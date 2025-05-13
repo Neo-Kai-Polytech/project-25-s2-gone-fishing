@@ -4,6 +4,8 @@
     {
         private static Random random = new Random();
         private static int Task;
+        static string[] inventory = ["", "", "", "", "", "", "", "", "", ""]; //Inventory of 10 slots, all same empty value to check if slots are empty
+
 
         static void Welcome()
         {
@@ -184,8 +186,6 @@
                 Console.ReadLine();
             }
 
-            static string[] inventory = ["", "", "", "", "", "", "", "", "", ""]; //Inventory of 10 slots, all same empty value to check if slots are empty
-
             static void InventoryManage()
             {
                 int input;
@@ -202,8 +202,8 @@
                         case 0:
                             Console.WriteLine("Exiting inventory now");
                             break;
-                        case 1: //Scavenges for food (Seperate function not in repo just yet)
-                           
+                        case 1: //Scavenges for ingredients and puts it in an empty slot in your inventory
+                            Scavenge();
                             break;
                         case 2: //Shows you your inventory
                             for (int i = 0; i < inventory.Length; i++)
@@ -219,7 +219,7 @@
                 } while (input != 0);
             }
 
-            static void Scavenge() //Ingredients are placeholder
+            static void Scavenge() //Ingredients are placeholder. Can be added on to
             {
                 int searchCase;
                 searchCase = random.Next(1, 5); //Decides what you find
@@ -242,7 +242,7 @@
 
                     case 2:
                     case 3:
-                    case 4: //You find bread. You are also more likely to find bread compared to lettuce
+                    case 4: //You find bread. You are also more likely to find bread compared to lettuce, thanks to the numerous cases assigned to the bread
                         for (int i = 0; i < inventory.Length; i++)
                         {
                             if (inventory[i] == "") //Finds empty slot
