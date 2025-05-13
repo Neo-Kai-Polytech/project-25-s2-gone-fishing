@@ -165,6 +165,43 @@
                 } while (input != 0);
             }
 
+            static void Scavenge() //Ingredients are placeholder
+            {
+                Random rand = new Random();
+                int searchCase;
+                searchCase = rand.Next(1, 5); //Decides what you find
+                switch (searchCase)
+                {
+                    default: //You found nothing
+                        Console.WriteLine("You found nothing");
+                        break;
+                    case 1: //You find lettuce
+                        for (int i = 0; i < inventory.Length; i++)
+                        {
+                            if (inventory[i] == "") //Finds an empty slot in inventory
+                            {
+                                inventory[i] = "Lettuce"; //Sets empty slot to lettuce
+                                Console.WriteLine("Added Lettuce to your inventory");
+                                break; //Breaks convention, but if it's not there than the entire inventory fills up with lettuce.
+                            }
+                        }
+                        break;
+
+                    case 2:
+                    case 3:
+                    case 4: //You find bread. You are also more likely to find bread compared to lettuce
+                        for (int i = 0; i < inventory.Length; i++)
+                        {
+                            if (inventory[i] == "") //Finds empty slot
+                            {
+                                inventory[i] = "Bread"; //Sets empty slot as bread
+                                Console.WriteLine("Added bread to your inventory");
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
         static void Main()
             {
 
