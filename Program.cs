@@ -63,7 +63,10 @@
 
         static void StartingArea()
         {
-            Console.WriteLine("This is the Starting Area");
+            Console.WriteLine("Starting Area");
+            Thread.Sleep(2000);
+            Console.Clear();
+
             Console.WriteLine("Press any key to move on to the next area...");
             Console.ReadLine();
             RandomNextArea();
@@ -103,7 +106,11 @@
         }
 
 
-
+        static void combatSystem()
+        {
+            int playerHP = 100;
+            
+        }
 
 
 
