@@ -233,8 +233,100 @@
                     Console.Clear();
                 } while (input != 0);
             }
+        // WIP. IGNORE SPAGHETTI CODE. WILL BREAK DOWN OVER TIME
+        static void Cooking()
+        {
+            int input;
+            string ingredientSlot1, ingredientSlot2, ingredientSlot3, temp;
+            Console.WriteLine("You are now in the cooking menu. What would you like to do?\n1. Start cooking\n2. Read cookbook\n0. Go back to inventory");
+            input = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+            do
+            {
+                switch (input)
+                {
+                    default:
+                        Console.WriteLine("Invalid input");
+                        break;
+                    case 1:
+                        do
+                        {
+                            Console.WriteLine("What tier recipie do you want to make?\n1. Tier 1 recipie\n2. Tier 2 recipie\n3. Tier 3 recipie\n\n0. Go back to cooking menu");
+                            input = Convert.ToInt32(Console.ReadLine());
+                            switch (input)
+                            {
+                                default:
+                                    Console.WriteLine("Invalid input");
+                                    break;
+                                case 1: //1st tier recipies
+                                    Console.WriteLine("What ingredient would you like to use?");
+                                    ingredientSlot1 = Console.ReadLine().ToLower();
+                                    if (ingredientSlot1 == "bread")
+                                    {
+                                        for (int i = 0; i < inventory.Length; i++)
+                                        {
+                                            if (ingredientSlot1 == inventory[i])
+                                            {
+                                                inventory[i] = "Toast";
+                                                Console.Write("You cooked Toast");
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("You don't know what to make with this!");
+                                    }
+                                    break;
+                                case 2: //2nd tier recipies
+                                    Console.WriteLine("What is the first ingredient you would like to use?");
+                                    ingredientSlot1 = Console.ReadLine().ToLower();
+                                    Console.WriteLine("What is the second ingredient you would like to use?");
+                                    ingredientSlot2 = Console.ReadLine().ToLower();
+                                    if (ingredientSlot1 == "lettuce" && ingredientSlot2 == "lettuce") //If the user made salad (2x lettuce)
+                                    {
+                                        for (int i = 0; i < inventory.Length; i++)
+                                        {
+                                            if (ingredientSlot1 == inventory[i])
+                                            {
+                                                inventory[i] = "Salad";
+                                                Console.WriteLine("You made Salad");
+                                                break;
+                                            }
+                                            else if (ingredientSlot2 == inventory[i])
+                                            {
+                                                inventory[i] = "";
+                                                break;
+                                            }
+                                        }
+                                    }
 
-            static void Scavenge() //Ingredients are placeholder. Can be added on to
+                                    break;
+                                case 3:
+                                    Console.WriteLine("What is the first ingredient you would like to use?");
+                                    ingredientSlot1 = Console.ReadLine().ToLower();
+                                    Console.WriteLine("What is the second ingredient you would like to use?");
+                                    ingredientSlot2 = Console.ReadLine().ToLower();
+                                    Console.WriteLine("What is the third ingredient you would like to use?");
+                                    ingredientSlot3 = Console.ReadLine().ToLower();
+                                    break;
+                            }
+                        } while (input != 0);
+
+
+                        Console.ReadLine();
+                        break;
+                    case 2:
+                        Console.WriteLine("Toast | Tier 1 recipie - 1 bread\nSalad | Tier 2 recipie - 2 lettuce\nBasic sandwich | Tier 3 recipie - 1 Lettuce, 2 bread");
+                        Console.ReadLine();
+                        break;
+                }
+                Console.Clear();
+                Console.WriteLine("You are now in the cooking menu. What would you like to do?\n1. Start cooking\n2. Read cookbook\n0. Go back to inventory");
+                input = Convert.ToInt32(Console.ReadLine());
+            } while (input != 0);
+        }
+        static void Scavenge() //Ingredients are placeholder. Can be added on to
             {
                 int searchCase;
                 searchCase = random.Next(1, 5); //Decides what you find
