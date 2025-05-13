@@ -129,7 +129,43 @@
                 Console.ReadLine();
             }
 
-            static void Main()
+            static string[] inventory = ["", "", "", "", "", "", "", "", "", ""]; //Inventory of 10 slots, all same empty value to check if slots are empty
+
+            static void InventoryManage()
+            {
+                int input;
+                Random rand = new Random();
+                Console.WriteLine("Hello. This is your inventory.\nPlease press 1 to scavenge for ingredients\nPlease press 2 to read out your inventory\n\nPlease press Anything else to close the program"); //Menu
+                input = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
+                do
+                {
+                    switch (input)
+                    {
+                        default:
+                            Console.WriteLine("Invalid Input");
+                            break;
+                        case 0:
+                            Console.WriteLine("Exiting inventory now");
+                            break;
+                        case 1: //Scavenges for food (Seperate function not in repo just yet)
+                           
+                            break;
+                        case 2: //Shows you your inventory
+                            for (int i = 0; i < inventory.Length; i++)
+                            {
+                                Console.WriteLine(inventory[i]);
+                            }
+                            break;
+                    }
+
+                    Console.WriteLine("Please enter in your next input\nPress 1 to scavenge for ingredients\nPress 2 to read out your inventory\n\nPress Anything else to close the program");
+                    input = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
+                } while (input != 0);
+            }
+
+        static void Main()
             {
 
                 string temp;
