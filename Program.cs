@@ -2,7 +2,8 @@
 {
     internal class Program
     {
-         private static int Task;
+        private static Random random = new Random();
+        private static int Task;
 
         static void Welcome()
         {
@@ -67,6 +68,29 @@
             Thread.Sleep(2000);
             Console.Clear();
 
+
+
+            Console.WriteLine("Before you stands a Huge Mutated Rat");
+            Thread.Sleep(2000);
+            Console.WriteLine("It shrieks in blood curdling savagery ready to gnaw your face off");
+            Thread.Sleep(2000);
+            Console.WriteLine("PREPARE TO FIGHT!");
+
+            Console.Clear();
+
+            Console.WriteLine("Epic Combat Commences");
+
+            combatSystem();
+
+
+
+
+
+
+
+
+
+
             Console.WriteLine("Press any key to move on to the next area...");
             Console.ReadLine();
             RandomNextArea();
@@ -109,6 +133,30 @@
         static void combatSystem()
         {
             int playerHP = 100;
+            int enemyHealth = random.Next(30,45);
+
+            int playerIniative = random.Next(0, 10);
+            int enemyIniative = random.Next(0, 10);
+
+            if (playerIniative >= enemyIniative)
+
+            {
+                Console.WriteLine("Player rolled higher iniative");
+                Console.WriteLine("Player goes first");
+                Console.WriteLine();
+
+
+            }
+            else 
+            {
+                Console.WriteLine("Enemy rolled higher iniative");
+                Console.WriteLine("Enemy strikes first");
+                Console.WriteLine("Giant Mutated Attacks with VISCIOUS CLAWS");
+
+                int enemyDamage = random.Next(0, 10);
+
+            }
+
             
         }
 
@@ -141,7 +189,6 @@
             static void InventoryManage()
             {
                 int input;
-                Random rand = new Random();
                 Console.WriteLine("Hello. This is your inventory.\nPlease press 1 to scavenge for ingredients\nPlease press 2 to read out your inventory\n\nPlease press Anything else to close the program"); //Menu
                 input = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
@@ -174,9 +221,8 @@
 
             static void Scavenge() //Ingredients are placeholder
             {
-                Random rand = new Random();
                 int searchCase;
-                searchCase = rand.Next(1, 5); //Decides what you find
+                searchCase = random.Next(1, 5); //Decides what you find
                 switch (searchCase)
                 {
                     default: //You found nothing
