@@ -4,6 +4,7 @@
     {
         private static Random random = new Random();
         private static int Task;
+        private static string charName;
         static string[] inventory = ["", "", "", "", "", "", "", "", "", ""]; //Inventory of 10 slots, all same empty value to check if slots are empty
 
 
@@ -14,6 +15,7 @@
             Console.WriteLine("The Menu options are:");
             Console.WriteLine("1  New Game");
             Console.WriteLine("2  Options");
+            Console.WriteLine("3  Controls");
             Console.WriteLine("0  Exit menu system");
             Console.WriteLine();
         }
@@ -28,7 +30,7 @@
 
         static void StoryLineSum()
         {
-            // Print to Screen Main Story Summary?
+            // Print to Screen Main Story Summary
 
             Console.WriteLine("So the story starts with World War III Apocalypse where all countries were on war. Lost of lives were lost, families got ruined. Not only damage is done to the humans, nature also paid the price animal species got extinct, air pollution went to the next level." +
                 "In the war many comunities were lost, world population got half, darkness is now spreading every corner of the world.People praying to the God to restore the balance of the world and some still have belief someone will a messiah will come and everything will come back to original."  );
@@ -37,13 +39,13 @@
             Console.ReadLine();
 
 
-            // Lead to Character Creation?
+            // Lead to Character Creation
             CharacterCreation();
 
 
         }
 
-        static void CharacterCreation()
+        public static void CharacterCreation()
 
         {
             // List Character Options??
@@ -92,6 +94,7 @@
             Console.WriteLine("It shrieks in blood curdling savagery ready to gnaw your face off");
             Thread.Sleep(2000);
             Console.WriteLine("PREPARE TO FIGHT!");
+            Thread.Sleep(2000);
 
             Console.Clear();
 
@@ -150,10 +153,35 @@
         static void combatSystem()
         {
             int playerHP = 100;
-            int enemyHealth = random.Next(30,45);
+            int enemyHP = 30;
 
             int playerIniative = random.Next(0, 10);
             int enemyIniative = random.Next(0, 10);
+
+            string enemyName = "Giant Rat";
+
+
+            do {
+
+                Console.Write("Name".PadRight(15));
+                Console.Write("Name".PadLeft(15));
+                Console.WriteLine();
+                Console.Write("Player".PadRight(15));
+                Console.Write(enemyName.PadLeft(15));
+                Console.WriteLine();
+                Console.WriteLine("VS".PadLeft(15));
+                Console.Write("Health:".PadRight(15));
+                Console.Write("Health:".PadLeft(15));
+                Console.WriteLine();
+                Console.Write(playerHP.PadRight(15));
+                Console.Write(enemyHP.PadLeft(15));
+
+            } while (enemyHP > 0); 
+
+
+
+            Console.ReadLine();
+
 
             if (playerIniative >= enemyIniative)
 
@@ -184,6 +212,16 @@
                 // OPTIONS MENU
 
                 Console.WriteLine("This is Task 2");
+                Console.WriteLine("Press any key to return to menu");
+                Console.ReadLine();
+
+            }
+            
+            static void Task3()
+            {
+                // OPTIONS MENU
+
+                Console.WriteLine("This is Task 3");
                 Console.WriteLine("Press any key to return to menu");
                 Console.ReadLine();
 
