@@ -4,6 +4,7 @@
     {
         private static Random random = new Random();
         private static int Task;
+        private static string charName;
         static string[] inventory = ["", "", "", "", "", "", "", "", "", ""]; //Inventory of 10 slots, all same empty value to check if slots are empty
 
 
@@ -14,6 +15,7 @@
             Console.WriteLine("The Menu options are:");
             Console.WriteLine("1  New Game");
             Console.WriteLine("2  Options");
+            Console.WriteLine("3  Controls");
             Console.WriteLine("0  Exit menu system");
             Console.WriteLine();
         }
@@ -28,7 +30,11 @@
 
         static void StoryLineSum()
         {
+
             // Main story line
+
+            // Print to Screen Main Story Summary
+
 
             Console.WriteLine("So the story starts with World War III Apocalypse where all countries were on war. Lost of lives were lost, families got ruined. Not only damage is done to the humans, nature also paid the price animal species got extinct, air pollution went to the next level." +
                 "In the war many comunities were lost, world population got half, darkness is now spreading every corner of the world.People praying to the God to restore the balance of the world and some still have belief someone will a messiah will come and everything will come back to original.");
@@ -37,13 +43,13 @@
             Console.ReadLine();
 
 
-            // Lead to Character Creation?
+            // Lead to Character Creation
             CharacterCreation();
 
 
         }
 
-        static void CharacterCreation()
+        public static void CharacterCreation()
 
         {
             // List Character Options??
@@ -71,30 +77,7 @@
 
             //start of the game
 
-            int events;
-        Console.WriteLine("Where would want to go first?");
-            Console.WriteLine("The options are:");
-            Console.WriteLine("Event 1");
-            Console.WriteLine("Event 2");
-            Console.WriteLine("Event 3");
-            Console.WriteLine("Event 4");
-            events = Convert.ToInt32(Console.ReadLine());
-            Console.ReadLine();
-            switch(events)
-            {
-                case 1:
-                //go to event 1
-                break;
-            case 2:
-                //go to event 2
-                break;
-            case 3:
-                //go to event 3
-                break;
-            case 4:
-                //go to event 4
-                break;
-        }
+ 
         
 
 
@@ -103,39 +86,6 @@
         // Lead to first Starting Area?
 
         StartingArea();
-
-        }
-        static void event1()
-        {
-            Console.WriteLine("Continuing his journey now he reached Russia where he saw that everything is destroyed.He is findind any life which is still alive and can talk with them. He is in a dense forest right now.");
-            //where do you wanna go/
-            Thread.Sleep(500);
-            Console.WriteLine("You see a bear running towards you.");
-            Console.WriteLine("what do you wannna do run or fight ?");
-            //during fight bear hp will come
-            //If he fights he will kill him and with the fighting sounds people will come and meet him
-            //If he runs he will find a village and they all together giht the bear and will kill the bear and enjoy the steak.
-            //here we can add some combat things and can give hp to the person and bear, he can also use various things like sword or something to fight.
-            Console.WriteLine("");
-            Console.ReadLine();
-
-        }
-
-        static void event2()
-        {
-            
-
-        }
-
-        static void event3()
-        {
-            
-
-        }
-
-        static void event4()
-        {
-            
 
         }
 
@@ -152,6 +102,7 @@
             Console.WriteLine("It shrieks in blood curdling savagery ready to gnaw your face off");
             Thread.Sleep(2000);
             Console.WriteLine("PREPARE TO FIGHT!");
+            Thread.Sleep(2000);
 
             Console.Clear();
 
@@ -210,10 +161,39 @@
         static void combatSystem()
         {
             int playerHP = 100;
+
             int enemyHealth = random.Next(30, 45);
+
+            int enemyHP = 30;
+
 
             int playerIniative = random.Next(0, 10);
             int enemyIniative = random.Next(0, 10);
+
+            string enemyName = "Giant Rat";
+
+
+            do {
+
+                Console.Write("Name".PadRight(15));
+                Console.Write("Name".PadLeft(15));
+                Console.WriteLine();
+                Console.Write("Player".PadRight(15));
+                Console.Write(enemyName.PadLeft(15));
+                Console.WriteLine();
+                Console.WriteLine("VS".PadLeft(15));
+                Console.Write("Health:".PadRight(15));
+                Console.Write("Health:".PadLeft(15));
+                Console.WriteLine();
+                Console.Write(playerHP.PadRight(15));
+                Console.Write(enemyHP.PadLeft(15));
+
+            } while (enemyHP > 0); 
+
+
+
+            Console.ReadLine();
+
 
             if (playerIniative >= enemyIniative)
 
@@ -281,24 +261,260 @@
                         Scavenge();
                         break;
                     case 2: //Shows you your inventory
+                // OPTIONS MENU
+
+                Console.WriteLine("This is Task 2");
+                Console.WriteLine("Press any key to return to menu");
+                Console.ReadLine();
+
+            }
+            
+            static void Task3()
+            {
+                // OPTIONS MENU
+
+                Console.WriteLine("This is Task 3");
+                Console.WriteLine("Press any key to return to menu");
+                Console.ReadLine();
+
+            }
+
+            static void Exit()
+            {
+                Console.WriteLine("This is the exit");
+                Console.WriteLine("Press any key to close program");
+            }
+
+            static void InvalidInput()
+            {
+                Console.WriteLine("Invalid Input");
+                Console.ReadLine();
+            }
+
+        static void InventoryManage()
+        {
+            int input;
+            Console.Clear();
+            do
+            {
+                Console.WriteLine("Hello. This is your inventory.\nPress 1 to cook ingredients\nPress 2 to read out your inventory\nPress 3 to scavenge for ingredients\n\nPress 0 to close the program"); //Menu text
+                input = Convert.ToInt32(Console.ReadLine());
+                switch (input)
+                {
+                    default:
+                        InvalidInput();
+                        break;
+                    case 0: //Exit inventory
+                        Console.WriteLine("Exiting inventory now");
+                        break;
+                    case 1: //Scavenges for ingredients and puts it in an empty slot in your inventory
+                        Cooking();
+                        break;
+                    case 2: //Shows you your inventory
+                        Console.WriteLine("Inventory:");
+
                         for (int i = 0; i < inventory.Length; i++)
                         {
                             Console.WriteLine(inventory[i]);
                         }
+
                         break;
                 }
 
                 Console.WriteLine("Please enter in your next input\nPress 1 to scavenge for ingredients\nPress 2 to read out your inventory\n\nPress Anything else to close the program");
                 input = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("-- End of inventory. Press enter to go back to menu");
+                        Console.ReadLine();
+                        Console.Clear();
+                        break;
+                    case 3:
+                        Console.Clear();
+                        Scavenge();
+                        Console.WriteLine("-- Press enter to go back to the menu");
+                        Console.ReadLine();
+                        break;
+                }
                 Console.Clear();
             } while (input != 0);
         }
+        // WIP. IGNORE SPAGHETTI CODE. WILL BREAK DOWN OVER TIME
+        /*TODO: 
+        *Add functional tier 3 crafting recipies. Make it so I don't need an if statement with 9 or's to cover all cooking variations.
+        *Change "for (int i = 0; i < inventory.Length; i++)" to a while/do while loop. It is more efficient.
+         */
+        static void Cooking()
+        {
+            int input;
+            Console.Clear();
+            do
+            {
+                Console.WriteLine("You are now in the cooking menu. What would you like to do?\n1. Start cooking\n2. Read cookbook\n0. Go back to inventory");
+                input = Convert.ToInt32(Console.ReadLine());
+                switch (input)
+                {
+                    default:
+                        InvalidInput();
+                        break;
+                    case 1:
+                        Kitchen();
+                        break;
+                    case 2:
+                        Console.WriteLine("Toast | Tier 1 recipie - 1 bread\nBoiling Water | Tier 1 recipie - 1 Drinkable Water\nSalad | Tier 2 recipie - 2 lettuce\nBasic sandwich | Tier 3 recipie - 1 Lettuce, 2 bread");
+                        Console.ReadLine();
+                        break;
+                    case 0:
+                        break;
+                }
+
+                Console.Clear();
+            } while (input != 0);
+        }
+
 
         static void Scavenge() //Ingredients are placeholder. Can be added on to
         {
             int searchCase;
             searchCase = random.Next(1, 5); //Decides what you find
             switch (searchCase)
+
+        static void Kitchen()
+        {
+            int input;
+            string ingredientSlot1, ingredientSlot2, ingredientSlot3;
+            Console.Clear();
+            do
+            {
+                Console.WriteLine("What tier recipie do you want to make?\n1. Tier 1 recipie\n2. Tier 2 recipie\n3. Tier 3 recipie\n\n0. Go back to cooking menu");
+                input = Convert.ToInt32(Console.ReadLine());
+                switch (input)
+                {
+                    default:
+                        InvalidInput();
+                        break;
+                    case 1: //Cooking tier 1 recipies
+                        Console.WriteLine("What ingredient would you like to use?");
+                        ingredientSlot1 = Console.ReadLine().ToLower();
+                        //Toast
+                        if (ingredientSlot1 == "bread") //ingredient (bread, in this case)
+                        {
+                            for (int i = 0; i < inventory.Length; i++)
+                            {
+                                if (inventory[i] == "Bread") //Grab the ingredient from inventory
+                                {
+                                    inventory[i] = "Toast"; //Make inventory slot the final meal
+                                    Console.Write("You cooked Toast");
+                                    break;
+                                }
+                            }
+                        }
+                        //Boiling Water
+                        else if (ingredientSlot1 == "drinkable water") //ingredient
+                        {
+                            for (int i = 0; i < inventory.Length; i++)
+                            {
+                                if (inventory[i] == "Drinkable Water") //Find in inventory
+                                {
+                                    inventory[i] = "Boiling Water"; //Replace it
+                                    Console.WriteLine("You made Boiling Water");
+                                    break;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("You don't know what to make with this!");
+                        }
+                        Console.ReadLine();
+                        break;
+                    case 2: //Cooking tier 2 recipies
+                        Console.WriteLine("What is the first ingredient you would like to use?");
+                        ingredientSlot1 = Console.ReadLine().ToLower();
+                        Console.WriteLine("What is the second ingredient you would like to use?");
+                        ingredientSlot2 = Console.ReadLine().ToLower();
+                        //Salad
+                        if (ingredientSlot1 == "lettuce" && ingredientSlot2 == "lettuce") //Ingredients
+                        {
+                            for (int i = 0; i < inventory.Length; i++)
+                            {
+                                if (inventory[i] == "Lettuce") //Grab the first ingredient in inventory
+                                {
+                                    inventory[i] = "Salad"; //Make it salad
+                                    Console.WriteLine("You made Salad");
+                                }
+                                else if (inventory[i] == "Lettuce") //Make sure to change all other ingredients used to empty slots
+                                {
+                                    inventory[i] = "";
+                                    break;
+                                }
+                            }
+                        }
+                        Console.ReadLine();
+                        break;
+                    case 3: //Cooking tier 3 recipies
+                        Console.WriteLine("What is the first ingredient you would like to use?");
+                        ingredientSlot1 = Console.ReadLine().ToLower();
+                        Console.WriteLine("What is the second ingredient you would like to use?");
+                        ingredientSlot2 = Console.ReadLine().ToLower();
+                        Console.WriteLine("What is the third ingredient you would like to use?");
+                        ingredientSlot3 = Console.ReadLine().ToLower();
+                        break;
+                    case 0:
+                        break;
+                }
+                Console.Clear();
+            } while (input != 0);
+
+
+        }
+        static void Scavenge() //Ingredients are placeholder. Can be added on to
+        {
+            int searchCase;
+            searchCase = random.Next(1, 6); //Decides what you find
+            switch (searchCase)
+            {
+                default: //You found nothing
+                    Console.WriteLine("You found nothing");
+                    break;
+                case 1: //You find lettuce
+                    for (int i = 0; i < inventory.Length; i++)
+                    {
+                        if (inventory[i] == "") //Finds an empty slot in inventory
+                        {
+                            inventory[i] = "Lettuce"; //Sets empty slot to lettuce
+                            Console.WriteLine("Added Lettuce to your inventory");
+                            break; //Breaks convention, but if it's not there than the entire inventory fills up with lettuce.
+                        }
+                    }
+                    break;
+
+                case 2:
+                case 3:
+                case 4: //You find bread. You are also more likely to find bread compared to lettuce, thanks to the numerous cases assigned to the bread
+                    for (int i = 0; i < inventory.Length; i++)
+                    {
+                        if (inventory[i] == "") //Finds empty slot
+                        {
+                            inventory[i] = "Bread"; //Sets empty slot as bread
+                            Console.WriteLine("Added bread to your inventory");
+                            break;
+                        }
+                    }
+                    break;
+                case 5:
+                    for (int i = 0; i < inventory.Length; i++)
+                    {
+                        if (inventory[i] == "")
+                        {
+                            inventory[i] = "Drinkable Water";
+                            Console.WriteLine("You found a bottle of Drinkable Water");
+                            break;
+                        }
+                    }
+                    break;
+            }
+        }
+        static void Main()
+
             {
                 default: //You found nothing
                     Console.WriteLine("You found nothing");
