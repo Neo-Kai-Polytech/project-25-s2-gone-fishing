@@ -110,19 +110,36 @@
                         break;
                         static void event1()
                         {
+                            char des1;
                             Console.WriteLine("Continuing his journey now he reached Russia where he saw that everything is destroyed.He is findind any life which is still alive and can talk with them. He is in a dense forest right now.");
                             //where do you wanna go/
                             Thread.Sleep(500);
                             Console.WriteLine("You see a bear running towards you.");
                             Console.WriteLine("what do you wannna do run or fight ?");
+                            des1 = Convert.ToChar(Console.ReadLine());
                             //during fight bear hp will come
                             //If he fights he will kill him and with the fighting sounds people will come and meet him
                             //If he runs he will find a village and they all together giht the bear and will kill the bear and enjoy the steak.
                             //here we can add some combat things and can give hp to the person and bear, he can also use various things like sword or something to fight.
                             Console.WriteLine("");
-                            
-                            Console.ReadLine();
+                            switch (des1)
+                            {
+                                case 'r':
+                                    Console.WriteLine("While running he got to a village where he saw bunch of people");
+                                    break;
+                                case 'f':
+                                    //he fights
+                                    int bear = 50;
+                                    int player = 100;
+                                    break;
+                            }
+                            Console.WriteLine("After this he observed the cooking method of the villagers which was slighl=tly different and wane to talk with them regarding that.While chatting he got to know some new dishes which includes russian steak etc.");
+                            //here some things 2 or 3 ingredients will get added in the inventory
+                            Console.WriteLine("Press any button to cook new dish");
+                            //here cook book will come 
 
+                            Console.ReadLine();
+                            //end of event and he continues his journey
                         }
 
 
