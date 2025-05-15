@@ -76,7 +76,7 @@
             Thread.Sleep(500);
 
             //start of the game
-
+            FirstFight();
 
         }
 
@@ -126,9 +126,10 @@
 
                 }
             }
+        }
 
 
-            static void FirstFight()
+            public static void FirstFight()
             {
                 Console.WriteLine("Starting Area");
                 Thread.Sleep(2000);
@@ -148,15 +149,6 @@
                 Console.WriteLine("Epic Combat Commences");
 
                 combatSystem();
-
-
-
-
-
-
-
-
-
 
                 Console.WriteLine("Press any key to move on to the next area...");
                 Console.ReadLine();
@@ -199,14 +191,17 @@
 
             static void combatSystem()
             {
-
-                string playerHP = "100";
-                string enemyHP = "30";
                 int playerIniative = random.Next(0, 10);
                 int enemyIniative = random.Next(0, 10);
 
-                string enemyName = "Giant Rat";
+                int playerHP = 100;
+                int enemyHP = random.Next(30,40);
 
+                int playerAttack = 0;
+                int enemyAttack = 0;
+
+
+                string enemyName = "Giant Rat";
 
                 do
                 {
@@ -221,34 +216,48 @@
                     Console.Write("Health:".PadRight(15));
                     Console.Write("Health:".PadLeft(15));
                     Console.WriteLine();
-                    Console.Write(playerHP.PadRight(15));
-                    Console.Write(enemyHP.PadLeft(15));
+                    Console.Write(playerHP.ToString().PadRight(15));
+                    Console.Write(enemyHP.ToString().PadLeft(15));
 
-                } while (enemyHP != "0");
+                    Console.WriteLine();
+                    Console.WriteLine("What would you like to do?");
+                    
+                    string playerInput = Console.ReadLine();
+
+                    playerAttack = random.Next(5, 15);
+                    Console.WriteLine($"\n Player slices and dices dealing {playerAttack} damage! \n");
+                    enemyHP = enemyHP - playerAttack;
+
+
+                    enemyAttack = random.Next(1, 6);
+                    Console.WriteLine($"\n Giant Mutated Attacks with VISCIOUS CLAWS dealing {enemyAttack} damage! \n");
+                    playerHP = playerHP - enemyAttack;
+
+                } while (enemyHP > 0);
 
 
 
                 Console.ReadLine();
 
 
-                if (playerIniative >= enemyIniative)
+                //if (playerIniative >= enemyIniative)
 
-                {
-                    Console.WriteLine("Player rolled higher iniative");
-                    Console.WriteLine("Player goes first");
-                    Console.WriteLine();
+                //{
+                //    Console.WriteLine("Player rolled higher iniative");
+                //    Console.WriteLine("Player goes first");
+                //    Console.WriteLine();
 
 
-                }
-                else
-                {
-                    Console.WriteLine("Enemy rolled higher iniative");
-                    Console.WriteLine("Enemy strikes first");
-                    Console.WriteLine("Giant Mutated Attacks with VISCIOUS CLAWS");
+                //}
+                //else
+                //{
+                //    Console.WriteLine("Enemy rolled higher iniative");
+                //    Console.WriteLine("Enemy strikes first");
+                //    Console.WriteLine("Giant Mutated Attacks with VISCIOUS CLAWS");
 
-                    int enemyDamage = random.Next(0, 10);
+                //    int enemyDamage = random.Next(0, 10);
 
-                }
+                //}
 
 
             }
@@ -530,4 +539,3 @@
             }
         }
     }
-}
