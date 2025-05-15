@@ -77,15 +77,15 @@
 
             //start of the game
 
- 
-        
 
 
 
 
-        // Lead to first Starting Area?
 
-        StartingArea();
+
+            // Lead to first Starting Area?
+
+            StartingArea();
 
         }
 
@@ -160,25 +160,17 @@
 
         static void combatSystem()
         {
-<<<<<<< HEAD
+
             string playerHP = "100";
             string enemyHP = "30";
-=======
-            int playerHP = 100;
-
-            int enemyHealth = random.Next(30, 45);
-
-            int enemyHP = 30;
->>>>>>> e7c9aa6f9a7c4fec5deaf9f04fca3e370451ca04
-
-
             int playerIniative = random.Next(0, 10);
             int enemyIniative = random.Next(0, 10);
 
             string enemyName = "Giant Rat";
 
 
-            do {
+            do
+            {
 
                 Console.Write("Name".PadRight(15));
                 Console.Write("Name".PadLeft(15));
@@ -193,7 +185,7 @@
                 Console.Write(playerHP.PadRight(15));
                 Console.Write(enemyHP.PadLeft(15));
 
-            } while (enemyHP != "0"); 
+            } while (enemyHP != "0");
 
 
 
@@ -249,56 +241,6 @@
         static void InventoryManage()
         {
             int input;
-            Console.WriteLine("Hello. This is your inventory.\nPlease press 1 to scavenge for ingredients\nPlease press 2 to read out your inventory\n\nPlease press Anything else to close the program"); //Menu
-            input = Convert.ToInt32(Console.ReadLine());
-            Console.Clear();
-            do
-            {
-                switch (input)
-                {
-                    default:
-                        Console.WriteLine("Invalid Input");
-                        break;
-                    case 0:
-                        Console.WriteLine("Exiting inventory now");
-                        break;
-                    case 1: //Scavenges for ingredients and puts it in an empty slot in your inventory
-                        Scavenge();
-                        break;
-                    case 2: //Shows you your inventory
-                // OPTIONS MENU
-
-                Console.WriteLine("This is Task 2");
-                Console.WriteLine("Press any key to return to menu");
-                Console.ReadLine();
-
-            }
-            
-            static void Task3()
-            {
-                // OPTIONS MENU
-
-                Console.WriteLine("This is Task 3");
-                Console.WriteLine("Press any key to return to menu");
-                Console.ReadLine();
-
-            }
-
-            static void Exit()
-            {
-                Console.WriteLine("This is the exit");
-                Console.WriteLine("Press any key to close program");
-            }
-
-            static void InvalidInput()
-            {
-                Console.WriteLine("Invalid Input");
-                Console.ReadLine();
-            }
-
-        static void InventoryManage()
-        {
-            int input;
             Console.Clear();
             do
             {
@@ -317,17 +259,10 @@
                         break;
                     case 2: //Shows you your inventory
                         Console.WriteLine("Inventory:");
-
                         for (int i = 0; i < inventory.Length; i++)
                         {
                             Console.WriteLine(inventory[i]);
                         }
-
-                        break;
-                }
-
-                Console.WriteLine("Please enter in your next input\nPress 1 to scavenge for ingredients\nPress 2 to read out your inventory\n\nPress Anything else to close the program");
-                input = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("-- End of inventory. Press enter to go back to menu");
                         Console.ReadLine();
                         Console.Clear();
@@ -370,17 +305,9 @@
                     case 0:
                         break;
                 }
-
                 Console.Clear();
             } while (input != 0);
         }
-
-
-        static void Scavenge() //Ingredients are placeholder. Can be added on to
-        {
-            int searchCase;
-            searchCase = random.Next(1, 5); //Decides what you find
-            switch (searchCase)
 
         static void Kitchen()
         {
@@ -519,39 +446,6 @@
             }
         }
         static void Main()
-
-            {
-                default: //You found nothing
-                    Console.WriteLine("You found nothing");
-                    break;
-                case 1: //You find lettuce
-                    for (int i = 0; i < inventory.Length; i++)
-                    {
-                        if (inventory[i] == "") //Finds an empty slot in inventory
-                        {
-                            inventory[i] = "Lettuce"; //Sets empty slot to lettuce
-                            Console.WriteLine("Added Lettuce to your inventory");
-                            break; //Breaks convention, but if it's not there than the entire inventory fills up with lettuce.
-                        }
-                    }
-                    break;
-
-                case 2:
-                case 3:
-                case 4: //You find bread. You are also more likely to find bread compared to lettuce, thanks to the numerous cases assigned to the bread
-                    for (int i = 0; i < inventory.Length; i++)
-                    {
-                        if (inventory[i] == "") //Finds empty slot
-                        {
-                            inventory[i] = "Bread"; //Sets empty slot as bread
-                            Console.WriteLine("Added bread to your inventory");
-                            break;
-                        }
-                    }
-                    break;
-            }
-        }
-        static void Main()
         {
 
             string temp;
@@ -596,9 +490,6 @@
 
 
 
-
-
         }
     }
 }
-
