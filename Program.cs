@@ -93,6 +93,38 @@
                 Console.WriteLine("Event 4");
                 events = Convert.ToInt32(Console.ReadLine());
                 Console.ReadLine();
+
+                switch (events)
+                {
+                    case 1:
+                        //go to event 1
+                        break;
+                    case 2:
+                        //go to event 2
+                        break;
+                    case 3:
+                        //go to event 3
+                        break;
+                    case 4:
+                        //go to event 4
+                        break;
+                        static void event1()
+                        {
+                            Console.WriteLine("Continuing his journey now he reached Russia where he saw that everything is destroyed.He is findind any life which is still alive and can talk with them. He is in a dense forest right now.");
+                            //where do you wanna go/
+                            Thread.Sleep(500);
+                            Console.WriteLine("You see a bear running towards you.");
+                            Console.WriteLine("what do you wannna do run or fight ?");
+                            //during fight bear hp will come
+                            //If he fights he will kill him and with the fighting sounds people will come and meet him
+                            //If he runs he will find a village and they all together giht the bear and will kill the bear and enjoy the steak.
+                            //here we can add some combat things and can give hp to the person and bear, he can also use various things like sword or something to fight.
+                            Console.WriteLine("");
+                            Console.ReadLine();
+
+                        }
+
+                }
             }
 
 
