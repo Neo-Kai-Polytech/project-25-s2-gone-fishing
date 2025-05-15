@@ -152,8 +152,8 @@
 
         static void combatSystem()
         {
-            int playerHP = 100;
-            int enemyHP = 30;
+            string playerHP = "100";
+            string enemyHP = "30";
 
             int playerIniative = random.Next(0, 10);
             int enemyIniative = random.Next(0, 10);
@@ -176,7 +176,7 @@
                 Console.Write(playerHP.PadRight(15));
                 Console.Write(enemyHP.PadLeft(15));
 
-            } while (enemyHP > 0); 
+            } while (enemyHP != "0"); 
 
 
 
