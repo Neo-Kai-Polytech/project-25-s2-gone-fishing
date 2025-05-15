@@ -30,10 +30,14 @@
 
         static void StoryLineSum()
         {
+
+            // Main story line
+
             // Print to Screen Main Story Summary
 
+
             Console.WriteLine("So the story starts with World War III Apocalypse where all countries were on war. Lost of lives were lost, families got ruined. Not only damage is done to the humans, nature also paid the price animal species got extinct, air pollution went to the next level." +
-                "In the war many comunities were lost, world population got half, darkness is now spreading every corner of the world.People praying to the God to restore the balance of the world and some still have belief someone will a messiah will come and everything will come back to original."  );
+                "In the war many comunities were lost, world population got half, darkness is now spreading every corner of the world.People praying to the God to restore the balance of the world and some still have belief someone will a messiah will come and everything will come back to original.");
 
             Console.WriteLine("Press any key to know about the main character");
             Console.ReadLine();
@@ -51,8 +55,12 @@
             // List Character Options??
             string charName;
 
+            //char name
+
             Console.WriteLine("Enter the name of the character.");
             charName = Console.ReadLine();
+            //char background
+
             Console.WriteLine("The main character belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief. His all family is very patriotic and kind. Follwing his father's footsteps he also wanted to become a army officer.He also liked cooking which came from his mother and wanted to use this side talent in his life. So he wanted to become a army chef" +
                 ".Eventually, after working hard he accomplished his goal and started serving in the army.");
             Thread.Sleep(500);
@@ -66,18 +74,18 @@
             Thread.Sleep(500);
             Console.WriteLine("After this night he decided to go on a world journey with passion to help people and to get some new experiences.");
             Thread.Sleep(500);
-            Console.WriteLine("Where would want to go first?");
-            Console.WriteLine("The options are:");
-            Console.ReadLine();
+
+            //start of the game
+
+ 
+        
 
 
 
 
+        // Lead to first Starting Area?
 
-
-            // Lead to first Starting Area?
-
-            StartingArea();
+        StartingArea();
 
         }
 
@@ -152,8 +160,17 @@
 
         static void combatSystem()
         {
+<<<<<<< HEAD
             string playerHP = "100";
             string enemyHP = "30";
+=======
+            int playerHP = 100;
+
+            int enemyHealth = random.Next(30, 45);
+
+            int enemyHP = 30;
+>>>>>>> e7c9aa6f9a7c4fec5deaf9f04fca3e370451ca04
+
 
             int playerIniative = random.Next(0, 10);
             int enemyIniative = random.Next(0, 10);
@@ -192,7 +209,7 @@
 
 
             }
-            else 
+            else
             {
                 Console.WriteLine("Enemy rolled higher iniative");
                 Console.WriteLine("Enemy strikes first");
@@ -202,13 +219,53 @@
 
             }
 
-            
+
         }
 
 
 
-            static void Task2()
+        static void Task2()
+        {
+            // OPTIONS MENU
+
+            Console.WriteLine("This is Task 2");
+            Console.WriteLine("Press any key to return to menu");
+            Console.ReadLine();
+
+        }
+
+        static void Exit()
+        {
+            Console.WriteLine("This is the exit");
+            Console.WriteLine("Press any key to close program");
+        }
+
+        static void InvalidInput()
+        {
+            Console.WriteLine("Invalid Input");
+            Console.ReadLine();
+        }
+
+        static void InventoryManage()
+        {
+            int input;
+            Console.WriteLine("Hello. This is your inventory.\nPlease press 1 to scavenge for ingredients\nPlease press 2 to read out your inventory\n\nPlease press Anything else to close the program"); //Menu
+            input = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+            do
             {
+                switch (input)
+                {
+                    default:
+                        Console.WriteLine("Invalid Input");
+                        break;
+                    case 0:
+                        Console.WriteLine("Exiting inventory now");
+                        break;
+                    case 1: //Scavenges for ingredients and puts it in an empty slot in your inventory
+                        Scavenge();
+                        break;
+                    case 2: //Shows you your inventory
                 // OPTIONS MENU
 
                 Console.WriteLine("This is Task 2");
@@ -260,10 +317,17 @@
                         break;
                     case 2: //Shows you your inventory
                         Console.WriteLine("Inventory:");
+
                         for (int i = 0; i < inventory.Length; i++)
                         {
                             Console.WriteLine(inventory[i]);
                         }
+
+                        break;
+                }
+
+                Console.WriteLine("Please enter in your next input\nPress 1 to scavenge for ingredients\nPress 2 to read out your inventory\n\nPress Anything else to close the program");
+                input = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("-- End of inventory. Press enter to go back to menu");
                         Console.ReadLine();
                         Console.Clear();
@@ -306,9 +370,17 @@
                     case 0:
                         break;
                 }
+
                 Console.Clear();
             } while (input != 0);
         }
+
+
+        static void Scavenge() //Ingredients are placeholder. Can be added on to
+        {
+            int searchCase;
+            searchCase = random.Next(1, 5); //Decides what you find
+            switch (searchCase)
 
         static void Kitchen()
         {
@@ -447,53 +519,86 @@
             }
         }
         static void Main()
+
             {
-
-                string temp;
-
-
-                do
-                {
-                    Welcome();
-
-                    Console.WriteLine("Please choose an option");
-                    temp = Console.ReadLine();
-                    Task = Convert.ToInt32(temp);
-
-                    Console.Clear();
-
-                    switch (Task)
-
+                default: //You found nothing
+                    Console.WriteLine("You found nothing");
+                    break;
+                case 1: //You find lettuce
+                    for (int i = 0; i < inventory.Length; i++)
                     {
-                        case 1:
-                            Task1();
-                            break;
-
-                        case 2:
-                            Task2();
-                            break;
-
-                        case 0:
-                            Exit();
-                            break;
-
-                        default:
-                            InvalidInput();
-                            break;
-
+                        if (inventory[i] == "") //Finds an empty slot in inventory
+                        {
+                            inventory[i] = "Lettuce"; //Sets empty slot to lettuce
+                            Console.WriteLine("Added Lettuce to your inventory");
+                            break; //Breaks convention, but if it's not there than the entire inventory fills up with lettuce.
+                        }
                     }
+                    break;
 
-                    Console.Clear();
-
-
-                } while (Task != 0);
-
-
-
-
-
-
+                case 2:
+                case 3:
+                case 4: //You find bread. You are also more likely to find bread compared to lettuce, thanks to the numerous cases assigned to the bread
+                    for (int i = 0; i < inventory.Length; i++)
+                    {
+                        if (inventory[i] == "") //Finds empty slot
+                        {
+                            inventory[i] = "Bread"; //Sets empty slot as bread
+                            Console.WriteLine("Added bread to your inventory");
+                            break;
+                        }
+                    }
+                    break;
             }
         }
+        static void Main()
+        {
+
+            string temp;
+
+
+            do
+            {
+                Welcome();
+
+                Console.WriteLine("Please choose an option");
+                temp = Console.ReadLine();
+                Task = Convert.ToInt32(temp);
+
+                Console.Clear();
+
+                switch (Task)
+
+                {
+                    case 1:
+                        Task1();
+                        break;
+
+                    case 2:
+                        Task2();
+                        break;
+
+                    case 0:
+                        Exit();
+                        break;
+
+                    default:
+                        InvalidInput();
+                        break;
+
+                }
+
+                Console.Clear();
+
+
+            } while (Task != 0);
+
+
+
+
+
+
+        }
     }
+}
 
