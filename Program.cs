@@ -135,20 +135,20 @@
                 Thread.Sleep(2000);
                 Console.Clear();
 
-
-
-                Console.WriteLine("Before you stands a Huge Mutated Rat");
-                Thread.Sleep(2000);
-                Console.WriteLine("It shrieks in blood curdling savagery ready to gnaw your face off");
-                Thread.Sleep(2000);
-                Console.WriteLine("PREPARE TO FIGHT!");
-                Thread.Sleep(2000);
+                //Console.WriteLine("Before you stands a Huge Mutated Rat");
+                //Thread.Sleep(2000);
+                //Console.WriteLine("It shrieks in blood curdling savagery ready to gnaw your face off");
+                //Thread.Sleep(2000);
+                //Console.WriteLine("PREPARE TO FIGHT!");
+                //Thread.Sleep(2000);
 
                 Console.Clear();
 
                 Console.WriteLine("Epic Combat Commences");
 
-                combatSystem();
+                string enemyName = HostileEnemies();
+
+                CombatSystem(enemyName);
 
                 Console.WriteLine("Press any key to move on to the next area...");
                 Console.ReadLine();
@@ -173,19 +173,13 @@
             }
 
 
-            static void combatSystem()
+            public static void CombatSystem(string enemyName)
             {
-                int playerIniative = random.Next(0, 10);
-                int enemyIniative = random.Next(0, 10);
-
                 int playerHP = 100;
                 int enemyHP = random.Next(30,40);
 
                 int playerAttack = 0;
                 int enemyAttack = 0;
-
-
-                string enemyName = "Giant Rat";
 
                 do
                 {
@@ -209,40 +203,17 @@
                     string playerInput = Console.ReadLine();
 
                     playerAttack = random.Next(5, 15);
-                    Console.WriteLine($"\n Player slices and dices dealing {playerAttack} damage! \n");
+                    Console.WriteLine($"\nPlayer attacks dealing {playerAttack} damage! \n");
                     enemyHP = enemyHP - playerAttack;
 
 
                     enemyAttack = random.Next(1, 6);
-                    Console.WriteLine($"\n Giant Mutated Attacks with VISCIOUS CLAWS dealing {enemyAttack} damage! \n");
+                    Console.WriteLine($"\n{enemyName} attacks dealing {enemyAttack} damage! \n");
                     playerHP = playerHP - enemyAttack;
 
                 } while (enemyHP > 0);
 
-
-
                 Console.ReadLine();
-
-
-                //if (playerIniative >= enemyIniative)
-
-                //{
-                //    Console.WriteLine("Player rolled higher iniative");
-                //    Console.WriteLine("Player goes first");
-                //    Console.WriteLine();
-
-
-                //}
-                //else
-                //{
-                //    Console.WriteLine("Enemy rolled higher iniative");
-                //    Console.WriteLine("Enemy strikes first");
-                //    Console.WriteLine("Giant Mutated Attacks with VISCIOUS CLAWS");
-
-                //    int enemyDamage = random.Next(0, 10);
-
-                //}
-
 
             }
 
@@ -258,10 +229,9 @@
 
         }
 
-        public static void HostileEnemies()
+        public static string HostileEnemies()
 
         {
-
             string[] monsterNames = new string[]
             {
                 "Radroach",             // Giant, irradiated cockroach with acidic saliva and armored carapace.
@@ -275,6 +245,14 @@
                 "Bone Dragger",         // Lurks in the shadows, dragging scavenged bones across the ground to lure victims.
                 "Nuke Leech"            // A glowing, slug-like parasite that feeds on radiation and attaches to living hosts.
             };
+
+
+            int enemyNumber = random.Next(monsterNames.Length);
+
+            string enemyName = monsterNames[enemyNumber].ToString();
+
+            return enemyName;
+
 
         }
 
