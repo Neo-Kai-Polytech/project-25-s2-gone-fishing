@@ -173,22 +173,6 @@
             }
 
 
-
-
-
-            static void EpicLoot()
-            {
-                // This will be an Array of Loot that you can randomly acquire through different events and fights.
-
-                string[] weapons;
-                string[] ingredients;
-                string[] recipes;
-                string[] potions;
-                string[] explosives;
-
-            }
-
-
             static void combatSystem()
             {
                 int playerIniative = random.Next(0, 10);
@@ -262,9 +246,40 @@
 
             }
 
+        static void EpicLoot()
+        {
+            // This will be an Array of Loot that you can randomly acquire through different events and fights.
+
+            string[] weapons;
+            string[] ingredients;
+            string[] recipes;
+            string[] potions;
+            string[] explosives;
+
+        }
+
+        public static void HostileEnemies()
+
+        {
+
+            string[] monsterNames = new string[]
+            {
+                "Radroach",             // Giant, irradiated cockroach with acidic saliva and armored carapace.
+                "Mutant Hound",         // Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression.
+                "Ash Crawler",          // A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below.
+                "Ghoul Reaper",         // A sentient, decaying humanoid that hunts the living for flesh, often in packs.
+                "Wasteland Abomination",// A massive fusion of flesh and machinery, created from failed experiments and scavenged tech.
+                "Irradiated Behemoth",  // Towering brute pulsing with nuclear energy, leaving scorched earth in its wake.
+                "Scorched Stalker",     // Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes.
+                "Toxic Spitter",        // A bloated mutant that expels corrosive bile from a distended jaw.
+                "Bone Dragger",         // Lurks in the shadows, dragging scavenged bones across the ground to lure victims.
+                "Nuke Leech"            // A glowing, slug-like parasite that feeds on radiation and attaches to living hosts.
+            };
+
+        }
 
 
-            static void Task2()
+        static void Task2()
             {
                 // OPTIONS MENU
 
