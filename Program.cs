@@ -4,7 +4,7 @@
     {
         private static Random random = new Random();
         private static int Task;
-        private static string charName, cookbook;
+        private static string charName, cookbook = "";
         static string[] inventory = ["", "", "", "", "", "", "", "", "", ""]; //Inventory of 10 slots, all same empty value to check if slots are empty
 
 
@@ -322,7 +322,7 @@
             Console.Clear();
             do
             {
-                Console.WriteLine("Hello. This is your inventory.\nPress 1 to cook ingredients\nPress 2 to read out your inventory\nPress 3 to scavenge for ingredients\n\nPress 0 to close the program"); //Menu text
+                Console.WriteLine("Hello. This is your inventory.\nPress 1 to cook ingredients\nPress 2 to read out your inventory\n\nPress 0 to close the program"); //Menu text
                 input = Convert.ToInt32(Console.ReadLine());
                 switch (input)
                 {
@@ -344,12 +344,6 @@
                         Console.WriteLine("-- End of inventory. Press enter to go back to menu");
                         Console.ReadLine();
                         Console.Clear();
-                        break;
-                    case 3:
-                        Console.Clear();
-                        Scavenge();
-                        Console.WriteLine("-- Press enter to go back to the menu");
-                        Console.ReadLine();
                         break;
                 }
                 Console.Clear();
@@ -431,7 +425,7 @@
                                 }
                             }
                         }
-                        else
+                        else //No logical input
                         {
                             Console.WriteLine("You don't know what to make with this!");
                         }
@@ -450,14 +444,22 @@
                             {
                                 if (inventory[i] == "Lettuce") //Grab the first ingredient in inventory
                                 {
-                                    inventory[i] = "Salad"; //Make it salad
+                                    inventory[i] = ""; //Removes it
                                     Console.WriteLine("You made Salad");
+                                    break; //Make it only happen once
                                 }
-                                else if (inventory[i] == "Lettuce") //Make sure to change all other ingredients used to empty slots
+                                if (inventory[i] == "Lettuce")  //And run the code again so that it removes the other one used
                                 {
                                     inventory[i] = "";
+                                    Console.WriteLine("You made Salad");
                                     break;
                                 }
+                                else if (inventory[i] == "") //Adds salad to the inventory
+                                {
+                                    inventory[i] = "Salad";
+                                    break;
+                                }
+                               
                             }
                         }
                         Console.ReadLine();
@@ -477,53 +479,7 @@
                 Console.Clear();
             } while (input != 0);
         }
-        static void Scavenge() //Ingredients are placeholder. Can be added on to
-        {
-            int searchCase;
-            searchCase = random.Next(1, 6); //Decides what you find
-            switch (searchCase)
-            {
-                default: //You found nothing
-                    Console.WriteLine("You found nothing");
-                    break;
-                case 1: //You find lettuce
-                    for (int i = 0; i < inventory.Length; i++)
-                    {
-                        if (inventory[i] == "") //Finds an empty slot in inventory
-                        {
-                            inventory[i] = "Lettuce"; //Sets empty slot to lettuce
-                            Console.WriteLine("Added Lettuce to your inventory");
-                            break; //Breaks convention, but if it's not there than the entire inventory fills up with lettuce.
-                        }
-                    }
-                    break;
-
-                case 2:
-                case 3:
-                case 4: //You find bread. You are also more likely to find bread compared to lettuce, thanks to the numerous cases assigned to the bread
-                    for (int i = 0; i < inventory.Length; i++)
-                    {
-                        if (inventory[i] == "") //Finds empty slot
-                        {
-                            inventory[i] = "Bread"; //Sets empty slot as bread
-                            Console.WriteLine("Added bread to your inventory");
-                            break;
-                        }
-                    }
-                    break;
-                case 5:
-                    for (int i = 0; i < inventory.Length; i++)
-                    {
-                        if (inventory[i] == "")
-                        {
-                            inventory[i] = "Drinkable Water";
-                            Console.WriteLine("You found a bottle of Drinkable Water");
-                            break;
-                        }
-                    }
-                    break;
-            }
-        }
+       
         static void Main()
         {
 
