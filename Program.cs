@@ -4,7 +4,7 @@
     {
         private static Random random = new Random();
         private static int Task;
-        private static string charName;
+        private static string charName, cookbook;
         static string[] inventory = ["", "", "", "", "", "", "", "", "", ""]; //Inventory of 10 slots, all same empty value to check if slots are empty
 
 
@@ -377,7 +377,7 @@
                         Kitchen();
                         break;
                     case 2:
-                        Console.WriteLine("Toast | Tier 1 recipie - 1 bread\nBoiling Water | Tier 1 recipie - 1 Drinkable Water\nSalad | Tier 2 recipie - 2 lettuce\nBasic sandwich | Tier 3 recipie - 1 Lettuce, 2 bread");
+                        Console.WriteLine($"{cookbook}\n\n-- Press enter to go back");
                         Console.ReadLine();
                         break;
                     case 0:
@@ -402,6 +402,7 @@
                         InvalidInput();
                         break;
                     case 1: //Cooking tier 1 recipies
+                        Console.Clear();
                         Console.WriteLine("What ingredient would you like to use?");
                         ingredientSlot1 = Console.ReadLine().ToLower();
                         //Toast
@@ -437,6 +438,7 @@
                         Console.ReadLine();
                         break;
                     case 2: //Cooking tier 2 recipies
+                        Console.Clear();
                         Console.WriteLine("What is the first ingredient you would like to use?");
                         ingredientSlot1 = Console.ReadLine().ToLower();
                         Console.WriteLine("What is the second ingredient you would like to use?");
@@ -461,6 +463,7 @@
                         Console.ReadLine();
                         break;
                     case 3: //Cooking tier 3 recipies
+                        Console.Clear();
                         Console.WriteLine("What is the first ingredient you would like to use?");
                         ingredientSlot1 = Console.ReadLine().ToLower();
                         Console.WriteLine("What is the second ingredient you would like to use?");
