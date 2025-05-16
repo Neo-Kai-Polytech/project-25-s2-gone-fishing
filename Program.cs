@@ -97,16 +97,16 @@
                 switch (events)
                 {
                     case 1:
-                        //go to event 1
+                        event1();
                         break;
                     case 2:
-                        //go to event 2
+                        event2();
                         break;
                     case 3:
-                        //go to event 3
+                        event3();
                         break;
                     case 4:
-                        //go to event 4
+                        event4();
                         break;
                         static void event1()
                         {
@@ -141,27 +141,26 @@
                             Console.ReadLine();
                             //end of event and he continues his journey
                         }
-
-
-
-                        //event 2 will come here
-
                 }
+                //event 2 will come here
                 static void event2()
                 {
-                    Console.WriteLine("");
+                    Console.WriteLine("This is event 2");
+                    Console.ReadLine();
                 }
 
                 //event 3 will come here
                 static void event3()
                 {
-                    Console.WriteLine("");
+                    Console.WriteLine("This is event 3");
+                    Console.ReadLine();
                 }
 
                 // event 4 will come here
                 static void event4()
                 {
-                    Console.WriteLine("");
+                    Console.WriteLine("This is event 4");
+                    Console.ReadLine();
                 }
             }
         }
