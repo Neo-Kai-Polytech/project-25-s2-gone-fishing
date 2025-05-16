@@ -61,20 +61,20 @@
             charName = Console.ReadLine();
             //char background
 
-            Console.WriteLine("The main character belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief. His all family is very patriotic and kind. Follwing his father's footsteps he also wanted to become a army officer.He also liked cooking which came from his mother and wanted to use this side talent in his life. So he wanted to become a army chef" +
+            Console.WriteLine($"The {charName} belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief. His all family is very patriotic and kind. Follwing his father's footsteps he also wanted to become a army officer.He also liked cooking which came from his mother and wanted to use this side talent in his life. So he wanted to become a army chef" +
                 ".Eventually, after working hard he accomplished his goal and started serving in the army.");
             Thread.Sleep(500);
-            Console.WriteLine("Two Years Later.........\n Russia Bombed America and World War III started and whole world was on fire and people were starving. In the attack on citizens he lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
+            Console.WriteLine($"Two Years Later.........\nRussia Bombed America and World War III started and whole world was on fire and people were starving. In the attack on citizens {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
                 "Suddenly, something went bad and he went into comma.");
             Thread.Sleep(500);
             Console.WriteLine("He woke up after Six months and remembered things which happened. After getting out from the hospital he had no purpose left in his life, fully depressed, no family and friends. But he had no idea that nature has planned something big for him.");
             Thread.Sleep(500);
-            Console.WriteLine("After some days, while he was still trying to figure out the purpose of his life, One night he got a dream where he was sitting on the dining table with his mom and dad talking about stuff happened recently" +
+            Console.WriteLine($"After some days, while {charName} was still trying to figure out the purpose of his life, One night he got a dream where he was sitting on the dining table with his mom and dad talking about stuff happened recently" +
                 "and there his parents told him to follow his passion of cooking and serving people in order to make something out of his life.");
             Thread.Sleep(500);
             Console.WriteLine("After this night he decided to go on a world journey with passion to help people and to get some new experiences.");
             Thread.Sleep(500);
-
+            Console.ReadLine();
             //start of the game
             FirstFight();
 
