@@ -53,15 +53,15 @@
 
         {
             // List Character Options??
-            string charName;
+            string characterName;
 
             //char name
 
             Console.WriteLine("Enter the name of the character.");
-            charName = Console.ReadLine();
+            characterName = Console.ReadLine();
             //char background
 
-            Console.WriteLine($"The {charName} belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief. His all family is very patriotic and kind. Follwing his father's footsteps he also wanted to become a army officer.He also liked cooking which came from his mother and wanted to use this side talent in his life. So he wanted to become a army chef" +
+            Console.WriteLine($"{characterName} belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief. His all family is very patriotic and kind. Follwing his father's footsteps he also wanted to become a army officer.He also liked cooking which came from his mother and wanted to use this side talent in his life. So he wanted to become a army chef" +
                 ".Eventually, after working hard he accomplished his goal and started serving in the army.");
             Thread.Sleep(500);
             Console.WriteLine($"Two Years Later.........\nRussia Bombed America and World War III started and whole world was on fire and people were starving. In the attack on citizens {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
@@ -69,14 +69,14 @@
             Thread.Sleep(500);
             Console.WriteLine("He woke up after Six months and remembered things which happened. After getting out from the hospital he had no purpose left in his life, fully depressed, no family and friends. But he had no idea that nature has planned something big for him.");
             Thread.Sleep(500);
-            Console.WriteLine($"After some days, while {charName} was still trying to figure out the purpose of his life, One night he got a dream where he was sitting on the dining table with his mom and dad talking about stuff happened recently" +
+            Console.WriteLine($"After some days, while {characterName} was still trying to figure out the purpose of his life, One night he got a dream where he was sitting on the dining table with his mom and dad talking about stuff happened recently" +
                 "and there his parents told him to follow his passion of cooking and serving people in order to make something out of his life.");
             Thread.Sleep(500);
             Console.WriteLine("After this night he decided to go on a world journey with passion to help people and to get some new experiences.");
             Thread.Sleep(500);
             Console.ReadLine();
             //start of the game
-            FirstFight();
+            FirstFight(characterName);
 
         }
 
@@ -166,26 +166,17 @@
         }
 
 
-        public static void FirstFight()
+        public static void FirstFight(string characterName)
         {
             Console.WriteLine("Starting Area");
             Thread.Sleep(2000);
-            Console.Clear();
-
-            //Console.WriteLine("Before you stands a Huge Mutated Rat");
-            //Thread.Sleep(2000);
-            //Console.WriteLine("It shrieks in blood curdling savagery ready to gnaw your face off");
-            //Thread.Sleep(2000);
-            //Console.WriteLine("PREPARE TO FIGHT!");
-            //Thread.Sleep(2000);
-
             Console.Clear();
 
             Console.WriteLine("Epic Combat Commences");
 
             string enemyName = HostileEnemies();
 
-            CombatSystem(enemyName);
+            CombatSystem(enemyName, characterName);
 
             Console.WriteLine("Press any key to move on to the next area...");
             Console.ReadLine();
@@ -210,7 +201,7 @@
         }
 
 
-        public static void CombatSystem(string enemyName)
+        public static void CombatSystem(string enemyName, string characterName)
         {
             int playerHP = 100;
             int enemyHP = random.Next(30, 40);
@@ -224,7 +215,7 @@
                 Console.Write("Name".PadRight(15));
                 Console.Write("Name".PadLeft(15));
                 Console.WriteLine();
-                Console.Write("Player".PadRight(15));
+                Console.Write(characterName.PadRight(15));
                 Console.Write(enemyName.PadLeft(15));
                 Console.WriteLine();
                 Console.WriteLine("VS".PadLeft(15));
