@@ -403,6 +403,7 @@
                         ingredientSlot2 = Console.ReadLine().ToLower();
                         Console.WriteLine("What is the third ingredient you would like to use?");
                         ingredientSlot3 = Console.ReadLine().ToLower();
+                        tierThree(ingredientSlot1, ingredientSlot2, ingredientSlot3);
                         break;
                     case 0:
                         break;
@@ -478,6 +479,11 @@
                 Console.WriteLine("I don't know what to do with this!");
             }
             Console.ReadLine();
+        }
+
+        static void tierThree(string ingredient1, string ingredient2, string ingredient3)
+        {
+
         }
 
         static void Main()
