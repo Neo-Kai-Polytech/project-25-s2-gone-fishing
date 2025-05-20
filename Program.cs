@@ -37,7 +37,7 @@
 
 
             Console.WriteLine("So the story starts with World War III Apocalypse where all countries were on war. Lost of lives were lost, families got ruined. Not only damage is done to the humans, nature also paid the price animal species got extinct, air pollution went to the next level." +
-                "In the war many comunities were lost, world population got half, darkness is now spreading every corner of the world.People praying to the God to restore the balance of the world and some still have belief someone will a messiah will come and everything will come back to original.");
+                "In the war many communities were lost, world population got half, darkness is now spreading every corner of the world.People praying to the God to restore the balance of the world and some still have belief someone will a messiah will come and everything will come back to original.");
 
             Console.WriteLine("Press any key to know about the main character");
             Console.ReadLine();
@@ -115,7 +115,7 @@
                             //where do you wanna go/
                             Thread.Sleep(500);
                             Console.WriteLine("You see a bear running towards you.");
-                            Console.WriteLine("what do you wannna do run or fight ?");
+                            Console.WriteLine("what do you wanna do run or fight ?");
                             des1 = Convert.ToChar(Console.ReadLine());
                             //during fight bear hp will come
                             //If he fights he will kill him and with the fighting sounds people will come and meet him
@@ -133,10 +133,18 @@
                                     int player = 100;
                                     break;
                             }
-                            Console.WriteLine("After this he observed the cooking method of the villagers which was slighl=tly different and wane to talk with them regarding that.While chatting he got to know some new dishes which includes russian steak etc.");
+                            Console.WriteLine("After this he observed the cooking method of the villagers which was slightly different and want to talk with them regarding that.While chatting he got to know some new dishes which includes russian steak etc.");
                             //here some things 2 or 3 ingredients will get added in the inventory
+                            for (int i = 0; i < inventory.Length; i++)
+                            {
+                                if (inventory[i] == "")
+                                {
+                                    inventory[i] = "Bread";
+                                    break;
+                                }
+                            }
                             Console.WriteLine("Press any button to cook new dish");
-                            //here cook book will come 
+                            Kitchen();
 
                             Console.ReadLine();
                             //end of event and he continues his journey
