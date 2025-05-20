@@ -1,35 +1,46 @@
-﻿namespace UberProject
+﻿using System.Xml.Linq;
+
+namespace UberProject
 {
-    public struct Enemies()
+    public struct Enemies
     {
-        string enemyName;
-        int enemyHP;
-        int enemyAttack;
-        string enemyType;
-        string enemyDesc;
+        public string enemyName;
+        public int enemyHP;
+        public int enemyAttack;
+        public string enemyDesc;
+
+        // Constructor with 'this' initializer
+        public Enemies(string name, int hp, int attack, string desc)
+        {
+            this.enemyName = name;
+            this.enemyHP = hp;
+            this.enemyAttack = attack;
+            this.enemyDesc = desc;
+        }
+
     }
     public struct Weapons()
     {
-        string weaponName;
-        int weaponDamage;
-        string weaponType;
+        public string weaponName;
+        public int weaponDamage;
+        public string weaponType;
     }
     public struct Ingredients()
     {
-        string ingredientName;
+        public string ingredientName;
     }
     public struct Consumables()
     {
-        string itemName;
-        int itemDamage;
-        string itemType;
-        int itemHeal;
-        string itemDesc;
+        public string itemName;
+        public int itemDamage;
+        public string itemType;
+        public int itemHeal;
+        public string itemDesc;
 
     }
     public struct Recipes()
     {
-        string recipeName;
+        public string recipeName;
     }
 
     internal class Program
@@ -249,26 +260,30 @@
 
         public static string HostileEnemies()
         {
-            string[] monsterNames = new string[]
-            {
-                "Radroach",             // Giant, irradiated cockroach with acidic saliva and armored carapace.
-                "Mutant Hound",         // Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression.
-                "Ash Crawler",          // A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below.
-                "Ghoul Reaper",         // A sentient, decaying humanoid that hunts the living for flesh, often in packs.
-                "Wasteland Abomination",// A massive fusion of flesh and machinery, created from failed experiments and scavenged tech.
-                "Irradiated Behemoth",  // Towering brute pulsing with nuclear energy, leaving scorched earth in its wake.
-                "Scorched Stalker",     // Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes.
-                "Toxic Spitter",        // A bloated mutant that expels corrosive bile from a distended jaw.
-                "Bone Dragger",         // Lurks in the shadows, dragging scavenged bones across the ground to lure victims.
-                "Nuke Leech"            // A glowing, slug-like parasite that feeds on radiation and attaches to living hosts.
-            };
+            // This will be an Array of Enemies that you can randomly encounter in the game.
 
 
-            int enemyNumber = random.Next(monsterNames.Length);
+            Enemies[] monsters =
+        {
+            new Enemies("Mirelurk", 30, 5, "A mutated crab-like creature with a hard shell and a vicious bite."),
+            new Enemies("Super Mutant", 40, 8, "A hulking brute with enhanced strength and resilience, often armed with heavy weapons."),
+            new Enemies("Deathclaw", 50, 10, "A terrifying predator with razor-sharp claws and incredible speed."),
+            new Enemies("Radscorpion", 35, 7, "A giant scorpion with a venomous sting and armored exoskeleton."),
+            new Enemies("Radroach", 20, 4, "Giant irradiated cockroach with acidic saliva and armored carapace"),
+            new Enemies("Mutant Hound", 35, 7, "Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression."),
+            new Enemies("Ash Crawler", 25, 5, "A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below."),
+            new Enemies("Ghoul Reaper", 30, 6, "A sentient, decaying humanoid that hunts the living for flesh, often in packs."),
+            new Enemies("Wasteland Abomination", 50, 10, "A massive fusion of flesh and machinery, created from failed experiments and scavenged tech."),
+            new Enemies("Irradiated Behemoth", 60, 12, "Towering brute pulsing with nuclear energy, leaving scorched earth in its wake."),
+            new Enemies("Scorched Stalker", 28, 6, "Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes."),
+            new Enemies("Toxic Spitter", 22, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
+            new Enemies("Bone Dragger", 26, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
+            new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts.")
+        };
 
-            string enemyName = monsterNames[enemyNumber].ToString();
+        int enemyNumber = random.Next(monsters.Length);
 
-            return enemyName;
+            return monsters[enemyNumber].ToString();
 
 
         }
@@ -283,7 +298,7 @@
             Console.ReadLine();
 
         }
-        static void Task3()
+        public static void Task3()
         {
             // Collection of Things
             string userInput;
@@ -345,7 +360,7 @@
 
                 }
 
-
+                Console.Clear();
 
 
             } while (userInput != "0");
