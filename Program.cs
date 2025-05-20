@@ -250,8 +250,23 @@ namespace UberProject
         {
             // This will be an Array of Loot that you can randomly acquire through different events and fights.
 
-            string[] weapons;
+            Weapons[] weapons =
+            {
+                new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 12, weaponType = "Ranged" },
+                new Weapons { weaponName = "Makeshift Flamethrower", weaponDamage = 18, weaponType = "Heavy" },
+                new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 20, weaponType = "Ranged" },
+                new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 10, weaponType = "Melee" },
+                new Weapons { weaponName = "Molotov Cocktail", weaponDamage = 15, weaponType = "Explosive" },
+                new Weapons { weaponName = "Radiation Axe", weaponDamage = 14, weaponType = "Melee" },
+                new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 16, weaponType = "Energy" },
+                new Weapons { weaponName = "Scrap Metal Shuriken", weaponDamage = 8, weaponType = "Thrown" },
+                new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 13, weaponType = "Ranged" },
+                new Weapons { weaponName = "Electrified Machete", weaponDamage = 17, weaponType = "Melee" }
+            };
+
             string[] ingredients;
+
+
             string[] recipes;
             string[] potions;
             string[] explosives;
@@ -281,7 +296,7 @@ namespace UberProject
             new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts.")
         };
 
-        int enemyNumber = random.Next(monsters.Length);
+            int enemyNumber = random.Next(monsters.Length);
 
             return monsters[enemyNumber].ToString();
 
