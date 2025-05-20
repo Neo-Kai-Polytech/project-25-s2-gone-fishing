@@ -1,5 +1,37 @@
 ﻿namespace UberProject
 {
+    public struct Enemies()
+    {
+        string enemyName;
+        int enemyHP;
+        int enemyAttack;
+        string enemyType;
+        string enemyDesc;
+    }
+    public struct Weapons()
+    {
+        string weaponName;
+        int weaponDamage;
+        string weaponType;
+    }
+    public struct Ingredients()
+    {
+        string ingredientName;
+    }
+    public struct Consumables()
+    {
+        string itemName;
+        int itemDamage;
+        string itemType;
+        int itemHeal;
+        string itemDesc;
+
+    }
+    public struct Recipes()
+    {
+        string recipeName;
+    }
+
     internal class Program
     {
         private static Random random = new Random();
@@ -36,8 +68,10 @@
             // Print to Screen Main Story Summary
 
 
-            Console.WriteLine("So the story starts with World War III Apocalypse where all countries were on war. Lost of lives were lost, families got ruined. Not only damage is done to the humans, nature also paid the price animal species got extinct, air pollution went to the next level." +
-                "In the war many communities were lost, world population got half, darkness is now spreading every corner of the world.People praying to the God to restore the balance of the world and some still have belief someone will a messiah will come and everything will come back to original.");
+            Console.WriteLine("So the story starts with World War III Apocalypse where all countries were on war. Lost of lives were lost, families got ruined. " +
+                "Not only damage is done to the humans, nature also paid the price animal species got extinct, air pollution went to the next level." +
+                "In the war many communities were lost, world population got half, darkness is now spreading every corner of the world." +
+                "People praying to the God to restore the balance of the world and some still have belief someone will a messiah will come and everything will come back to original.");
 
             Console.WriteLine("Press any key to know about the main character");
             Console.ReadLine();
@@ -61,13 +95,16 @@
             charName = Console.ReadLine();
             //char background
 
-            Console.WriteLine($"{charName} belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief. His all family is very patriotic and kind. Follwing his father's footsteps he also wanted to become a army officer.He also liked cooking which came from his mother and wanted to use this side talent in his life. So he wanted to become a army chef" +
-                ".Eventually, after working hard he accomplished his goal and started serving in the army.");
+            Console.WriteLine($"{charName} belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief. " +
+                $"His all family is very patriotic and kind. Follwing his father's footsteps he also wanted to become a army officer. " +
+                $"He also liked cooking which came from his mother and wanted to use this side talent in his life. So he wanted to become a army chef." +
+                "Eventually, after working hard he accomplished his goal and started serving in the army.");
             Thread.Sleep(500);
-            Console.WriteLine($"Two Years Later.........\nRussia Bombed America and World War III started and whole world was on fire and people were starving. In the attack on citizens {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
-                "Suddenly, something went bad and he went into comma.");
+            Console.WriteLine($"Two Years Later.........\nRussia Bombed America and World War III started and whole world was on fire and people were starving. " +
+                $"In the attack on citizens {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
+                "Suddenly, something went bad and he went into a coma.");
             Thread.Sleep(500);
-            Console.WriteLine("He woke up after Six months and remembered things which happened. After getting out from the hospital he had no purpose left in his life, fully depressed, no family and friends. But he had no idea that nature has planned something big for him.");
+            Console.WriteLine("He woke up after six months and remembered things which happened. After getting out from the hospital he had no purpose left in his life, fully depressed, no family and friends. But he had no idea that nature has planned something big for him.");
             Thread.Sleep(500);
             Console.WriteLine($"After some days, while {charName} was still trying to figure out the purpose of his life, One night he got a dream where he was sitting on the dining table with his mom and dad talking about stuff happened recently" +
                 "and there his parents told him to follow his passion of cooking and serving people in order to make something out of his life.");
@@ -90,9 +127,9 @@
 
             event2(charName);
 
-            event3();
+            event3(charName);
 
-            event4();
+            event4(charName);
 
 
 
@@ -139,14 +176,14 @@
             //end of event and he continues his journey
         }
 
-        static void event3()
+        static void event3(string charName)
         {
             Console.WriteLine("This is event 3");
             Console.ReadLine();
         }
 
         // event 4 will come here
-        static void event4()
+        static void event4(string charName)
         {
             Console.WriteLine("This is event 4");
             Console.ReadLine();
@@ -162,7 +199,7 @@
 
             do
             {
-
+                Console.Clear();
                 Console.Write("Name".PadRight(15));
                 Console.Write("Name".PadLeft(15));
                 Console.WriteLine();
@@ -184,11 +221,13 @@
                 playerAttack = random.Next(5, 15);
                 Console.WriteLine($"\nPlayer attacks dealing {playerAttack} damage! \n");
                 enemyHP = enemyHP - playerAttack;
-
+                Thread.Sleep(1000);
 
                 enemyAttack = random.Next(1, 6);
                 Console.WriteLine($"\n{enemyName} attacks dealing {enemyAttack} damage! \n");
                 playerHP = playerHP - enemyAttack;
+                Thread.Sleep(1000);
+
 
             } while (enemyHP > 0);
 
@@ -247,14 +286,69 @@
         static void Task3()
         {
             // Collection of Things
+            string userInput;
 
-            Console.WriteLine("Welcome to the collection of things in our game");
-            Console.WriteLine("The Menu options are:");
-            Console.WriteLine("1  New Game");
-            Console.WriteLine("2  Options");
-            Console.WriteLine("3  Controls");
-            Console.WriteLine("0  Exit menu system");
+            do
+            {
 
+                Console.WriteLine("Welcome to the collection of things in our game");
+                Console.WriteLine("The Menu options are:");
+                Console.WriteLine("1  Monsters");
+                Console.WriteLine("2  Weapons");
+                Console.WriteLine("3  Ingredients");
+                Console.WriteLine("4  Consumables");
+                Console.WriteLine("5  Recipes");
+                Console.WriteLine();
+                Console.WriteLine("0  Exit menu system");
+
+                Console.WriteLine();
+                Console.WriteLine("Please choose an option");
+                userInput = Console.ReadLine();
+                
+
+                Console.Clear();
+
+                switch (userInput)
+
+                {
+                    case "1":
+                        Task1();
+                        break;
+
+                    case "2":
+                        Task2();
+                        break;
+
+                    case "3":
+                        Task3();
+                        break;
+
+                    case "4":
+                        Exit();
+                        break;
+
+                    case "5":
+                        Exit();
+                        break;
+
+                    case "6":
+                        Exit();
+                        break;
+
+                    case "0":
+                        Exit();
+                        break;
+
+                    default:
+                        InvalidInput();
+                        break;
+
+                }
+
+
+
+
+            } while (userInput != "0");
 
             Console.WriteLine("Press any key to return to menu");
             Console.ReadLine();
@@ -306,6 +400,7 @@
                 Console.Clear();
             } while (input != 0);
         }
+
         static void Cooking()
         {
             int input;
@@ -507,6 +602,10 @@
 
                     case 2:
                         Task2();
+                        break;
+
+                    case 3:
+                        Task3();
                         break;
 
                     case 0:
