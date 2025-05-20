@@ -513,7 +513,7 @@
         {
 
             //Salad
-            if (ingredient1 == "lettuce" && ingredient2 == "lettuce") //Conditions
+            if (ingredient1 == "lettuce" && ingredient2 == "lettuce") //Conditions (Must be in order)
             {
                 for (int i = 0; i < inventory.Length; i++)
                 {
@@ -533,6 +533,13 @@
                         }
                         break;
                     }
+                }
+            }
+            else if (ingredient1 == "toast" && ingredient2 == "jam")
+            {
+                for (int i = 0;i < inventory.Length; i++)
+                {
+
                 }
             }
             else
