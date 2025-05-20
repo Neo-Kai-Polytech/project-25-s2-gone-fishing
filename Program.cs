@@ -483,7 +483,37 @@
 
         static void tierThree(string ingredient1, string ingredient2, string ingredient3)
         {
+            if (ingredient1 == "bread" && ingredient2 == "lettuce" && ingredient3 == "bread")
+            {
+                for (int i = 0; i < inventory.Length; i++)
+                { //Adds sandwich
+                    if (inventory[i] == "Bread")
+                    {
+                        inventory[i] = "Basic Sandwich";
+                        Console.WriteLine("You made a Basic Sandwich");
+                        for (int j = 0; j < inventory.Length; j++) //Removes second ingredient
+                        {
+                            if (inventory[j] == "Lettuce")
+                            {
+                                inventory[j] = "";
 
+                                for (int k = 0; k < inventory.Length; k++) //Removes third ingredient
+                                {
+                                    if (inventory[k] == "Bread")
+                                    {
+                                        inventory[k] = "";
+
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            Console.ReadLine();
         }
 
         static void Main()
