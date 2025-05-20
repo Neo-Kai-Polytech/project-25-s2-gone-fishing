@@ -29,7 +29,7 @@ namespace UberProject
     {
         public string ingredientName;
     }
-    public struct Consumables()
+    public struct Items()
     {
         public string itemName;
         public int itemDamage;
@@ -250,26 +250,73 @@ namespace UberProject
         {
             // This will be an Array of Loot that you can randomly acquire through different events and fights.
 
-            Weapons[] weapons =
+            Weapons[] tier1weapons =
             {
                 new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 12, weaponType = "Ranged" },
                 new Weapons { weaponName = "Makeshift Flamethrower", weaponDamage = 18, weaponType = "Heavy" },
                 new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 20, weaponType = "Ranged" },
                 new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 10, weaponType = "Melee" },
-                new Weapons { weaponName = "Molotov Cocktail", weaponDamage = 15, weaponType = "Explosive" },
                 new Weapons { weaponName = "Radiation Axe", weaponDamage = 14, weaponType = "Melee" },
                 new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 16, weaponType = "Energy" },
-                new Weapons { weaponName = "Scrap Metal Shuriken", weaponDamage = 8, weaponType = "Thrown" },
                 new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 13, weaponType = "Ranged" },
                 new Weapons { weaponName = "Electrified Machete", weaponDamage = 17, weaponType = "Melee" }
             };
+            Weapons[] tier2weapons =
+            {
+                new Weapons { weaponName = "Hunting Rifle", weaponDamage = 25, weaponType = "Ranged" },
+                new Weapons { weaponName = "Combat Shotgun", weaponDamage = 30, weaponType = "Ranged" },
+                new Weapons { weaponName = "Flamer", weaponDamage = 35, weaponType = "Heavy" },
+                new Weapons { weaponName = "Super Sledge", weaponDamage = 28, weaponType = "Melee" },
+                new Weapons { weaponName = "Laser Musket", weaponDamage = 32, weaponType = "Energy" },
+                new Weapons { weaponName = "Plasma Grenade", weaponDamage = 40, weaponType = "Explosive" }
+            };
+            Weapons[] tier3weapons =
+            {
+                new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 55, weaponType = "Energy" },
+                new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 80, weaponType = "Explosive" },
+                new Weapons { weaponName = "Tesla Cannon", weaponDamage = 65, weaponType = "Energy" },
+                new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 50, weaponType = "Melee" },
+                new Weapons { weaponName = "Cryolator", weaponDamage = 60, weaponType = "Energy" },
+                new Weapons { weaponName = "Railway Rifle", weaponDamage = 58, weaponType = "Ranged" },
+                new Weapons { weaponName = "Plasma Caster", weaponDamage = 70, weaponType = "Energy" },
+                new Weapons { weaponName = "Auto-Axe", weaponDamage = 52, weaponType = "Melee" }
+            };
+            Weapons[] tier4weapons =
+            {
+                new Weapons { weaponName = "Omega Particle Disruptor", weaponDamage = 100, weaponType = "Energy" },
+                new Weapons { weaponName = "Singularity Cannon", weaponDamage = 120, weaponType = "Explosive" },
+                new Weapons { weaponName = "Quantum Blade", weaponDamage = 90, weaponType = "Melee" },
+                new Weapons { weaponName = "Vortex Railgun", weaponDamage = 110, weaponType = "Ranged" },
+                new Weapons { weaponName = "Plague Injector", weaponDamage = 95, weaponType = "Ranged" },
+                new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 130, weaponType = "Heavy" },
+                new Weapons { weaponName = "Starlight Hammer", weaponDamage = 105, weaponType = "Melee" },
+                new Weapons { weaponName = "Dark Matter Launcher", weaponDamage = 125, weaponType = "Explosive" }
+            };
+
+
 
             string[] ingredients;
 
+            Items[] items =
+            {
+                new Items { itemName = "Stimpak", itemDamage = 0, itemType = "Healing", itemHeal = 20, itemDesc = "A medical kit that heals wounds and restores health." },
+                new Items { itemName = "RadAway", itemDamage = 0, itemType = "Healing", itemHeal = 15, itemDesc = "A serum that removes radiation from the body." },
+                new Items { itemName = "Nuka-Cola", itemDamage = 0, itemType = "Beverage", itemHeal = 10, itemDesc = "A refreshing drink that boosts energy." },
+                new Items { itemName = "Pork n' Beans", itemDamage = 0, itemType = "Food", itemHeal = 25, itemDesc = "A can of beans that restores hunger." },
+                new Items { itemName = "Mirelurk Meat", itemDamage = 0, itemType = "Food", itemHeal = 30, itemDesc = "Cooked meat from a Mirelurk." },
+                new Items { itemName = "Mutfruit", itemDamage = 0, itemType = "Food", itemHeal = 8, itemDesc = "A mutated fruit, slightly restores health." },
+                new Items { itemName = "Buffout", itemDamage = 0, itemType = "Drug", itemHeal = 0, itemDesc = "A performance-enhancing drug that temporarily boosts strength." },
+                new Items { itemName = "Antiseptic Bandage", itemDamage = 0, itemType = "Healing", itemHeal = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
+                new Items { itemName = "Dirty Water", itemDamage = 0, itemType = "Beverage", itemHeal = 5, itemDesc = "Water of questionable quality, restores a small amount of health." },
+                new Items { itemName = "Molotov Cocktail", itemDamage = 20, itemType = "Explosive", itemHeal = 0, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
+                new Items { itemName = "Rad-X", itemDamage = 0, itemType = "Drug", itemHeal = 0, itemDesc = "A drug that temporarily increases radiation resistance." },
+                new Items { itemName = "Cram", itemDamage = 0, itemType = "Food", itemHeal = 15, itemDesc = "A can of processed meat, restores a moderate amount of health." },
+                new Items { itemName = "Stealth Boy", itemDamage = 0, itemType = "Utility", itemHeal = 0, itemDesc = "A device that grants temporary invisibility." },
+                new Items { itemName = "Jet", itemDamage = 0, itemType = "Drug", itemHeal = 0, itemDesc = "A powerful inhalant that slows time for the user." },
+                new Items { itemName = "Purified Water", itemDamage = 0, itemType = "Beverage", itemHeal = 20, itemDesc = "Clean water, restores a good amount of health." }
+            };
 
             string[] recipes;
-            string[] potions;
-            string[] explosives;
 
         }
 
