@@ -4,7 +4,7 @@
     {
         private static Random random = new Random();
         private static int Task;
-        private static string charName, cookbook = "";
+        public static string charName, cookbook = "";
         static string[] inventory = ["", "", "", "", "", "", "", "", "", ""]; //Inventory of 10 slots, all same empty value to check if slots are empty
 
 
@@ -15,7 +15,7 @@
             Console.WriteLine("The Menu options are:");
             Console.WriteLine("1  New Game");
             Console.WriteLine("2  Options");
-            Console.WriteLine("3  Controls");
+            Console.WriteLine("3  Collection");
             Console.WriteLine("0  Exit menu system");
             Console.WriteLine();
         }
@@ -53,15 +53,15 @@
 
         {
             // List Character Options??
-            string characterName;
+            string charName;
 
             //char name
 
             Console.WriteLine("Enter the name of the character.");
-            characterName = Console.ReadLine();
+            charName = Console.ReadLine();
             //char background
 
-            Console.WriteLine($"{characterName} belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief. His all family is very patriotic and kind. Follwing his father's footsteps he also wanted to become a army officer.He also liked cooking which came from his mother and wanted to use this side talent in his life. So he wanted to become a army chef" +
+            Console.WriteLine($"{charName} belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief. His all family is very patriotic and kind. Follwing his father's footsteps he also wanted to become a army officer.He also liked cooking which came from his mother and wanted to use this side talent in his life. So he wanted to become a army chef" +
                 ".Eventually, after working hard he accomplished his goal and started serving in the army.");
             Thread.Sleep(500);
             Console.WriteLine($"Two Years Later.........\nRussia Bombed America and World War III started and whole world was on fire and people were starving. In the attack on citizens {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
@@ -69,147 +69,90 @@
             Thread.Sleep(500);
             Console.WriteLine("He woke up after Six months and remembered things which happened. After getting out from the hospital he had no purpose left in his life, fully depressed, no family and friends. But he had no idea that nature has planned something big for him.");
             Thread.Sleep(500);
-            Console.WriteLine($"After some days, while {characterName} was still trying to figure out the purpose of his life, One night he got a dream where he was sitting on the dining table with his mom and dad talking about stuff happened recently" +
+            Console.WriteLine($"After some days, while {charName} was still trying to figure out the purpose of his life, One night he got a dream where he was sitting on the dining table with his mom and dad talking about stuff happened recently" +
                 "and there his parents told him to follow his passion of cooking and serving people in order to make something out of his life.");
             Thread.Sleep(500);
             Console.WriteLine("After this night he decided to go on a world journey with passion to help people and to get some new experiences.");
             Thread.Sleep(500);
             Console.ReadLine();
             //start of the game
-            FirstFight(characterName);
 
-        }
-
-        public static void events()
-
-        {
-            {
-                int events;
-                Console.WriteLine("Where would want to go first?");
-                Console.WriteLine("The options are:");
-                Console.WriteLine("Event 1");
-                Console.WriteLine("Event 2");
-                Console.WriteLine("Event 3");
-                Console.WriteLine("Event 4");
-                events = Convert.ToInt32(Console.ReadLine());
-                Console.ReadLine();
-
-                switch (events)
-                {
-                    case 1:
-                        event1();
-                        break;
-                    case 2:
-                        event2();
-                        break;
-                    case 3:
-                        event3();
-                        break;
-                    case 4:
-                        event4();
-                        break;
-                        static void event1()
-                        {
-                            char des1;
-                            Console.WriteLine("Continuing his journey now he reached Russia where he saw that everything is destroyed.He is findind any life which is still alive and can talk with them. He is in a dense forest right now.");
-                            //where do you wanna go/
-                            Thread.Sleep(500);
-                            Console.WriteLine("You see a bear running towards you.");
-                            Console.WriteLine("what do you wanna do run or fight ?");
-                            des1 = Convert.ToChar(Console.ReadLine());
-                            //during fight bear hp will come
-                            //If he fights he will kill him and with the fighting sounds people will come and meet him
-                            //If he runs he will find a village and they all together giht the bear and will kill the bear and enjoy the steak.
-                            //here we can add some combat things and can give hp to the person and bear, he can also use various things like sword or something to fight.
-                            Console.WriteLine("");
-                            switch (des1)
-                            {
-                                case 'r':
-                                    Console.WriteLine("While running he got to a village where he saw bunch of people");
-                                    break;
-                                case 'f':
-                                    //he fights
-                                    int bear = 50;
-                                    int player = 100;
-                                    break;
-                            }
-                            Console.WriteLine("After this he observed the cooking method of the villagers which was slightly different and want to talk with them regarding that.While chatting he got to know some new dishes which includes russian steak etc.");
-                            //here some things 2 or 3 ingredients will get added in the inventory
-                            for (int i = 0; i < inventory.Length; i++)
-                            {
-                                if (inventory[i] == "")
-                                {
-                                    inventory[i] = "Bread";
-                                    break;
-                                }
-                            }
-                            Console.WriteLine("Press any button to cook new dish");
-                            Kitchen();
-
-                            Console.ReadLine();
-                            //end of event and he continues his journey
-                        }
-                }
-                //event 2 will come here
-                static void event2()
-                {
-                    Console.WriteLine("This is event 2");
-                    Console.ReadLine();
-                }
-
-                //event 3 will come here
-                static void event3()
-                {
-                    Console.WriteLine("This is event 3");
-                    Console.ReadLine();
-                }
-
-                // event 4 will come here
-                static void event4()
-                {
-                    Console.WriteLine("This is event 4");
-                    Console.ReadLine();
-                }
-            }
-        }
-
-
-        public static void FirstFight(string characterName)
-        {
-            Console.WriteLine("Starting Area");
-            Thread.Sleep(2000);
             Console.Clear();
 
-            Console.WriteLine("Epic Combat Commences");
+            StartingArea(charName);
 
-            string enemyName = HostileEnemies();
-
-            CombatSystem(enemyName, characterName);
-
-            Console.WriteLine("Press any key to move on to the next area...");
-            Console.ReadLine();
-            RandomNextArea();
         }
 
-        static void RandomNextArea()
+        public static void StartingArea(string charName)
         {
-            Console.WriteLine("This is the second explorable Area");
-            Console.WriteLine("Press any key to go to the END");
-            Console.ReadLine();
-            EndArea();
+
+            event1(charName);
+
+            event2(charName);
+
+            event3();
+
+            event4();
+
+
 
         }
 
-        static void EndArea()
+    
+        static void event1(string charName)
         {
-            Console.WriteLine("Well done you have made it to the end");
-            Console.WriteLine("Press any key to go back to the main Menu");
-            Console.ReadLine();
+            Console.WriteLine("Continuing his journey now he reached Russia where he saw that everything is destroyed. " +
+                "He is findind any life which is still alive and can talk with them. He is in a dense forest right now.");
+            Thread.Sleep(500);
+            Console.WriteLine("You see a bear running towards you!");
+            Console.WriteLine("Prepare yourself!\n\n");
+
+
+            string enemyName = "Bear";
+            CombatSystem(enemyName, charName);
+
+            event2(charName);
 
         }
 
+        static void event2(string charName)
+        {
 
-        public static void CombatSystem(string enemyName, string characterName)
+            Console.WriteLine("After this he observed the cooking method of the villagers which was slightly different and want to talk with them regarding that." +
+                "While chatting he got to know some new dishes which includes russian steak etc.");
+            Thread.Sleep(500);
+            //here some things 2 or 3 ingredients will get added in the inventory
+
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Bread";
+                    break;
+                }
+            }
+            Console.WriteLine("Press any button to cook new dish");
+            Console.ReadLine();
+            InventoryManage();
+
+            Console.ReadLine();
+            //end of event and he continues his journey
+        }
+
+        static void event3()
+        {
+            Console.WriteLine("This is event 3");
+            Console.ReadLine();
+        }
+
+        // event 4 will come here
+        static void event4()
+        {
+            Console.WriteLine("This is event 4");
+            Console.ReadLine();
+        }
+  
+        public static void CombatSystem(string enemyName, string charName)
         {
             int playerHP = 100;
             int enemyHP = random.Next(30, 40);
@@ -223,7 +166,7 @@
                 Console.Write("Name".PadRight(15));
                 Console.Write("Name".PadLeft(15));
                 Console.WriteLine();
-                Console.Write(characterName.PadRight(15));
+                Console.Write(charName.PadRight(15));
                 Console.Write(enemyName.PadLeft(15));
                 Console.WriteLine();
                 Console.WriteLine("VS".PadLeft(15));
@@ -266,7 +209,6 @@
         }
 
         public static string HostileEnemies()
-
         {
             string[] monsterNames = new string[]
             {
@@ -298,6 +240,22 @@
             // OPTIONS MENU
 
             Console.WriteLine("This is Task 2");
+            Console.WriteLine("Press any key to return to menu");
+            Console.ReadLine();
+
+        }
+        static void Task3()
+        {
+            // Collection of Things
+
+            Console.WriteLine("Welcome to the collection of things in our game");
+            Console.WriteLine("The Menu options are:");
+            Console.WriteLine("1  New Game");
+            Console.WriteLine("2  Options");
+            Console.WriteLine("3  Controls");
+            Console.WriteLine("0  Exit menu system");
+
+
             Console.WriteLine("Press any key to return to menu");
             Console.ReadLine();
 
