@@ -45,6 +45,9 @@ namespace UberProject
     public struct Recipes()
     {
         public string recipeName;
+        public string ingredient1;
+        public string ingredient2;
+        public string ingredient3;
     }
 
     internal class Program
@@ -341,7 +344,29 @@ namespace UberProject
                 new Items { itemName = "Purified Water", itemDamage = 0, itemType = "Beverage", itemHeal = 20, itemDesc = "Clean water, restores a good amount of health." }
             };
 
-            string[] recipes;
+            Recipes[] recipes = new Recipes[]
+            {
+                new Recipes { recipeName = "Russian Steak", ingredient1 = "Meat", ingredient2 = "Potato", ingredient3 = "Butter" },
+                new Recipes { recipeName = "Nuka-Cola Cake", ingredient1 = "Flour", ingredient2 = "Sugar", ingredient3 = "Nuka-Cola" },
+                new Recipes { recipeName = "Mutfruit Salad", ingredient1 = "Mutfruit", ingredient2 = "Lettuce", ingredient3 = "Tomato" },
+                new Recipes { recipeName = "Radroach Stew", ingredient1 = "Radroach Meat", ingredient2 = "Potato", ingredient3 = "Carrot" },
+                new Recipes { recipeName = "Wasteland Omelette", ingredient1 = "Egg", ingredient2 = "Cheese", ingredient3 = "Onion" },
+                new Recipes { recipeName = "Mirelurk Pie", ingredient1 = "Mirelurk Meat", ingredient2 = "Potato", ingredient3 = "Salt" },
+                new Recipes { recipeName = "Mutant Hound Jerky", ingredient1 = "Mutant Hound Meat", ingredient2 = "Salt", ingredient3 = "Pepper" },
+                new Recipes { recipeName = "Ghoul Goulash", ingredient1 = "Ghoul Meat", ingredient2 = "Carrot", ingredient3 = "Onion" },
+                new Recipes { recipeName = "Irradiated Apple Jam", ingredient1 = "Apple", ingredient2 = "Sugar", ingredient3 = "Jam" },
+                new Recipes { recipeName = "Cheesy Potato Soup", ingredient1 = "Potato", ingredient2 = "Cheese", ingredient3 = "Drinkable Water" },
+                new Recipes { recipeName = "Fried Fish Fillet", ingredient1 = "Fish", ingredient2 = "Butter", ingredient3 = "Salt" },
+                new Recipes { recipeName = "Mushroom Stew", ingredient1 = "Mushroom", ingredient2 = "Onion", ingredient3 = "Drinkable Water" },
+                new Recipes { recipeName = "Egg & Mutfruit Breakfast", ingredient1 = "Egg", ingredient2 = "Mutfruit", ingredient3 = "Milk" },
+                new Recipes { recipeName = "Carrot & Potato Mash", ingredient1 = "Carrot", ingredient2 = "Potato", ingredient3 = "Butter" },
+                new Recipes { recipeName = "Spicy Meat Skewer", ingredient1 = "Meat", ingredient2 = "Pepper", ingredient3 = "Onion" },
+                new Recipes { recipeName = "Garlic Bread", ingredient1 = "Bread", ingredient2 = "Butter", ingredient3 = "Garlic" },
+                new Recipes { recipeName = "Apple Pie", ingredient1 = "Apple", ingredient2 = "Flour", ingredient3 = "Butter" },
+                new Recipes { recipeName = "Mutfruit Jam Toast", ingredient1 = "Toast", ingredient2 = "Mutfruit", ingredient3 = "Jam" },
+                new Recipes { recipeName = "Rad-X Smoothie", ingredient1 = "Rad-X", ingredient2 = "Milk", ingredient3 = "Mutfruit" },
+                new Recipes { recipeName = "Pepper Steak", ingredient1 = "Meat", ingredient2 = "Pepper", ingredient3 = "Butter" }
+            };
 
         }
 
@@ -442,6 +467,7 @@ namespace UberProject
                         break;
 
                     case "2":
+                        // Display all weapons in a readable format
                         Weapons[] tier1weapons =
                         {
                             new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 12, weaponType = "Ranged" },
@@ -510,23 +536,109 @@ namespace UberProject
                         break;
 
                     case "3":
-                        Task3();
+                        // Display all items in a readable format
+                        Items[] items =
+                        {
+                            new Items { itemName = "Stimpak", itemDamage = 0, itemType = "Healing", itemHeal = 20, itemDesc = "A medical kit that heals wounds and restores health." },
+                            new Items { itemName = "RadAway", itemDamage = 0, itemType = "Healing", itemHeal = 15, itemDesc = "A serum that removes radiation from the body." },
+                            new Items { itemName = "Nuka-Cola", itemDamage = 0, itemType = "Beverage", itemHeal = 10, itemDesc = "A refreshing drink that boosts energy." },
+                            new Items { itemName = "Pork n' Beans", itemDamage = 0, itemType = "Food", itemHeal = 25, itemDesc = "A can of beans that restores hunger." },
+                            new Items { itemName = "Mirelurk Meat", itemDamage = 0, itemType = "Food", itemHeal = 30, itemDesc = "Cooked meat from a Mirelurk." },
+                            new Items { itemName = "Mutfruit", itemDamage = 0, itemType = "Food", itemHeal = 8, itemDesc = "A mutated fruit, slightly restores health." },
+                            new Items { itemName = "Buffout", itemDamage = 0, itemType = "Drug", itemHeal = 0, itemDesc = "A performance-enhancing drug that temporarily boosts strength." },
+                            new Items { itemName = "Antiseptic Bandage", itemDamage = 0, itemType = "Healing", itemHeal = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
+                            new Items { itemName = "Dirty Water", itemDamage = 0, itemType = "Beverage", itemHeal = 5, itemDesc = "Water of questionable quality, restores a small amount of health." },
+                            new Items { itemName = "Molotov Cocktail", itemDamage = 20, itemType = "Explosive", itemHeal = 0, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
+                            new Items { itemName = "Pipe Bomb", itemDamage = 25, itemType = "Explosive", itemHeal = 0, itemDesc = "A homemade explosive device, deals significant area damage." },
+                            new Items { itemName = "Fragmentation Grenade", itemDamage = 30, itemType = "Explosive", itemHeal = 0, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
+                            new Items { itemName = "Plasma Mine", itemDamage = 35, itemType = "Explosive", itemHeal = 0, itemDesc = "A mine that detonates with a burst of plasma energy." },
+                            new Items { itemName = "Dynamite Bundle", itemDamage = 40, itemType = "Explosive", itemHeal = 0, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
+                            new Items { itemName = "Cryo Grenade", itemDamage = 18, itemType = "Explosive", itemHeal = 0, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
+                            new Items { itemName = "Rad-X", itemDamage = 0, itemType = "Drug", itemHeal = 0, itemDesc = "A drug that temporarily increases radiation resistance." },
+                            new Items { itemName = "Cram", itemDamage = 0, itemType = "Food", itemHeal = 15, itemDesc = "A can of processed meat, restores a moderate amount of health." },
+                            new Items { itemName = "Stealth Boy", itemDamage = 0, itemType = "Utility", itemHeal = 0, itemDesc = "A device that grants temporary invisibility." },
+                            new Items { itemName = "Jet", itemDamage = 0, itemType = "Drug", itemHeal = 0, itemDesc = "A powerful inhalant that slows time for the user." },
+                            new Items { itemName = "Purified Water", itemDamage = 0, itemType = "Beverage", itemHeal = 20, itemDesc = "Clean water, restores a good amount of health." }
+                        };
+                        Console.WriteLine("Items in the game:\n");
+                        foreach (var item in items)
+                        {
+                            Console.WriteLine(item);
+                        }
+                        Console.WriteLine("\n-- Press any key to return to the collection menu --");
+                        Console.ReadLine();
                         break;
 
                     case "4":
-                        Exit();
+                        // Display all ingredients in a readable format
+                        Ingredients[] ingredients =
+                        {
+                            new Ingredients { ingredientName = "Bread" },
+                            new Ingredients { ingredientName = "Lettuce" },
+                            new Ingredients { ingredientName = "Tomato" },
+                            new Ingredients { ingredientName = "Cheese" },
+                            new Ingredients { ingredientName = "Meat" },
+                            new Ingredients { ingredientName = "Egg" },
+                            new Ingredients { ingredientName = "Potato" },
+                            new Ingredients { ingredientName = "Carrot" },
+                            new Ingredients { ingredientName = "Onion" },
+                            new Ingredients { ingredientName = "Garlic" },
+                            new Ingredients { ingredientName = "Salt" },
+                            new Ingredients { ingredientName = "Pepper" },
+                            new Ingredients { ingredientName = "Drinkable Water" },
+                            new Ingredients { ingredientName = "Jam" },
+                            new Ingredients { ingredientName = "Milk" },
+                            new Ingredients { ingredientName = "Butter" },
+                            new Ingredients { ingredientName = "Mushroom" },
+                            new Ingredients { ingredientName = "Fish" },
+                            new Ingredients { ingredientName = "Apple" },
+                            new Ingredients { ingredientName = "Mutfruit" }
+                        };
+                        Console.WriteLine("Ingredients in the game:\n");
+                        foreach (var ingredient in ingredients)
+                        {
+                            Console.WriteLine(ingredient);
+                        }
+                        Console.WriteLine("\n-- Press any key to return to the collection menu --");
+                        Console.ReadLine();
                         break;
 
                     case "5":
-                        Exit();
-                        break;
-
-                    case "6":
-                        Exit();
+                        // Display all recipes in a readable format
+                        Recipes[] recipes =
+                        {
+                            new Recipes { recipeName = "Russian Steak", ingredient1 = "Meat", ingredient2 = "Potato", ingredient3 = "Butter" },
+                            new Recipes { recipeName = "Nuka-Cola Cake", ingredient1 = "Flour", ingredient2 = "Sugar", ingredient3 = "Nuka-Cola" },
+                            new Recipes { recipeName = "Mutfruit Salad", ingredient1 = "Mutfruit", ingredient2 = "Lettuce", ingredient3 = "Tomato" },
+                            new Recipes { recipeName = "Radroach Stew", ingredient1 = "Radroach Meat", ingredient2 = "Potato", ingredient3 = "Carrot" },
+                            new Recipes { recipeName = "Wasteland Omelette", ingredient1 = "Egg", ingredient2 = "Cheese", ingredient3 = "Onion" },
+                            new Recipes { recipeName = "Mirelurk Pie", ingredient1 = "Mirelurk Meat", ingredient2 = "Potato", ingredient3 = "Salt" },
+                            new Recipes { recipeName = "Mutant Hound Jerky", ingredient1 = "Mutant Hound Meat", ingredient2 = "Salt", ingredient3 = "Pepper" },
+                            new Recipes { recipeName = "Ghoul Goulash", ingredient1 = "Ghoul Meat", ingredient2 = "Carrot", ingredient3 = "Onion" },
+                            new Recipes { recipeName = "Irradiated Apple Jam", ingredient1 = "Apple", ingredient2 = "Sugar", ingredient3 = "Jam" },
+                            new Recipes { recipeName = "Cheesy Potato Soup", ingredient1 = "Potato", ingredient2 = "Cheese", ingredient3 = "Drinkable Water" },
+                            new Recipes { recipeName = "Fried Fish Fillet", ingredient1 = "Fish", ingredient2 = "Butter", ingredient3 = "Salt" },
+                            new Recipes { recipeName = "Mushroom Stew", ingredient1 = "Mushroom", ingredient2 = "Onion", ingredient3 = "Drinkable Water" },
+                            new Recipes { recipeName = "Egg & Mutfruit Breakfast", ingredient1 = "Egg", ingredient2 = "Mutfruit", ingredient3 = "Milk" },
+                            new Recipes { recipeName = "Carrot & Potato Mash", ingredient1 = "Carrot", ingredient2 = "Potato", ingredient3 = "Butter" },
+                            new Recipes { recipeName = "Spicy Meat Skewer", ingredient1 = "Meat", ingredient2 = "Pepper", ingredient3 = "Onion" },
+                            new Recipes { recipeName = "Garlic Bread", ingredient1 = "Bread", ingredient2 = "Butter", ingredient3 = "Garlic" },
+                            new Recipes { recipeName = "Apple Pie", ingredient1 = "Apple", ingredient2 = "Flour", ingredient3 = "Butter" },
+                            new Recipes { recipeName = "Mutfruit Jam Toast", ingredient1 = "Toast", ingredient2 = "Mutfruit", ingredient3 = "Jam" },
+                            new Recipes { recipeName = "Rad-X Smoothie", ingredient1 = "Rad-X", ingredient2 = "Milk", ingredient3 = "Mutfruit" },
+                            new Recipes { recipeName = "Pepper Steak", ingredient1 = "Meat", ingredient2 = "Pepper", ingredient3 = "Butter" }
+                        };
+                        Console.WriteLine("Recipes in the game:\n");
+                        foreach (var recipe in recipes)
+                        {
+                            Console.WriteLine(recipe);
+                        }
+                        Console.WriteLine("\n-- Press any key to return to the collection menu --");
+                        Console.ReadLine();
                         break;
 
                     case "0":
-                        Exit();
+                        Welcome();
                         break;
 
                     default:
