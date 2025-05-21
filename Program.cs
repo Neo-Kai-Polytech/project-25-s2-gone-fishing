@@ -850,7 +850,7 @@ namespace UberProject
             }
             else
             {
-                Console.WriteLine("I don't know what to do with this!");
+                Console.WriteLine("I don't know what to make with this!");
             }
             Console.ReadLine();
         }
@@ -887,7 +887,71 @@ namespace UberProject
                     }
                 }
             }
-            Console.ReadLine();
+            else if (ingredient1 == "meat" && ingredient2 == "onion" && ingredient3 == "potatoes")
+            {
+                for (int i = 0; i < inventory.Length; i++)
+                { //Adds borscht
+                    if (inventory[i] == "Meat")
+                    {
+                        inventory[i] = "Borscht";
+                        Console.WriteLine("You made Borscht");
+                        for (int j = 0; j < inventory.Length; j++) //Removes second ingredient
+                        {
+                            if (inventory[j] == "Onion")
+                            {
+                                inventory[j] = "";
+
+                                for (int k = 0; k < inventory.Length; k++) //Removes third ingredient
+                                {
+                                    if (inventory[k] == "potatoes")
+                                    {
+                                        inventory[k] = "";
+
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            else if (ingredient1 == "pickle" && ingredient2 == "lemon" && ingredient3 == "flour")
+            {
+                for (int i = 0; i < inventory.Length; i++)
+                { //Adds solyanka
+                    if (inventory[i] == "Pickle")
+                    {
+                        inventory[i] = "Solyanka";
+                        Console.WriteLine("You made Solyanka");
+                        for (int j = 0; j < inventory.Length; j++) //Removes second ingredient
+                        {
+                            if (inventory[j] == "Lemon")
+                            {
+                                inventory[j] = "";
+
+                                for (int k = 0; k < inventory.Length; k++) //Removes third ingredient
+                                {
+                                    if (inventory[k] == "Flour")
+                                    {
+                                        inventory[k] = "";
+
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("I don't know what to make with this!");
+            }
+                Console.ReadLine();
         }
 
         static void Main()
