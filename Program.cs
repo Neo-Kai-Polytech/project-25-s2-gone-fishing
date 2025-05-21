@@ -253,8 +253,6 @@ namespace UberProject
             Weapons[] tier1weapons =
             {
                 new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 12, weaponType = "Ranged" },
-                new Weapons { weaponName = "Makeshift Flamethrower", weaponDamage = 18, weaponType = "Heavy" },
-                new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 20, weaponType = "Ranged" },
                 new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 10, weaponType = "Melee" },
                 new Weapons { weaponName = "Radiation Axe", weaponDamage = 14, weaponType = "Melee" },
                 new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 16, weaponType = "Energy" },
@@ -264,16 +262,15 @@ namespace UberProject
             Weapons[] tier2weapons =
             {
                 new Weapons { weaponName = "Hunting Rifle", weaponDamage = 25, weaponType = "Ranged" },
+                new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 30, weaponType = "Ranged" },
                 new Weapons { weaponName = "Combat Shotgun", weaponDamage = 30, weaponType = "Ranged" },
                 new Weapons { weaponName = "Flamer", weaponDamage = 35, weaponType = "Heavy" },
                 new Weapons { weaponName = "Super Sledge", weaponDamage = 28, weaponType = "Melee" },
                 new Weapons { weaponName = "Laser Musket", weaponDamage = 32, weaponType = "Energy" },
-                new Weapons { weaponName = "Plasma Grenade", weaponDamage = 40, weaponType = "Explosive" }
             };
             Weapons[] tier3weapons =
             {
                 new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 55, weaponType = "Energy" },
-                new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 80, weaponType = "Explosive" },
                 new Weapons { weaponName = "Tesla Cannon", weaponDamage = 65, weaponType = "Energy" },
                 new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 50, weaponType = "Melee" },
                 new Weapons { weaponName = "Cryolator", weaponDamage = 60, weaponType = "Energy" },
@@ -283,14 +280,10 @@ namespace UberProject
             };
             Weapons[] tier4weapons =
             {
-                new Weapons { weaponName = "Omega Particle Disruptor", weaponDamage = 100, weaponType = "Energy" },
-                new Weapons { weaponName = "Singularity Cannon", weaponDamage = 120, weaponType = "Explosive" },
-                new Weapons { weaponName = "Quantum Blade", weaponDamage = 90, weaponType = "Melee" },
-                new Weapons { weaponName = "Vortex Railgun", weaponDamage = 110, weaponType = "Ranged" },
-                new Weapons { weaponName = "Plague Injector", weaponDamage = 95, weaponType = "Ranged" },
-                new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 130, weaponType = "Heavy" },
-                new Weapons { weaponName = "Starlight Hammer", weaponDamage = 105, weaponType = "Melee" },
-                new Weapons { weaponName = "Dark Matter Launcher", weaponDamage = 125, weaponType = "Explosive" }
+                new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 100, weaponType = "Explosive" },
+                new Weapons { weaponName = "Plague Injector", weaponDamage = 80, weaponType = "Ranged" },
+                new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 90, weaponType = "Heavy" },
+
             };
 
 
