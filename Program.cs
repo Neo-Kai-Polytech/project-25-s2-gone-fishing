@@ -17,6 +17,10 @@ namespace UberProject
             this.enemyAttack = attack;
             this.enemyDesc = desc;
         }
+        public override string ToString()
+        {
+            return $"Name: {enemyName}, HP: {enemyHP}, Attack: {enemyAttack}, Description: {enemyDesc}";
+        }
 
     }
     public struct Weapons()
@@ -106,21 +110,23 @@ namespace UberProject
             charName = Console.ReadLine();
             //char background
 
-            Console.WriteLine($"{charName} belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief. " +
-                $"His all family is very patriotic and kind. Follwing his father's footsteps he also wanted to become a army officer. " +
-                $"He also liked cooking which came from his mother and wanted to use this side talent in his life. So he wanted to become a army chef." +
-                "Eventually, after working hard he accomplished his goal and started serving in the army.");
+            Console.WriteLine($"{charName} belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief." +
+                $"\nHis whole family is very patriotic and kind. Follwing his father's footsteps he also wanted to become a army officer. " +
+                $"\nHe also liked cooking which came from his mother and wanted to use this side talent in his life. So he wanted to become a army chef." +
+                "\nEventually, after working hard he accomplished his goal and started serving in the army.");
             Thread.Sleep(500);
-            Console.WriteLine($"Two Years Later.........\nRussia Bombed America and World War III started and whole world was on fire and people were starving. " +
-                $"In the attack on citizens {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
-                "Suddenly, something went bad and he went into a coma.");
+            Console.WriteLine($"\n\nTwo Years Later.........\nRussia Bombed America and World War III started and whole world was on fire and people were starving. " +
+                $"\nIn the attack on citizens {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
+                "\nSuddenly, something went bad and he went into a coma.");
             Thread.Sleep(500);
-            Console.WriteLine("He woke up after six months and remembered things which happened. After getting out from the hospital he had no purpose left in his life, fully depressed, no family and friends. But he had no idea that nature has planned something big for him.");
+            Console.WriteLine("He woke up after six months and remembered things which happened. \nAfter getting out from the hospital he had no purpose left in his life, fully depressed, no family and friends. " +
+                "\nBut he had no idea that nature has planned something big for him.");
             Thread.Sleep(500);
-            Console.WriteLine($"After some days, while {charName} was still trying to figure out the purpose of his life, One night he got a dream where he was sitting on the dining table with his mom and dad talking about stuff happened recently" +
-                "and there his parents told him to follow his passion of cooking and serving people in order to make something out of his life.");
+            Console.WriteLine($"After some days, while {charName} was still trying to figure out the purpose of his life, " +
+                $"\none night he got a dream where he was sitting on the dining table with his mom and dad talking about stuff happened recently" +
+                "\nand there his parents told him to follow his passion of cooking and serving people in order to make something out of his life.");
             Thread.Sleep(500);
-            Console.WriteLine("After this night he decided to go on a world journey with passion to help people and to get some new experiences.");
+            Console.WriteLine("\n\nAfter this night he decided to go on a world journey with passion to help people and to get some new experiences.");
             Thread.Sleep(500);
             Console.ReadLine();
             //start of the game
@@ -150,13 +156,14 @@ namespace UberProject
         static void event1(string charName)
         {
             Console.WriteLine("Continuing his journey now he reached Russia where he saw that everything is destroyed. " +
-                "He is findind any life which is still alive and can talk with them. He is in a dense forest right now.");
-            Thread.Sleep(500);
-            Console.WriteLine("You see a bear running towards you!");
+                "\nHe is findind any life which is still alive and can talk with them. He is in a dense forest right now.");
+            Thread.Sleep(2000);
+            Console.WriteLine("\nYou see a bear running towards you!");
             Console.WriteLine("Prepare yourself!\n\n");
+            Thread.Sleep(2000);
 
+            string enemyName = HostileEnemies();
 
-            string enemyName = "Bear";
             CombatSystem(enemyName, charName);
 
             event2(charName);
@@ -286,9 +293,29 @@ namespace UberProject
 
             };
 
-
-
-            string[] ingredients;
+            Ingredients[] ingredients =
+            {
+                new Ingredients { ingredientName = "Bread" },
+                new Ingredients { ingredientName = "Lettuce" },
+                new Ingredients { ingredientName = "Tomato" },
+                new Ingredients { ingredientName = "Cheese" },
+                new Ingredients { ingredientName = "Meat" },
+                new Ingredients { ingredientName = "Egg" },
+                new Ingredients { ingredientName = "Potato" },
+                new Ingredients { ingredientName = "Carrot" },
+                new Ingredients { ingredientName = "Onion" },
+                new Ingredients { ingredientName = "Garlic" },
+                new Ingredients { ingredientName = "Salt" },
+                new Ingredients { ingredientName = "Pepper" },
+                new Ingredients { ingredientName = "Drinkable Water" },
+                new Ingredients { ingredientName = "Jam" },
+                new Ingredients { ingredientName = "Milk" },
+                new Ingredients { ingredientName = "Butter" },
+                new Ingredients { ingredientName = "Mushroom" },
+                new Ingredients { ingredientName = "Fish" },
+                new Ingredients { ingredientName = "Apple" },
+                new Ingredients { ingredientName = "Mutfruit" }
+            };
 
             Items[] items =
             {
@@ -302,6 +329,11 @@ namespace UberProject
                 new Items { itemName = "Antiseptic Bandage", itemDamage = 0, itemType = "Healing", itemHeal = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
                 new Items { itemName = "Dirty Water", itemDamage = 0, itemType = "Beverage", itemHeal = 5, itemDesc = "Water of questionable quality, restores a small amount of health." },
                 new Items { itemName = "Molotov Cocktail", itemDamage = 20, itemType = "Explosive", itemHeal = 0, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
+                new Items { itemName = "Pipe Bomb", itemDamage = 25, itemType = "Explosive", itemHeal = 0, itemDesc = "A homemade explosive device, deals significant area damage." },
+                new Items { itemName = "Fragmentation Grenade", itemDamage = 30, itemType = "Explosive", itemHeal = 0, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
+                new Items { itemName = "Plasma Mine", itemDamage = 35, itemType = "Explosive", itemHeal = 0, itemDesc = "A mine that detonates with a burst of plasma energy." },
+                new Items { itemName = "Dynamite Bundle", itemDamage = 40, itemType = "Explosive", itemHeal = 0, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
+                new Items { itemName = "Cryo Grenade", itemDamage = 18, itemType = "Explosive", itemHeal = 0, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
                 new Items { itemName = "Rad-X", itemDamage = 0, itemType = "Drug", itemHeal = 0, itemDesc = "A drug that temporarily increases radiation resistance." },
                 new Items { itemName = "Cram", itemDamage = 0, itemType = "Food", itemHeal = 15, itemDesc = "A can of processed meat, restores a moderate amount of health." },
                 new Items { itemName = "Stealth Boy", itemDamage = 0, itemType = "Utility", itemHeal = 0, itemDesc = "A device that grants temporary invisibility." },
@@ -338,7 +370,7 @@ namespace UberProject
 
             int enemyNumber = random.Next(monsters.Length);
 
-            return monsters[enemyNumber].ToString();
+            return monsters[enemyNumber].enemyName;
 
 
         }
@@ -365,8 +397,8 @@ namespace UberProject
                 Console.WriteLine("The Menu options are:");
                 Console.WriteLine("1  Monsters");
                 Console.WriteLine("2  Weapons");
-                Console.WriteLine("3  Ingredients");
-                Console.WriteLine("4  Consumables");
+                Console.WriteLine("3  Items");
+                Console.WriteLine("4  Ingredients");
                 Console.WriteLine("5  Recipes");
                 Console.WriteLine();
                 Console.WriteLine("0  Exit menu system");
@@ -382,11 +414,99 @@ namespace UberProject
 
                 {
                     case "1":
-                        Task1();
+                        // Display all enemies in a readable format
+                        Enemies[] monsters =
+                        {
+                            new Enemies("Mirelurk", 30, 5, "A mutated crab-like creature with a hard shell and a vicious bite."),
+                            new Enemies("Super Mutant", 40, 8, "A hulking brute with enhanced strength and resilience, often armed with heavy weapons."),
+                            new Enemies("Deathclaw", 50, 10, "A terrifying predator with razor-sharp claws and incredible speed."),
+                            new Enemies("Radscorpion", 35, 7, "A giant scorpion with a venomous sting and armored exoskeleton."),
+                            new Enemies("Radroach", 20, 4, "Giant irradiated cockroach with acidic saliva and armored carapace"),
+                            new Enemies("Mutant Hound", 35, 7, "Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression."),
+                            new Enemies("Ash Crawler", 25, 5, "A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below."),
+                            new Enemies("Ghoul Reaper", 30, 6, "A sentient, decaying humanoid that hunts the living for flesh, often in packs."),
+                            new Enemies("Wasteland Abomination", 50, 10, "A massive fusion of flesh and machinery, created from failed experiments and scavenged tech."),
+                            new Enemies("Irradiated Behemoth", 60, 12, "Towering brute pulsing with nuclear energy, leaving scorched earth in its wake."),
+                            new Enemies("Scorched Stalker", 28, 6, "Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes."),
+                            new Enemies("Toxic Spitter", 22, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
+                            new Enemies("Bone Dragger", 26, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
+                            new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts.")
+                        };
+                        Console.WriteLine("Monsters in the game:\n");
+                        foreach (var enemy in monsters)
+                        {
+                            Console.WriteLine(enemy);
+                        }
+                        Console.WriteLine("\n-- Press any key to return to the collection menu --");
+                        Console.ReadLine();
                         break;
 
                     case "2":
-                        Task2();
+                        Weapons[] tier1weapons =
+                        {
+                            new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 12, weaponType = "Ranged" },
+                            new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 10, weaponType = "Melee" },
+                            new Weapons { weaponName = "Radiation Axe", weaponDamage = 14, weaponType = "Melee" },
+                            new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 16, weaponType = "Energy" },
+                            new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 13, weaponType = "Ranged" },
+                            new Weapons { weaponName = "Electrified Machete", weaponDamage = 17, weaponType = "Melee" }
+                        };
+                        Weapons[] tier2weapons =
+                        {
+                            new Weapons { weaponName = "Hunting Rifle", weaponDamage = 25, weaponType = "Ranged" },
+                            new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 30, weaponType = "Ranged" },
+                            new Weapons { weaponName = "Combat Shotgun", weaponDamage = 30, weaponType = "Ranged" },
+                            new Weapons { weaponName = "Flamer", weaponDamage = 35, weaponType = "Heavy" },
+                            new Weapons { weaponName = "Super Sledge", weaponDamage = 28, weaponType = "Melee" },
+                            new Weapons { weaponName = "Laser Musket", weaponDamage = 32, weaponType = "Energy" },
+                        };
+                        Weapons[] tier3weapons =
+                        {
+                            new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 55, weaponType = "Energy" },
+                            new Weapons { weaponName = "Tesla Cannon", weaponDamage = 65, weaponType = "Energy" },
+                            new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 50, weaponType = "Melee" },
+                            new Weapons { weaponName = "Cryolator", weaponDamage = 60, weaponType = "Energy" },
+                            new Weapons { weaponName = "Railway Rifle", weaponDamage = 58, weaponType = "Ranged" },
+                            new Weapons { weaponName = "Plasma Caster", weaponDamage = 70, weaponType = "Energy" },
+                            new Weapons { weaponName = "Auto-Axe", weaponDamage = 52, weaponType = "Melee" }
+                        };
+                        Weapons[] tier4weapons =
+                        {
+                            new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 100, weaponType = "Explosive" },
+                            new Weapons { weaponName = "Plague Injector", weaponDamage = 80, weaponType = "Ranged" },
+                            new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 90, weaponType = "Heavy" },
+                        };
+
+                        Console.WriteLine("Weapons in the game:\n");
+
+                        Console.WriteLine("Tier 1 Weapons:");
+                        foreach (var weapon in tier1weapons)
+                        {
+                            Console.WriteLine($"Name: {weapon.weaponName}, Damage: {weapon.weaponDamage}, Type: {weapon.weaponType}");
+                        }
+                        Console.WriteLine();
+
+                        Console.WriteLine("Tier 2 Weapons:");
+                        foreach (var weapon in tier2weapons)
+                        {
+                            Console.WriteLine($"Name: {weapon.weaponName}, Damage: {weapon.weaponDamage}, Type: {weapon.weaponType}");
+                        }
+                        Console.WriteLine();
+
+                        Console.WriteLine("Tier 3 Weapons:");
+                        foreach (var weapon in tier3weapons)
+                        {
+                            Console.WriteLine($"Name: {weapon.weaponName}, Damage: {weapon.weaponDamage}, Type: {weapon.weaponType}");
+                        }
+                        Console.WriteLine();
+
+                        Console.WriteLine("Tier 4 Weapons:");
+                        foreach (var weapon in tier4weapons)
+                        {
+                            Console.WriteLine($"Name: {weapon.weaponName}, Damage: {weapon.weaponDamage}, Type: {weapon.weaponType}");
+                        }
+                        Console.WriteLine("\n-- Press any key to return to the collection menu --");
+                        Console.ReadLine();
                         break;
 
                     case "3":
