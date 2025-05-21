@@ -505,6 +505,7 @@ namespace UberProject
 
                         Console.WriteLine("Weapons in the game:\n");
 
+                        Console.ForegroundColor = ConsoleColor.Gray;
                         Console.WriteLine("Tier 1 Weapons:");
                         foreach (var weapon in tier1weapons)
                         {
@@ -512,6 +513,7 @@ namespace UberProject
                         }
                         Console.WriteLine();
 
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Tier 2 Weapons:");
                         foreach (var weapon in tier2weapons)
                         {
@@ -519,6 +521,7 @@ namespace UberProject
                         }
                         Console.WriteLine();
 
+                        Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("Tier 3 Weapons:");
                         foreach (var weapon in tier3weapons)
                         {
@@ -526,6 +529,7 @@ namespace UberProject
                         }
                         Console.WriteLine();
 
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.WriteLine("Tier 4 Weapons:");
                         foreach (var weapon in tier4weapons)
                         {
