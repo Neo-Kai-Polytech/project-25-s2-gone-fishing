@@ -89,7 +89,7 @@ namespace UberProject
             Console.WriteLine("So the story starts with World War III Apocalypse where all countries were on war. Lost of lives were lost, families got ruined. " +
                 "Not only damage is done to the humans, nature also paid the price animal species got extinct, air pollution went to the next level." +
                 "In the war many communities were lost, world population got half, darkness is now spreading every corner of the world." +
-                "People praying to the God to restore the balance of the world and some still have belief someone will a messiah will come and everything will come back to original.");
+                "People praying to the God to restore the balance of the world and some still have belief that someday a messiah will come and everything will come back to its original.");
 
             Console.WriteLine("Press any key to know about the main character");
             Console.ReadLine();
@@ -119,15 +119,15 @@ namespace UberProject
                 "\nEventually, after working hard he accomplished his goal and started serving in the army.");
             Thread.Sleep(500);
             Console.WriteLine($"\n\nTwo Years Later.........\nRussia Bombed America and World War III started and whole world was on fire and people were starving. " +
-                $"\nIn the attack on citizens {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
-                "\nSuddenly, something went bad and he went into a coma.");
+                $"In the attack {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
+                "Suddenly, something went bad and he went into a coma.");
             Thread.Sleep(500);
-            Console.WriteLine("He woke up after six months and remembered things which happened. \nAfter getting out from the hospital, he observed lots of things has changed example due to nuclear war some animals got mutated.. .One night he had a panic attack and he was thinking that now  had no purpose left in his life, fully depressed, no family and friends. " +
+            Console.WriteLine("He woke up after six months and remembered things which happened. \nAfter getting out from the hospital, he observed lots of things has changed example due to nuclear war some animals got mutated.. .So, one night he had a panic attack and he was thinking that now  had no purpose left in his life, fully depressed, no family and friends. " +
                 "\nBut he had no idea that nature has planned something big for him.");
             Thread.Sleep(500);
             Console.WriteLine($"After some days, while {charName} was still trying to figure out the purpose of his life, " +
                 $"\none night he got a dream where he was sitting on the dining table with his mom and dad talking about stuff happened recently" +
-                "\nand there his parents told him to follow his passion of cooking and serving people in order to make something out of his life.");
+                "and there his parents told him to follow his passion of cooking and serving people in order to make something out of his life.");
             Thread.Sleep(500);
             Console.WriteLine("\n\nAfter this night he decided to go on a world journey with passion to help people and to get some new experiences.");
             Console.WriteLine("\n To decide where he should start first he just darted on the small globe and it landed on Russia.");
@@ -178,7 +178,7 @@ namespace UberProject
         {
 
             Console.WriteLine("After this he observed the cooking method of the villagers which was slightly different and want to talk with them regarding that." +
-                "While chatting he got to know some new dishes which includes russian steak etc.");
+                "While chatting he got to know some new dishes which includes Russian steak etc.");
             Thread.Sleep(500);
             //here some things 2 or 3 ingredients will get added in the inventory
 
@@ -256,6 +256,9 @@ namespace UberProject
                     break;
                 }
             }
+            Console.WriteLine("Press any button to cook new dish");
+            Console.ReadLine();
+            InventoryManage();
             Console.ReadLine();
         }
 
