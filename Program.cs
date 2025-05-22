@@ -106,9 +106,9 @@ namespace UberProject
 
 
             Console.WriteLine("So the story starts with World War III Apocalypse where all countries were on war. Lost of lives were lost, families got ruined. " +
-                "Not only damage is done to the humans, nature also paid the price animal species got extinct, air pollution went to the next level." +
-                "In the war many communities were lost, world population got half, darkness is now spreading every corner of the world." +
-                "People praying to the God to restore the balance of the world and some still have belief that someday a messiah will come and everything will come back to its original.");
+                "\nNot only damage is done to the humans, nature also paid the price animal species got extinct, air pollution went to the next level." +
+                "\nIn the war many communities were lost, world population got half, darkness is now spreading every corner of the world." +
+                "People praying to the God to restore the balance of the world.\nSome still have belief that someday a messiah will come and everything will come back to its original.");
 
             Console.WriteLine("Press any key to know about the main character");
             Console.ReadLine();
@@ -140,18 +140,18 @@ namespace UberProject
                 "\nEventually, after working hard he accomplished his goal and started serving in the army.");
             Thread.Sleep(500);
             Console.WriteLine($"\n\nTwo Years Later.........\nRussia Bombed America and World War III started and whole world was on fire and people were starving. " +
-                $"In the attack {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
+                $"\nIn the attack {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
                 "Suddenly, something went bad and he went into a coma.");
             Thread.Sleep(500);
-            Console.WriteLine("He woke up after six months and remembered things which happened. \nAfter getting out from the hospital, he observed lots of things has changed example due to nuclear war some animals got mutated.. .So, one night he had a panic attack and he was thinking that now  had no purpose left in his life, fully depressed, no family and friends. " +
+            Console.WriteLine("\nHe woke up after six months and remembered things which happened. \nAfter getting out from the hospital, he observed lots of things has changed example due to nuclear war some animals got mutated.\nSo, one night he had a panic attack and he was thinking that now  had no purpose left in his life, fully depressed, no family and friends. " +
                 "\nBut he had no idea that nature has planned something big for him.");
             Thread.Sleep(500);
             Console.WriteLine($"After some days, while {charName} was still trying to figure out the purpose of his life, " +
-                $"\none night he got a dream where he was sitting on the dining table with his mom and dad talking about stuff happened recently" +
-                "and there his parents told him to follow his passion of cooking and serving people in order to make something out of his life.");
+                $"\none night he got a dream where he was sitting on the dining table with his mom and dad talking about stuff happened recently.\n" +
+                "There his parents told him to follow his passion of cooking and serving people in order to make something out of his life.\n");
             Thread.Sleep(500);
-            Console.WriteLine("\n\nAfter this night he decided to go on a world journey with passion to help people and to get some new experiences.");
-            Console.WriteLine("\n To decide where he should start first he just darted on the small globe and it landed on Russia.");
+            Console.WriteLine("\nAfter this night he decided to go on a world journey with passion to help people and to get some new experiences.");
+            Console.WriteLine("\nTo decide where he should start first he just darted on the small globe and it landed on Russia.");
             Thread.Sleep(500);
             Console.ReadLine();
             //start of the game
@@ -186,6 +186,7 @@ namespace UberProject
             Console.WriteLine("\nYou see a bear running towards you!");
             Console.WriteLine("Prepare yourself!\n\n");
             Thread.Sleep(2000);
+            Console.ReadLine() ;
 
             Enemies enemy = HostileEnemies();
             
@@ -193,16 +194,27 @@ namespace UberProject
 
             event2(player);
 
+            CombatSystem(player, enemy);
+            Console.WriteLine("Yay!! In reward you got bread.");
+            Console.WriteLine($"After the fight villagers came to see who is in trouble and found {charName}");
+
+            event2(player);
+
+
+
         }
 
         static void event2(Player player)
         {
 
-            Console.WriteLine("After this he observed the cooking method of the villagers which was slightly different and want to talk with them regarding that." +
-                "While chatting he got to know some new dishes which includes Russian steak etc.");
+            Console.WriteLine("After uniting with villagers he observed their cooking method  which was slightly different and want to talk with them regarding that." +
+                "While chatting he got to know some new dishes which includes Russian steak etc.\n");
             Thread.Sleep(500);
+            Console.WriteLine("Russian Steak is now added in your inventory.");
+            Thread.Sleep(500);
+            Console.WriteLine("Recipe for Russian Steak is Meat, Potato, Butter.");
             //here some things 2 or 3 ingredients will get added in the inventory
-
+            cookbook = cookbook + "Russian Steak";
             for (int i = 0; i < inventory.Length; i++)
             {
                 if (inventory[i] == "")
@@ -211,6 +223,32 @@ namespace UberProject
                     break;
                 }
             }
+
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Meat";
+                    break;
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Potato";
+                    break;
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Butter";
+                    break;
+                }
+            }
+
             Console.WriteLine("Press any button to cook new dish");
             Console.ReadLine();
             InventoryManage();
@@ -233,23 +271,7 @@ namespace UberProject
             {
                 if (inventory[i] == "")
                 {
-                    inventory[i] = "meat";
-                    break;
-                }
-            }
-            for (int i = 0; i < inventory.Length; i++)
-            {
-                if (inventory[i] == "")
-                {
                     inventory[i] = "onion";
-                    break;
-                }
-            }
-            for (int i = 0; i < inventory.Length; i++)
-            {
-                if (inventory[i] == "")
-                {
-                    inventory[i] = "potato";
                     break;
                 }
             }
