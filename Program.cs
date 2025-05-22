@@ -9,7 +9,6 @@ namespace UberProject
         public int enemyAttack;
         public string enemyDesc;
 
-        // Constructor with 'this' initializer
         public Enemies(string name, int hp, int attack, string desc)
         {
             this.enemyName = name;
@@ -60,8 +59,10 @@ namespace UberProject
 
         static void Welcome()
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("FLAVOURS OF FALLOUT");
             Console.WriteLine();
+            Console.ResetColor();
             Console.WriteLine("The Menu options are:");
             Console.WriteLine("1  New Game");
             Console.WriteLine("2  Options");
