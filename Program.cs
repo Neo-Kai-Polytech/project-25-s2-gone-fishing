@@ -90,7 +90,7 @@ namespace UberProject
             Console.WriteLine("So the story starts with World War III Apocalypse where all countries were on war. Lost of lives were lost, families got ruined. " +
                 "Not only damage is done to the humans, nature also paid the price animal species got extinct, air pollution went to the next level." +
                 "In the war many communities were lost, world population got half, darkness is now spreading every corner of the world." +
-                "People praying to the God to restore the balance of the world and some still have belief someone will a messiah will come and everything will come back to original.");
+                "People praying to the God to restore the balance of the world and some still have belief that someday a messiah will come and everything will come back to its original.");
 
             Console.WriteLine("Press any key to know about the main character");
             Console.ReadLine();
@@ -115,22 +115,23 @@ namespace UberProject
             //char background
 
             Console.WriteLine($"{charName} belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief." +
-                $"\nHis whole family is very patriotic and kind. Follwing his father's footsteps he also wanted to become a army officer. " +
-                $"\nHe also liked cooking which came from his mother and wanted to use this side talent in his life. So he wanted to become a army chef." +
+                $"\nHis whole family is very patriotic and kind. Following his father's footsteps he also wanted to become an army officer. " +
+                $"\nHe also liked cooking which her mother taught him and wanted to use this side talent in his life. So he wanted to become an army chef." +
                 "\nEventually, after working hard he accomplished his goal and started serving in the army.");
             Thread.Sleep(500);
             Console.WriteLine($"\n\nTwo Years Later.........\nRussia Bombed America and World War III started and whole world was on fire and people were starving. " +
-                $"\nIn the attack on citizens {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
-                "\nSuddenly, something went bad and he went into a coma.");
+                $"In the attack {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
+                "Suddenly, something went bad and he went into a coma.");
             Thread.Sleep(500);
-            Console.WriteLine("He woke up after six months and remembered things which happened. \nAfter getting out from the hospital he had no purpose left in his life, fully depressed, no family and friends. " +
+            Console.WriteLine("He woke up after six months and remembered things which happened. \nAfter getting out from the hospital, he observed lots of things has changed example due to nuclear war some animals got mutated.. .So, one night he had a panic attack and he was thinking that now  had no purpose left in his life, fully depressed, no family and friends. " +
                 "\nBut he had no idea that nature has planned something big for him.");
             Thread.Sleep(500);
             Console.WriteLine($"After some days, while {charName} was still trying to figure out the purpose of his life, " +
                 $"\none night he got a dream where he was sitting on the dining table with his mom and dad talking about stuff happened recently" +
-                "\nand there his parents told him to follow his passion of cooking and serving people in order to make something out of his life.");
+                "and there his parents told him to follow his passion of cooking and serving people in order to make something out of his life.");
             Thread.Sleep(500);
             Console.WriteLine("\n\nAfter this night he decided to go on a world journey with passion to help people and to get some new experiences.");
+            Console.WriteLine("\n To decide where he should start first he just darted on the small globe and it landed on Russia.");
             Thread.Sleep(500);
             Console.ReadLine();
             //start of the game
@@ -159,8 +160,8 @@ namespace UberProject
     
         static void event1(string charName)
         {
-            Console.WriteLine("Continuing his journey now he reached Russia where he saw that everything is destroyed. " +
-                "\nHe is findind any life which is still alive and can talk with them. He is in a dense forest right now.");
+            Console.WriteLine("With his journey now he is finally in Russia where he saw that everything is destroyed. " +
+                "\nHe is finding any life which is still alive and can talk with them and he found a dense forest.And suddenly,..........");
             Thread.Sleep(2000);
             Console.WriteLine("\nYou see a bear running towards you!");
             Console.WriteLine("Prepare yourself!\n\n");
@@ -178,7 +179,7 @@ namespace UberProject
         {
 
             Console.WriteLine("After this he observed the cooking method of the villagers which was slightly different and want to talk with them regarding that." +
-                "While chatting he got to know some new dishes which includes russian steak etc.");
+                "While chatting he got to know some new dishes which includes Russian steak etc.");
             Thread.Sleep(500);
             //here some things 2 or 3 ingredients will get added in the inventory
 
@@ -200,7 +201,65 @@ namespace UberProject
 
         static void event3(string charName)
         {
-            Console.WriteLine("This is event 3");
+            Console.WriteLine($"Now Continuing in Russia {charName} reached in Moscow. He saw that city is pretty much destroyed and the vibes are pretty depressed in the city.Roaming around he met a bunch of people going in a group mental therapy and decided to join them. During the conversations he told them his passsion of cooking and about his joruney.\n" +
+                $"So other persons shared their favorite recipies and ingredients with him.");
+            Console.WriteLine();
+            Console.WriteLine("The recipies are following:");
+            Console.WriteLine("1. Borcht - meat, onion, potato");
+            Console.WriteLine("2. Solyanka - pickle, lemon, flour");
+            cookbook = cookbook + "Borcht";
+            cookbook = cookbook + "solyanka";
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "meat";
+                    break;
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "onion";
+                    break;
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "potato";
+                    break;
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "pickle";
+                    break;
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "lemon";
+                    break;
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "flour";
+                    break;
+                }
+            }
+            Console.WriteLine("Press any button to cook new dish");
+            Console.ReadLine();
+            InventoryManage();
             Console.ReadLine();
         }
 
