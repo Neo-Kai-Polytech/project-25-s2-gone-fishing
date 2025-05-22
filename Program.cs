@@ -200,7 +200,12 @@ namespace UberProject
 
         static void event3(string charName)
         {
-            Console.WriteLine("This is event 3");
+            Console.WriteLine($"Now Continuing in Russia {charName} reached in Moscow. He saw that city is pretty much destroyed and the vibes are pretty depressed in the city.Roaming around he met a bunch of people going in a group mental therapy and decided to join them. During the conversations he told them his passsion of cooking and about his joruney.\n" +
+                $"So other persons shared their favorite recipies and ingredients with him.");
+            Console.WriteLine();
+            Console.WriteLine("The recipies are following:");
+            Console.WriteLine("1. Borcht - meat, onion, potato");
+            Console.WriteLine("2. Solyanka - pickle, lemon, flour");
             Console.ReadLine();
         }
 
