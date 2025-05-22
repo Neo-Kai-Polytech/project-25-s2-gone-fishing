@@ -2,6 +2,24 @@
 
 namespace UberProject
 {
+    public struct Player
+    {
+        public string playerName;
+        public int playerHP;
+        public string playerWeapon;
+        public int playerAttack;
+        public Player(string name, int hp, string weapon, int attack)
+        {
+            this.playerName = name;
+            this.playerHP = hp;
+            this.playerWeapon = weapon;
+            this.playerAttack = attack;
+        }
+        public override string ToString()
+        {
+            return $"Name: {playerName}, HP: {playerHP}, Weapon: {playerWeapon}, Attack: {playerAttack}";
+        }
+    }
     public struct Enemies
     {
         public string enemyName;
@@ -59,7 +77,7 @@ namespace UberProject
 
         static void Welcome()
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("FLAVOURS OF FALLOUT");
             Console.WriteLine();
             Console.ResetColor();
@@ -114,6 +132,8 @@ namespace UberProject
             charName = Console.ReadLine();
             //char background
 
+            Player player = new Player(charName, 100, "Rusty Pipe Rifle", 10);
+
             Console.WriteLine($"{charName} belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief." +
                 $"\nHis whole family is very patriotic and kind. Following his father's footsteps he also wanted to become an army officer. " +
                 $"\nHe also liked cooking which her mother taught him and wanted to use this side talent in his life. So he wanted to become an army chef." +
@@ -138,27 +158,27 @@ namespace UberProject
 
             Console.Clear();
 
-            StartingArea(charName);
+            StartingArea(player);
 
         }
 
-        public static void StartingArea(string charName)
+        public static void StartingArea(Player player)
         {
 
-            event1(charName);
+            event1(player);
 
-            event2(charName);
+            event2(player);
 
-            event3(charName);
+            event3();
 
-            event4(charName);
+            event4();
 
 
 
         }
 
     
-        static void event1(string charName)
+        static void event1(Player player)
         {
             Console.WriteLine("With his journey now he is finally in Russia where he saw that everything is destroyed. " +
                 "\nHe is finding any life which is still alive and can talk with them and he found a dense forest.And suddenly,..........");
@@ -167,15 +187,15 @@ namespace UberProject
             Console.WriteLine("Prepare yourself!\n\n");
             Thread.Sleep(2000);
 
-            string enemyName = HostileEnemies();
+            Enemies enemy = HostileEnemies();
+            
+            CombatSystem(player, enemy);
 
-            CombatSystem(enemyName, charName);
-
-            event2(charName);
+            event2(player);
 
         }
 
-        static void event2(string charName)
+        static void event2(Player player)
         {
 
             Console.WriteLine("After this he observed the cooking method of the villagers which was slightly different and want to talk with them regarding that." +
@@ -199,7 +219,7 @@ namespace UberProject
             //end of event and he continues his journey
         }
 
-        static void event3(string charName)
+        static void event3()
         {
             Console.WriteLine($"Now Continuing in Russia {charName} reached in Moscow. He saw that city is pretty much destroyed and the vibes are pretty depressed in the city.Roaming around he met a bunch of people going in a group mental therapy and decided to join them. During the conversations he told them his passsion of cooking and about his joruney.\n" +
                 $"So other persons shared their favorite recipies and ingredients with him.");
@@ -264,56 +284,62 @@ namespace UberProject
         }
 
         // event 4 will come here
-        static void event4(string charName)
+        static void event4()
         {
             Console.WriteLine("This is event 4");
             Console.ReadLine();
         }
-  
-        public static void CombatSystem(string enemyName, string charName)
+
+        public static void CombatSystem(Player player, Enemies enemy)
         {
-            int playerHP = 100;
-            int enemyHP = random.Next(30, 40);
+            int playerHP = player.playerHP;
+            int enemyHP = enemy.enemyHP;
 
-            int playerAttack = 0;
-            int enemyAttack = 0;
-
-            do
+            while (playerHP > 0 && enemyHP > 0)
             {
                 Console.Clear();
-                Console.Write("Name".PadRight(15));
-                Console.Write("Name".PadLeft(15));
-                Console.WriteLine();
-                Console.Write(charName.PadRight(15));
-                Console.Write(enemyName.PadLeft(15));
-                Console.WriteLine();
-                Console.WriteLine("VS".PadLeft(15));
-                Console.Write("Health:".PadRight(15));
-                Console.Write("Health:".PadLeft(15));
-                Console.WriteLine();
-                Console.Write(playerHP.ToString().PadRight(15));
-                Console.Write(enemyHP.ToString().PadLeft(15));
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine($"Player: {player.playerName} | HP: {playerHP} | Weapon: {player.playerWeapon} | Attack: {player.playerAttack}");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Enemy: {enemy.enemyName} | HP: {enemyHP} | Attack: {enemy.enemyAttack}");
+                Console.ResetColor();
 
-                Console.WriteLine();
-                Console.WriteLine("What would you like to do?");
+                Console.WriteLine("\nPress Enter to attack...");
+                Console.ReadLine();
 
-                string playerInput = Console.ReadLine();
+                int playerAttack = player.playerAttack + random.Next(-2, 3);
+                enemyHP -= playerAttack;
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"{player.playerName} attacks {enemy.enemyName} for {playerAttack} damage!");
+                Console.ResetColor();
 
-                playerAttack = random.Next(5, 15);
-                Console.WriteLine($"\nPlayer attacks dealing {playerAttack} damage! \n");
-                enemyHP = enemyHP - playerAttack;
-                Thread.Sleep(1000);
+                if (enemyHP <= 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine($"{enemy.enemyName} is defeated!");
+                    Console.ResetColor();
+                    break;
+                }
 
-                enemyAttack = random.Next(1, 6);
-                Console.WriteLine($"\n{enemyName} attacks dealing {enemyAttack} damage! \n");
-                playerHP = playerHP - enemyAttack;
-                Thread.Sleep(1000);
+                int enemyAttack = enemy.enemyAttack + random.Next(-1, 2);
+                playerHP -= enemyAttack;
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine($"{enemy.enemyName} attacks {player.playerName} for {enemyAttack} damage!");
+                Console.ResetColor();
 
+                if (playerHP <= 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"{player.playerName} has been defeated!");
+                    Console.ResetColor();
+                    break;
+                }
 
-            } while (enemyHP > 0);
-
+                Console.WriteLine("\nPress Enter for next round...");
+                Console.ReadLine();
+            }
+            Console.WriteLine("Combat ended. Press Enter to continue...");
             Console.ReadLine();
-
         }
 
         static void EpicLoot()
@@ -355,6 +381,7 @@ namespace UberProject
                 new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 90, weaponType = "Heavy" },
 
             };
+
 
             Ingredients[] ingredients =
             {
@@ -404,33 +431,9 @@ namespace UberProject
                 new Items { itemName = "Purified Water", itemDamage = 0, itemType = "Beverage", itemHeal = 20, itemDesc = "Clean water, restores a good amount of health." }
             };
 
-            Recipes[] recipes = new Recipes[]
-            {
-                new Recipes { recipeName = "Russian Steak", ingredient1 = "Meat", ingredient2 = "Potato", ingredient3 = "Butter" },
-                new Recipes { recipeName = "Nuka-Cola Cake", ingredient1 = "Flour", ingredient2 = "Sugar", ingredient3 = "Nuka-Cola" },
-                new Recipes { recipeName = "Mutfruit Salad", ingredient1 = "Mutfruit", ingredient2 = "Lettuce", ingredient3 = "Tomato" },
-                new Recipes { recipeName = "Radroach Stew", ingredient1 = "Radroach Meat", ingredient2 = "Potato", ingredient3 = "Carrot" },
-                new Recipes { recipeName = "Wasteland Omelette", ingredient1 = "Egg", ingredient2 = "Cheese", ingredient3 = "Onion" },
-                new Recipes { recipeName = "Mirelurk Pie", ingredient1 = "Mirelurk Meat", ingredient2 = "Potato", ingredient3 = "Salt" },
-                new Recipes { recipeName = "Mutant Hound Jerky", ingredient1 = "Mutant Hound Meat", ingredient2 = "Salt", ingredient3 = "Pepper" },
-                new Recipes { recipeName = "Ghoul Goulash", ingredient1 = "Ghoul Meat", ingredient2 = "Carrot", ingredient3 = "Onion" },
-                new Recipes { recipeName = "Irradiated Apple Jam", ingredient1 = "Apple", ingredient2 = "Sugar", ingredient3 = "Jam" },
-                new Recipes { recipeName = "Cheesy Potato Soup", ingredient1 = "Potato", ingredient2 = "Cheese", ingredient3 = "Drinkable Water" },
-                new Recipes { recipeName = "Fried Fish Fillet", ingredient1 = "Fish", ingredient2 = "Butter", ingredient3 = "Salt" },
-                new Recipes { recipeName = "Mushroom Stew", ingredient1 = "Mushroom", ingredient2 = "Onion", ingredient3 = "Drinkable Water" },
-                new Recipes { recipeName = "Egg & Mutfruit Breakfast", ingredient1 = "Egg", ingredient2 = "Mutfruit", ingredient3 = "Milk" },
-                new Recipes { recipeName = "Carrot & Potato Mash", ingredient1 = "Carrot", ingredient2 = "Potato", ingredient3 = "Butter" },
-                new Recipes { recipeName = "Spicy Meat Skewer", ingredient1 = "Meat", ingredient2 = "Pepper", ingredient3 = "Onion" },
-                new Recipes { recipeName = "Garlic Bread", ingredient1 = "Bread", ingredient2 = "Butter", ingredient3 = "Garlic" },
-                new Recipes { recipeName = "Apple Pie", ingredient1 = "Apple", ingredient2 = "Flour", ingredient3 = "Butter" },
-                new Recipes { recipeName = "Mutfruit Jam Toast", ingredient1 = "Toast", ingredient2 = "Mutfruit", ingredient3 = "Jam" },
-                new Recipes { recipeName = "Rad-X Smoothie", ingredient1 = "Rad-X", ingredient2 = "Milk", ingredient3 = "Mutfruit" },
-                new Recipes { recipeName = "Pepper Steak", ingredient1 = "Meat", ingredient2 = "Pepper", ingredient3 = "Butter" }
-            };
-
         }
 
-        public static string HostileEnemies()
+        public static Enemies HostileEnemies()
         {
             // This will be an Array of Enemies that you can randomly encounter in the game.
 
@@ -455,7 +458,7 @@ namespace UberProject
 
             int enemyNumber = random.Next(monsters.Length);
 
-            return monsters[enemyNumber].enemyName;
+            return monsters[enemyNumber];
 
 
         }
@@ -595,6 +598,9 @@ namespace UberProject
                         {
                             Console.WriteLine($"Name: {weapon.weaponName}, Damage: {weapon.weaponDamage}, Type: {weapon.weaponType}");
                         }
+
+                        Console.ResetColor();
+
                         Console.WriteLine("\n-- Press any key to return to the collection menu --");
                         Console.ReadLine();
                         break;
