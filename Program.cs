@@ -975,7 +975,7 @@ namespace UberProject
                     }
                 }
             }
-            else if (ingredient1 == "meat" && ingredient2 == "onion" && ingredient3 == "potatoes")
+            else if (ingredient1 == "meat" && ingredient2 == "onion" && ingredient3 == "potato")
             {
                 for (int i = 0; i < inventory.Length; i++)
                 { //Adds borscht
@@ -991,7 +991,7 @@ namespace UberProject
 
                                 for (int k = 0; k < inventory.Length; k++) //Removes third ingredient
                                 {
-                                    if (inventory[k] == "potatoes")
+                                    if (inventory[k] == "potato")
                                     {
                                         inventory[k] = "";
 
