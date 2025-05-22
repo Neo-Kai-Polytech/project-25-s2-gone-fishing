@@ -114,15 +114,15 @@ namespace UberProject
             //char background
 
             Console.WriteLine($"{charName} belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief." +
-                $"\nHis whole family is very patriotic and kind. Follwing his father's footsteps he also wanted to become a army officer. " +
-                $"\nHe also liked cooking which came from his mother and wanted to use this side talent in his life. So he wanted to become a army chef." +
+                $"\nHis whole family is very patriotic and kind. Following his father's footsteps he also wanted to become an army officer. " +
+                $"\nHe also liked cooking which her mother taught him and wanted to use this side talent in his life. So he wanted to become an army chef." +
                 "\nEventually, after working hard he accomplished his goal and started serving in the army.");
             Thread.Sleep(500);
             Console.WriteLine($"\n\nTwo Years Later.........\nRussia Bombed America and World War III started and whole world was on fire and people were starving. " +
                 $"\nIn the attack on citizens {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
                 "\nSuddenly, something went bad and he went into a coma.");
             Thread.Sleep(500);
-            Console.WriteLine("He woke up after six months and remembered things which happened. \nAfter getting out from the hospital he had no purpose left in his life, fully depressed, no family and friends. " +
+            Console.WriteLine("He woke up after six months and remembered things which happened. \nAfter getting out from the hospital, he observed lots of things has changed example due to nuclear war some animals got mutated.. .One night he had a panic attack and he was thinking that now  had no purpose left in his life, fully depressed, no family and friends. " +
                 "\nBut he had no idea that nature has planned something big for him.");
             Thread.Sleep(500);
             Console.WriteLine($"After some days, while {charName} was still trying to figure out the purpose of his life, " +
@@ -130,6 +130,7 @@ namespace UberProject
                 "\nand there his parents told him to follow his passion of cooking and serving people in order to make something out of his life.");
             Thread.Sleep(500);
             Console.WriteLine("\n\nAfter this night he decided to go on a world journey with passion to help people and to get some new experiences.");
+            Console.WriteLine("\n To decide where he should start first he just darted on the small globe and it landed on Russia.");
             Thread.Sleep(500);
             Console.ReadLine();
             //start of the game
@@ -158,8 +159,8 @@ namespace UberProject
     
         static void event1(string charName)
         {
-            Console.WriteLine("Continuing his journey now he reached Russia where he saw that everything is destroyed. " +
-                "\nHe is findind any life which is still alive and can talk with them. He is in a dense forest right now.");
+            Console.WriteLine("With his journey now he is finally in Russia where he saw that everything is destroyed. " +
+                "\nHe is finding any life which is still alive and can talk with them and he found a dense forest.And suddenly,..........");
             Thread.Sleep(2000);
             Console.WriteLine("\nYou see a bear running towards you!");
             Console.WriteLine("Prepare yourself!\n\n");
