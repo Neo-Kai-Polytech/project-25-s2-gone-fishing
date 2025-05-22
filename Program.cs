@@ -206,6 +206,56 @@ namespace UberProject
             Console.WriteLine("The recipies are following:");
             Console.WriteLine("1. Borcht - meat, onion, potato");
             Console.WriteLine("2. Solyanka - pickle, lemon, flour");
+            cookbook = cookbook + "Borcht";
+            cookbook = cookbook + "solyanka";
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "meat";
+                    break;
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "onion";
+                    break;
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "potato";
+                    break;
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "pickle";
+                    break;
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "lemon";
+                    break;
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "flour";
+                    break;
+                }
+            }
             Console.ReadLine();
         }
 
