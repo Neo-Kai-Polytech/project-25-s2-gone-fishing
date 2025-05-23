@@ -190,9 +190,9 @@ namespace UberProject
 
             event2(player);
 
-            event3();
+            event3(player);
 
-            event4();
+            event4(player);
 
 
 
@@ -213,16 +213,8 @@ namespace UberProject
             
             CombatSystem(player, enemy);
 
-            event2(player);
-
-            CombatSystem(player, enemy);
-            Console.WriteLine("Yay!! In reward you got bread.");
             Console.WriteLine($"After the fight villagers came to see who is in trouble and found {charName}");
-
-            event2(player);
-
-
-
+            Thread.Sleep(2000);
         }
 
         static void event2(Player player)
@@ -274,11 +266,12 @@ namespace UberProject
             Console.ReadLine();
             InventoryManage();
 
+            Console.WriteLine("Press any button to continue...");
             Console.ReadLine();
             //end of event and he continues his journey
         }
 
-        static void event3()
+        static void event3(Player player)
         {
             Console.WriteLine($"Now Continuing in Russia {charName} reached in Moscow. He saw that city is pretty much destroyed and the vibes are pretty depressed in the city.Roaming around he met a bunch of people going in a group mental therapy and decided to join them. During the conversations he told them his passsion of cooking and about his joruney.\n" +
                 $"So other persons shared their favorite recipies and ingredients with him.");
@@ -323,11 +316,16 @@ namespace UberProject
             Console.WriteLine("Press any button to cook new dish");
             Console.ReadLine();
             InventoryManage();
+
+
+            Console.WriteLine("Press any button to continue...");
             Console.ReadLine();
+
+
         }
 
         // event 4 will come here
-        static void event4()
+        static void event4(Player player)
         {
             Console.WriteLine("This is event 4");
             Console.ReadLine();
@@ -569,7 +567,8 @@ namespace UberProject
             new Enemies("Scorched Stalker", 28, 6, "Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes."),
             new Enemies("Toxic Spitter", 22, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
             new Enemies("Bone Dragger", 26, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
-            new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts.")
+            new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts."),
+            new Enemies("Murderous Crow", 7, 10, "A seemingly normal crow with teeth that can cut through ceramic plates")
         };
 
             int enemyNumber = random.Next(monsters.Length);
