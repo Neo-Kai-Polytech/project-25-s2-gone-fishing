@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using System.Numerics;
+using System.Xml.Linq;
 
 namespace UberProject
 {
@@ -178,7 +179,6 @@ namespace UberProject
 
         }
          
-
         public static void StartingArea(Player player)
         {
             Console.WriteLine("Starting Area");
@@ -327,7 +327,35 @@ namespace UberProject
         // event 4 will come here
         static void event4(Player player)
         {
-            Console.WriteLine("This is event 4");
+            string input;
+            Console.WriteLine("You see yourself at what used to be an old car park. Tattered green tents lay across it, and military jeeps create barricades. You can tell it had long since been abandoned. All of a sudden a crow comes eye to eye with you. twitchingly eyeing you up.");
+            Enemies enemy = HostileEnemies();
+            CombatSystem(player, enemy); //Crow fight
+            Console.WriteLine("You notice that the crow has given you bite marks. It seems that over time it has evolved teeth to chew through the armour plating that the military soldiers have. It seems that you have caused quite the commotion during your fight, and now all of the crows want to see what's going on");
+            Console.WriteLine("You couldn't outrun them if you tried, unless you managed to find a distraction. The meat you're carrying will do just fine. Or you can engage with them, and see what the soldiers left behind");
+            Console.WriteLine("r|   Sacrifice all meat and run away     f|    Fight 5 crows back to back");
+            input = Console.ReadLine();
+            switch (input)
+            {
+                case "f":
+                    CombatSystem(player, enemy); //Crow fight
+                    CombatSystem(player, enemy); //Crow fight
+                    CombatSystem(player, enemy); //Crow fight
+                    CombatSystem(player, enemy); //Crow fight
+                    CombatSystem(player, enemy); //Crow fight
+                    break;
+                case "r":
+                    for (int i = 0; i < inventory.Length; i++)
+                    {
+                        if (inventory[i] == "Meat" ||  inventory[i] == "Fish")
+                        {
+                            inventory[i] = "";
+                        }
+                    }
+                    Console.WriteLine("You run away, losing all your meat");
+                    break;
+            }
+            Console.ReadLine();
             Console.ReadLine();
         }
 
