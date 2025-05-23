@@ -225,6 +225,7 @@ namespace UberProject
                 // event 4 will come here
                 static void event4()
                 {
+
                     Console.WriteLine("You see yourself at what used to be an old car park. Tattered green tents lay across it, and military jeeps create barricades. You can tell it had long since been abandoned. All of a sudden a crow comes eye to eye with you. twitchingly eyeing you up.");
                     CombatSystem(); //Crow fight
                     Console.WriteLine("You notice that the crow has given you bite marks. It seems that over time it has evolved teeth to chew through the armour plating that the military soldiers have. It seems that you have caused quite the commotion during your fight, and now all of the crows want to see what's going on");
@@ -559,7 +560,8 @@ namespace UberProject
             new Enemies("Scorched Stalker", 28, 6, "Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes."),
             new Enemies("Toxic Spitter", 22, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
             new Enemies("Bone Dragger", 26, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
-            new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts.")
+            new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts."),
+            new Enemies("Murderous Crow", 7, 10, "A seemingly normal crow with teeth that can cut through ceramic plates")
         };
 
             int enemyNumber = random.Next(monsters.Length);
