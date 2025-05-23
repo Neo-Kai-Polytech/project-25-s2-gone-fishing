@@ -605,12 +605,11 @@ namespace UberProject
         }
 
 
-        static void Task2(Player player)
+        static void Task2()
         {
             // OPTIONS MENU
 
             Console.WriteLine("This is Task 2");
-            event4(player);
             Console.WriteLine("Press any key to return to menu");
             Console.ReadLine();
 
