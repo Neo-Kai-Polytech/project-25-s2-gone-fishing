@@ -221,19 +221,6 @@ namespace UberProject
                             //end of event and he continues his journey
                         }
                 }
-                //event 2 will come here
-                static void event2()
-                {
-                    Console.WriteLine("The Player reached in ");
-                    Console.ReadLine();
-                }
-
-                //event 3 will come here
-                static void event3()
-                {
-                    Console.WriteLine("This is event 3");
-                    Console.ReadLine();
-                }
 
                 // event 4 will come here
                 static void event4()
