@@ -225,7 +225,10 @@ namespace UberProject
                 // event 4 will come here
                 static void event4()
                 {
-                    Console.WriteLine("This is event 4");
+                    Console.WriteLine("You see yourself at what used to be an old car park. Tattered green tents lay across it, and military jeeps create barricades. You can tell it had long since been abandoned. All of a sudden a crow comes eye to eye with you. twitchingly eyeing you up.");
+                    CombatSystem(); //Crow fight
+                    Console.WriteLine("You notice that the crow has given you bite marks. It seems that over time it has evolved teeth to chew through the armour plating that the military soldiers have. It seems that you have caused quite the commotion during your fight, and now all of the crows want to see what's going on");
+                    Console.WriteLine("You couldn't outrun them if you tried, unless you managed to find a distraction. The meat you're carrying will do just fine. Or you can engage with them, and see what the soldiers left behind");
                     Console.ReadLine();
                 }
             }
