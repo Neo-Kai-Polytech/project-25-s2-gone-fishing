@@ -387,7 +387,6 @@ namespace UberProject
             Console.ReadLine();
         }
 
-        // event 4 will come here
         static void event4(Player player)
         {
             string input;
@@ -401,11 +400,11 @@ namespace UberProject
             switch (input)
             {
                 case "f":
-                    CombatSystem(player, enemy); //Crow fight
-                    CombatSystem(player, enemy); //Crow fight
-                    CombatSystem(player, enemy); //Crow fight
-                    CombatSystem(player, enemy); //Crow fight
-                    CombatSystem(player, enemy); //Crow fight
+                    CombatSystem(player, enemy); //Fight 5 crows
+                    CombatSystem(player, enemy); 
+                    CombatSystem(player, enemy); 
+                    CombatSystem(player, enemy); 
+                    CombatSystem(player, enemy); 
                     break;
                 case "r":
                     for (int i = 0; i < inventory.Length; i++)
@@ -418,7 +417,6 @@ namespace UberProject
                     Console.WriteLine("You run away, losing all your meat");
                     break;
             }
-            Console.ReadLine();
             Console.ReadLine();
         }
 
@@ -597,11 +595,12 @@ namespace UberProject
         }
 
 
-        static void Task2()
+        static void Task2(Player player)
         {
             // OPTIONS MENU
 
             Console.WriteLine("This is Task 2");
+            event4(player);
             Console.WriteLine("Press any key to return to menu");
             Console.ReadLine();
 
