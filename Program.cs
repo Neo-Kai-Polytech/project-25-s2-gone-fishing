@@ -17,7 +17,7 @@ namespace UberProject
         }
         public override string ToString()
         {
-            return $"Name: {playerName}, HP: {playerHP}, Weapon: {playerWeapon}, Attack: {playerAttack}";
+            return $"Name: {playerName} | HP: {playerHP} | Weapon: {playerWeapon} | Attack: {playerAttack}";
         }
     }
     public struct Enemies
@@ -36,7 +36,7 @@ namespace UberProject
         }
         public override string ToString()
         {
-            return $"Name: {enemyName}, HP: {enemyHP}, Attack: {enemyAttack}, Description: {enemyDesc}";
+            return $"{enemyName} | HP: {enemyHP} | Attack: {enemyAttack} | Description: {enemyDesc}";
         }
 
     }
@@ -45,10 +45,19 @@ namespace UberProject
         public string weaponName;
         public int weaponDamage;
         public string weaponType;
+        public string weaponRarity;
+        public override string ToString()
+        {
+            return $"{weaponName} | Damage: {weaponDamage} | Type: {weaponType} | Rarity: {weaponRarity}";
+        }
     }
     public struct Ingredients()
     {
         public string ingredientName;
+        public override string ToString()
+        {
+            return $"Name: {ingredientName}";
+        }
     }
     public struct Items()
     {
@@ -57,6 +66,10 @@ namespace UberProject
         public string itemType;
         public int itemHeal;
         public string itemDesc;
+        public override string ToString()
+        {
+            return $"{itemName} | Damage: {itemDamage} | Type: {itemType} | Heal: {itemHeal} | Description: {itemDesc}";
+        }
 
     }
     public struct Recipes()
@@ -65,6 +78,10 @@ namespace UberProject
         public string ingredient1;
         public string ingredient2;
         public string ingredient3;
+        public override string ToString()
+        {
+            return $"{recipeName} | Ingredient1: {ingredient1} | Ingredient2: {ingredient2} | Ingredient3: {ingredient3}";
+        }
     }
 
     internal class Program
@@ -157,94 +174,17 @@ namespace UberProject
             //start of the game
 
 
+            StartingArea(player);
+
         }
+         
 
-        public static void events()
-
-        {
-            {
-                int events;
-                Console.WriteLine("Where would want to go first?");
-                Console.WriteLine("The options are:");
-                Console.WriteLine("Event 1");
-                Console.WriteLine("Event 2");
-                Console.WriteLine("Event 3");
-                Console.WriteLine("Event 4");
-                events = Convert.ToInt32(Console.ReadLine());
-                Console.ReadLine();
-
-                switch (events)
-                {
-                    case 1:
-                        event1();
-                        break;
-                    case 2:
-                        event2();
-                        break;
-                    case 3:
-                        event3();
-                        break;
-                    case 4:
-                        event4();
-                        break;
-                        static void event1()
-                        {
-                            char des1;
-                            Console.WriteLine("Continuing his journey now he reached Russia where he saw that everything is destroyed.He is findind any life which is still alive and can talk with them. He is in a dense forest right now.");
-                            //where do you wanna go/
-                            Thread.Sleep(500);
-                            Console.WriteLine("You see a bear running towards you.");
-                            Console.WriteLine("what do you wannna do run or fight ?");
-                            des1 = Convert.ToChar(Console.ReadLine());
-                            //during fight bear hp will come
-                            //If he fights he will kill him and with the fighting sounds people will come and meet him
-                            //If he runs he will find a village and they all together giht the bear and will kill the bear and enjoy the steak.
-                            //here we can add some combat things and can give hp to the person and bear, he can also use various things like sword or something to fight.
-                            Console.WriteLine("");
-                            switch (des1)
-                            {
-                                case 'r':
-                                    Console.WriteLine("While running he got to a village where he saw bunch of people");
-                                    break;
-                                case 'f':
-                                    //he fights
-                                    int bear = 50;
-                                    int player = 100;
-                                    break;
-                            }
-                            Console.WriteLine("After this he observed the cooking method of the villagers which was slighl=tly different and wane to talk with them regarding that.While chatting he got to know some new dishes which includes russian steak etc.");
-                            //here some things 2 or 3 ingredients will get added in the inventory
-                            Console.WriteLine("Press any button to cook new dish");
-                            //here cook book will come 
-
-                            Console.ReadLine();
-                            //end of event and he continues his journey
-                        }
-                }
-
-                // event 4 will come here
-                static void event4()
-                {
-                    Console.WriteLine("This is event 4");
-                    Console.ReadLine();
-                }
-            }
-        }
-
-
-        public static void FirstFight(string characterName)
+        public static void StartingArea(Player player)
         {
             Console.WriteLine("Starting Area");
             Thread.Sleep(2000);
 
             Console.Clear();
-
-            StartingArea(player);
-
-        }
-
-        public static void StartingArea(Player player)
-        {
 
             event1(player);
 
@@ -443,46 +383,48 @@ namespace UberProject
             }
             Console.WriteLine("Combat ended. Press Enter to continue...");
             Console.ReadLine();
+
+            Console.WriteLine("WOWEE GUESS WHAT!?");
+            Thread.Sleep(1000);
+            Console.WriteLine("YOU'VE FOUND EPIC LOOT!");
+            Console.ReadLine();
+            AcquireEpicLoot();
+
         }
 
-        static void EpicLoot()
+        static void AcquireEpicLoot()
         {
             // This will be an Array of Loot that you can randomly acquire through different events and fights.
 
-            Weapons[] tier1weapons =
+            Weapons[] weapons =
             {
-                new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 12, weaponType = "Ranged" },
-                new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 10, weaponType = "Melee" },
-                new Weapons { weaponName = "Radiation Axe", weaponDamage = 14, weaponType = "Melee" },
-                new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 16, weaponType = "Energy" },
-                new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 13, weaponType = "Ranged" },
-                new Weapons { weaponName = "Electrified Machete", weaponDamage = 17, weaponType = "Melee" }
-            };
-            Weapons[] tier2weapons =
-            {
-                new Weapons { weaponName = "Hunting Rifle", weaponDamage = 25, weaponType = "Ranged" },
-                new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 30, weaponType = "Ranged" },
-                new Weapons { weaponName = "Combat Shotgun", weaponDamage = 30, weaponType = "Ranged" },
-                new Weapons { weaponName = "Flamer", weaponDamage = 35, weaponType = "Heavy" },
-                new Weapons { weaponName = "Super Sledge", weaponDamage = 28, weaponType = "Melee" },
-                new Weapons { weaponName = "Laser Musket", weaponDamage = 32, weaponType = "Energy" },
-            };
-            Weapons[] tier3weapons =
-            {
-                new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 55, weaponType = "Energy" },
-                new Weapons { weaponName = "Tesla Cannon", weaponDamage = 65, weaponType = "Energy" },
-                new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 50, weaponType = "Melee" },
-                new Weapons { weaponName = "Cryolator", weaponDamage = 60, weaponType = "Energy" },
-                new Weapons { weaponName = "Railway Rifle", weaponDamage = 58, weaponType = "Ranged" },
-                new Weapons { weaponName = "Plasma Caster", weaponDamage = 70, weaponType = "Energy" },
-                new Weapons { weaponName = "Auto-Axe", weaponDamage = 52, weaponType = "Melee" }
-            };
-            Weapons[] tier4weapons =
-            {
-                new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 100, weaponType = "Explosive" },
-                new Weapons { weaponName = "Plague Injector", weaponDamage = 80, weaponType = "Ranged" },
-                new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 90, weaponType = "Heavy" },
-
+                new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 12, weaponType = "Ranged", weaponRarity = "Common" },
+                new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 10, weaponType = "Melee", weaponRarity = "Common" },
+                new Weapons { weaponName = "Radiation Axe", weaponDamage = 14, weaponType = "Melee", weaponRarity = "Common" },
+                new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 16, weaponType = "Energy", weaponRarity = "Common" },
+                new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 13, weaponType = "Ranged", weaponRarity = "Common" },
+                new Weapons { weaponName = "Electrified Machete", weaponDamage = 17, weaponType = "Melee", weaponRarity = "Common" },
+            
+                new Weapons { weaponName = "Hunting Rifle", weaponDamage = 25, weaponType = "Ranged", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 30, weaponType = "Ranged", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Combat Shotgun", weaponDamage = 30, weaponType = "Ranged", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Flamer", weaponDamage = 35, weaponType = "Heavy", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Super Sledge", weaponDamage = 28, weaponType = "Melee", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Laser Musket", weaponDamage = 32, weaponType = "Energy", weaponRarity = "Rare" },
+            
+                new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 55, weaponType = "Energy", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Tesla Cannon", weaponDamage = 65, weaponType = "Energy", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 50, weaponType = "Melee", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Cryolator", weaponDamage = 60, weaponType = "Energy", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Railway Rifle", weaponDamage = 58, weaponType = "Ranged", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Auto-Axe", weaponDamage = 52, weaponType = "Melee", weaponRarity = "Epic" },
+            
+                new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 100, weaponType = "Explosive", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Plague Injector", weaponDamage = 80, weaponType = "Ranged", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 90, weaponType = "Heavy", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 110, weaponType = "Energy", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Oblivion Hammer", weaponDamage = 95, weaponType = "Melee", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Apocalypse Blade", weaponDamage = 105, weaponType = "Melee", weaponRarity = "*Legendary*" },
             };
 
 
@@ -533,6 +475,77 @@ namespace UberProject
                 new Items { itemName = "Jet", itemDamage = 0, itemType = "Drug", itemHeal = 0, itemDesc = "A powerful inhalant that slows time for the user." },
                 new Items { itemName = "Purified Water", itemDamage = 0, itemType = "Beverage", itemHeal = 20, itemDesc = "Clean water, restores a good amount of health." }
             };
+
+
+            int weaponLoot = random.Next(0,23);
+            int itemLoot = random.Next(0, 19);
+            int ingredientLoot = random.Next(0, 17);
+
+            Weapons acquiredEpicWeapon = weapons[weaponLoot];
+            Items acquiredItem = items[itemLoot];
+            Ingredients acquiredIngredient = ingredients[ingredientLoot];
+
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = acquiredEpicWeapon.weaponName;
+                    break;
+                }
+
+            }
+
+            Console.WriteLine("You have received ");
+
+            if (weapons[weaponLoot].weaponRarity == "Common")
+            {
+                Console.ForegroundColor = ConsoleColor.Gray;
+            }
+            else if (weapons[weaponLoot].weaponRarity == "Rare")
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+            }
+            else if (weapons[weaponLoot].weaponRarity == "Epic")
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+            else if (weapons[weaponLoot].weaponRarity == "*Legendary*")
+            {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+            }
+
+            Console.Write($"{acquiredEpicWeapon}");
+
+            Console.ResetColor();
+
+            Console.WriteLine();
+            Console.WriteLine($"You have received {acquiredItem.itemName}");
+            Thread.Sleep(1000);
+
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = acquiredItem.itemName;
+                    break;
+                }
+            }
+
+            Console.WriteLine($"You have received {acquiredIngredient.ingredientName}");
+            Thread.Sleep(1000);
+
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = acquiredIngredient.ingredientName;
+                    break;
+                }
+            }
+
+            Console.ReadLine();
+
+
 
         }
 
@@ -659,7 +672,6 @@ namespace UberProject
                             new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 50, weaponType = "Melee" },
                             new Weapons { weaponName = "Cryolator", weaponDamage = 60, weaponType = "Energy" },
                             new Weapons { weaponName = "Railway Rifle", weaponDamage = 58, weaponType = "Ranged" },
-                            new Weapons { weaponName = "Plasma Caster", weaponDamage = 70, weaponType = "Energy" },
                             new Weapons { weaponName = "Auto-Axe", weaponDamage = 52, weaponType = "Melee" }
                         };
                         Weapons[] tier4weapons =
@@ -667,6 +679,9 @@ namespace UberProject
                             new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 100, weaponType = "Explosive" },
                             new Weapons { weaponName = "Plague Injector", weaponDamage = 80, weaponType = "Ranged" },
                             new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 90, weaponType = "Heavy" },
+                            new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 110, weaponType = "Energy" },
+                            new Weapons { weaponName = "Oblivion Hammer", weaponDamage = 95, weaponType = "Melee" },
+                            new Weapons { weaponName = "Apocalypse Blade", weaponDamage = 105, weaponType = "Melee" },
                         };
 
                         Console.WriteLine("Weapons in the game:\n");
