@@ -408,8 +408,6 @@ namespace UberProject
             Console.WriteLine("Combat ended. Press Enter to continue...");
             Console.ReadLine();
 
-            Console.WriteLine("WOWEE GUESS WHAT!?");
-            Thread.Sleep(1000);
             Console.WriteLine("YOU'VE FOUND EPIC LOOT!");
             Console.ReadLine();
             AcquireEpicLoot();
@@ -484,7 +482,6 @@ namespace UberProject
                 new Items { itemName = "Pork n' Beans", itemDamage = 0, itemType = "Food", itemHeal = 25, itemDesc = "A can of beans that restores hunger." },
                 new Items { itemName = "Mirelurk Meat", itemDamage = 0, itemType = "Food", itemHeal = 30, itemDesc = "Cooked meat from a Mirelurk." },
                 new Items { itemName = "Mutfruit", itemDamage = 0, itemType = "Food", itemHeal = 8, itemDesc = "A mutated fruit, slightly restores health." },
-                new Items { itemName = "Buffout", itemDamage = 0, itemType = "Drug", itemHeal = 0, itemDesc = "A performance-enhancing drug that temporarily boosts strength." },
                 new Items { itemName = "Antiseptic Bandage", itemDamage = 0, itemType = "Healing", itemHeal = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
                 new Items { itemName = "Dirty Water", itemDamage = 0, itemType = "Beverage", itemHeal = 5, itemDesc = "Water of questionable quality, restores a small amount of health." },
                 new Items { itemName = "Molotov Cocktail", itemDamage = 20, itemType = "Explosive", itemHeal = 0, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
@@ -493,17 +490,34 @@ namespace UberProject
                 new Items { itemName = "Plasma Mine", itemDamage = 35, itemType = "Explosive", itemHeal = 0, itemDesc = "A mine that detonates with a burst of plasma energy." },
                 new Items { itemName = "Dynamite Bundle", itemDamage = 40, itemType = "Explosive", itemHeal = 0, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
                 new Items { itemName = "Cryo Grenade", itemDamage = 18, itemType = "Explosive", itemHeal = 0, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
-                new Items { itemName = "Rad-X", itemDamage = 0, itemType = "Drug", itemHeal = 0, itemDesc = "A drug that temporarily increases radiation resistance." },
                 new Items { itemName = "Cram", itemDamage = 0, itemType = "Food", itemHeal = 15, itemDesc = "A can of processed meat, restores a moderate amount of health." },
-                new Items { itemName = "Stealth Boy", itemDamage = 0, itemType = "Utility", itemHeal = 0, itemDesc = "A device that grants temporary invisibility." },
-                new Items { itemName = "Jet", itemDamage = 0, itemType = "Drug", itemHeal = 0, itemDesc = "A powerful inhalant that slows time for the user." },
                 new Items { itemName = "Purified Water", itemDamage = 0, itemType = "Beverage", itemHeal = 20, itemDesc = "Clean water, restores a good amount of health." }
             };
 
-
-            int weaponLoot = random.Next(0,23);
+            int weaponLootRarity = random.Next(1,101);
+            int weaponLoot;
             int itemLoot = random.Next(0, 19);
             int ingredientLoot = random.Next(0, 17);
+
+            if (weaponLootRarity == (1-40))
+            {
+                weaponLoot = random.Next(0, 6); // Common Weapons
+
+            }
+            else if (weaponLootRarity == (41 - 70))
+            {
+                weaponLoot = random.Next(6, 12); // Rare Weapons
+            }
+            else if (weaponLootRarity == (71 - 90))
+            {
+                weaponLoot = random.Next(12, 18); // Epic Weapons
+            }
+            else
+            {
+                weaponLoot = random.Next(18, 24); // Legendary Weapons
+            }
+
+
 
             Weapons acquiredEpicWeapon = weapons[weaponLoot];
             Items acquiredItem = items[itemLoot];
@@ -551,18 +565,6 @@ namespace UberProject
                 if (inventory[i] == "")
                 {
                     inventory[i] = acquiredItem.itemName;
-                    break;
-                }
-            }
-
-            Console.WriteLine($"You have received {acquiredIngredient.ingredientName}");
-            Thread.Sleep(1000);
-
-            for (int i = 0; i < inventory.Length; i++)
-            {
-                if (inventory[i] == "")
-                {
-                    inventory[i] = acquiredIngredient.ingredientName;
                     break;
                 }
             }
@@ -758,7 +760,6 @@ namespace UberProject
                             new Items { itemName = "Pork n' Beans", itemDamage = 0, itemType = "Food", itemHeal = 25, itemDesc = "A can of beans that restores hunger." },
                             new Items { itemName = "Mirelurk Meat", itemDamage = 0, itemType = "Food", itemHeal = 30, itemDesc = "Cooked meat from a Mirelurk." },
                             new Items { itemName = "Mutfruit", itemDamage = 0, itemType = "Food", itemHeal = 8, itemDesc = "A mutated fruit, slightly restores health." },
-                            new Items { itemName = "Buffout", itemDamage = 0, itemType = "Drug", itemHeal = 0, itemDesc = "A performance-enhancing drug that temporarily boosts strength." },
                             new Items { itemName = "Antiseptic Bandage", itemDamage = 0, itemType = "Healing", itemHeal = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
                             new Items { itemName = "Dirty Water", itemDamage = 0, itemType = "Beverage", itemHeal = 5, itemDesc = "Water of questionable quality, restores a small amount of health." },
                             new Items { itemName = "Molotov Cocktail", itemDamage = 20, itemType = "Explosive", itemHeal = 0, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
@@ -767,10 +768,7 @@ namespace UberProject
                             new Items { itemName = "Plasma Mine", itemDamage = 35, itemType = "Explosive", itemHeal = 0, itemDesc = "A mine that detonates with a burst of plasma energy." },
                             new Items { itemName = "Dynamite Bundle", itemDamage = 40, itemType = "Explosive", itemHeal = 0, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
                             new Items { itemName = "Cryo Grenade", itemDamage = 18, itemType = "Explosive", itemHeal = 0, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
-                            new Items { itemName = "Rad-X", itemDamage = 0, itemType = "Drug", itemHeal = 0, itemDesc = "A drug that temporarily increases radiation resistance." },
                             new Items { itemName = "Cram", itemDamage = 0, itemType = "Food", itemHeal = 15, itemDesc = "A can of processed meat, restores a moderate amount of health." },
-                            new Items { itemName = "Stealth Boy", itemDamage = 0, itemType = "Utility", itemHeal = 0, itemDesc = "A device that grants temporary invisibility." },
-                            new Items { itemName = "Jet", itemDamage = 0, itemType = "Drug", itemHeal = 0, itemDesc = "A powerful inhalant that slows time for the user." },
                             new Items { itemName = "Purified Water", itemDamage = 0, itemType = "Beverage", itemHeal = 20, itemDesc = "Clean water, restores a good amount of health." }
                         };
                         Console.WriteLine("Items in the game:\n");
