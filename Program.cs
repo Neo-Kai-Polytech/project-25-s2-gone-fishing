@@ -90,8 +90,7 @@ namespace UberProject
         private static Random random = new Random();
         private static int Task;
         public static string charName, cookbook = "";
-        static string[] inventory = ["", "", "", "", "", "", "", "", "", ""]; //Inventory of 10 slots, all same empty value to check if slots are empty
-
+        static string[] inventory = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; //Inventory of 10 slots, all same empty value to check if slots are empty
 
         static void Welcome()
         {
