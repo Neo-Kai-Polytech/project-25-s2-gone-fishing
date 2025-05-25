@@ -91,6 +91,7 @@ namespace UberProject
         private static int Task;
         public static string charName, cookbook = "";
         static string[] inventory = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; //Inventory of 10 slots, all same empty value to check if slots are empty
+        static string[] foodSatchel = ["", "", "", "", "", "", "", "", "", ""]; //Food Satchel of 10 slots, all same empty value to check if slots are empty
         static Enemies[] monsters =
       {
             new Enemies("Mirelurk", 30, 5, "A mutated crab-like creature with a hard shell and a vicious bite."),
@@ -107,7 +108,7 @@ namespace UberProject
             new Enemies("Toxic Spitter", 22, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
             new Enemies("Bone Dragger", 26, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
             new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts."),
-            new Enemies("Murderous Crow", 7, 10, "A seemingly normal crow with teeth that can cut through ceramic plates"),
+            new Enemies("Murderous Crow", 18, 4, "A seemingly normal crow with teeth that can cut through ceramic plates"),
             new Enemies("Mutant Bear", 35, 8, "A mutated bear, aggressive and dangerous.")
     };
 
@@ -396,7 +397,11 @@ namespace UberProject
                 Console.WriteLine("-------------------------------------------------------");
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Enemy: {enemy.enemyName} | HP: {enemy.enemyHP} | Attack: {enemy.enemyAttack}");
+                Console.WriteLine($"Description: {enemy.enemyDesc}");
+
                 Console.ResetColor();
+
+                Console.WriteLine(inventory.Length > 0 ? "\nYour Inventory: " + string.Join(", ", inventory.Where(i => !string.IsNullOrEmpty(i))) : "Your Inventory is empty.");
 
                 Console.WriteLine("\nPress Enter to attack...");
                 Console.ReadLine();
