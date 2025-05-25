@@ -6,7 +6,7 @@ namespace UberProject
     public struct Player
     {
         public string playerName;
-        public int playerHP = 100;
+        public int playerHP;
         public string playerWeapon;
         public int playerAttack;
         public Player(string name, int hp, string weapon, int attack)
@@ -193,31 +193,31 @@ namespace UberProject
             //start of the game
 
 
-            StartingArea(player);
+            StartingArea(ref player);
 
         }
          
-        public static void StartingArea(Player player)
+        public static void StartingArea(ref Player player)
         {
             Console.WriteLine("Starting Area");
             Thread.Sleep(2000);
 
             Console.Clear();
 
-            event1(player);
+            event1(ref player);
 
-            event2(player);
+            event2(ref player);
 
-            event3(player);
+            event3(ref player);
 
-            event4(player);
+            event4(ref player);
 
 
 
         }
 
     
-        static void event1(Player player)
+        static void event1(ref Player player)
         {
             Console.WriteLine("With his journey now he is finally in Russia where he saw that everything is destroyed. " +
                 "\nHe is finding any life which is still alive and can talk with them and he found a dense forest.And suddenly,..........");
@@ -229,7 +229,7 @@ namespace UberProject
 
             Enemies enemy = monsters[15];
 
-            CombatSystem(player, enemy);
+            CombatSystem(ref player, enemy);
 
             Console.WriteLine("YOU'VE FOUND EPIC LOOT!");
             Console.ReadLine();
@@ -239,7 +239,7 @@ namespace UberProject
             Thread.Sleep(2000);
         }
 
-        static void event2(Player player)
+        static void event2(ref Player player)
         {
 
             Console.WriteLine("After uniting with villagers he observed their cooking method  which was slightly different and want to talk with them regarding that." +
@@ -293,7 +293,7 @@ namespace UberProject
             //end of event and he continues his journey
         }
 
-        static void event3(Player player)
+        static void event3(ref Player player)
         {
             Console.WriteLine($"Now Continuing in Russia {charName} reached in Moscow. He saw that city is pretty much destroyed and the vibes are pretty depressed in the city.Roaming around he met a bunch of people going in a group mental therapy and decided to join them. During the conversations he told them his passsion of cooking and about his joruney.\n" +
                 $"So other persons shared their favorite recipies and ingredients with him.");
@@ -346,12 +346,12 @@ namespace UberProject
 
         }
 
-        static void event4(Player player)
+        static void event4(ref Player player)
         {
             string input;
             Console.WriteLine("You see yourself at what used to be an old car park. Tattered green tents lay across it, and military jeeps create barricades. You can tell it had long since been abandoned. All of a sudden a crow comes eye to eye with you. twitchingly eyeing you up.");
             Enemies enemy = monsters[14];
-            CombatSystem(player, enemy); //Crow fight
+            CombatSystem(ref player, enemy); //Crow fight
             Console.WriteLine("You notice that the crow has given you bite marks. It seems that over time it has evolved teeth to chew through the armour plating that the military soldiers have. It seems that you have caused quite the commotion during your fight, and now all of the crows want to see what's going on");
             Console.WriteLine("You couldn't outrun them if you tried, unless you managed to find a distraction. The meat you're carrying will do just fine. Or you can engage with them, and see what the soldiers left behind");
             Console.WriteLine("r|   Sacrifice all meat and run away     f|    Fight 5 crows back to back");
@@ -359,11 +359,11 @@ namespace UberProject
             switch (input)
             {
                 case "f":
-                    CombatSystem(player, enemy); //Fight 5 crows
-                    CombatSystem(player, enemy); 
-                    CombatSystem(player, enemy); 
-                    CombatSystem(player, enemy); 
-                    CombatSystem(player, enemy);
+                    CombatSystem(ref player, enemy); //Fight 5 crows
+                    CombatSystem(ref player, enemy); 
+                    CombatSystem(ref player, enemy); 
+                    CombatSystem(ref player, enemy); 
+                    CombatSystem(ref player, enemy);
                     Console.WriteLine("YOU'VE FOUND EPIC LOOT!");
                     Console.ReadLine();
                     AcquireEpicLoot();
@@ -382,7 +382,7 @@ namespace UberProject
             Console.ReadLine();
         }
 
-        public static void CombatSystem(Player player, Enemies enemy)
+        public static void CombatSystem(ref Player player, Enemies enemy)
         {
 
             while (player.playerHP > 0 && enemy.enemyHP > 0)
@@ -391,9 +391,9 @@ namespace UberProject
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine($"Player: {player.playerName} | HP: {player.playerHP} | Weapon: {player.playerWeapon} | Attack: {player.playerAttack}");
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("--------------------------------------------------");
-                Console.WriteLine("VS".PadLeft(30));
-                Console.WriteLine("--------------------------------------------------");
+                Console.WriteLine("-------------------------------------------------------");
+                Console.WriteLine("VS".PadLeft(28));
+                Console.WriteLine("-------------------------------------------------------");
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Enemy: {enemy.enemyName} | HP: {enemy.enemyHP} | Attack: {enemy.enemyAttack}");
                 Console.ResetColor();
@@ -402,7 +402,7 @@ namespace UberProject
                 Console.ReadLine();
 
                 int playerAttack = player.playerAttack + random.Next(-2, 3);
-                enemy.enemyHP -= playerAttack;
+                enemy.enemyHP = enemy.enemyHP - playerAttack;
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"{player.playerName} attacks {enemy.enemyName} for {playerAttack} damage!");
                 Console.ResetColor();
@@ -416,7 +416,7 @@ namespace UberProject
                 }
 
                 int enemyAttack = enemy.enemyAttack + random.Next(-1, 2);
-                player.playerHP -= enemyAttack;
+                player.playerHP = player.playerHP - enemyAttack;
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine($"{enemy.enemyName} attacks {player.playerName} for {enemyAttack} damage!");
                 Console.ResetColor();
