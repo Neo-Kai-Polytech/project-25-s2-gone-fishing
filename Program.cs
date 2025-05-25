@@ -90,7 +90,7 @@ namespace UberProject
         private static Random random = new Random();
         private static int Task;
         public static string charName, cookbook = "";
-        static string[] inventory = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; //Inventory of 10 slots, all same empty value to check if slots are empty
+        static string[] inventory = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; //Inventory of 15 slots, all same empty value to check if slots are empty
         static string[] foodSatchel = ["", "", "", "", "", "", "", "", "", ""]; //Food Satchel of 10 slots, all same empty value to check if slots are empty
         static Enemies[] monsters =
       {
@@ -1093,7 +1093,7 @@ namespace UberProject
         {
             if (ingredient1 == "bread" && ingredient2 == "lettuce" && ingredient3 == "bread")
             {
-                for (int i = 0; i < inventory.Length; i++)
+                for (int i = 0; i < foodSatchel.Length; i++)
                 { //Adds sandwich
                     if (foodSatchel[i] == "Bread")
                     {
