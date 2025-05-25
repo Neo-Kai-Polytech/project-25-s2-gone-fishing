@@ -251,36 +251,36 @@ namespace UberProject
             Console.WriteLine("Recipe for Russian Steak is Meat, Potato, Butter.");
             //here some things 2 or 3 ingredients will get added in the inventory
             cookbook = cookbook + "Russian Steak";
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = "Bread";
+                    foodSatchel[i] = "Bread";
                     break;
                 }
             }
 
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = "Meat";
+                    foodSatchel[i] = "Meat";
                     break;
                 }
             }
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = "Potato";
+                    foodSatchel[i] = "Potato";
                     break;
                 }
             }
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = "Butter";
+                    foodSatchel[i] = "Butter";
                     break;
                 }
             }
@@ -304,35 +304,35 @@ namespace UberProject
             Console.WriteLine("2. Solyanka - pickle, lemon, flour");
             cookbook = cookbook + "Borcht";
             cookbook = cookbook + "solyanka";
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = "onion";
+                    foodSatchel[i] = "onion";
                     break;
                 }
             }
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = "pickle";
+                    foodSatchel[i] = "pickle";
                     break;
                 }
             }
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = "lemon";
+                    foodSatchel[i] = "lemon";
                     break;
                 }
             }
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = "flour";
+                    foodSatchel[i] = "flour";
                     break;
                 }
             }
@@ -370,11 +370,11 @@ namespace UberProject
                     AcquireEpicLoot();
                     break;
                 case "r":
-                    for (int i = 0; i < inventory.Length; i++)
+                    for (int i = 0; i < foodSatchel.Length; i++)
                     {
-                        if (inventory[i] == "Meat" ||  inventory[i] == "Fish")
+                        if (foodSatchel[i] == "Meat" ||  foodSatchel[i] == "Fish")
                         {
-                            inventory[i] = "";
+                            foodSatchel[i] = "";
                         }
                     }
                     Console.WriteLine("You run away, losing all your meat");
@@ -552,11 +552,11 @@ namespace UberProject
             Items acquiredItem = items[itemLoot];
             Ingredients acquiredIngredient = ingredients[ingredientLoot];
 
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = acquiredEpicWeapon.weaponName;
+                    foodSatchel[i] = acquiredEpicWeapon.weaponName;
                     break;
                 }
 
@@ -589,11 +589,11 @@ namespace UberProject
             Console.WriteLine($"You have received {acquiredItem.itemName}");
             Thread.Sleep(1000);
 
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = acquiredItem.itemName;
+                    foodSatchel[i] = acquiredItem.itemName;
                     break;
                 }
             }
@@ -913,7 +913,7 @@ namespace UberProject
             Console.Clear();
             do
             {
-                Console.WriteLine("Hello. This is your inventory.\nPress 1 to cook ingredients\nPress 2 to read out your inventory\n\nPress 0 to close the program"); //Menu text
+                Console.WriteLine("Hello. This is your food inventory.\nPress 1 to cook ingredients\nPress 2 to read out your inventory\n\nPress 0 to close the program"); //Menu text
                 input = Convert.ToInt32(Console.ReadLine());
                 switch (input)
                 {
@@ -927,12 +927,12 @@ namespace UberProject
                         Cooking();
                         break;
                     case 2: //Shows you your inventory
-                        Console.WriteLine("Inventory:");
-                        for (int i = 0; i < inventory.Length; i++)
+                        Console.WriteLine("Food satchel:");
+                        for (int i = 0; i < foodSatchel.Length; i++)
                         {
-                            Console.WriteLine(inventory[i]);
+                            Console.WriteLine(foodSatchel[i]);
                         }
-                        Console.WriteLine("-- End of inventory. Press enter to go back to menu");
+                        Console.WriteLine("-- End of food inventory. Press enter to go back to menu");
                         Console.ReadLine();
                         Console.Clear();
                         break;
@@ -947,7 +947,7 @@ namespace UberProject
             Console.Clear();
             do
             {
-                Console.WriteLine("You are now in the cooking menu. What would you like to do?\n1. Start cooking\n2. Read cookbook\n0. Go back to inventory");
+                Console.WriteLine("You are now in the cooking menu. What would you like to do?\n1. Start cooking\n2. Read cookbook\n0. Go back to food inventory");
                 input = Convert.ToInt32(Console.ReadLine());
                 switch (input)
                 {
@@ -1020,11 +1020,11 @@ namespace UberProject
             //Toast
             if (ingredient1 == "bread")
             {
-                for (int i = 0; i < inventory.Length; i++)
+                for (int i = 0; i < foodSatchel.Length; i++)
                 {
-                    if (inventory[i] == "Bread")
+                    if (foodSatchel[i] == "Bread")
                     {
-                        inventory[i] = "Toast";
+                        foodSatchel[i] = "Toast";
                         Console.Write("You cooked Toast");
                         break;
                     }
@@ -1033,11 +1033,11 @@ namespace UberProject
             //Boiling Water
             else if (ingredient1 == "drinkable water")
             {
-                for (int i = 0; i < inventory.Length; i++)
+                for (int i = 0; i < foodSatchel.Length; i++)
                 {
-                    if (inventory[i] == "Drinkable Water")
+                    if (foodSatchel[i] == "Drinkable Water")
                     {
-                        inventory[i] = "Boiling Water";
+                        foodSatchel[i] = "Boiling Water";
                         Console.WriteLine("You made Boiling Water");
                         break;
                     }
@@ -1055,18 +1055,18 @@ namespace UberProject
             //Salad
             if (ingredient1 == "lettuce" && ingredient2 == "lettuce") //Conditions (Must be in order)
             {
-                for (int i = 0; i < inventory.Length; i++)
+                for (int i = 0; i < foodSatchel.Length; i++)
                 {
-                    if (inventory[i] == "Lettuce") //First instance of ingredient
+                    if (foodSatchel[i] == "Lettuce") //First instance of ingredient
                     {
-                        inventory[i] = "Salad"; //Change it to result
+                        foodSatchel[i] = "Salad"; //Change it to result
                         Console.WriteLine("You made Salad");
 
-                        for (int j = 0; j < inventory.Length; j++) //Second instance of ingredient
+                        for (int j = 0; j < foodSatchel.Length; j++) //Second instance of ingredient
                         {
-                            if (inventory[j] == "Lettuce")
+                            if (foodSatchel[j] == "Lettuce")
                             {
-                                inventory[j] = ""; //Change it to nothing
+                                foodSatchel[j] = ""; //Change it to nothing
 
                                 break; //break out of each for loop so that it doesn't change all instances of lettuce (Sorry Krissi)
                             }
@@ -1077,7 +1077,7 @@ namespace UberProject
             }
             else if (ingredient1 == "toast" && ingredient2 == "jam")
             {
-                for (int i = 0;i < inventory.Length; i++)
+                for (int i = 0;i < foodSatchel.Length; i++)
                 {
 
                 }
@@ -1095,21 +1095,21 @@ namespace UberProject
             {
                 for (int i = 0; i < inventory.Length; i++)
                 { //Adds sandwich
-                    if (inventory[i] == "Bread")
+                    if (foodSatchel[i] == "Bread")
                     {
-                        inventory[i] = "Basic Sandwich";
+                        foodSatchel[i] = "Basic Sandwich";
                         Console.WriteLine("You made a Basic Sandwich");
-                        for (int j = 0; j < inventory.Length; j++) //Removes second ingredient
+                        for (int j = 0; j < foodSatchel.Length; j++) //Removes second ingredient
                         {
-                            if (inventory[j] == "Lettuce")
+                            if (foodSatchel[j] == "Lettuce")
                             {
-                                inventory[j] = "";
+                                foodSatchel[j] = "";
 
-                                for (int k = 0; k < inventory.Length; k++) //Removes third ingredient
+                                for (int k = 0; k < foodSatchel.Length; k++) //Removes third ingredient
                                 {
-                                    if (inventory[k] == "Bread")
+                                    if (foodSatchel[k] == "Bread")
                                     {
-                                        inventory[k] = "";
+                                        foodSatchel[k] = "";
 
                                         break;
                                     }
@@ -1123,23 +1123,23 @@ namespace UberProject
             }
             else if (ingredient1 == "meat" && ingredient2 == "onion" && ingredient3 == "potato")
             {
-                for (int i = 0; i < inventory.Length; i++)
+                for (int i = 0; i < foodSatchel.Length; i++)
                 { //Adds borscht
-                    if (inventory[i] == "Meat")
+                    if (foodSatchel[i] == "Meat")
                     {
-                        inventory[i] = "Borscht";
+                        foodSatchel[i] = "Borscht";
                         Console.WriteLine("You made Borscht");
-                        for (int j = 0; j < inventory.Length; j++) //Removes second ingredient
+                        for (int j = 0; j < foodSatchel.Length; j++) //Removes second ingredient
                         {
-                            if (inventory[j] == "Onion")
+                            if (foodSatchel[j] == "Onion")
                             {
-                                inventory[j] = "";
+                                foodSatchel[j] = "";
 
-                                for (int k = 0; k < inventory.Length; k++) //Removes third ingredient
+                                for (int k = 0; k < foodSatchel.Length; k++) //Removes third ingredient
                                 {
-                                    if (inventory[k] == "potato")
+                                    if (foodSatchel[k] == "potato")
                                     {
-                                        inventory[k] = "";
+                                        foodSatchel[k] = "";
 
                                         break;
                                     }
@@ -1153,23 +1153,23 @@ namespace UberProject
             }
             else if (ingredient1 == "pickle" && ingredient2 == "lemon" && ingredient3 == "flour")
             {
-                for (int i = 0; i < inventory.Length; i++)
+                for (int i = 0; i < foodSatchel.Length; i++)
                 { //Adds solyanka
-                    if (inventory[i] == "Pickle")
+                    if (foodSatchel[i] == "Pickle")
                     {
-                        inventory[i] = "Solyanka";
+                        foodSatchel[i] = "Solyanka";
                         Console.WriteLine("You made Solyanka");
-                        for (int j = 0; j < inventory.Length; j++) //Removes second ingredient
+                        for (int j = 0; j < foodSatchel.Length; j++) //Removes second ingredient
                         {
-                            if (inventory[j] == "Lemon")
+                            if (foodSatchel[j] == "Lemon")
                             {
-                                inventory[j] = "";
+                                foodSatchel[j] = "";
 
-                                for (int k = 0; k < inventory.Length; k++) //Removes third ingredient
+                                for (int k = 0; k < foodSatchel.Length; k++) //Removes third ingredient
                                 {
-                                    if (inventory[k] == "Flour")
+                                    if (foodSatchel[k] == "Flour")
                                     {
-                                        inventory[k] = "";
+                                        foodSatchel[k] = "";
 
                                         break;
                                     }
