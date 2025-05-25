@@ -6,7 +6,7 @@ namespace UberProject
     public struct Player
     {
         public string playerName;
-        public int playerHP;
+        public int playerHP = 100;
         public string playerWeapon;
         public int playerAttack;
         public Player(string name, int hp, string weapon, int attack)
@@ -91,6 +91,25 @@ namespace UberProject
         private static int Task;
         public static string charName, cookbook = "";
         static string[] inventory = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; //Inventory of 10 slots, all same empty value to check if slots are empty
+        static Enemies[] monsters =
+      {
+            new Enemies("Mirelurk", 30, 5, "A mutated crab-like creature with a hard shell and a vicious bite."),
+            new Enemies("Super Mutant", 40, 8, "A hulking brute with enhanced strength and resilience, often armed with heavy weapons."),
+            new Enemies("Deathclaw", 50, 10, "A terrifying predator with razor-sharp claws and incredible speed."),
+            new Enemies("Radscorpion", 35, 7, "A giant scorpion with a venomous sting and armored exoskeleton."),
+            new Enemies("Radroach", 20, 4, "Giant irradiated cockroach with acidic saliva and armored carapace"),
+            new Enemies("Mutant Hound", 35, 7, "Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression."),
+            new Enemies("Ash Crawler", 25, 5, "A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below."),
+            new Enemies("Ghoul Reaper", 30, 6, "A sentient, decaying humanoid that hunts the living for flesh, often in packs."),
+            new Enemies("Wasteland Abomination", 50, 10, "A massive fusion of flesh and machinery, created from failed experiments and scavenged tech."),
+            new Enemies("Irradiated Behemoth", 60, 12, "Towering brute pulsing with nuclear energy, leaving scorched earth in its wake."),
+            new Enemies("Scorched Stalker", 28, 6, "Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes."),
+            new Enemies("Toxic Spitter", 22, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
+            new Enemies("Bone Dragger", 26, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
+            new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts."),
+            new Enemies("Murderous Crow", 7, 10, "A seemingly normal crow with teeth that can cut through ceramic plates"),
+            new Enemies("Mutant Bear", 35, 8, "A mutated bear, aggressive and dangerous.")
+    };
 
         static void Welcome()
         {
@@ -208,9 +227,13 @@ namespace UberProject
             Thread.Sleep(2000);
             Console.ReadLine() ;
 
-            Enemies enemy = HostileEnemies();
-            
+            Enemies enemy = monsters[15];
+
             CombatSystem(player, enemy);
+
+            Console.WriteLine("YOU'VE FOUND EPIC LOOT!");
+            Console.ReadLine();
+            AcquireEpicLoot();
 
             Console.WriteLine($"After the fight villagers came to see who is in trouble and found {charName}");
             Thread.Sleep(2000);
@@ -327,7 +350,7 @@ namespace UberProject
         {
             string input;
             Console.WriteLine("You see yourself at what used to be an old car park. Tattered green tents lay across it, and military jeeps create barricades. You can tell it had long since been abandoned. All of a sudden a crow comes eye to eye with you. twitchingly eyeing you up.");
-            Enemies enemy = HostileEnemies();
+            Enemies enemy = monsters[14];
             CombatSystem(player, enemy); //Crow fight
             Console.WriteLine("You notice that the crow has given you bite marks. It seems that over time it has evolved teeth to chew through the armour plating that the military soldiers have. It seems that you have caused quite the commotion during your fight, and now all of the crows want to see what's going on");
             Console.WriteLine("You couldn't outrun them if you tried, unless you managed to find a distraction. The meat you're carrying will do just fine. Or you can engage with them, and see what the soldiers left behind");
@@ -340,7 +363,10 @@ namespace UberProject
                     CombatSystem(player, enemy); 
                     CombatSystem(player, enemy); 
                     CombatSystem(player, enemy); 
-                    CombatSystem(player, enemy); 
+                    CombatSystem(player, enemy);
+                    Console.WriteLine("YOU'VE FOUND EPIC LOOT!");
+                    Console.ReadLine();
+                    AcquireEpicLoot();
                     break;
                 case "r":
                     for (int i = 0; i < inventory.Length; i++)
@@ -358,28 +384,30 @@ namespace UberProject
 
         public static void CombatSystem(Player player, Enemies enemy)
         {
-            int playerHP = player.playerHP;
-            int enemyHP = enemy.enemyHP;
 
-            while (playerHP > 0 && enemyHP > 0)
+            while (player.playerHP > 0 && enemy.enemyHP > 0)
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine($"Player: {player.playerName} | HP: {playerHP} | Weapon: {player.playerWeapon} | Attack: {player.playerAttack}");
+                Console.WriteLine($"Player: {player.playerName} | HP: {player.playerHP} | Weapon: {player.playerWeapon} | Attack: {player.playerAttack}");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("--------------------------------------------------");
+                Console.WriteLine("VS".PadLeft(30));
+                Console.WriteLine("--------------------------------------------------");
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"Enemy: {enemy.enemyName} | HP: {enemyHP} | Attack: {enemy.enemyAttack}");
+                Console.WriteLine($"Enemy: {enemy.enemyName} | HP: {enemy.enemyHP} | Attack: {enemy.enemyAttack}");
                 Console.ResetColor();
 
                 Console.WriteLine("\nPress Enter to attack...");
                 Console.ReadLine();
 
                 int playerAttack = player.playerAttack + random.Next(-2, 3);
-                enemyHP -= playerAttack;
+                enemy.enemyHP -= playerAttack;
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"{player.playerName} attacks {enemy.enemyName} for {playerAttack} damage!");
                 Console.ResetColor();
 
-                if (enemyHP <= 0)
+                if (enemy.enemyHP <= 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine($"{enemy.enemyName} is defeated!");
@@ -388,28 +416,27 @@ namespace UberProject
                 }
 
                 int enemyAttack = enemy.enemyAttack + random.Next(-1, 2);
-                playerHP -= enemyAttack;
+                player.playerHP -= enemyAttack;
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine($"{enemy.enemyName} attacks {player.playerName} for {enemyAttack} damage!");
                 Console.ResetColor();
 
-                if (playerHP <= 0)
+                if (player.playerHP <= 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"{player.playerName} has been defeated!");
                     Console.ResetColor();
-                    break;
+
+                    Console.WriteLine("GAME OVER! Press Enter to exit...");
+                    Main();
                 }
 
                 Console.WriteLine("\nPress Enter for next round...");
                 Console.ReadLine();
             }
+
             Console.WriteLine("Combat ended. Press Enter to continue...");
             Console.ReadLine();
-
-            Console.WriteLine("YOU'VE FOUND EPIC LOOT!");
-            Console.ReadLine();
-            AcquireEpicLoot();
 
         }
 
@@ -495,19 +522,19 @@ namespace UberProject
 
             int weaponLootRarity = random.Next(1,101);
             int weaponLoot;
-            int itemLoot = random.Next(0, 19);
-            int ingredientLoot = random.Next(0, 17);
+            int itemLoot = random.Next(items.Length);
+            int ingredientLoot = random.Next(ingredients.Length);
 
-            if (weaponLootRarity == (1-40))
+            if (weaponLootRarity <= 40)
             {
                 weaponLoot = random.Next(0, 6); // Common Weapons
 
             }
-            else if (weaponLootRarity == (41 - 70))
+            else if (weaponLootRarity > 40 && weaponLootRarity < 70)
             {
                 weaponLoot = random.Next(6, 12); // Rare Weapons
             }
-            else if (weaponLootRarity == (71 - 90))
+            else if (weaponLootRarity >= 70 && weaponLootRarity < 90)
             {
                 weaponLoot = random.Next(12, 18); // Epic Weapons
             }
@@ -515,8 +542,6 @@ namespace UberProject
             {
                 weaponLoot = random.Next(18, 24); // Legendary Weapons
             }
-
-
 
             Weapons acquiredEpicWeapon = weapons[weaponLoot];
             Items acquiredItem = items[itemLoot];
@@ -570,11 +595,9 @@ namespace UberProject
 
             Console.ReadLine();
 
-
-
         }
 
-        public static Enemies HostileEnemies()
+        public static Enemies RadndomHostileEncounter()
         {
             // This will be an Array of Enemies that you can randomly encounter in the game.
 
