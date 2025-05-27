@@ -211,6 +211,8 @@ namespace UberProject
 
             event4(ref player);
 
+            event5(ref player);
+
             endEvent(ref player);
 
 
@@ -381,7 +383,7 @@ namespace UberProject
             Console.ReadLine();
         }
 
-        static void event5()
+        static void event5(ref Player player)
         {
             Console.WriteLine($"{charName} find themself walking through a run-down mall. They are heading towards the food court to keep warm throughout the night. Expecting trouble, {charName} is surprised to see a small community surviving deep inside the mall.");
             Console.WriteLine($"Coming down to meet the survivors, they instantly welcome {charName} into their community. {charName} explained their dream of helping people, and the survivors told them that they believed that one day a messiah would come to save us all, and that {charName} should eat a meal with them");
@@ -432,6 +434,9 @@ namespace UberProject
             Console.WriteLine("Beef stroganoff - Meat, Sour Cream, Onions");
             Console.WriteLine("Varenniki - Cheese, Potato, Eggs");
             Console.ReadLine() ;
+
+            Console.WriteLine("Thanks for playing the game.Hope yuo enjoyed it.");
+            Console.WriteLine("If you wanna play again press A\nIf you wanna exit Press Enter.");
         }
 
 
