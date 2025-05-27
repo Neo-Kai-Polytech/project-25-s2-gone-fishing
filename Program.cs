@@ -432,6 +432,37 @@ namespace UberProject
             Console.WriteLine($"In this whole journey {charName} learned lots of new dishes which are:");
             Console.WriteLine("Beef stroganoff - Meat, Sour Cream, Onions");
             Console.WriteLine("Varenniki - Cheese, Potato, Eggs");
+            Console.WriteLine("Now these recipies are added in your inventory");
+            cookbook = cookbook + "Varenniki | Cheese, Potato, Eggs ";
+            cookbook = cookbook + "Beef stroganoff | Meat, Sour Cream, Onions ";
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Cheese";
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Eggs";
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Sour Cream";
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Onions";
+                }
+            }
             Console.ReadLine() ;
 
             Console.WriteLine("Thanks for playing the game.Hope yuo enjoyed it.");
