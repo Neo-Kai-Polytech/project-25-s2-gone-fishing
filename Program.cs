@@ -388,7 +388,16 @@ namespace UberProject
         static void endEvent(ref Player player)
         {
             Console.WriteLine("Now you are in the end of the game.");
-            Console.WriteLine("Now you are in the end of the game.");
+            Console.WriteLine($"People in Moscow have told {player} that there is a Military base near Moscow where a chef teacher is needed and they can use his help.");
+            Console.WriteLine($"So he went there and saw bunch of young soldiers eating raw flesh which is not good for health. " +
+                $"So {player} approached them but suddenly siren starts ringing and news is a Mutant Lizard attacked the OutPost.");
+            Console.WriteLine($"{player} decides to help other soldiers");
+            Console.WriteLine($"Prepare to FIGHT!!!");
+            //fighting scene will come here
+            Console.WriteLine($"After the Fight you gained the trust of soldiers and now told them that he wants to teach soldiers some cooking methods.");
+            Console.WriteLine($"In this whole journey {player} learned lots of new dishes which are:");
+            Console.WriteLine("Beef stroganoff - Meat, Sour Cream, Onions");
+            Console.WriteLine("Varenniki - Cheese, Potato, Eggs");
         }
 
         public static void CombatSystem(ref Player player, Enemies enemy)
