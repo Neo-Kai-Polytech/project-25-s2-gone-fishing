@@ -434,6 +434,39 @@ namespace UberProject
             Console.WriteLine("Varenniki - Cheese, Potato, Eggs");
             Console.ReadLine();
 
+            Console.WriteLine("Now these recipies are added in your inventory");
+            cookbook = cookbook + "Varenniki | Cheese, Potato, Eggs ";
+            cookbook = cookbook + "Beef stroganoff | Meat, Sour Cream, Onions ";
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Cheese";
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Eggs";
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Sour Cream";
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Onions";
+                }
+            }
+            Console.ReadLine();
+
             Console.WriteLine("Thanks for playing the game.Hope you enjoyed it.");
             Console.WriteLine("If you wanna play again press A\nIf you wanna exit Press Enter.");
         }
@@ -1330,7 +1363,7 @@ namespace UberProject
 
                                 for (int k = 0; k < foodSatchel.Length; k++) //Removes third ingredient
                                 {
-                                    if (foodSatchel[k] == "potato")
+                                    if (foodSatchel[k] == "Potato")
                                     {
                                         foodSatchel[k] = "";
 
@@ -1378,7 +1411,7 @@ namespace UberProject
             {
                 for (int i = 0; i < inventory.Length; i++)
                 { //Adds Beef Stroganoff
-                    if (inventory[i] == "meat")
+                    if (inventory[i] == "Meat")
                     {
                         inventory[i] = "Beef Stroganoff";
                         Console.WriteLine("You made Beef Stroganoff");
@@ -1444,13 +1477,13 @@ namespace UberProject
                         Console.WriteLine("You made Kutia");
                         for (int j = 0; j < inventory.Length; j++) //Removes second ingredient
                         {
-                            if (inventory[j] == "Canned fruits")
+                            if (inventory[j] == "Canned Fruits")
                             {
                                 inventory[j] = "";
 
                                 for (int k = 0; k < inventory.Length; k++) //Removes third ingredient
                                 {
-                                    if (inventory[k] == "Flower seeds")
+                                    if (inventory[k] == "Flower Seeds")
                                     {
                                         inventory[k] = "";
 
