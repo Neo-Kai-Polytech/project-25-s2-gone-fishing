@@ -302,15 +302,15 @@ namespace UberProject
                 $"So other persons shared their favorite recipies and ingredients with him.");
             Console.WriteLine();
             Console.WriteLine("The recipies are following:");
-            Console.WriteLine("1. Borcht - meat, onion, potato");
+            Console.WriteLine("1. Borcht - Meat, Onion, Potato");
             Console.WriteLine("2. Solyanka - pickle, lemon, flour");
-            cookbook = cookbook + "Borcht";
-            cookbook = cookbook + "solyanka";
+            cookbook = cookbook + "Borcht | Meat, Onion Potato ";
+            cookbook = cookbook + "Solyanka | Pickle, Lemon, Flour ";
             for (int i = 0; i < foodSatchel.Length; i++)
             {
                 if (foodSatchel[i] == "")
                 {
-                    foodSatchel[i] = "onion";
+                    foodSatchel[i] = "Onion";
                     break;
                 }
             }
@@ -318,7 +318,7 @@ namespace UberProject
             {
                 if (foodSatchel[i] == "")
                 {
-                    foodSatchel[i] = "pickle";
+                    foodSatchel[i] = "Pickle";
                     break;
                 }
             }
@@ -326,7 +326,7 @@ namespace UberProject
             {
                 if (foodSatchel[i] == "")
                 {
-                    foodSatchel[i] = "lemon";
+                    foodSatchel[i] = "Lemon";
                     break;
                 }
             }
@@ -334,7 +334,7 @@ namespace UberProject
             {
                 if (foodSatchel[i] == "")
                 {
-                    foodSatchel[i] = "flour";
+                    foodSatchel[i] = "Flour";
                     break;
                 }
             }
@@ -1125,6 +1125,36 @@ namespace UberProject
                                 for (int k = 0; k < foodSatchel.Length; k++) //Removes third ingredient
                                 {
                                     if (foodSatchel[k] == "Bread")
+                                    {
+                                        foodSatchel[k] = "";
+
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            if (ingredient1 == "meat" && ingredient2 == "bread" && ingredient3 == "potato")
+            {
+                for (int i = 0; i < foodSatchel.Length; i++)
+                { //Adds Russian Steak
+                    if (foodSatchel[i] == "Meat")
+                    {
+                        foodSatchel[i] = "Russian Steak";
+                        Console.WriteLine("You made a Russian Steak");
+                        for (int j = 0; j < foodSatchel.Length; j++) //Removes second ingredient
+                        {
+                            if (foodSatchel[j] == "Bread")
+                            {
+                                foodSatchel[j] = "";
+
+                                for (int k = 0; k < foodSatchel.Length; k++) //Removes third ingredient
+                                {
+                                    if (foodSatchel[k] == "Potato")
                                     {
                                         foodSatchel[k] = "";
 
