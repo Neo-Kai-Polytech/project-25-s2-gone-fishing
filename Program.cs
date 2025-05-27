@@ -89,8 +89,8 @@ namespace UberProject
         private static Random random = new Random();
         private static int Task;
         public static string charName, cookbook = "";
-        static string[] inventory = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; //Inventory of 15 slots, all same empty value to check if slots are empty
-        static string[] foodSatchel = ["", "", "", "", "", "", "", "", "", ""]; //Food Satchel of 10 slots, all same empty value to check if slots are empty
+        static string[] inventory = ["", "", "", "", "", "", "", "", "", ""]; 
+        static string[] foodSatchel = ["", "", "", "", "", "", "", "", "", ""];
         static Enemies[] monsters =
       {
             new Enemies("Mirelurk", 30, 5, "A mutated crab-like creature with a hard shell and a vicious bite."),
@@ -113,9 +113,9 @@ namespace UberProject
 
         static void Welcome()
         {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("______ _                                        __       ______    _ _             _   \r\n|  ___| |                                      / _|      |  ___|  | | |           | |  \r\n| |_  | | __ ___   _____  _ __ ___        ___ | |_       | |_ __ _| | | ___  _   _| |_ \r\n|  _| | |/ _` \\ \\ / / _ \\| '__/ __|      / _ \\|  _|      |  _/ _` | | |/ _ \\| | | | __|\r\n| |   | | (_| |\\ V / (_) | |  \\__ \\     | (_) | |        | || (_| | | | (_) | |_| | |_ \r\n\\_|   |_|\\__,_| \\_/ \\___/|_|  |___/      \\___/|_|        \\_| \\__,_|_|_|\\___/ \\__,_|\\__|\r\n                                                                                       \r\n                                                                                       ");
-            Console.ReadLine();
             Console.ResetColor();
             Console.WriteLine("The Menu options are:");
             Console.WriteLine("1  New Game");
@@ -432,15 +432,17 @@ namespace UberProject
             Console.WriteLine($"In this whole journey {charName} learned lots of new dishes which are:");
             Console.WriteLine("Beef stroganoff - Meat, Sour Cream, Onions");
             Console.WriteLine("Varenniki - Cheese, Potato, Eggs");
-            Console.ReadLine() ;
+            Console.ReadLine();
 
-            Console.WriteLine("Thanks for playing the game.Hope yuo enjoyed it.");
+            Console.WriteLine("Thanks for playing the game.Hope you enjoyed it.");
             Console.WriteLine("If you wanna play again press A\nIf you wanna exit Press Enter.");
         }
 
 
         public static void CombatSystem(ref Player player, Enemies enemy)
         {
+            int choice;
+            string temp;
 
             while (player.playerHP > 0 && enemy.enemyHP > 0)
             {
@@ -457,48 +459,153 @@ namespace UberProject
 
                 Console.ResetColor();
 
-                DisplayInventory();
+                Console.WriteLine("What do you want to do?");
+
+                Console.WriteLine("1. Attack");
+                Console.WriteLine("2. Open Inventory");
+
+                temp = Console.ReadLine();
+                choice = Convert.ToInt32(temp);
 
 
-                Console.WriteLine("\nPress Enter to attack...");
-                Console.ReadLine();
-
-                int playerAttack = player.playerAttack + random.Next(-2, 3);
-                enemy.enemyHP = enemy.enemyHP - playerAttack;
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"{player.playerName} attacks {enemy.enemyName} for {playerAttack} damage!");
-                Console.ResetColor();
-
-                if (enemy.enemyHP <= 0)
+                switch (choice)
                 {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine($"{enemy.enemyName} is defeated!");
-                    Console.ResetColor();
-                    break;
+                    case 1:
+                        // Attack
+                        int pAttack = player.playerAttack + random.Next(-2, 3);
+                        enemy.enemyHP = enemy.enemyHP - pAttack;
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"{player.playerName} attacks {enemy.enemyName} for {pAttack} damage!");
+                        Console.ResetColor();
+
+                        if (enemy.enemyHP <= 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine($"{enemy.enemyName} is defeated!");
+                            Console.ResetColor();
+                            break;
+                        }
+
+                        int eAttack = enemy.enemyAttack + random.Next(20,40);
+                        player.playerHP = player.playerHP - eAttack;
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.WriteLine($"{enemy.enemyName} attacks {player.playerName} for {eAttack} damage!");
+                        Console.ResetColor();
+
+                        if (player.playerHP <= 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine($"{player.playerName} has been defeated!");
+                            Console.ResetColor();
+
+                            Console.WriteLine("GAME OVER! Press Enter to exit...");
+                            Main();
+                        }
+
+                        Console.WriteLine("\nPress Enter for next round...");
+                        Console.ReadLine();
+                        break;
+
+                    case 2:
+                        // Open Inventory
+                        Console.Clear();
+                        DisplayInventory(ref player, enemy);
+                        continue; // Skip the rest of the loop and go back to the top
+                    default:
+                        Console.WriteLine("Invalid choice, try again.");
+                        continue; // Skip the rest of the loop and go back to the top
                 }
 
-                int enemyAttack = enemy.enemyAttack + random.Next(-1, 2);
-                player.playerHP = player.playerHP - enemyAttack;
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine($"{enemy.enemyName} attacks {player.playerName} for {enemyAttack} damage!");
-                Console.ResetColor();
-
-                if (player.playerHP <= 0)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"{player.playerName} has been defeated!");
-                    Console.ResetColor();
-
-                    Console.WriteLine("GAME OVER! Press Enter to exit...");
-                    Main();
-                }
-
-                Console.WriteLine("\nPress Enter for next round...");
-                Console.ReadLine();
             }
 
             Console.WriteLine("Combat ended. Press Enter to continue...");
             Console.ReadLine();
+
+        }
+
+
+        static void DisplayInventory(ref Player player, Enemies enemy)
+        {
+            Console.WriteLine("Inventory:");
+            Console.WriteLine("Slot | Item");
+            Console.WriteLine("---------------");
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                string item = string.IsNullOrEmpty(inventory[i]) ? "[Empty]" : inventory[i];
+                Console.WriteLine($"{i + 1,4} | {item}");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("What would you like to do?");
+            Console.WriteLine("1. Use an item");
+            Console.WriteLine("2. Equip a weapon");
+            Console.WriteLine("3. Return to combat");
+
+            int choice;
+            string temp = Console.ReadLine();
+            choice = Convert.ToInt32(temp);
+
+            switch (choice)
+            {
+                case 1:
+                    Console.WriteLine("Enter the slot number of the item you want to use:");
+                    int itemSlot;
+                    temp = Console.ReadLine();
+                    itemSlot = Convert.ToInt32(temp) - 1;
+                    if (itemSlot >= 0 && itemSlot < inventory.Length && !string.IsNullOrEmpty(inventory[itemSlot]))
+                    {
+                        string[] itemDetails = inventory[itemSlot].Split(" - ");
+                        if (itemDetails.Length >= 3 && itemDetails[1] == "Healing")
+                        {
+                            int healAmount = Convert.ToInt32(itemDetails[2]);
+                            player.playerHP = player.playerHP + healAmount;
+                            Console.WriteLine($"You used {itemDetails[0]} and healed for {healAmount} HP!");
+                            inventory[itemSlot] = "";
+                        }
+                        else if (itemDetails.Length >= 3 && itemDetails[1] == "Explosive")
+                        {
+                            int damageAmount = Convert.ToInt32(itemDetails[2]);
+                            enemy.enemyHP = enemy.enemyHP - damageAmount;
+                            Console.WriteLine("***HUGE EXPLOSIONS***");
+                            Console.WriteLine($"You used {itemDetails[0]} against {enemy.enemyName} dealing {damageAmount} damage!");
+                            inventory[itemSlot] = "";
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid slot number or empty slot.");
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine("Enter the slot number of the weapon you want to equip:");
+                    int weaponSlot;
+                    temp = Console.ReadLine();
+                    weaponSlot = Convert.ToInt32(temp) - 1;
+                    if (weaponSlot >= 0 && weaponSlot < inventory.Length && !string.IsNullOrEmpty(inventory[weaponSlot]))
+                    {
+                        string[] weaponDetails = inventory[weaponSlot].Split(" - ");
+                        if (weaponDetails.Length >= 4)
+                        {
+                            player.playerWeapon = weaponDetails[0];
+                            player.playerAttack = Convert.ToInt32(weaponDetails[1]);
+                            Console.WriteLine($"You equipped {player.playerWeapon} with {player.playerAttack} attack power!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid weapon details.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid slot number or empty slot.");
+                    }
+                    break;
+                case 3:
+                    Console.WriteLine("Returning to combat...");
+                    Thread.Sleep(1000);
+                    return;
+            }
+
 
         }
 
@@ -656,18 +763,6 @@ namespace UberProject
 
             Console.ReadLine();
 
-        }
-        static void DisplayInventory()
-        {
-            Console.WriteLine("Inventory:");
-            Console.WriteLine("Slot | Item");
-            Console.WriteLine("---------------");
-            for (int i = 0; i < inventory.Length; i++)
-            {
-                string item = string.IsNullOrEmpty(inventory[i]) ? "[Empty]" : inventory[i];
-                Console.WriteLine($"{i + 1,4} | {item}");
-            }
-            Console.WriteLine();
         }
 
         public static Enemies RadndomHostileEncounter()
@@ -966,6 +1061,7 @@ namespace UberProject
         {
             Console.WriteLine("This is the exit");
             Console.WriteLine("Press any key to close program");
+            Console.ReadLine();
         }
 
         static void InvalidInput()
