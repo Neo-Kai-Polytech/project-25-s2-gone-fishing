@@ -541,12 +541,11 @@ namespace UberProject
 
                     case 2:
                         // Open Inventory
-                        Console.Clear();
-                        DisplayInventory(ref player, enemy);
-                        continue; // Skip the rest of the loop and go back to the top
+                        DisplayInventory(ref player, ref enemy);
+                        continue;
                     default:
                         Console.WriteLine("Invalid choice, try again.");
-                        continue; // Skip the rest of the loop and go back to the top
+                        continue;
                 }
 
             }
@@ -557,7 +556,7 @@ namespace UberProject
         }
 
 
-        static void DisplayInventory(ref Player player, Enemies enemy)
+        static void DisplayInventory(ref Player player, ref Enemies enemy)
         {
             Console.WriteLine("Inventory:");
             Console.WriteLine("Slot | Item");
@@ -594,6 +593,7 @@ namespace UberProject
                             player.playerHP = player.playerHP + healAmount;
                             Console.WriteLine($"You used {itemDetails[0]} and healed for {healAmount} HP!");
                             inventory[itemSlot] = "";
+                            Console.ReadLine();
                         }
                         else if (itemDetails.Length >= 3 && itemDetails[1] == "Explosive")
                         {
@@ -602,6 +602,7 @@ namespace UberProject
                             Console.WriteLine("***HUGE EXPLOSIONS***");
                             Console.WriteLine($"You used {itemDetails[0]} against {enemy.enemyName} dealing {damageAmount} damage!");
                             inventory[itemSlot] = "";
+                            Console.ReadLine();
                         }
                     }
                     else
@@ -648,33 +649,33 @@ namespace UberProject
 
             Weapons[] weapons =
             {
-                new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 12, weaponType = "Ranged", weaponRarity = "Common" },
-                new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 10, weaponType = "Melee", weaponRarity = "Common" },
-                new Weapons { weaponName = "Radiation Axe", weaponDamage = 14, weaponType = "Melee", weaponRarity = "Common" },
-                new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 16, weaponType = "Energy", weaponRarity = "Common" },
-                new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 13, weaponType = "Ranged", weaponRarity = "Common" },
-                new Weapons { weaponName = "Electrified Machete", weaponDamage = 17, weaponType = "Melee", weaponRarity = "Common" },
+                new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 6, weaponType = "Ranged", weaponRarity = "Common" },
+                new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 6, weaponType = "Melee", weaponRarity = "Common" },
+                new Weapons { weaponName = "Radiation Axe", weaponDamage = 8, weaponType = "Melee", weaponRarity = "Common" },
+                new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 7, weaponType = "Energy", weaponRarity = "Common" },
+                new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 7, weaponType = "Ranged", weaponRarity = "Common" },
+                new Weapons { weaponName = "Electrified Machete", weaponDamage = 8, weaponType = "Melee", weaponRarity = "Common" },
             
-                new Weapons { weaponName = "Hunting Rifle", weaponDamage = 25, weaponType = "Ranged", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 30, weaponType = "Ranged", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Combat Shotgun", weaponDamage = 30, weaponType = "Ranged", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Flamer", weaponDamage = 35, weaponType = "Heavy", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Super Sledge", weaponDamage = 28, weaponType = "Melee", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Laser Musket", weaponDamage = 32, weaponType = "Energy", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Hunting Rifle", weaponDamage = 12, weaponType = "Ranged", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 13, weaponType = "Ranged", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Combat Shotgun", weaponDamage = 14, weaponType = "Ranged", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Flamer", weaponDamage = 12, weaponType = "Heavy", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Super Sledge", weaponDamage = 13, weaponType = "Melee", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Laser Musket", weaponDamage = 14, weaponType = "Energy", weaponRarity = "Rare" },
             
-                new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 55, weaponType = "Energy", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Tesla Cannon", weaponDamage = 65, weaponType = "Energy", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 50, weaponType = "Melee", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Cryolator", weaponDamage = 60, weaponType = "Energy", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Railway Rifle", weaponDamage = 58, weaponType = "Ranged", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Auto-Axe", weaponDamage = 52, weaponType = "Melee", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 21, weaponType = "Energy", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Tesla Cannon", weaponDamage = 24, weaponType = "Energy", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 22, weaponType = "Melee", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Cryolator", weaponDamage = 21, weaponType = "Energy", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Railway Rifle", weaponDamage = 23, weaponType = "Ranged", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Auto-Axe", weaponDamage = 22, weaponType = "Melee", weaponRarity = "Epic" },
             
-                new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 100, weaponType = "Explosive", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Plague Injector", weaponDamage = 80, weaponType = "Ranged", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 90, weaponType = "Heavy", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 110, weaponType = "Energy", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Oblivion Hammer", weaponDamage = 95, weaponType = "Melee", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Apocalypse Blade", weaponDamage = 105, weaponType = "Melee", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 50, weaponType = "Explosive", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Plague Injector", weaponDamage = 36, weaponType = "Ranged", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 35, weaponType = "Heavy", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 38, weaponType = "Energy", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Oblivion Hammer", weaponDamage = 36, weaponType = "Melee", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Apocalypse Blade", weaponDamage = 35, weaponType = "Melee", weaponRarity = "*Legendary*" },
             };
 
 
@@ -706,24 +707,20 @@ namespace UberProject
             {
                 new Items { itemName = "Stimpak", itemType = "Healing", itemEffectValue = 15, itemDesc = "A medical kit that heals wounds and restores health." },
                 new Items { itemName = "RadAway", itemType = "Healing", itemEffectValue = 10, itemDesc = "A serum that removes radiation from the body." },
-                new Items { itemName = "Nuka-Cola", itemType = "Beverage", itemEffectValue = 8, itemDesc = "A refreshing drink that boosts energy." },
-                new Items { itemName = "Pork n' Beans", itemType = "Food", itemEffectValue = 9, itemDesc = "A can of beans that restores hunger." },
-                new Items { itemName = "Mirelurk Meat"  , itemType = "Food", itemEffectValue = 12, itemDesc = "Cooked meat from a Mirelurk." },
-                new Items { itemName = "Mutfruit", itemType = "Food", itemEffectValue = 5, itemDesc = "A mutated fruit, slightly restores health." },
                 new Items { itemName = "Antiseptic Bandage", itemType = "Healing", itemEffectValue = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
-                new Items { itemName = "Dirty Water", itemType = "Beverage", itemEffectValue = 5, itemDesc = "Water of questionable quality, restores a small amount of health." },
                 new Items { itemName = "Molotov Cocktail", itemType = "Explosive", itemEffectValue = 18, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
                 new Items { itemName = "Fragmentation Grenade", itemType = "Explosive", itemEffectValue = 20, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
                 new Items { itemName = "Plasma Mine", itemType = "Explosive", itemEffectValue = 24, itemDesc = "A mine that detonates with a burst of plasma energy." },
                 new Items { itemName = "Dynamite Bundle", itemType = "Explosive", itemEffectValue = 30, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
                 new Items { itemName = "Cryo Grenade", itemType = "Explosive", itemEffectValue = 15, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
-                new Items { itemName = "Cram", itemType = "Food", itemEffectValue = 15, itemDesc = "A can of processed meat, restores a moderate amount of health." },
-                new Items { itemName = "Purified Water", itemType = "Beverage", itemEffectValue = 10, itemDesc = "Clean water, restores a good amount of health." }
+                new Items { itemName = "Purified Water", itemType = "Healing", itemEffectValue = 8, itemDesc = "Clean water that hydrates and restores minor health." },
+
             };
 
             int weaponLootRarity = random.Next(1,101);
             int weaponLoot;
-            int itemLoot = random.Next(items.Length);
+            int itemLoot1 = random.Next(items.Length);
+            int itemLoot2 = random.Next(items.Length);
             int ingredientLoot = random.Next(ingredients.Length);
 
             if (weaponLootRarity <= 40)
@@ -745,7 +742,8 @@ namespace UberProject
             }
 
             Weapons acquiredEpicWeapon = weapons[weaponLoot];
-            Items acquiredItem = items[itemLoot];
+            Items acquiredItem1 = items[itemLoot1];
+            Items acquiredItem2 = items[itemLoot2];
             Ingredients acquiredIngredient = ingredients[ingredientLoot];
 
             for (int i = 0; i < inventory.Length; i++)
@@ -782,18 +780,31 @@ namespace UberProject
             Console.ResetColor();
 
             Console.WriteLine();
-            Console.WriteLine($"You have received {acquiredItem.itemName}");
+            Console.WriteLine($"You have received {acquiredItem1.itemName}");
             Thread.Sleep(1000);
 
             for (int i = 0; i < inventory.Length; i++)
             {
                 if (inventory[i] == "")
                 {
-                    inventory[i] = $"{acquiredItem.itemName} - {acquiredItem.itemType} - {acquiredItem.itemEffectValue}";
+                    inventory[i] = $"{acquiredItem1.itemName} - {acquiredItem1.itemType} - {acquiredItem1.itemEffectValue}";
+                    break;
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine($"You have received {acquiredItem1.itemName}");
+            Thread.Sleep(1000);
+
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = $"{acquiredItem1.itemName} - {acquiredItem1.itemType} - {acquiredItem1.itemEffectValue}";
                     break;
                 }
             }
 
+            Console.WriteLine("Press any button to continue...");
             Console.ReadLine();
 
         }
