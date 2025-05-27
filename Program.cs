@@ -1129,6 +1129,36 @@ namespace UberProject
                     }
                 }
             }
+            if (ingredient1 == "meat" && ingredient2 == "bread" && ingredient3 == "potato")
+            {
+                for (int i = 0; i < foodSatchel.Length; i++)
+                { //Adds Russian Steak
+                    if (foodSatchel[i] == "Meat")
+                    {
+                        foodSatchel[i] = "Russian Steak";
+                        Console.WriteLine("You made a Russian Steak");
+                        for (int j = 0; j < foodSatchel.Length; j++) //Removes second ingredient
+                        {
+                            if (foodSatchel[j] == "Bread")
+                            {
+                                foodSatchel[j] = "";
+
+                                for (int k = 0; k < foodSatchel.Length; k++) //Removes third ingredient
+                                {
+                                    if (foodSatchel[k] == "Potato")
+                                    {
+                                        foodSatchel[k] = "";
+
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
             else if (ingredient1 == "meat" && ingredient2 == "onion" && ingredient3 == "potato")
             {
                 for (int i = 0; i < foodSatchel.Length; i++)
