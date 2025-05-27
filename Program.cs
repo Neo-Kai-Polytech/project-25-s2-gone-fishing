@@ -113,9 +113,9 @@ namespace UberProject
 
         static void Welcome()
         {
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("FLAVOURS OF FALLOUT");
-            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("______ _                                        __       ______    _ _             _   \r\n|  ___| |                                      / _|      |  ___|  | | |           | |  \r\n| |_  | | __ ___   _____  _ __ ___        ___ | |_       | |_ __ _| | | ___  _   _| |_ \r\n|  _| | |/ _` \\ \\ / / _ \\| '__/ __|      / _ \\|  _|      |  _/ _` | | |/ _ \\| | | | __|\r\n| |   | | (_| |\\ V / (_) | |  \\__ \\     | (_) | |        | || (_| | | | (_) | |_| | |_ \r\n\\_|   |_|\\__,_| \\_/ \\___/|_|  |___/      \\___/|_|        \\_| \\__,_|_|_|\\___/ \\__,_|\\__|\r\n                                                                                       \r\n                                                                                       ");
+            Console.ReadLine();
             Console.ResetColor();
             Console.WriteLine("The Menu options are:");
             Console.WriteLine("1  New Game");
