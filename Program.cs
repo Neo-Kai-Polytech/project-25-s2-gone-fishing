@@ -381,6 +381,13 @@ namespace UberProject
             Console.ReadLine();
         }
 
+        static void event5()
+        {
+            Console.WriteLine($"{charName} find themself walking through a run-down mall. They are heading towards the food court to keep warm throughout the night. Expecting trouble, {charName} is surprised to see a small community surviving deep inside the mall.");
+            Console.WriteLine($"Coming down to meet the survivors, they instantly welcome {charName} into their community. {charName} explained their dream of helping people, and the survivors told them that they believed that one day a messiah would come to save us all, and that {charName} should eat a meal with them");
+            Console.ReadLine();
+        }
+
         static void endEvent(ref Player player)
         {
             Console.WriteLine("Now you are in the end of the game.");
