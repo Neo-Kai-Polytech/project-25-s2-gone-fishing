@@ -213,6 +213,8 @@ namespace UberProject
 
             event4(ref player);
 
+            endEvent(ref player);
+
 
 
         }
@@ -381,6 +383,12 @@ namespace UberProject
                     break;
             }
             Console.ReadLine();
+        }
+
+        static void endEvent(ref Player player)
+        {
+            Console.WriteLine("Now you are in the end of the game.");
+            Console.WriteLine("Now you are in the end of the game.");
         }
 
         public static void CombatSystem(ref Player player, Enemies enemy)
