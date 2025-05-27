@@ -386,6 +386,29 @@ namespace UberProject
             Console.WriteLine($"{charName} find themself walking through a run-down mall. They are heading towards the food court to keep warm throughout the night. Expecting trouble, {charName} is surprised to see a small community surviving deep inside the mall.");
             Console.WriteLine($"Coming down to meet the survivors, they instantly welcome {charName} into their community. {charName} explained their dream of helping people, and the survivors told them that they believed that one day a messiah would come to save us all, and that {charName} should eat a meal with them");
             Console.ReadLine();
+            cookbook = cookbook + "Kutia | Rice, Canned Fruits, Flower Seeds";
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Rice";
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Canned Fruits";
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Flower Seeds";
+                }
+            }
+            Console.ReadLine();
         }
 
         static void endEvent(ref Player player)
