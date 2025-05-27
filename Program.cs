@@ -1202,6 +1202,66 @@ namespace UberProject
                     }
                 }
             }
+            else if (ingredient1 == "cheese" && ingredient2 == "potato" && ingredient3 == "eggs")
+            {
+                for (int i = 0; i < inventory.Length; i++)
+                { //Adds Varenniki
+                    if (inventory[i] == "Cheese")
+                    {
+                        inventory[i] = "Varenniki";
+                        Console.WriteLine("You made Varenniki");
+                        for (int j = 0; j < inventory.Length; j++) //Removes second ingredient
+                        {
+                            if (inventory[j] == "Potato")
+                            {
+                                inventory[j] = "";
+
+                                for (int k = 0; k < inventory.Length; k++) //Removes third ingredient
+                                {
+                                    if (inventory[k] == "Eggs")
+                                    {
+                                        inventory[k] = "";
+
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            else if (ingredient1 == "meat" && ingredient2 == "sour cream" && ingredient3 == "onions")
+            {
+                for (int i = 0; i < inventory.Length; i++)
+                { //Adds Beef Stroganoff
+                    if (inventory[i] == "meat")
+                    {
+                        inventory[i] = "Beef Stroganoff";
+                        Console.WriteLine("You made Beef Stroganoff");
+                        for (int j = 0; j < inventory.Length; j++) //Removes second ingredient
+                        {
+                            if (inventory[j] == "Sour Cream")
+                            {
+                                inventory[j] = "";
+
+                                for (int k = 0; k < inventory.Length; k++) //Removes third ingredient
+                                {
+                                    if (inventory[k] == "Onions")
+                                    {
+                                        inventory[k] = "";
+
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
             else if (ingredient1 == "pickle" && ingredient2 == "lemon" && ingredient3 == "flour")
             {
                 for (int i = 0; i < foodSatchel.Length; i++)
