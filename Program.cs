@@ -131,7 +131,6 @@ namespace UberProject
             // NEW GAME CREATION --> Lead to Start of Story and Character Creation
 
             StoryLineSum();
-
         }
 
         static void StoryLineSum()
@@ -189,7 +188,6 @@ namespace UberProject
             Thread.Sleep(500);
             Console.WriteLine("\nAfter this night he decided to go on a world journey with passion to help people and to get some new experiences.");
             Console.WriteLine("\nTo decide where he should start first he just darted on the small globe and it landed on Russia.");
-            Thread.Sleep(500);
             Console.ReadLine();
             //start of the game
 
@@ -201,7 +199,7 @@ namespace UberProject
         public static void StartingArea(ref Player player)
         {
             Console.WriteLine("Starting Area");
-            Thread.Sleep(2000);
+            Console.ReadLine();
 
             Console.Clear();
 
@@ -222,13 +220,12 @@ namespace UberProject
     
         static void event1(ref Player player)
         {
-            Console.WriteLine("With his journey now he is finally in Russia where he saw that everything is destroyed. " +
+            Console.WriteLine("With the journey now he is finally in Russia where he saw that everything is destroyed. " +
                 "\nHe is finding any life which is still alive and can talk with them and he found a dense forest.And suddenly,..........");
             Thread.Sleep(2000);
             Console.WriteLine("\nYou see a bear running towards you!");
             Console.WriteLine("Prepare yourself!\n\n");
-            Thread.Sleep(2000);
-            Console.ReadLine() ;
+            Console.ReadLine();
 
             Enemies enemy = monsters[15];
 
@@ -239,14 +236,13 @@ namespace UberProject
             AcquireEpicLoot();
 
             Console.WriteLine($"After the fight villagers came to see who is in trouble and found {charName}");
-            Thread.Sleep(2000);
         }
 
         static void event2(ref Player player)
         {
 
             Console.WriteLine("After uniting with villagers he observed their cooking method  which was slightly different and want to talk with them regarding that." +
-                "While chatting he got to know some new dishes which includes Russian steak etc.\n");
+                "\nWhile chatting he got to know some new dishes which includes Russian steak etc.\n");
             Thread.Sleep(500);
             Console.WriteLine("Russian Steak is now added in your inventory.");
             Thread.Sleep(500);
@@ -298,7 +294,7 @@ namespace UberProject
 
         static void event3(ref Player player)
         {
-            Console.WriteLine($"Now Continuing in Russia {charName} reached in Moscow. He saw that city is pretty much destroyed and the vibes are pretty depressed in the city.Roaming around he met a bunch of people going in a group mental therapy and decided to join them. During the conversations he told them his passsion of cooking and about his joruney.\n" +
+            Console.WriteLine($"Now Continuing in Russia {charName} reached in Moscow. He saw that city is pretty much destroyed and the vibes are pretty depressed in the city.\nRoaming around he met a bunch of people going in a group mental therapy and decided to join them. During the conversations he told them his passion of cooking and about his journey.\n" +
                 $"So other persons shared their favorite recipies and ingredients with him.");
             Console.WriteLine();
             Console.WriteLine("The recipies are following:");
@@ -388,17 +384,25 @@ namespace UberProject
         static void endEvent(ref Player player)
         {
             Console.WriteLine("Now you are in the end of the game.");
-            Console.WriteLine($"People in Moscow have told {player} that there is a Military base near Moscow where a chef teacher is needed and they can use his help.");
-            Console.WriteLine($"So he went there and saw bunch of young soldiers eating raw flesh which is not good for health. " +
-                $"So {player} approached them but suddenly siren starts ringing and news is a Mutant Lizard attacked the OutPost.");
-            Console.WriteLine($"{player} decides to help other soldiers");
+            Console.WriteLine($"People in Moscow have told {charName} that there is a Military base near Moscow where a chef teacher is needed and they can use his help.");
+            Console.WriteLine($"\nSo he went there and saw bunch of young soldiers eating raw flesh which is not good for health. " +
+                $"\nSo {charName} approached them but suddenly siren starts ringing and news is a Mutant Scorpio attacked the OutPost.");
+            Console.WriteLine($"{charName} decides to help other soldiers");
+            Console.ReadLine();
             Console.WriteLine($"Prepare to FIGHT!!!");
+
+            Enemies enemy = monsters[3];
+
+            CombatSystem(ref player, enemy);
+
             //fighting scene will come here
             Console.WriteLine($"After the Fight you gained the trust of soldiers and now told them that he wants to teach soldiers some cooking methods.");
-            Console.WriteLine($"In this whole journey {player} learned lots of new dishes which are:");
+            Console.WriteLine($"In this whole journey {charName} learned lots of new dishes which are:");
             Console.WriteLine("Beef stroganoff - Meat, Sour Cream, Onions");
             Console.WriteLine("Varenniki - Cheese, Potato, Eggs");
+            Console.ReadLine() ;
         }
+
 
         public static void CombatSystem(ref Player player, Enemies enemy)
         {
