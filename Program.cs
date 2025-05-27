@@ -302,15 +302,15 @@ namespace UberProject
                 $"So other persons shared their favorite recipies and ingredients with him.");
             Console.WriteLine();
             Console.WriteLine("The recipies are following:");
-            Console.WriteLine("1. Borcht - meat, onion, potato");
+            Console.WriteLine("1. Borcht - Meat, Onion, Potato");
             Console.WriteLine("2. Solyanka - pickle, lemon, flour");
-            cookbook = cookbook + "Borcht";
-            cookbook = cookbook + "solyanka";
+            cookbook = cookbook + "Borcht | Meat, Onion Potato ";
+            cookbook = cookbook + "Solyanka | Pickle, Lemon, Flour ";
             for (int i = 0; i < foodSatchel.Length; i++)
             {
                 if (foodSatchel[i] == "")
                 {
-                    foodSatchel[i] = "onion";
+                    foodSatchel[i] = "Onion";
                     break;
                 }
             }
@@ -318,7 +318,7 @@ namespace UberProject
             {
                 if (foodSatchel[i] == "")
                 {
-                    foodSatchel[i] = "pickle";
+                    foodSatchel[i] = "Pickle";
                     break;
                 }
             }
@@ -326,7 +326,7 @@ namespace UberProject
             {
                 if (foodSatchel[i] == "")
                 {
-                    foodSatchel[i] = "lemon";
+                    foodSatchel[i] = "Lemon";
                     break;
                 }
             }
@@ -334,7 +334,7 @@ namespace UberProject
             {
                 if (foodSatchel[i] == "")
                 {
-                    foodSatchel[i] = "flour";
+                    foodSatchel[i] = "Flour";
                     break;
                 }
             }
