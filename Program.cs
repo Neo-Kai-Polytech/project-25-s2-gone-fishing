@@ -63,13 +63,12 @@ namespace UberProject
     public struct Items()
     {
         public string itemName;
-        public int itemDamage;
         public string itemType;
-        public int itemHeal;
+        public int itemEffectValue;
         public string itemDesc;
         public override string ToString()
         {
-            return $"{itemName} | Damage: {itemDamage} | Type: {itemType} | Heal: {itemHeal} | Description: {itemDesc}";
+            return $"{itemName} | Type: {itemType} | {itemEffectValue} | Description: {itemDesc}";
         }
 
     }
@@ -458,7 +457,8 @@ namespace UberProject
 
                 Console.ResetColor();
 
-                Console.WriteLine(inventory.Length > 0 ? "\nYour Inventory: " + string.Join(", ", inventory.Where(i => !string.IsNullOrEmpty(i))) : "Your Inventory is empty.");
+                DisplayInventory();
+
 
                 Console.WriteLine("\nPress Enter to attack...");
                 Console.ReadLine();
@@ -564,22 +564,21 @@ namespace UberProject
 
             Items[] items =
             {
-                new Items { itemName = "Stimpak", itemDamage = 0, itemType = "Healing", itemHeal = 20, itemDesc = "A medical kit that heals wounds and restores health." },
-                new Items { itemName = "RadAway", itemDamage = 0, itemType = "Healing", itemHeal = 15, itemDesc = "A serum that removes radiation from the body." },
-                new Items { itemName = "Nuka-Cola", itemDamage = 0, itemType = "Beverage", itemHeal = 10, itemDesc = "A refreshing drink that boosts energy." },
-                new Items { itemName = "Pork n' Beans", itemDamage = 0, itemType = "Food", itemHeal = 25, itemDesc = "A can of beans that restores hunger." },
-                new Items { itemName = "Mirelurk Meat", itemDamage = 0, itemType = "Food", itemHeal = 30, itemDesc = "Cooked meat from a Mirelurk." },
-                new Items { itemName = "Mutfruit", itemDamage = 0, itemType = "Food", itemHeal = 8, itemDesc = "A mutated fruit, slightly restores health." },
-                new Items { itemName = "Antiseptic Bandage", itemDamage = 0, itemType = "Healing", itemHeal = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
-                new Items { itemName = "Dirty Water", itemDamage = 0, itemType = "Beverage", itemHeal = 5, itemDesc = "Water of questionable quality, restores a small amount of health." },
-                new Items { itemName = "Molotov Cocktail", itemDamage = 20, itemType = "Explosive", itemHeal = 0, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
-                new Items { itemName = "Pipe Bomb", itemDamage = 25, itemType = "Explosive", itemHeal = 0, itemDesc = "A homemade explosive device, deals significant area damage." },
-                new Items { itemName = "Fragmentation Grenade", itemDamage = 30, itemType = "Explosive", itemHeal = 0, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
-                new Items { itemName = "Plasma Mine", itemDamage = 35, itemType = "Explosive", itemHeal = 0, itemDesc = "A mine that detonates with a burst of plasma energy." },
-                new Items { itemName = "Dynamite Bundle", itemDamage = 40, itemType = "Explosive", itemHeal = 0, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
-                new Items { itemName = "Cryo Grenade", itemDamage = 18, itemType = "Explosive", itemHeal = 0, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
-                new Items { itemName = "Cram", itemDamage = 0, itemType = "Food", itemHeal = 15, itemDesc = "A can of processed meat, restores a moderate amount of health." },
-                new Items { itemName = "Purified Water", itemDamage = 0, itemType = "Beverage", itemHeal = 20, itemDesc = "Clean water, restores a good amount of health." }
+                new Items { itemName = "Stimpak", itemType = "Healing", itemEffectValue = 15, itemDesc = "A medical kit that heals wounds and restores health." },
+                new Items { itemName = "RadAway", itemType = "Healing", itemEffectValue = 10, itemDesc = "A serum that removes radiation from the body." },
+                new Items { itemName = "Nuka-Cola", itemType = "Beverage", itemEffectValue = 8, itemDesc = "A refreshing drink that boosts energy." },
+                new Items { itemName = "Pork n' Beans", itemType = "Food", itemEffectValue = 9, itemDesc = "A can of beans that restores hunger." },
+                new Items { itemName = "Mirelurk Meat"  , itemType = "Food", itemEffectValue = 12, itemDesc = "Cooked meat from a Mirelurk." },
+                new Items { itemName = "Mutfruit", itemType = "Food", itemEffectValue = 5, itemDesc = "A mutated fruit, slightly restores health." },
+                new Items { itemName = "Antiseptic Bandage", itemType = "Healing", itemEffectValue = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
+                new Items { itemName = "Dirty Water", itemType = "Beverage", itemEffectValue = 5, itemDesc = "Water of questionable quality, restores a small amount of health." },
+                new Items { itemName = "Molotov Cocktail", itemType = "Explosive", itemEffectValue = 18, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
+                new Items { itemName = "Fragmentation Grenade", itemType = "Explosive", itemEffectValue = 20, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
+                new Items { itemName = "Plasma Mine", itemType = "Explosive", itemEffectValue = 24, itemDesc = "A mine that detonates with a burst of plasma energy." },
+                new Items { itemName = "Dynamite Bundle", itemType = "Explosive", itemEffectValue = 30, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
+                new Items { itemName = "Cryo Grenade", itemType = "Explosive", itemEffectValue = 15, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
+                new Items { itemName = "Cram", itemType = "Food", itemEffectValue = 15, itemDesc = "A can of processed meat, restores a moderate amount of health." },
+                new Items { itemName = "Purified Water", itemType = "Beverage", itemEffectValue = 10, itemDesc = "Clean water, restores a good amount of health." }
             };
 
             int weaponLootRarity = random.Next(1,101);
@@ -609,11 +608,11 @@ namespace UberProject
             Items acquiredItem = items[itemLoot];
             Ingredients acquiredIngredient = ingredients[ingredientLoot];
 
-            for (int i = 0; i < foodSatchel.Length; i++)
+            for (int i = 0; i < inventory.Length; i++)
             {
-                if (foodSatchel[i] == "")
+                if (inventory[i] == "")
                 {
-                    foodSatchel[i] = acquiredEpicWeapon.weaponName;
+                    inventory[i] = $"{acquiredEpicWeapon.weaponName} - {acquiredEpicWeapon.weaponDamage} - {acquiredEpicWeapon.weaponType} - {acquiredEpicWeapon.weaponRarity}";
                     break;
                 }
 
@@ -646,17 +645,29 @@ namespace UberProject
             Console.WriteLine($"You have received {acquiredItem.itemName}");
             Thread.Sleep(1000);
 
-            for (int i = 0; i < foodSatchel.Length; i++)
+            for (int i = 0; i < inventory.Length; i++)
             {
-                if (foodSatchel[i] == "")
+                if (inventory[i] == "")
                 {
-                    foodSatchel[i] = acquiredItem.itemName;
+                    inventory[i] = $"{acquiredItem.itemName} - {acquiredItem.itemType} - {acquiredItem.itemEffectValue}";
                     break;
                 }
             }
 
             Console.ReadLine();
 
+        }
+        static void DisplayInventory()
+        {
+            Console.WriteLine("Inventory:");
+            Console.WriteLine("Slot | Item");
+            Console.WriteLine("---------------");
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                string item = string.IsNullOrEmpty(inventory[i]) ? "[Empty]" : inventory[i];
+                Console.WriteLine($"{i + 1,4} | {item}");
+            }
+            Console.WriteLine();
         }
 
         public static Enemies RadndomHostileEncounter()
@@ -838,22 +849,21 @@ namespace UberProject
                         // Display all items in a readable format
                         Items[] items =
                         {
-                            new Items { itemName = "Stimpak", itemDamage = 0, itemType = "Healing", itemHeal = 20, itemDesc = "A medical kit that heals wounds and restores health." },
-                            new Items { itemName = "RadAway", itemDamage = 0, itemType = "Healing", itemHeal = 15, itemDesc = "A serum that removes radiation from the body." },
-                            new Items { itemName = "Nuka-Cola", itemDamage = 0, itemType = "Beverage", itemHeal = 10, itemDesc = "A refreshing drink that boosts energy." },
-                            new Items { itemName = "Pork n' Beans", itemDamage = 0, itemType = "Food", itemHeal = 25, itemDesc = "A can of beans that restores hunger." },
-                            new Items { itemName = "Mirelurk Meat", itemDamage = 0, itemType = "Food", itemHeal = 30, itemDesc = "Cooked meat from a Mirelurk." },
-                            new Items { itemName = "Mutfruit", itemDamage = 0, itemType = "Food", itemHeal = 8, itemDesc = "A mutated fruit, slightly restores health." },
-                            new Items { itemName = "Antiseptic Bandage", itemDamage = 0, itemType = "Healing", itemHeal = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
-                            new Items { itemName = "Dirty Water", itemDamage = 0, itemType = "Beverage", itemHeal = 5, itemDesc = "Water of questionable quality, restores a small amount of health." },
-                            new Items { itemName = "Molotov Cocktail", itemDamage = 20, itemType = "Explosive", itemHeal = 0, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
-                            new Items { itemName = "Pipe Bomb", itemDamage = 25, itemType = "Explosive", itemHeal = 0, itemDesc = "A homemade explosive device, deals significant area damage." },
-                            new Items { itemName = "Fragmentation Grenade", itemDamage = 30, itemType = "Explosive", itemHeal = 0, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
-                            new Items { itemName = "Plasma Mine", itemDamage = 35, itemType = "Explosive", itemHeal = 0, itemDesc = "A mine that detonates with a burst of plasma energy." },
-                            new Items { itemName = "Dynamite Bundle", itemDamage = 40, itemType = "Explosive", itemHeal = 0, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
-                            new Items { itemName = "Cryo Grenade", itemDamage = 18, itemType = "Explosive", itemHeal = 0, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
-                            new Items { itemName = "Cram", itemDamage = 0, itemType = "Food", itemHeal = 15, itemDesc = "A can of processed meat, restores a moderate amount of health." },
-                            new Items { itemName = "Purified Water", itemDamage = 0, itemType = "Beverage", itemHeal = 20, itemDesc = "Clean water, restores a good amount of health." }
+                            new Items { itemName = "Stimpak", itemType = "Healing", itemEffectValue = 15, itemDesc = "A medical kit that heals wounds and restores health." },
+                            new Items { itemName = "RadAway", itemType = "Healing", itemEffectValue = 10, itemDesc = "A serum that removes radiation from the body." },
+                            new Items { itemName = "Nuka-Cola", itemType = "Beverage", itemEffectValue = 8, itemDesc = "A refreshing drink that boosts energy." },
+                            new Items { itemName = "Pork n' Beans", itemType = "Food", itemEffectValue = 9, itemDesc = "A can of beans that restores hunger." },
+                            new Items { itemName = "Mirelurk Meat"  , itemType = "Food", itemEffectValue = 12, itemDesc = "Cooked meat from a Mirelurk." },
+                            new Items { itemName = "Mutfruit", itemType = "Food", itemEffectValue = 5, itemDesc = "A mutated fruit, slightly restores health." },
+                            new Items { itemName = "Antiseptic Bandage", itemType = "Healing", itemEffectValue = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
+                            new Items { itemName = "Dirty Water", itemType = "Beverage", itemEffectValue = 5, itemDesc = "Water of questionable quality, restores a small amount of health." },
+                            new Items { itemName = "Molotov Cocktail", itemType = "Explosive", itemEffectValue = 18, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
+                            new Items { itemName = "Fragmentation Grenade", itemType = "Explosive", itemEffectValue = 20, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
+                            new Items { itemName = "Plasma Mine", itemType = "Explosive", itemEffectValue = 24, itemDesc = "A mine that detonates with a burst of plasma energy." },
+                            new Items { itemName = "Dynamite Bundle", itemType = "Explosive", itemEffectValue = 30, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
+                            new Items { itemName = "Cryo Grenade", itemType = "Explosive", itemEffectValue = 15, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
+                            new Items { itemName = "Cram", itemType = "Food", itemEffectValue = 15, itemDesc = "A can of processed meat, restores a moderate amount of health." },
+                            new Items { itemName = "Purified Water", itemType = "Beverage", itemEffectValue = 10, itemDesc = "Clean water, restores a good amount of health." }
                         };
                         Console.WriteLine("Items in the game:\n");
                         foreach (var item in items)
