@@ -483,9 +483,9 @@ namespace UberProject
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine($"Player: {player.playerName} | HP: {player.playerHP} | Weapon: {player.playerWeapon} | Attack: {player.playerAttack}");
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("-------------------------------------------------------");
-                Console.WriteLine("VS".PadLeft(28));
-                Console.WriteLine("-------------------------------------------------------");
+                Console.WriteLine("------------------------------------------------------------");
+                Console.WriteLine("VS".PadLeft(32));
+                Console.WriteLine("------------------------------------------------------------");
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Enemy: {enemy.enemyName} | HP: {enemy.enemyHP} | Attack: {enemy.enemyAttack}");
                 Console.WriteLine($"Description: {enemy.enemyDesc}");
@@ -519,7 +519,7 @@ namespace UberProject
                             break;
                         }
 
-                        int eAttack = enemy.enemyAttack + random.Next(20,40);
+                        int eAttack = enemy.enemyAttack + random.Next(-2,3);
                         player.playerHP = player.playerHP - eAttack;
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine($"{enemy.enemyName} attacks {player.playerName} for {eAttack} damage!");
