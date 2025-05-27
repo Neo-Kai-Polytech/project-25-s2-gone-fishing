@@ -408,6 +408,7 @@ namespace UberProject
                     inventory[i] = "Flower Seeds";
                 }
             }
+            Console.WriteLine("Kutia was added to your cookbook");
             Console.ReadLine();
         }
 
@@ -1311,6 +1312,36 @@ namespace UberProject
                                     if (foodSatchel[k] == "Flour")
                                     {
                                         foodSatchel[k] = "";
+
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            else if (ingredient1 == "rice" && ingredient2 == "canned fruits" && ingredient3 == "flower seeds")
+            {
+                for (int i = 0; i < inventory.Length; i++)
+                { //Adds Kutia
+                    if (inventory[i] == "Rice")
+                    {
+                        inventory[i] = "Kutia";
+                        Console.WriteLine("You made Kutia");
+                        for (int j = 0; j < inventory.Length; j++) //Removes second ingredient
+                        {
+                            if (inventory[j] == "Canned fruits")
+                            {
+                                inventory[j] = "";
+
+                                for (int k = 0; k < inventory.Length; k++) //Removes third ingredient
+                                {
+                                    if (inventory[k] == "Flower seeds")
+                                    {
+                                        inventory[k] = "";
 
                                         break;
                                     }
