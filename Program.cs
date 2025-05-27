@@ -1234,7 +1234,7 @@ namespace UberProject
 
                                 for (int k = 0; k < foodSatchel.Length; k++) //Removes third ingredient
                                 {
-                                    if (foodSatchel[k] == "potato")
+                                    if (foodSatchel[k] == "Potato")
                                     {
                                         foodSatchel[k] = "";
 
@@ -1282,7 +1282,7 @@ namespace UberProject
             {
                 for (int i = 0; i < inventory.Length; i++)
                 { //Adds Beef Stroganoff
-                    if (inventory[i] == "meat")
+                    if (inventory[i] == "Meat")
                     {
                         inventory[i] = "Beef Stroganoff";
                         Console.WriteLine("You made Beef Stroganoff");
@@ -1348,13 +1348,13 @@ namespace UberProject
                         Console.WriteLine("You made Kutia");
                         for (int j = 0; j < inventory.Length; j++) //Removes second ingredient
                         {
-                            if (inventory[j] == "Canned fruits")
+                            if (inventory[j] == "Canned Fruits")
                             {
                                 inventory[j] = "";
 
                                 for (int k = 0; k < inventory.Length; k++) //Removes third ingredient
                                 {
-                                    if (inventory[k] == "Flower seeds")
+                                    if (inventory[k] == "Flower Seeds")
                                     {
                                         inventory[k] = "";
 
