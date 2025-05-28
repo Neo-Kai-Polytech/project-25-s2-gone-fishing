@@ -135,27 +135,27 @@ namespace UberProject
         static void StoryLineSum()
         {
             Console.WriteLine("The story begins with the aftermath of World War III,");
-            Thread.Sleep(2000);
+            Thread.Sleep(200);
             Console.WriteLine("complete nuclear devastion plunging every nation into chaos and destruction.");
-            Thread.Sleep(2000);
+            Thread.Sleep(200);
             Console.WriteLine("\nCountless lives were lost, families were torn apart,");
-            Thread.Sleep(2000);
+            Thread.Sleep(200);
             Console.WriteLine("and the world as we knew it was shattered.");
-            Thread.Sleep(2000);
+            Thread.Sleep(200);
             Console.WriteLine("\nThe devastation extended beyond humanity—nature itself suffered,");
-            Thread.Sleep(2000);
+            Thread.Sleep(200);
             Console.WriteLine("with animal species driven to extinction and the air thick with radiation.");
-            Thread.Sleep(2000);
+            Thread.Sleep(200);
             Console.WriteLine("\nCommunities vanished, the global population was reduced to a tiny fraction,");
-            Thread.Sleep(2000);
+            Thread.Sleep(200);
             Console.WriteLine("and darkness spread to every corner of the earth.");
-            Thread.Sleep(2000);
+            Thread.Sleep(200);
             Console.WriteLine("\nIn these desperate times, people prayed for the world to be restored.");
-            Thread.Sleep(2000);
+            Thread.Sleep(200);
             Console.WriteLine("\nSome still held onto hope,");
-            Thread.Sleep(2000);
+            Thread.Sleep(200);
             Console.WriteLine("believing that one day a savior would emerge to bring balance back to the world.");
-            Thread.Sleep(2000);
+            Thread.Sleep(200);
             Console.WriteLine("\nPress any key to know about the main character");
             Console.ReadLine();
 
@@ -166,14 +166,8 @@ namespace UberProject
         public static void CharacterCreation()
 
         {
-            // List Character Options??
-            string charName;
-
-            //char name
-
             Console.WriteLine("Enter the name of the character.");
             charName = Console.ReadLine();
-            //char background
 
             Player player = new Player(charName, 100, "Steel Pan", 6);
             Console.Clear();
@@ -207,7 +201,6 @@ namespace UberProject
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             //start of the game
-
 
             StartingArea(ref player);
 
@@ -518,7 +511,9 @@ namespace UberProject
                 Console.WriteLine($"Player: {player.playerName} | HP: {player.playerHP} | Weapon: {player.playerWeapon} | Attack: {player.playerAttack}");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("------------------------------------------------------------");
-                Console.WriteLine("VS".PadLeft(32));
+                Console.WriteLine();
+                Console.WriteLine("VS".PadLeft(30));
+                Console.WriteLine();
                 Console.WriteLine("------------------------------------------------------------");
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Enemy: {enemy.enemyName} | HP: {enemy.enemyHP} | Attack: {enemy.enemyAttack}");
@@ -530,17 +525,14 @@ namespace UberProject
 
                 Console.WriteLine("1. Attack");
                 Console.WriteLine("2. Open Inventory");
-
-                do
+                
+                temp = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(temp) || !int.TryParse(temp, out choice))
                 {
-                    choice = Convert.ToInt32(Console.ReadLine());
-                    if (choice != Convert.ToInt32(Console.ReadLine) || (choice != 1 && choice != 2))
-                    {
-                        Console.WriteLine("Invalid choice, try again.");
-                        continue;
-                    }
-                    break;
-                } while (true);
+                    Console.WriteLine("Invalid input, please enter a number.");
+                    Thread.Sleep(1000);
+                    continue;
+                }
 
                 switch (choice)
                 {
@@ -665,6 +657,7 @@ namespace UberProject
                             player.playerAttack = Convert.ToInt32(weaponDetails[1]);
                             Console.WriteLine($"You equipped {player.playerWeapon} with {player.playerAttack} attack power!");
                             inventory[weaponSlot] = "";
+                            Console.ReadLine();
                         }
                         else
                         {
