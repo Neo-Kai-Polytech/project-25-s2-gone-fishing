@@ -557,6 +557,10 @@ namespace UberProject
             Console.WriteLine("Thanks for playing the game. Hope you enjoyed it.");
             Console.WriteLine("To exit press Enter.");
             Console.ReadLine();
+            Console.WriteLine("The Chef will return with his joruney in the next part.Coming SOON!!....");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(" _____ _                      _____          _ \r\n|_   _| |                    |  ___|        | |\r\n  | | | |__   ___            | |__ _ __   __| |\r\n  | | | '_ \\ / _ \\           |  __| '_ \\ / _` |\r\n  | | | | | |  __/           | |__| | | | (_| |\r\n  \\_/ |_| |_|\\___|           \\____/_| |_|\\__,_|\r\n                                               \r\n                                               ");
+            Console.ReadLine();
         }
 
 
