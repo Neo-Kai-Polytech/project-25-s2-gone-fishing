@@ -158,7 +158,7 @@ namespace UberProject
             Thread.Sleep(200);
             Console.WriteLine("and the world as we knew it was shattered.");
             Thread.Sleep(200);
-            Console.WriteLine("\nThe devastation extended beyond humanity—nature itself suffered,");
+            Console.WriteLine("\nThe devastation extended beyond humanity, as nature itself suffered,");
             Thread.Sleep(200);
             Console.WriteLine("with animal species driven to extinction and the air thick with radiation.");
             Thread.Sleep(200);
@@ -190,16 +190,18 @@ namespace UberProject
         public static void CharacterCreation()
 
         {
+            Console.Clear();
             Console.WriteLine("Enter the name of the character.");
             charName = Console.ReadLine();
-
             Player player = new Player(charName, 100, "Steel Pan", 6);
-            Console.Clear();
 
-            Console.WriteLine($"{charName} belongs to a small village and was brought up in a large family. His mother was a housekeeper, and his father was the army chief.\n " +
-                $"\nHis whole family was very patriotic and kind. He wanted to follow in his father’s footsteps and become an army officer." +
-                $"\nHe also liked cooking, which was taught to him by his mother, and he wanted to use this side talent in his life." +
-                $"\nSo he wanted to become an army chef. After much hard work, he eventually accomplished his goal and started serving in the army.");
+            Console.WriteLine("Sangrur, India - 2040");
+            Thread.Sleep(1000);
+            Console.WriteLine($"{charName} belonged to a small village and was brought up in a large family. His mother was a housekeeper," +
+                $"\nand his father was the Army Chief. His whole family was very patriotic and kind. He wanted to follow in his father’s" +
+                $"\nfootsteps and become an Army Officer. He also liked cooking, which was taught to him by his mother, and he wanted to" +
+                $"\nuse this side talent in his life. So he wanted to become an army chef." +
+                $"\nAfter much hard work, he eventually accomplished his goal and started serving in the army.");
             Thread.Sleep(1000);
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
@@ -209,20 +211,23 @@ namespace UberProject
             Thread.Sleep(1000);
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
-            Console.WriteLine($"\nSix months later, he woke up and remembered all that had happened. " +
-                $"\nAfter leaving the hospital, he saw that lots had changed.Due to the nuclear war, some animals had been mutated." +
-                $"\nOne night, he had a panic attack and felt he had no purpose left in his life; he was fully depressed and had no family or friends. " +
+            Console.WriteLine($"\nSix months later, he woke up alone and abandoned, facing a devasted world beyond recognition." +
+                $"\nAfter leaving the hospital, he quickly realised how much has changed. Due to the nuclear war," +
+                $"\nmany animals had mutated into terrifying creatures. One night, he had a panic attack and felt" +
+                $"\nhe had no purpose left in his life; he was fully depressed and had no family or friends. " +
                 $"\nBut he had no idea that nature had planned something big for him.");
             Thread.Sleep(1000);
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
-            Console.WriteLine($"After some days, while {charName} was trying to figure out the purpose of his life, he had a dream about his parents. " +
+            Console.WriteLine($"After some days, while {charName} was trying to figure out the purpose of his life, he had a dream about his parents." +
                 $"\nHe was sitting with them at the dining table, talking about everything that had happened." +
-                $"\nHis parents told him to make something new out of his life by following his passion for cooking and serving people.");
+                $"\nHis parents comforted him about the immense tragedy that has befallen mankind, but told him he had the opportunity" +
+                $"\nto create something new with his life, by following his passion for cooking and serving people" +
+                $"\nhe could be a catalyst towards the rebuilding and revival of humanity.");
             Thread.Sleep(500);
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
-            Console.WriteLine("\nAfter this dream, he decided to go on a worldwide journey to work towards restoring human civilisation one meal at a time.");
+            Console.WriteLine("\nAfter this dream, he decided to go on a worldwide journey to work towards restoring human civilisation, one meal at a time.");
             Console.WriteLine("\nTo decide where to go first, he threw a dart at a small globe, landing on Russia...");
             Console.WriteLine("Press any key to continue...");
             Console.Beep(440, 200);
@@ -239,6 +244,7 @@ namespace UberProject
             Console.Beep(329, 200);
             Console.Beep(369, 200);
             Console.Beep(329, 200);
+
             Console.ReadLine();
             //start of the game
 
@@ -250,7 +256,7 @@ namespace UberProject
         { 
             Console.Clear();
 
-            Console.WriteLine("Starting Area - Mother Russia, 2042");
+            Console.WriteLine("Starting Area - Russia, 2042");
             Thread.Sleep(1500);
 
 
