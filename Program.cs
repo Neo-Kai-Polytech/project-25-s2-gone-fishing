@@ -270,7 +270,7 @@ namespace UberProject
             Thread.Sleep(500);
             Console.WriteLine("Recipe for Russian Steak is Meat, Potato, Butter.");
             //here some things 2 or 3 ingredients will get added in the inventory
-            cookbook = cookbook + "Russian Steak";
+            cookbook = cookbook + "Russian Steak - Meat, Braed, Potato | ";
             for (int i = 0; i < foodSatchel.Length; i++)
             {
                 if (foodSatchel[i] == "")
@@ -323,8 +323,8 @@ namespace UberProject
             Console.WriteLine("The recipies are following:");
             Console.WriteLine("1. Borcht - Meat, Onion, Potato");
             Console.WriteLine("2. Solyanka - pickle, lemon, flour");
-            cookbook = cookbook + "Borcht | Meat, Onion Potato ";
-            cookbook = cookbook + "Solyanka | Pickle, Lemon, Flour ";
+            cookbook = cookbook + "Borcht - Meat, Onion Potato | ";
+            cookbook = cookbook + "Solyanka - Pickle, Lemon, Flour | ";
             for (int i = 0; i < foodSatchel.Length; i++)
             {
                 if (foodSatchel[i] == "")
@@ -413,7 +413,7 @@ namespace UberProject
             Console.WriteLine($"{charName} find themself walking through a run-down mall. They are heading towards the food court to keep warm throughout the night. Expecting trouble, {charName} is surprised to see a small community surviving deep inside the mall.");
             Console.WriteLine($"Coming down to meet the survivors, they instantly welcome {charName} into their community. {charName} explained their dream of helping people, and the survivors told them that they believed that one day a messiah would come to save us all, and that {charName} should eat a meal with them");
             Console.ReadLine();
-            cookbook = cookbook + "Kutia | Rice, Canned Fruits, Flower Seeds";
+            cookbook = cookbook + "Kutia - Rice, Canned Fruits, Flower Seeds | ";
             for (int i = 0; i < foodSatchel.Length; i++)
             {
                 if (foodSatchel[i] == "")
@@ -461,8 +461,8 @@ namespace UberProject
             Console.ReadLine();
 
             Console.WriteLine("Now these recipies are added in your inventory");
-            cookbook = cookbook + "Varenniki | Cheese, Potato, Eggs ";
-            cookbook = cookbook + "Beef stroganoff | Meat, Sour Cream, Onions ";
+            cookbook = cookbook + "Varenniki - Cheese, Potato, Eggs | ";
+            cookbook = cookbook + "Beef stroganoff - Meat, Sour Cream, Onions | ";
             for (int i = 0; i < foodSatchel.Length; i++)
             {
                 if (foodSatchel[i] == "")
@@ -1226,6 +1226,7 @@ namespace UberProject
                         {
                             Console.WriteLine(foodSatchel[i]);
                         }
+                        Console.WriteLine($"Cookbook:\n{cookbook}");
                         Console.WriteLine("What ingredient would you like to use?");
                         ingredientSlot1 = Console.ReadLine().ToLower();
                         tierOne(ingredientSlot1);
@@ -1237,6 +1238,7 @@ namespace UberProject
                         {
                             Console.WriteLine(foodSatchel[i]);
                         }
+                        Console.WriteLine($"Cookbook:\n{cookbook}");
                         Console.WriteLine("What is the first ingredient you would like to use?");
                         ingredientSlot1 = Console.ReadLine().ToLower();
                         Console.WriteLine("What is the second ingredient you would like to use?");
@@ -1250,6 +1252,7 @@ namespace UberProject
                         {
                             Console.WriteLine(foodSatchel[i]);
                         }
+                        Console.WriteLine($"Cookbook:\n{cookbook}");
                         Console.WriteLine("What is the first ingredient you would like to use?");
                         ingredientSlot1 = Console.ReadLine().ToLower();
                         Console.WriteLine("What is the second ingredient you would like to use?");
