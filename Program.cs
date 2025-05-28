@@ -157,6 +157,14 @@ namespace UberProject
             Console.WriteLine("believing that one day a savior would emerge to bring balance back to the world.");
             Thread.Sleep(200);
             Console.WriteLine("\nPress any key to know about the main character");
+            Console.Beep(369, 200);
+            Console.Beep(369, 200);
+            Console.Beep(369, 200);
+            Console.Beep(293, 200);
+            Console.Beep(246, 200);
+            Console.Beep(329, 200);
+            Console.Beep(329, 200);
+            Console.Beep(329, 200);
             Console.ReadLine();
 
             // Lead to Character Creation
@@ -199,6 +207,20 @@ namespace UberProject
             Console.WriteLine("\nAfter this night he decided to go on a world journey with passion to help people and to get some new experiences.");
             Console.WriteLine("\nTo decide where he should start first he just darted on the small globe and it landed on Russia.");
             Console.WriteLine("Press any key to continue...");
+            Console.Beep(440, 200);
+            Console.Beep(493, 200);
+            Console.Beep(440, 200);
+            Console.Beep(440, 200);
+            Console.Beep(440, 200);
+            Console.Beep(329, 200);
+            Console.Beep(293, 200);
+            Console.Beep(369, 200);
+            Console.Beep(369, 200);
+            Console.Beep(369, 200);
+            Console.Beep(329, 200);
+            Console.Beep(329, 200);
+            Console.Beep(369, 200);
+            Console.Beep(329, 200);
             Console.ReadLine();
             //start of the game
 
@@ -239,6 +261,13 @@ namespace UberProject
             Console.WriteLine("\nYou see a bear running towards you!");
             Console.WriteLine("Prepare yourself!\n\n");
             Console.ReadLine();
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(213, 100);
 
             Enemies enemy = monsters[15];
 
@@ -374,6 +403,13 @@ namespace UberProject
             Console.WriteLine("You see yourself at what used to be an old car park. Tattered green tents lay across it, and military jeeps create barricades. You can tell it had long since been abandoned. All of a sudden a crow comes eye to eye with you. twitchingly eyeing you up.");
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(213, 100);
             Enemies enemy = monsters[14];
             CombatSystem(ref player, enemy); //Crow fight
             Console.Clear();
@@ -448,6 +484,13 @@ namespace UberProject
             Console.WriteLine($"{charName} decides to help other soldiers");
             Console.ReadLine();
             Console.WriteLine($"Prepare to FIGHT!!!");
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(213, 100);
             Thread.Sleep(500);
             Enemies enemy = monsters[3];
 
@@ -494,7 +537,7 @@ namespace UberProject
             Console.ReadLine();
 
             Console.WriteLine("Thanks for playing the game. Hope you enjoyed it.");
-            Console.WriteLine("If you wanna exit press Enter.");
+            Console.WriteLine("To exit press Enter.");
             Console.ReadLine();
         }
 
