@@ -200,7 +200,7 @@ namespace UberProject
             Console.WriteLine($"{charName} belonged to a small village and was brought up in a large family. His mother was a housekeeper," +
                 $"\nand his father was the Army Chief. His whole family was very patriotic and kind. He wanted to follow in his father’s" +
                 $"\nfootsteps and become an Army Officer. He also liked cooking, which was taught to him by his mother, and he wanted to" +
-                $"\nuse this side talent in his life. So he wanted to become an army chef." +
+                $"\nuse this side talent in his life. So he wanted to become an Army Chef." +
                 $"\nAfter much hard work, he eventually accomplished his goal and started serving in the army.");
             Thread.Sleep(1000);
             Console.WriteLine("Press any key to continue...");
@@ -214,7 +214,7 @@ namespace UberProject
             Console.WriteLine($"\nSix months later, he woke up alone and abandoned, facing a devasted world beyond recognition." +
                 $"\nAfter leaving the hospital, he quickly realised how much has changed. Due to the nuclear war," +
                 $"\nmany animals had mutated into terrifying creatures. One night, he had a panic attack and felt" +
-                $"\nhe had no purpose left in his life; he was fully depressed and had no family or friends. " +
+                $"\nhe had no purpose left in his life; he was fully depressed and had no family or friends." +
                 $"\nBut he had no idea that nature had planned something big for him.");
             Thread.Sleep(1000);
             Console.WriteLine("Press any key to continue...");
@@ -279,11 +279,14 @@ namespace UberProject
     
         static void event1(ref Player player)
         {
-            Console.WriteLine("With the journey now he is finally in Russia where he saw that everything is destroyed. " +
-                "\nHe is finding any life which is still alive and can talk with them and he found a dense forest.And suddenly,..........");
+            Console.WriteLine("Setting off on his journey, he finally makes it to Russia where he sees immense destruction everywhere." +
+                "\nWalking around he desperately tries to find any sign of life, hoping to find survivors he can talk with." +
+                "\nSoon he finds himself in a dense forest." +
+                "\nAnd suddenly...");
             Thread.Sleep(2000);
             Console.WriteLine("\nYou see a bear running towards you!");
             Console.WriteLine("Prepare yourself!\n\n");
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             Console.Beep(319, 100);
             Console.Beep(319, 100);
@@ -301,12 +304,14 @@ namespace UberProject
             Thread.Sleep(1000);
             AcquireEpicLoot();
 
+            Console.Clear();
             Console.WriteLine($"After the fight villagers came to see who is in trouble and found {charName}");
             Thread.Sleep(500);
-            Console.WriteLine($"Villagers were happy to see {charName} and they welcomed him in their village. " +
-                $"\nThey were very kind and helpful. They told {charName} that they are also trying to survive in this apocalypse and they are also looking for some food." +
+            Console.WriteLine($"The Villagers were very happy to see {charName} and they welcomed him into their village." +
+                $"\nThey were very kind and helpful. They told {charName} that they are also trying to survive in this" +
+                $"\napocalypse and they are also looking for some food." +
                 $"\nSo {charName} decided to help them with his cooking skills and he started cooking for them." +
-                $"\nVillagers were very happy with his cooking skills and they started calling him Chef {charName}.\n");
+                $"\nThe Villagers were very happy with his cooking skills and they started calling him Chef {charName}.\n");
 
             Thread.Sleep(500);
             Console.WriteLine("Press any key to continue...");
@@ -316,13 +321,13 @@ namespace UberProject
         static void event2(ref Player player)
         {
             Console.Clear();
-            Console.WriteLine("After uniting with villagers he observed their cooking method  which was slightly different and want to talk with them regarding that." +
-                "\nWhile chatting he got to know some new dishes which includes Russian steak etc.\n");
+            Console.WriteLine("After uniting with the villagers he observed their cooking method which was slightly different " +
+                "and want to talk with them regarding that. While chatting he got to know some new dishes.\n");
+            Thread.Sleep(500);
+            Console.WriteLine("Recipe for Russian Steak is Meat, Potato, Butter.");
             Thread.Sleep(500);
             Console.WriteLine("Russian Steak is now added in your inventory.");
             Thread.Sleep(500);
-            Console.WriteLine("Recipe for Russian Steak is Meat, Potato, Butter.");
-            //here some things 2 or 3 ingredients will get added in the inventory
             cookbook = cookbook + "Russian Steak - Meat, Bread, Potato | ";
             for (int i = 0; i < foodSatchel.Length; i++)
             {
@@ -370,8 +375,11 @@ namespace UberProject
         static void event3(ref Player player)
         {
             Console.Clear();
-            Console.WriteLine($"Now Continuing in Russia {charName} reached in Moscow. He saw that city is pretty much destroyed and the vibes are pretty depressed in the city.\nRoaming around he met a bunch of people going in a group mental therapy and decided to join them. During the conversations he told them his passion of cooking and about his journey.\n" +
-                $"So other persons shared their favorite recipies and ingredients with him.");
+            Console.WriteLine($"Now Continuing in Russia {charName} reached Moscow." +
+                $"\nHe saw that the city is pretty much destroyed and the vibes are pretty depressed in the city." +
+                $"\nRoaming around he met a bunch of people taking part in group mental therapy and decided to join them." +
+                $"\nDuring the conversations he told them his passion of cooking and about his journey." +
+                $"\nSo other persons shared their favorite recipes and ingredients with him.");
             Console.WriteLine();
             Console.WriteLine("The recipies are following:");
             Console.WriteLine("1. Borcht - Meat, Onion, Potato");
@@ -425,8 +433,9 @@ namespace UberProject
         {
             string input;
             Console.Clear();
-            Console.WriteLine("You see yourself at what used to be an old car park. Tattered green tents lay across it," +
-                "\nand military jeeps create barricades. You can tell it had long since been abandoned." +
+            Console.WriteLine("Back outside roaming the wasteland you come across what used to be an old car park. " +
+                "\nTattered green tents lay across it, and military jeeps create barricades." +
+                "\nYou can tell it had long since been abandoned." +
                 "\nAll of a sudden a crow comes eye to eye with you, twitchingly eyeing you up.");
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
@@ -475,8 +484,11 @@ namespace UberProject
         static void event5(ref Player player)
         {
             Console.Clear();
-            Console.WriteLine($"{charName} find themself walking through a run-down mall. They are heading towards the food court to keep warm throughout the night. Expecting trouble, {charName} is surprised to see a small community surviving deep inside the mall.");
-            Console.WriteLine($"Coming down to meet the survivors, they instantly welcome {charName} into their community. {charName} explained their dream of helping people, and the survivors told them that they believed that one day a messiah would come to save us all, and that {charName} should eat a meal with them");
+            Console.WriteLine($"As night approaches, {charName} finds himself walking through a run-down mall, heading towards the food court to keep warm throughout the night." +
+                $"\nExpecting trouble, {charName} is surprised to see a small community surviving deep inside the mall.");
+            Console.WriteLine($"Coming down to meet the survivors, they instantly welcome {charName} into their community." +
+                $"\n{charName} explained their dream of helping people, and the survivors told them that they believed that" +
+                $"\none day a messiah would come to save us all, and that {charName} should eat a meal with them");
             Console.ReadLine();
             cookbook = cookbook + "Kutia - Rice, Canned Fruits, Flower Seeds | ";
             for (int i = 0; i < foodSatchel.Length; i++)
@@ -506,13 +518,17 @@ namespace UberProject
 
         static void endEvent(ref Player player)
         {
-            Console.WriteLine("Now you are in the end of the game.");
-            Console.WriteLine($"People in Moscow have told {charName} that there is a Military base near Moscow where a chef teacher is needed and they can use his help.");
-            Console.WriteLine($"\nSo he went there and saw bunch of young soldiers eating raw flesh which is not good for health. " +
-                $"\nSo {charName} approached them but suddenly siren starts ringing and news is a Mutant Scorpio attacked the OutPost.");
-            Console.WriteLine($"{charName} decides to help other soldiers");
-            Console.ReadLine();
+            
+            Console.WriteLine($"In the morning {charName} hears reports that there is a Military base near Moscow where a chef teacher is needed and they can use his help.");
+            Console.WriteLine($"\nSo he went there and saw bunch of young soldiers eating any scraps they can get their hands on, " +
+                $"\nsome even psychoticly choosing to eat human flesh to survive." +
+                $"\nSo {charName} approached them but suddenly siren starts ringing and news is a massive Mutant Scorpion has broken through into the outpost!");
+            Console.WriteLine($"{charName} decided to help the other soldiers");
+            Thread.Sleep(2000);
             Console.WriteLine($"Prepare to FIGHT!!!");
+            Console.WriteLine();
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
             Console.Beep(319, 100);
             Console.Beep(319, 100);
             Console.Beep(319, 100);
@@ -526,7 +542,8 @@ namespace UberProject
             CombatSystem(ref player, enemy);
 
             //fighting scene will come here
-            Console.WriteLine($"After the Fight you gained the trust of soldiers and now {charName} told them that he wants to teach soldiers some cooking methods.");
+            Console.Clear();
+            Console.WriteLine($"After the fight {charName} gained the trust of the soldiers and now started to teach the soldiers some new cooking methods.");
             Console.WriteLine($"In this whole journey {charName} learned lots of new dishes which are:");
             Console.WriteLine("Beef stroganoff - Meat, Sour Cream, Onions");
             Console.WriteLine("Varenniki - Cheese, Potato, Eggs");
@@ -563,12 +580,15 @@ namespace UberProject
                     foodSatchel[i] = "Onions";
                 }
             }
+
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
 
             Console.WriteLine("Thanks for playing the game. Hope you enjoyed it.");
             Console.WriteLine("To exit press Enter.");
             Console.ReadLine();
-            Console.WriteLine("The Chef will return with his joruney in the next part.Coming SOON!!....");
+            Console.WriteLine("The Chef will return with his journey in the next part." +
+                "\nComing SOON!!....\n");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(" _____ _                      _____          _ \r\n|_   _| |                    |  ___|        | |\r\n  | | | |__   ___            | |__ _ __   __| |\r\n  | | | '_ \\ / _ \\           |  __| '_ \\ / _` |\r\n  | | | | | |  __/           | |__| | | | (_| |\r\n  \\_/ |_| |_|\\___|           \\____/_| |_|\\__,_|\r\n                                               \r\n                                               ");
             Console.ReadLine();
@@ -618,13 +638,15 @@ namespace UberProject
                         enemy.enemyHP = enemy.enemyHP - pAttack;
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine($"{player.playerName} attacks {enemy.enemyName} for {pAttack} damage!");
+                        Console.Beep(400, 100);
                         Console.ResetColor();
-                        Thread.Sleep(1000);
+                        Thread.Sleep(700);
 
                         if (enemy.enemyHP <= 0)
                         {
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.WriteLine($"{enemy.enemyName} is defeated!");
+                            Console.Beep(800, 300);
                             Console.ResetColor();
                             break;
                         }
@@ -634,8 +656,9 @@ namespace UberProject
                         player.playerHP = player.playerHP - eAttack;
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine($"{enemy.enemyName} attacks {player.playerName} for {eAttack} damage!");
+                        Console.Beep(200, 150);
                         Console.ResetColor();
-                        Thread.Sleep(1000);
+                        Thread.Sleep(700);
 
                         if (player.playerHP <= 0)
                         {
