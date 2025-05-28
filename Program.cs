@@ -414,25 +414,25 @@ namespace UberProject
             Console.WriteLine($"Coming down to meet the survivors, they instantly welcome {charName} into their community. {charName} explained their dream of helping people, and the survivors told them that they believed that one day a messiah would come to save us all, and that {charName} should eat a meal with them");
             Console.ReadLine();
             cookbook = cookbook + "Kutia | Rice, Canned Fruits, Flower Seeds";
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = "Rice";
+                    foodSatchel[i] = "Rice";
                 }
             }
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = "Canned Fruits";
+                    foodSatchel[i] = "Canned Fruits";
                 }
             }
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = "Flower Seeds";
+                    foodSatchel[i] = "Flower Seeds";
                 }
             }
             Console.WriteLine("Kutia was added to your cookbook");
@@ -448,13 +448,13 @@ namespace UberProject
             Console.WriteLine($"{charName} decides to help other soldiers");
             Console.ReadLine();
             Console.WriteLine($"Prepare to FIGHT!!!");
-
+            Thread.Sleep(500);
             Enemies enemy = monsters[3];
 
             CombatSystem(ref player, enemy);
 
             //fighting scene will come here
-            Console.WriteLine($"After the Fight you gained the trust of soldiers and now told them that he wants to teach soldiers some cooking methods.");
+            Console.WriteLine($"After the Fight you gained the trust of soldiers and now {charName} told them that he wants to teach soldiers some cooking methods.");
             Console.WriteLine($"In this whole journey {charName} learned lots of new dishes which are:");
             Console.WriteLine("Beef stroganoff - Meat, Sour Cream, Onions");
             Console.WriteLine("Varenniki - Cheese, Potato, Eggs");
@@ -463,32 +463,32 @@ namespace UberProject
             Console.WriteLine("Now these recipies are added in your inventory");
             cookbook = cookbook + "Varenniki | Cheese, Potato, Eggs ";
             cookbook = cookbook + "Beef stroganoff | Meat, Sour Cream, Onions ";
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = "Cheese";
+                    foodSatchel[i] = "Cheese";
                 }
             }
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = "Eggs";
+                    foodSatchel[i] = "Eggs";
                 }
             }
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = "Sour Cream";
+                    foodSatchel[i] = "Sour Cream";
                 }
             }
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < foodSatchel.Length; i++)
             {
-                if (inventory[i] == "")
+                if (foodSatchel[i] == "")
                 {
-                    inventory[i] = "Onions";
+                    foodSatchel[i] = "Onions";
                 }
             }
             Console.ReadLine();
@@ -1221,12 +1221,22 @@ namespace UberProject
                         break;
                     case 1: //Cooking tier 1 recipies
                         Console.Clear();
+                        Console.WriteLine("Food satchel:");
+                        for (int i = 0; i < foodSatchel.Length; i++)
+                        {
+                            Console.WriteLine(foodSatchel[i]);
+                        }
                         Console.WriteLine("What ingredient would you like to use?");
                         ingredientSlot1 = Console.ReadLine().ToLower();
                         tierOne(ingredientSlot1);
                         break;
                     case 2: //Cooking tier 2 recipies
                         Console.Clear();
+                        Console.WriteLine("Food satchel:");
+                        for (int i = 0; i < foodSatchel.Length; i++)
+                        {
+                            Console.WriteLine(foodSatchel[i]);
+                        }
                         Console.WriteLine("What is the first ingredient you would like to use?");
                         ingredientSlot1 = Console.ReadLine().ToLower();
                         Console.WriteLine("What is the second ingredient you would like to use?");
@@ -1235,6 +1245,11 @@ namespace UberProject
                         break;
                     case 3: //Cooking tier 3 recipies
                         Console.Clear();
+                        Console.WriteLine("Food satchel:");
+                        for (int i = 0; i < foodSatchel.Length; i++)
+                        {
+                            Console.WriteLine(foodSatchel[i]);
+                        }
                         Console.WriteLine("What is the first ingredient you would like to use?");
                         ingredientSlot1 = Console.ReadLine().ToLower();
                         Console.WriteLine("What is the second ingredient you would like to use?");
@@ -1354,22 +1369,22 @@ namespace UberProject
             }
             else if (ingredient1 == "cheese" && ingredient2 == "potato" && ingredient3 == "eggs")
             {
-                for (int i = 0; i < inventory.Length; i++)
+                for (int i = 0; i < foodSatchel.Length; i++)
                 { //Adds Varenniki
-                    if (inventory[i] == "Cheese")
+                    if (foodSatchel[i] == "Cheese")
                     {
-                        inventory[i] = "Varenniki";
+                        foodSatchel[i] = "Varenniki";
                         Console.WriteLine("You made Varenniki");
                     }
                 }
             }
             else if (ingredient1 == "meat" && ingredient2 == "sour cream" && ingredient3 == "onions")
             {
-                for (int i = 0; i < inventory.Length; i++)
+                for (int i = 0; i < foodSatchel.Length; i++)
                 { //Adds Beef Stroganoff
-                    if (inventory[i] == "")
+                    if (foodSatchel[i] == "")
                     {
-                        inventory[i] = "Beef Stroganoff";
+                        foodSatchel[i] = "Beef Stroganoff";
                         Console.WriteLine("You made Beef Stroganoff");
                     }
                 }
@@ -1387,11 +1402,11 @@ namespace UberProject
             }
             else if (ingredient1 == "rice" && ingredient2 == "canned fruits" && ingredient3 == "flower seeds")
             {
-                for (int i = 0; i < inventory.Length; i++)
+                for (int i = 0; i < foodSatchel.Length; i++)
                 { //Adds Kutia
-                    if (inventory[i] == "")
+                    if (foodSatchel[i] == "")
                     {
-                        inventory[i] = "Kutia";
+                        foodSatchel[i] = "Kutia";
                         Console.WriteLine("You made Kutia");
                     }
                 }
