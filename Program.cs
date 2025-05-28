@@ -96,7 +96,7 @@ namespace UberProject
             new Enemies("Mirelurk", 30, 5, "A mutated crab-like creature with a hard shell and a vicious bite."),
             new Enemies("Super Mutant", 40, 8, "A hulking brute with enhanced strength and resilience, often armed with heavy weapons."),
             new Enemies("Deathclaw", 50, 10, "A terrifying predator with razor-sharp claws and incredible speed."),
-            new Enemies("Radscorpion", 35, 7, "A giant scorpion with a venomous sting and armored exoskeleton."),
+            new Enemies("Radscorpion", 80, 13, "A giant scorpion with a venomous sting and armored exoskeleton."),
             new Enemies("Radroach", 20, 4, "Giant irradiated cockroach with acidic saliva and armored carapace"),
             new Enemies("Mutant Hound", 35, 7, "Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression."),
             new Enemies("Ash Crawler", 25, 5, "A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below."),
@@ -134,25 +134,33 @@ namespace UberProject
 
         static void StoryLineSum()
         {
-
-            // Main story line
-
-            // Print to Screen Main Story Summary
-
-
-            Console.WriteLine("So the story starts with World War III Apocalypse where all countries were on war. Lost of lives were lost, families got ruined. " +
-                "\nNot only damage is done to the humans, nature also paid the price animal species got extinct, air pollution went to the next level." +
-                "\nIn the war many communities were lost, world population got half, darkness is now spreading every corner of the world." +
-                "People praying to the God to restore the balance of the world.\nSome still have belief that someday a messiah will come and everything will come back to its original.");
-
-            Console.WriteLine("Press any key to know about the main character");
+            Console.WriteLine("The story begins with the aftermath of World War III,");
+            Thread.Sleep(2000);
+            Console.WriteLine("complete nuclear devastion plunging every nation into chaos and destruction.");
+            Thread.Sleep(2000);
+            Console.WriteLine("\nCountless lives were lost, families were torn apart,");
+            Thread.Sleep(2000);
+            Console.WriteLine("and the world as we knew it was shattered.");
+            Thread.Sleep(2000);
+            Console.WriteLine("\nThe devastation extended beyond humanity—nature itself suffered,");
+            Thread.Sleep(2000);
+            Console.WriteLine("with animal species driven to extinction and the air thick with radiation.");
+            Thread.Sleep(2000);
+            Console.WriteLine("\nCommunities vanished, the global population was reduced to a tiny fraction,");
+            Thread.Sleep(2000);
+            Console.WriteLine("and darkness spread to every corner of the earth.");
+            Thread.Sleep(2000);
+            Console.WriteLine("\nIn these desperate times, people prayed for the world to be restored.");
+            Thread.Sleep(2000);
+            Console.WriteLine("\nSome still held onto hope,");
+            Thread.Sleep(2000);
+            Console.WriteLine("believing that one day a savior would emerge to bring balance back to the world.");
+            Thread.Sleep(2000);
+            Console.WriteLine("\nPress any key to know about the main character");
             Console.ReadLine();
-
 
             // Lead to Character Creation
             CharacterCreation();
-
-
         }
 
         public static void CharacterCreation()
@@ -167,26 +175,36 @@ namespace UberProject
             charName = Console.ReadLine();
             //char background
 
-            Player player = new Player(charName, 100, "Rusty Pipe Rifle", 10);
+            Player player = new Player(charName, 100, "Steel Pan", 6);
+            Console.Clear();
 
             Console.WriteLine($"{charName} belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief." +
                 $"\nHis whole family is very patriotic and kind. Following his father's footsteps he also wanted to become an army officer. " +
                 $"\nHe also liked cooking which her mother taught him and wanted to use this side talent in his life. So he wanted to become an army chef." +
                 "\nEventually, after working hard he accomplished his goal and started serving in the army.");
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
             Console.WriteLine($"\n\nTwo Years Later.........\nRussia Bombed America and World War III started and whole world was on fire and people were starving. " +
                 $"\nIn the attack {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
                 "Suddenly, something went bad and he went into a coma.");
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
             Console.WriteLine("\nHe woke up after six months and remembered things which happened. \nAfter getting out from the hospital, he observed lots of things has changed example due to nuclear war some animals got mutated.\nSo, one night he had a panic attack and he was thinking that now  had no purpose left in his life, fully depressed, no family and friends. " +
                 "\nBut he had no idea that nature has planned something big for him.");
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
             Console.WriteLine($"After some days, while {charName} was still trying to figure out the purpose of his life, " +
                 $"\none night he got a dream where he was sitting on the dining table with his mom and dad talking about stuff happened recently.\n" +
                 "There his parents told him to follow his passion of cooking and serving people in order to make something out of his life.\n");
             Thread.Sleep(500);
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
             Console.WriteLine("\nAfter this night he decided to go on a world journey with passion to help people and to get some new experiences.");
             Console.WriteLine("\nTo decide where he should start first he just darted on the small globe and it landed on Russia.");
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             //start of the game
 
@@ -196,11 +214,12 @@ namespace UberProject
         }
          
         public static void StartingArea(ref Player player)
-        {
-            Console.WriteLine("Starting Area");
-            Console.ReadLine();
-
+        { 
             Console.Clear();
+
+            Console.WriteLine("Starting Area - Mother Russia, 2042");
+            Thread.Sleep(1500);
+
 
             event1(ref player);
 
@@ -233,15 +252,24 @@ namespace UberProject
             CombatSystem(ref player, enemy);
 
             Console.WriteLine("YOU'VE FOUND EPIC LOOT!");
-            Console.ReadLine();
+            Thread.Sleep(1000);
             AcquireEpicLoot();
 
             Console.WriteLine($"After the fight villagers came to see who is in trouble and found {charName}");
+            Thread.Sleep(500);
+            Console.WriteLine($"Villagers were happy to see {charName} and they welcomed him in their village. " +
+                $"\nThey were very kind and helpful. They told {charName} that they are also trying to survive in this apocalypse and they are also looking for some food." +
+                $"\nSo {charName} decided to help them with his cooking skills and he started cooking for them." +
+                $"\nVillagers were very happy with his cooking skills and they started calling him Chef {charName}.\n");
+
+            Thread.Sleep(500);
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
         }
 
         static void event2(ref Player player)
         {
-
+            Console.Clear();
             Console.WriteLine("After uniting with villagers he observed their cooking method  which was slightly different and want to talk with them regarding that." +
                 "\nWhile chatting he got to know some new dishes which includes Russian steak etc.\n");
             Thread.Sleep(500);
@@ -295,6 +323,7 @@ namespace UberProject
 
         static void event3(ref Player player)
         {
+            Console.Clear();
             Console.WriteLine($"Now Continuing in Russia {charName} reached in Moscow. He saw that city is pretty much destroyed and the vibes are pretty depressed in the city.\nRoaming around he met a bunch of people going in a group mental therapy and decided to join them. During the conversations he told them his passion of cooking and about his journey.\n" +
                 $"So other persons shared their favorite recipies and ingredients with him.");
             Console.WriteLine();
@@ -350,8 +379,11 @@ namespace UberProject
         {
             string input;
             Console.WriteLine("You see yourself at what used to be an old car park. Tattered green tents lay across it, and military jeeps create barricades. You can tell it had long since been abandoned. All of a sudden a crow comes eye to eye with you. twitchingly eyeing you up.");
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
             Enemies enemy = monsters[14];
             CombatSystem(ref player, enemy); //Crow fight
+            Console.Clear();
             Console.WriteLine("You notice that the crow has given you bite marks. It seems that over time it has evolved teeth to chew through the armour plating that the military soldiers have. It seems that you have caused quite the commotion during your fight, and now all of the crows want to see what's going on");
             Console.WriteLine("You couldn't outrun them if you tried, unless you managed to find a distraction. The meat you're carrying will do just fine. Or you can engage with them, and see what the soldiers left behind");
             Console.WriteLine("r|   Sacrifice all meat and run away     f|    Fight 5 crows back to back");
@@ -365,7 +397,7 @@ namespace UberProject
                     CombatSystem(ref player, enemy); 
                     CombatSystem(ref player, enemy);
                     Console.WriteLine("YOU'VE FOUND EPIC LOOT!");
-                    Console.ReadLine();
+                    Thread.Sleep(1000);
                     AcquireEpicLoot();
                     break;
                 case "r":
@@ -384,6 +416,7 @@ namespace UberProject
 
         static void event5(ref Player player)
         {
+            Console.Clear();
             Console.WriteLine($"{charName} find themself walking through a run-down mall. They are heading towards the food court to keep warm throughout the night. Expecting trouble, {charName} is surprised to see a small community surviving deep inside the mall.");
             Console.WriteLine($"Coming down to meet the survivors, they instantly welcome {charName} into their community. {charName} explained their dream of helping people, and the survivors told them that they believed that one day a messiah would come to save us all, and that {charName} should eat a meal with them");
             Console.ReadLine();
@@ -623,6 +656,7 @@ namespace UberProject
                             player.playerWeapon = weaponDetails[0];
                             player.playerAttack = Convert.ToInt32(weaponDetails[1]);
                             Console.WriteLine($"You equipped {player.playerWeapon} with {player.playerAttack} attack power!");
+                            inventory[weaponSlot] = "";
                         }
                         else
                         {
@@ -705,15 +739,15 @@ namespace UberProject
 
             Items[] items =
             {
-                new Items { itemName = "Stimpak", itemType = "Healing", itemEffectValue = 15, itemDesc = "A medical kit that heals wounds and restores health." },
-                new Items { itemName = "RadAway", itemType = "Healing", itemEffectValue = 10, itemDesc = "A serum that removes radiation from the body." },
+                new Items { itemName = "Stimpak", itemType = "Healing", itemEffectValue = 20, itemDesc = "A medical kit that heals wounds and restores health." },
+                new Items { itemName = "RadAway", itemType = "Healing", itemEffectValue = 15, itemDesc = "A serum that removes radiation from the body." },
                 new Items { itemName = "Antiseptic Bandage", itemType = "Healing", itemEffectValue = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
                 new Items { itemName = "Molotov Cocktail", itemType = "Explosive", itemEffectValue = 18, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
                 new Items { itemName = "Fragmentation Grenade", itemType = "Explosive", itemEffectValue = 20, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
                 new Items { itemName = "Plasma Mine", itemType = "Explosive", itemEffectValue = 24, itemDesc = "A mine that detonates with a burst of plasma energy." },
                 new Items { itemName = "Dynamite Bundle", itemType = "Explosive", itemEffectValue = 30, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
                 new Items { itemName = "Cryo Grenade", itemType = "Explosive", itemEffectValue = 15, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
-                new Items { itemName = "Purified Water", itemType = "Healing", itemEffectValue = 8, itemDesc = "Clean water that hydrates and restores minor health." },
+                new Items { itemName = "Purified Water", itemType = "Healing", itemEffectValue = 10, itemDesc = "Clean water that hydrates and restores minor health." },
 
             };
 
@@ -791,15 +825,16 @@ namespace UberProject
                     break;
                 }
             }
-            Console.WriteLine();
-            Console.WriteLine($"You have received {acquiredItem1.itemName}");
+
+            Console.WriteLine($"You have received {acquiredItem2.itemName}");
             Thread.Sleep(1000);
+            Console.WriteLine();
 
             for (int i = 0; i < inventory.Length; i++)
             {
                 if (inventory[i] == "")
                 {
-                    inventory[i] = $"{acquiredItem1.itemName} - {acquiredItem1.itemType} - {acquiredItem1.itemEffectValue}";
+                    inventory[i] = $"{acquiredItem2.itemName} - {acquiredItem2.itemType} - {acquiredItem2.itemEffectValue}";
                     break;
                 }
             }
@@ -836,7 +871,6 @@ namespace UberProject
             int enemyNumber = random.Next(monsters.Length);
 
             return monsters[enemyNumber];
-
 
         }
 
@@ -988,22 +1022,17 @@ namespace UberProject
                         // Display all items in a readable format
                         Items[] items =
                         {
-                            new Items { itemName = "Stimpak", itemType = "Healing", itemEffectValue = 15, itemDesc = "A medical kit that heals wounds and restores health." },
-                            new Items { itemName = "RadAway", itemType = "Healing", itemEffectValue = 10, itemDesc = "A serum that removes radiation from the body." },
-                            new Items { itemName = "Nuka-Cola", itemType = "Beverage", itemEffectValue = 8, itemDesc = "A refreshing drink that boosts energy." },
-                            new Items { itemName = "Pork n' Beans", itemType = "Food", itemEffectValue = 9, itemDesc = "A can of beans that restores hunger." },
-                            new Items { itemName = "Mirelurk Meat"  , itemType = "Food", itemEffectValue = 12, itemDesc = "Cooked meat from a Mirelurk." },
-                            new Items { itemName = "Mutfruit", itemType = "Food", itemEffectValue = 5, itemDesc = "A mutated fruit, slightly restores health." },
+                            new Items { itemName = "Stimpak", itemType = "Healing", itemEffectValue = 20, itemDesc = "A medical kit that heals wounds and restores health." },
+                            new Items { itemName = "RadAway", itemType = "Healing", itemEffectValue = 15, itemDesc = "A serum that removes radiation from the body." },
                             new Items { itemName = "Antiseptic Bandage", itemType = "Healing", itemEffectValue = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
-                            new Items { itemName = "Dirty Water", itemType = "Beverage", itemEffectValue = 5, itemDesc = "Water of questionable quality, restores a small amount of health." },
                             new Items { itemName = "Molotov Cocktail", itemType = "Explosive", itemEffectValue = 18, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
                             new Items { itemName = "Fragmentation Grenade", itemType = "Explosive", itemEffectValue = 20, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
                             new Items { itemName = "Plasma Mine", itemType = "Explosive", itemEffectValue = 24, itemDesc = "A mine that detonates with a burst of plasma energy." },
                             new Items { itemName = "Dynamite Bundle", itemType = "Explosive", itemEffectValue = 30, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
                             new Items { itemName = "Cryo Grenade", itemType = "Explosive", itemEffectValue = 15, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
-                            new Items { itemName = "Cram", itemType = "Food", itemEffectValue = 15, itemDesc = "A can of processed meat, restores a moderate amount of health." },
-                            new Items { itemName = "Purified Water", itemType = "Beverage", itemEffectValue = 10, itemDesc = "Clean water, restores a good amount of health." }
+                            new Items { itemName = "Purified Water", itemType = "Healing", itemEffectValue = 10, itemDesc = "Clean water that hydrates and restores minor health." },
                         };
+
                         Console.WriteLine("Items in the game:\n");
                         foreach (var item in items)
                         {
