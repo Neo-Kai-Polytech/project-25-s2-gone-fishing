@@ -500,8 +500,9 @@ namespace UberProject
             }
             Console.ReadLine();
 
-            Console.WriteLine("Thanks for playing the game.Hope you enjoyed it.");
-            Console.WriteLine("If you wanna play again press A\nIf you wanna exit Press Enter.");
+            Console.WriteLine("Thanks for playing the game. Hope you enjoyed it.");
+            Console.WriteLine("If you wanna exit press Enter.");
+            Console.ReadLine();
         }
 
 
@@ -530,9 +531,16 @@ namespace UberProject
                 Console.WriteLine("1. Attack");
                 Console.WriteLine("2. Open Inventory");
 
-                temp = Console.ReadLine();
-                choice = Convert.ToInt32(temp);
-
+                do
+                {
+                    choice = Convert.ToInt32(Console.ReadLine());
+                    if (choice != Convert.ToInt32(Console.ReadLine) || (choice != 1 && choice != 2))
+                    {
+                        Console.WriteLine("Invalid choice, try again.");
+                        continue;
+                    }
+                    break;
+                } while (true);
 
                 switch (choice)
                 {
