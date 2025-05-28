@@ -310,7 +310,7 @@ namespace UberProject
             Thread.Sleep(500);
             Console.WriteLine("Recipe for Russian Steak is Meat, Potato, Butter.");
             //here some things 2 or 3 ingredients will get added in the inventory
-            cookbook = cookbook + "Russian Steak - Meat, Braed, Potato | ";
+            cookbook = cookbook + "Russian Steak - Meat, Bread, Potato | ";
             for (int i = 0; i < foodSatchel.Length; i++)
             {
                 if (foodSatchel[i] == "")
@@ -1399,6 +1399,7 @@ namespace UberProject
                     {
                         foodSatchel[i] = "Basic Sandwich";
                         Console.WriteLine("You made a Basic Sandwich");
+                        break;
                     }
                 }
             }
@@ -1410,6 +1411,7 @@ namespace UberProject
                     {
                         foodSatchel[i] = "Russian Steak";
                         Console.WriteLine("You made a Russian Steak");
+                        break;
                     }
                 }
             }
@@ -1421,6 +1423,7 @@ namespace UberProject
                     {
                         foodSatchel[i] = "Borscht";
                         Console.WriteLine("You made Borscht");
+                        break;
                     }
                 }
             }
@@ -1432,6 +1435,7 @@ namespace UberProject
                     {
                         foodSatchel[i] = "Varenniki";
                         Console.WriteLine("You made Varenniki");
+                        break;
                     }
                 }
             }
@@ -1443,6 +1447,7 @@ namespace UberProject
                     {
                         foodSatchel[i] = "Beef Stroganoff";
                         Console.WriteLine("You made Beef Stroganoff");
+                        break;
                     }
                 }
             }
@@ -1454,6 +1459,7 @@ namespace UberProject
                     {
                         foodSatchel[i] = "Solyanka";
                         Console.WriteLine("You made Solyanka");
+                        break;
                     }
                 }
             }
@@ -1465,6 +1471,7 @@ namespace UberProject
                     {
                         foodSatchel[i] = "Kutia";
                         Console.WriteLine("You made Kutia");
+                        break;
                     }
                 }
             }
