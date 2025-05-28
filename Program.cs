@@ -122,6 +122,17 @@ namespace UberProject
             Console.WriteLine("2  Options");
             Console.WriteLine("3  Collection");
             Console.WriteLine("0  Exit menu system");
+            Console.Beep(659, 200); // E5
+            Console.Beep(659, 200); // E5
+            Thread.Sleep(100);
+            Console.Beep(659, 200); // E5
+            Thread.Sleep(100);
+            Console.Beep(523, 200); // C5
+            Console.Beep(659, 200); // E5
+            Thread.Sleep(100);
+            Console.Beep(784, 200); // G5
+            Thread.Sleep(300);
+            Console.Beep(392, 400); // G4
             Console.WriteLine();
         }
 
