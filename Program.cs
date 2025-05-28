@@ -127,6 +127,17 @@ namespace UberProject
             Console.WriteLine("2  Options");
             Console.WriteLine("3  Collection");
             Console.WriteLine("0  Exit menu system");
+            Console.Beep(659, 200); // E5
+            Console.Beep(659, 200); // E5
+            Thread.Sleep(100);
+            Console.Beep(659, 200); // E5
+            Thread.Sleep(100);
+            Console.Beep(523, 200); // C5
+            Console.Beep(659, 200); // E5
+            Thread.Sleep(100);
+            Console.Beep(784, 200); // G5
+            Thread.Sleep(300);
+            Console.Beep(392, 400); // G4
             Console.WriteLine();
         }
 
@@ -162,6 +173,14 @@ namespace UberProject
             Console.WriteLine("believing that one day a savior would emerge to bring balance back to the world.");
             Thread.Sleep(200);
             Console.WriteLine("\nPress any key to know about the main character");
+            Console.Beep(369, 200);
+            Console.Beep(369, 200);
+            Console.Beep(369, 200);
+            Console.Beep(293, 200);
+            Console.Beep(246, 200);
+            Console.Beep(329, 200);
+            Console.Beep(329, 200);
+            Console.Beep(329, 200);
             Console.ReadLine();
 
             // Lead to Character Creation
@@ -206,6 +225,20 @@ namespace UberProject
             Console.WriteLine("\nAfter this dream, he decided to go on a worldwide journey to work towards restoring human civilisation one meal at a time.");
             Console.WriteLine("\nTo decide where to go first, he threw a dart at a small globe, landing on Russia...");
             Console.WriteLine("Press any key to continue...");
+            Console.Beep(440, 200);
+            Console.Beep(493, 200);
+            Console.Beep(440, 200);
+            Console.Beep(440, 200);
+            Console.Beep(440, 200);
+            Console.Beep(329, 200);
+            Console.Beep(293, 200);
+            Console.Beep(369, 200);
+            Console.Beep(369, 200);
+            Console.Beep(369, 200);
+            Console.Beep(329, 200);
+            Console.Beep(329, 200);
+            Console.Beep(369, 200);
+            Console.Beep(329, 200);
             Console.ReadLine();
             //start of the game
 
@@ -246,6 +279,13 @@ namespace UberProject
             Console.WriteLine("\nYou see a bear running towards you!");
             Console.WriteLine("Prepare yourself!\n\n");
             Console.ReadLine();
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(213, 100);
 
             Enemies enemy = monsters[15];
 
@@ -277,7 +317,7 @@ namespace UberProject
             Thread.Sleep(500);
             Console.WriteLine("Recipe for Russian Steak is Meat, Potato, Butter.");
             //here some things 2 or 3 ingredients will get added in the inventory
-            cookbook = cookbook + "Russian Steak";
+            cookbook = cookbook + "Russian Steak - Meat, Bread, Potato | ";
             for (int i = 0; i < foodSatchel.Length; i++)
             {
                 if (foodSatchel[i] == "")
@@ -330,8 +370,8 @@ namespace UberProject
             Console.WriteLine("The recipies are following:");
             Console.WriteLine("1. Borcht - Meat, Onion, Potato");
             Console.WriteLine("2. Solyanka - pickle, lemon, flour");
-            cookbook = cookbook + "Borcht | Meat, Onion Potato ";
-            cookbook = cookbook + "Solyanka | Pickle, Lemon, Flour ";
+            cookbook = cookbook + "Borcht - Meat, Onion Potato | ";
+            cookbook = cookbook + "Solyanka - Pickle, Lemon, Flour | ";
             for (int i = 0; i < foodSatchel.Length; i++)
             {
                 if (foodSatchel[i] == "")
@@ -381,6 +421,13 @@ namespace UberProject
             Console.WriteLine("You see yourself at what used to be an old car park. Tattered green tents lay across it, and military jeeps create barricades. You can tell it had long since been abandoned. All of a sudden a crow comes eye to eye with you. twitchingly eyeing you up.");
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(213, 100);
             Enemies enemy = monsters[14];
             CombatSystem(ref player, enemy); //Crow fight
             Console.Clear();
@@ -420,7 +467,7 @@ namespace UberProject
             Console.WriteLine($"{charName} find themself walking through a run-down mall. They are heading towards the food court to keep warm throughout the night. Expecting trouble, {charName} is surprised to see a small community surviving deep inside the mall.");
             Console.WriteLine($"Coming down to meet the survivors, they instantly welcome {charName} into their community. {charName} explained their dream of helping people, and the survivors told them that they believed that one day a messiah would come to save us all, and that {charName} should eat a meal with them");
             Console.ReadLine();
-            cookbook = cookbook + "Kutia | Rice, Canned Fruits, Flower Seeds";
+            cookbook = cookbook + "Kutia - Rice, Canned Fruits, Flower Seeds | ";
             for (int i = 0; i < foodSatchel.Length; i++)
             {
                 if (foodSatchel[i] == "")
@@ -455,6 +502,13 @@ namespace UberProject
             Console.WriteLine($"{charName} decides to help other soldiers");
             Console.ReadLine();
             Console.WriteLine($"Prepare to FIGHT!!!");
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(319, 100);
+            Console.Beep(213, 100);
             Thread.Sleep(500);
             Enemies enemy = monsters[3];
 
@@ -468,8 +522,8 @@ namespace UberProject
             Console.ReadLine();
 
             Console.WriteLine("Now these recipies are added in your inventory");
-            cookbook = cookbook + "Varenniki | Cheese, Potato, Eggs ";
-            cookbook = cookbook + "Beef stroganoff | Meat, Sour Cream, Onions ";
+            cookbook = cookbook + "Varenniki - Cheese, Potato, Eggs | ";
+            cookbook = cookbook + "Beef stroganoff - Meat, Sour Cream, Onions | ";
             for (int i = 0; i < foodSatchel.Length; i++)
             {
                 if (foodSatchel[i] == "")
@@ -501,7 +555,7 @@ namespace UberProject
             Console.ReadLine();
 
             Console.WriteLine("Thanks for playing the game. Hope you enjoyed it.");
-            Console.WriteLine("If you wanna exit press Enter.");
+            Console.WriteLine("To exit press Enter.");
             Console.ReadLine();
         }
 
@@ -1244,6 +1298,7 @@ namespace UberProject
                         {
                             Console.WriteLine(foodSatchel[i]);
                         }
+                        Console.WriteLine($"Cookbook:\n{cookbook}");
                         Console.WriteLine("What ingredient would you like to use?");
                         ingredientSlot1 = Console.ReadLine().ToLower();
                         tierOne(ingredientSlot1);
@@ -1255,6 +1310,7 @@ namespace UberProject
                         {
                             Console.WriteLine(foodSatchel[i]);
                         }
+                        Console.WriteLine($"Cookbook:\n{cookbook}");
                         Console.WriteLine("What is the first ingredient you would like to use?");
                         ingredientSlot1 = Console.ReadLine().ToLower();
                         Console.WriteLine("What is the second ingredient you would like to use?");
@@ -1268,6 +1324,7 @@ namespace UberProject
                         {
                             Console.WriteLine(foodSatchel[i]);
                         }
+                        Console.WriteLine($"Cookbook:\n{cookbook}");
                         Console.WriteLine("What is the first ingredient you would like to use?");
                         ingredientSlot1 = Console.ReadLine().ToLower();
                         Console.WriteLine("What is the second ingredient you would like to use?");
@@ -1360,6 +1417,7 @@ namespace UberProject
                     {
                         foodSatchel[i] = "Basic Sandwich";
                         Console.WriteLine("You made a Basic Sandwich");
+                        break;
                     }
                 }
             }
@@ -1371,6 +1429,7 @@ namespace UberProject
                     {
                         foodSatchel[i] = "Russian Steak";
                         Console.WriteLine("You made a Russian Steak");
+                        break;
                     }
                 }
             }
@@ -1382,6 +1441,7 @@ namespace UberProject
                     {
                         foodSatchel[i] = "Borscht";
                         Console.WriteLine("You made Borscht");
+                        break;
                     }
                 }
             }
@@ -1393,6 +1453,7 @@ namespace UberProject
                     {
                         foodSatchel[i] = "Varenniki";
                         Console.WriteLine("You made Varenniki");
+                        break;
                     }
                 }
             }
@@ -1404,6 +1465,7 @@ namespace UberProject
                     {
                         foodSatchel[i] = "Beef Stroganoff";
                         Console.WriteLine("You made Beef Stroganoff");
+                        break;
                     }
                 }
             }
@@ -1415,6 +1477,7 @@ namespace UberProject
                     {
                         foodSatchel[i] = "Solyanka";
                         Console.WriteLine("You made Solyanka");
+                        break;
                     }
                 }
             }
@@ -1426,6 +1489,7 @@ namespace UberProject
                     {
                         foodSatchel[i] = "Kutia";
                         Console.WriteLine("You made Kutia");
+                        break;
                     }
                 }
             }
