@@ -89,14 +89,14 @@ namespace UberProject
         private static Random random = new Random();
         private static int Task;
         public static string charName, cookbook = "";
-        static string[] inventory = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]; //Inventory of 15 slots, all same empty value to check if slots are empty
-        static string[] foodSatchel = ["", "", "", "", "", "", "", "", "", ""]; //Food Satchel of 10 slots, all same empty value to check if slots are empty
+        static string[] inventory = ["", "", "", "", "", "", "", "", "", ""]; 
+        static string[] foodSatchel = ["", "", "", "", "", "", "", "", "", ""];
         static Enemies[] monsters =
       {
             new Enemies("Mirelurk", 30, 5, "A mutated crab-like creature with a hard shell and a vicious bite."),
             new Enemies("Super Mutant", 40, 8, "A hulking brute with enhanced strength and resilience, often armed with heavy weapons."),
             new Enemies("Deathclaw", 50, 10, "A terrifying predator with razor-sharp claws and incredible speed."),
-            new Enemies("Radscorpion", 35, 7, "A giant scorpion with a venomous sting and armored exoskeleton."),
+            new Enemies("Radscorpion", 80, 13, "A giant scorpion with a venomous sting and armored exoskeleton."),
             new Enemies("Radroach", 20, 4, "Giant irradiated cockroach with acidic saliva and armored carapace"),
             new Enemies("Mutant Hound", 35, 7, "Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression."),
             new Enemies("Ash Crawler", 25, 5, "A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below."),
@@ -113,9 +113,9 @@ namespace UberProject
 
         static void Welcome()
         {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("______ _                                        __       ______    _ _             _   \r\n|  ___| |                                      / _|      |  ___|  | | |           | |  \r\n| |_  | | __ ___   _____  _ __ ___        ___ | |_       | |_ __ _| | | ___  _   _| |_ \r\n|  _| | |/ _` \\ \\ / / _ \\| '__/ __|      / _ \\|  _|      |  _/ _` | | |/ _ \\| | | | __|\r\n| |   | | (_| |\\ V / (_) | |  \\__ \\     | (_) | |        | || (_| | | | (_) | |_| | |_ \r\n\\_|   |_|\\__,_| \\_/ \\___/|_|  |___/      \\___/|_|        \\_| \\__,_|_|_|\\___/ \\__,_|\\__|\r\n                                                                                       \r\n                                                                                       ");
-            Console.ReadLine();
             Console.ResetColor();
             Console.WriteLine("The Menu options are:");
             Console.WriteLine("1  New Game");
@@ -134,25 +134,33 @@ namespace UberProject
 
         static void StoryLineSum()
         {
-
-            // Main story line
-
-            // Print to Screen Main Story Summary
-
-
-            Console.WriteLine("So the story starts with World War III Apocalypse where all countries were on war. Lost of lives were lost, families got ruined. " +
-                "\nNot only damage is done to the humans, nature also paid the price animal species got extinct, air pollution went to the next level." +
-                "\nIn the war many communities were lost, world population got half, darkness is now spreading every corner of the world." +
-                "People praying to the God to restore the balance of the world.\nSome still have belief that someday a messiah will come and everything will come back to its original.");
-
-            Console.WriteLine("Press any key to know about the main character");
+            Console.WriteLine("The story begins with the aftermath of World War III,");
+            Thread.Sleep(2000);
+            Console.WriteLine("complete nuclear devastion plunging every nation into chaos and destruction.");
+            Thread.Sleep(2000);
+            Console.WriteLine("\nCountless lives were lost, families were torn apart,");
+            Thread.Sleep(2000);
+            Console.WriteLine("and the world as we knew it was shattered.");
+            Thread.Sleep(2000);
+            Console.WriteLine("\nThe devastation extended beyond humanity—nature itself suffered,");
+            Thread.Sleep(2000);
+            Console.WriteLine("with animal species driven to extinction and the air thick with radiation.");
+            Thread.Sleep(2000);
+            Console.WriteLine("\nCommunities vanished, the global population was reduced to a tiny fraction,");
+            Thread.Sleep(2000);
+            Console.WriteLine("and darkness spread to every corner of the earth.");
+            Thread.Sleep(2000);
+            Console.WriteLine("\nIn these desperate times, people prayed for the world to be restored.");
+            Thread.Sleep(2000);
+            Console.WriteLine("\nSome still held onto hope,");
+            Thread.Sleep(2000);
+            Console.WriteLine("believing that one day a savior would emerge to bring balance back to the world.");
+            Thread.Sleep(2000);
+            Console.WriteLine("\nPress any key to know about the main character");
             Console.ReadLine();
-
 
             // Lead to Character Creation
             CharacterCreation();
-
-
         }
 
         public static void CharacterCreation()
@@ -167,26 +175,36 @@ namespace UberProject
             charName = Console.ReadLine();
             //char background
 
-            Player player = new Player(charName, 100, "Rusty Pipe Rifle", 10);
+            Player player = new Player(charName, 100, "Steel Pan", 6);
+            Console.Clear();
 
             Console.WriteLine($"{charName} belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief." +
                 $"\nHis whole family is very patriotic and kind. Following his father's footsteps he also wanted to become an army officer. " +
                 $"\nHe also liked cooking which her mother taught him and wanted to use this side talent in his life. So he wanted to become an army chef." +
                 "\nEventually, after working hard he accomplished his goal and started serving in the army.");
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
             Console.WriteLine($"\n\nTwo Years Later.........\nRussia Bombed America and World War III started and whole world was on fire and people were starving. " +
                 $"\nIn the attack {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
                 "Suddenly, something went bad and he went into a coma.");
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
             Console.WriteLine("\nHe woke up after six months and remembered things which happened. \nAfter getting out from the hospital, he observed lots of things has changed example due to nuclear war some animals got mutated.\nSo, one night he had a panic attack and he was thinking that now  had no purpose left in his life, fully depressed, no family and friends. " +
                 "\nBut he had no idea that nature has planned something big for him.");
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
             Console.WriteLine($"After some days, while {charName} was still trying to figure out the purpose of his life, " +
                 $"\none night he got a dream where he was sitting on the dining table with his mom and dad talking about stuff happened recently.\n" +
                 "There his parents told him to follow his passion of cooking and serving people in order to make something out of his life.\n");
             Thread.Sleep(500);
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
             Console.WriteLine("\nAfter this night he decided to go on a world journey with passion to help people and to get some new experiences.");
             Console.WriteLine("\nTo decide where he should start first he just darted on the small globe and it landed on Russia.");
+            Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             //start of the game
 
@@ -196,11 +214,12 @@ namespace UberProject
         }
          
         public static void StartingArea(ref Player player)
-        {
-            Console.WriteLine("Starting Area");
-            Console.ReadLine();
-
+        { 
             Console.Clear();
+
+            Console.WriteLine("Starting Area - Mother Russia, 2042");
+            Thread.Sleep(1500);
+
 
             event1(ref player);
 
@@ -233,15 +252,24 @@ namespace UberProject
             CombatSystem(ref player, enemy);
 
             Console.WriteLine("YOU'VE FOUND EPIC LOOT!");
-            Console.ReadLine();
+            Thread.Sleep(1000);
             AcquireEpicLoot();
 
             Console.WriteLine($"After the fight villagers came to see who is in trouble and found {charName}");
+            Thread.Sleep(500);
+            Console.WriteLine($"Villagers were happy to see {charName} and they welcomed him in their village. " +
+                $"\nThey were very kind and helpful. They told {charName} that they are also trying to survive in this apocalypse and they are also looking for some food." +
+                $"\nSo {charName} decided to help them with his cooking skills and he started cooking for them." +
+                $"\nVillagers were very happy with his cooking skills and they started calling him Chef {charName}.\n");
+
+            Thread.Sleep(500);
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
         }
 
         static void event2(ref Player player)
         {
-
+            Console.Clear();
             Console.WriteLine("After uniting with villagers he observed their cooking method  which was slightly different and want to talk with them regarding that." +
                 "\nWhile chatting he got to know some new dishes which includes Russian steak etc.\n");
             Thread.Sleep(500);
@@ -295,6 +323,7 @@ namespace UberProject
 
         static void event3(ref Player player)
         {
+            Console.Clear();
             Console.WriteLine($"Now Continuing in Russia {charName} reached in Moscow. He saw that city is pretty much destroyed and the vibes are pretty depressed in the city.\nRoaming around he met a bunch of people going in a group mental therapy and decided to join them. During the conversations he told them his passion of cooking and about his journey.\n" +
                 $"So other persons shared their favorite recipies and ingredients with him.");
             Console.WriteLine();
@@ -350,8 +379,11 @@ namespace UberProject
         {
             string input;
             Console.WriteLine("You see yourself at what used to be an old car park. Tattered green tents lay across it, and military jeeps create barricades. You can tell it had long since been abandoned. All of a sudden a crow comes eye to eye with you. twitchingly eyeing you up.");
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
             Enemies enemy = monsters[14];
             CombatSystem(ref player, enemy); //Crow fight
+            Console.Clear();
             Console.WriteLine("You notice that the crow has given you bite marks. It seems that over time it has evolved teeth to chew through the armour plating that the military soldiers have. It seems that you have caused quite the commotion during your fight, and now all of the crows want to see what's going on");
             Console.WriteLine("You couldn't outrun them if you tried, unless you managed to find a distraction. The meat you're carrying will do just fine. Or you can engage with them, and see what the soldiers left behind");
             Console.WriteLine("r|   Sacrifice all meat and run away     f|    Fight 5 crows back to back");
@@ -365,7 +397,7 @@ namespace UberProject
                     CombatSystem(ref player, enemy); 
                     CombatSystem(ref player, enemy);
                     Console.WriteLine("YOU'VE FOUND EPIC LOOT!");
-                    Console.ReadLine();
+                    Thread.Sleep(1000);
                     AcquireEpicLoot();
                     break;
                 case "r":
@@ -384,6 +416,7 @@ namespace UberProject
 
         static void event5(ref Player player)
         {
+            Console.Clear();
             Console.WriteLine($"{charName} find themself walking through a run-down mall. They are heading towards the food court to keep warm throughout the night. Expecting trouble, {charName} is surprised to see a small community surviving deep inside the mall.");
             Console.WriteLine($"Coming down to meet the survivors, they instantly welcome {charName} into their community. {charName} explained their dream of helping people, and the survivors told them that they believed that one day a messiah would come to save us all, and that {charName} should eat a meal with them");
             Console.ReadLine();
@@ -432,15 +465,50 @@ namespace UberProject
             Console.WriteLine($"In this whole journey {charName} learned lots of new dishes which are:");
             Console.WriteLine("Beef stroganoff - Meat, Sour Cream, Onions");
             Console.WriteLine("Varenniki - Cheese, Potato, Eggs");
-            Console.ReadLine() ;
+            Console.ReadLine();
 
-            Console.WriteLine("Thanks for playing the game.Hope yuo enjoyed it.");
+            Console.WriteLine("Now these recipies are added in your inventory");
+            cookbook = cookbook + "Varenniki | Cheese, Potato, Eggs ";
+            cookbook = cookbook + "Beef stroganoff | Meat, Sour Cream, Onions ";
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Cheese";
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Eggs";
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Sour Cream";
+                }
+            }
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                if (inventory[i] == "")
+                {
+                    inventory[i] = "Onions";
+                }
+            }
+            Console.ReadLine();
+
+            Console.WriteLine("Thanks for playing the game.Hope you enjoyed it.");
             Console.WriteLine("If you wanna play again press A\nIf you wanna exit Press Enter.");
         }
 
 
         public static void CombatSystem(ref Player player, Enemies enemy)
         {
+            int choice;
+            string temp;
 
             while (player.playerHP > 0 && enemy.enemyHP > 0)
             {
@@ -448,57 +516,164 @@ namespace UberProject
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine($"Player: {player.playerName} | HP: {player.playerHP} | Weapon: {player.playerWeapon} | Attack: {player.playerAttack}");
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("-------------------------------------------------------");
-                Console.WriteLine("VS".PadLeft(28));
-                Console.WriteLine("-------------------------------------------------------");
+                Console.WriteLine("------------------------------------------------------------");
+                Console.WriteLine("VS".PadLeft(32));
+                Console.WriteLine("------------------------------------------------------------");
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Enemy: {enemy.enemyName} | HP: {enemy.enemyHP} | Attack: {enemy.enemyAttack}");
                 Console.WriteLine($"Description: {enemy.enemyDesc}");
 
                 Console.ResetColor();
 
-                DisplayInventory();
+                Console.WriteLine("What do you want to do?");
+
+                Console.WriteLine("1. Attack");
+                Console.WriteLine("2. Open Inventory");
+
+                temp = Console.ReadLine();
+                choice = Convert.ToInt32(temp);
 
 
-                Console.WriteLine("\nPress Enter to attack...");
-                Console.ReadLine();
-
-                int playerAttack = player.playerAttack + random.Next(-2, 3);
-                enemy.enemyHP = enemy.enemyHP - playerAttack;
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"{player.playerName} attacks {enemy.enemyName} for {playerAttack} damage!");
-                Console.ResetColor();
-
-                if (enemy.enemyHP <= 0)
+                switch (choice)
                 {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine($"{enemy.enemyName} is defeated!");
-                    Console.ResetColor();
-                    break;
+                    case 1:
+                        // Attack
+                        int pAttack = player.playerAttack + random.Next(-2, 3);
+                        enemy.enemyHP = enemy.enemyHP - pAttack;
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"{player.playerName} attacks {enemy.enemyName} for {pAttack} damage!");
+                        Console.ResetColor();
+
+                        if (enemy.enemyHP <= 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine($"{enemy.enemyName} is defeated!");
+                            Console.ResetColor();
+                            break;
+                        }
+
+                        int eAttack = enemy.enemyAttack + random.Next(-2,3);
+                        player.playerHP = player.playerHP - eAttack;
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.WriteLine($"{enemy.enemyName} attacks {player.playerName} for {eAttack} damage!");
+                        Console.ResetColor();
+
+                        if (player.playerHP <= 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine($"{player.playerName} has been defeated!");
+                            Console.ResetColor();
+
+                            Console.WriteLine("GAME OVER! Press Enter to exit...");
+                            Main();
+                        }
+
+                        Console.WriteLine("\nPress Enter for next round...");
+                        Console.ReadLine();
+                        break;
+
+                    case 2:
+                        // Open Inventory
+                        DisplayInventory(ref player, ref enemy);
+                        continue;
+                    default:
+                        Console.WriteLine("Invalid choice, try again.");
+                        continue;
                 }
 
-                int enemyAttack = enemy.enemyAttack + random.Next(-1, 2);
-                player.playerHP = player.playerHP - enemyAttack;
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine($"{enemy.enemyName} attacks {player.playerName} for {enemyAttack} damage!");
-                Console.ResetColor();
-
-                if (player.playerHP <= 0)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"{player.playerName} has been defeated!");
-                    Console.ResetColor();
-
-                    Console.WriteLine("GAME OVER! Press Enter to exit...");
-                    Main();
-                }
-
-                Console.WriteLine("\nPress Enter for next round...");
-                Console.ReadLine();
             }
 
             Console.WriteLine("Combat ended. Press Enter to continue...");
             Console.ReadLine();
+
+        }
+
+
+        static void DisplayInventory(ref Player player, ref Enemies enemy)
+        {
+            Console.WriteLine("Inventory:");
+            Console.WriteLine("Slot | Item");
+            Console.WriteLine("---------------");
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                string item = string.IsNullOrEmpty(inventory[i]) ? "[Empty]" : inventory[i];
+                Console.WriteLine($"{i + 1,4} | {item}");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("What would you like to do?");
+            Console.WriteLine("1. Use an item");
+            Console.WriteLine("2. Equip a weapon");
+            Console.WriteLine("3. Return to combat");
+
+            int choice;
+            string temp = Console.ReadLine();
+            choice = Convert.ToInt32(temp);
+
+            switch (choice)
+            {
+                case 1:
+                    Console.WriteLine("Enter the slot number of the item you want to use:");
+                    int itemSlot;
+                    temp = Console.ReadLine();
+                    itemSlot = Convert.ToInt32(temp) - 1;
+                    if (itemSlot >= 0 && itemSlot < inventory.Length && !string.IsNullOrEmpty(inventory[itemSlot]))
+                    {
+                        string[] itemDetails = inventory[itemSlot].Split(" - ");
+                        if (itemDetails.Length >= 3 && itemDetails[1] == "Healing")
+                        {
+                            int healAmount = Convert.ToInt32(itemDetails[2]);
+                            player.playerHP = player.playerHP + healAmount;
+                            Console.WriteLine($"You used {itemDetails[0]} and healed for {healAmount} HP!");
+                            inventory[itemSlot] = "";
+                            Console.ReadLine();
+                        }
+                        else if (itemDetails.Length >= 3 && itemDetails[1] == "Explosive")
+                        {
+                            int damageAmount = Convert.ToInt32(itemDetails[2]);
+                            enemy.enemyHP = enemy.enemyHP - damageAmount;
+                            Console.WriteLine("***HUGE EXPLOSIONS***");
+                            Console.WriteLine($"You used {itemDetails[0]} against {enemy.enemyName} dealing {damageAmount} damage!");
+                            inventory[itemSlot] = "";
+                            Console.ReadLine();
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid slot number or empty slot.");
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine("Enter the slot number of the weapon you want to equip:");
+                    int weaponSlot;
+                    temp = Console.ReadLine();
+                    weaponSlot = Convert.ToInt32(temp) - 1;
+                    if (weaponSlot >= 0 && weaponSlot < inventory.Length && !string.IsNullOrEmpty(inventory[weaponSlot]))
+                    {
+                        string[] weaponDetails = inventory[weaponSlot].Split(" - ");
+                        if (weaponDetails.Length >= 4)
+                        {
+                            player.playerWeapon = weaponDetails[0];
+                            player.playerAttack = Convert.ToInt32(weaponDetails[1]);
+                            Console.WriteLine($"You equipped {player.playerWeapon} with {player.playerAttack} attack power!");
+                            inventory[weaponSlot] = "";
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid weapon details.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid slot number or empty slot.");
+                    }
+                    break;
+                case 3:
+                    Console.WriteLine("Returning to combat...");
+                    Thread.Sleep(1000);
+                    return;
+            }
+
 
         }
 
@@ -508,33 +683,33 @@ namespace UberProject
 
             Weapons[] weapons =
             {
-                new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 12, weaponType = "Ranged", weaponRarity = "Common" },
-                new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 10, weaponType = "Melee", weaponRarity = "Common" },
-                new Weapons { weaponName = "Radiation Axe", weaponDamage = 14, weaponType = "Melee", weaponRarity = "Common" },
-                new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 16, weaponType = "Energy", weaponRarity = "Common" },
-                new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 13, weaponType = "Ranged", weaponRarity = "Common" },
-                new Weapons { weaponName = "Electrified Machete", weaponDamage = 17, weaponType = "Melee", weaponRarity = "Common" },
+                new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 6, weaponType = "Ranged", weaponRarity = "Common" },
+                new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 6, weaponType = "Melee", weaponRarity = "Common" },
+                new Weapons { weaponName = "Radiation Axe", weaponDamage = 8, weaponType = "Melee", weaponRarity = "Common" },
+                new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 7, weaponType = "Energy", weaponRarity = "Common" },
+                new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 7, weaponType = "Ranged", weaponRarity = "Common" },
+                new Weapons { weaponName = "Electrified Machete", weaponDamage = 8, weaponType = "Melee", weaponRarity = "Common" },
             
-                new Weapons { weaponName = "Hunting Rifle", weaponDamage = 25, weaponType = "Ranged", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 30, weaponType = "Ranged", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Combat Shotgun", weaponDamage = 30, weaponType = "Ranged", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Flamer", weaponDamage = 35, weaponType = "Heavy", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Super Sledge", weaponDamage = 28, weaponType = "Melee", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Laser Musket", weaponDamage = 32, weaponType = "Energy", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Hunting Rifle", weaponDamage = 12, weaponType = "Ranged", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 13, weaponType = "Ranged", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Combat Shotgun", weaponDamage = 14, weaponType = "Ranged", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Flamer", weaponDamage = 12, weaponType = "Heavy", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Super Sledge", weaponDamage = 13, weaponType = "Melee", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Laser Musket", weaponDamage = 14, weaponType = "Energy", weaponRarity = "Rare" },
             
-                new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 55, weaponType = "Energy", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Tesla Cannon", weaponDamage = 65, weaponType = "Energy", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 50, weaponType = "Melee", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Cryolator", weaponDamage = 60, weaponType = "Energy", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Railway Rifle", weaponDamage = 58, weaponType = "Ranged", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Auto-Axe", weaponDamage = 52, weaponType = "Melee", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 21, weaponType = "Energy", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Tesla Cannon", weaponDamage = 24, weaponType = "Energy", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 22, weaponType = "Melee", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Cryolator", weaponDamage = 21, weaponType = "Energy", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Railway Rifle", weaponDamage = 23, weaponType = "Ranged", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Auto-Axe", weaponDamage = 22, weaponType = "Melee", weaponRarity = "Epic" },
             
-                new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 100, weaponType = "Explosive", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Plague Injector", weaponDamage = 80, weaponType = "Ranged", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 90, weaponType = "Heavy", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 110, weaponType = "Energy", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Oblivion Hammer", weaponDamage = 95, weaponType = "Melee", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Apocalypse Blade", weaponDamage = 105, weaponType = "Melee", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 50, weaponType = "Explosive", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Plague Injector", weaponDamage = 36, weaponType = "Ranged", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 35, weaponType = "Heavy", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 38, weaponType = "Energy", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Oblivion Hammer", weaponDamage = 36, weaponType = "Melee", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Apocalypse Blade", weaponDamage = 35, weaponType = "Melee", weaponRarity = "*Legendary*" },
             };
 
 
@@ -564,26 +739,22 @@ namespace UberProject
 
             Items[] items =
             {
-                new Items { itemName = "Stimpak", itemType = "Healing", itemEffectValue = 15, itemDesc = "A medical kit that heals wounds and restores health." },
-                new Items { itemName = "RadAway", itemType = "Healing", itemEffectValue = 10, itemDesc = "A serum that removes radiation from the body." },
-                new Items { itemName = "Nuka-Cola", itemType = "Beverage", itemEffectValue = 8, itemDesc = "A refreshing drink that boosts energy." },
-                new Items { itemName = "Pork n' Beans", itemType = "Food", itemEffectValue = 9, itemDesc = "A can of beans that restores hunger." },
-                new Items { itemName = "Mirelurk Meat"  , itemType = "Food", itemEffectValue = 12, itemDesc = "Cooked meat from a Mirelurk." },
-                new Items { itemName = "Mutfruit", itemType = "Food", itemEffectValue = 5, itemDesc = "A mutated fruit, slightly restores health." },
+                new Items { itemName = "Stimpak", itemType = "Healing", itemEffectValue = 20, itemDesc = "A medical kit that heals wounds and restores health." },
+                new Items { itemName = "RadAway", itemType = "Healing", itemEffectValue = 15, itemDesc = "A serum that removes radiation from the body." },
                 new Items { itemName = "Antiseptic Bandage", itemType = "Healing", itemEffectValue = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
-                new Items { itemName = "Dirty Water", itemType = "Beverage", itemEffectValue = 5, itemDesc = "Water of questionable quality, restores a small amount of health." },
                 new Items { itemName = "Molotov Cocktail", itemType = "Explosive", itemEffectValue = 18, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
                 new Items { itemName = "Fragmentation Grenade", itemType = "Explosive", itemEffectValue = 20, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
                 new Items { itemName = "Plasma Mine", itemType = "Explosive", itemEffectValue = 24, itemDesc = "A mine that detonates with a burst of plasma energy." },
                 new Items { itemName = "Dynamite Bundle", itemType = "Explosive", itemEffectValue = 30, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
                 new Items { itemName = "Cryo Grenade", itemType = "Explosive", itemEffectValue = 15, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
-                new Items { itemName = "Cram", itemType = "Food", itemEffectValue = 15, itemDesc = "A can of processed meat, restores a moderate amount of health." },
-                new Items { itemName = "Purified Water", itemType = "Beverage", itemEffectValue = 10, itemDesc = "Clean water, restores a good amount of health." }
+                new Items { itemName = "Purified Water", itemType = "Healing", itemEffectValue = 10, itemDesc = "Clean water that hydrates and restores minor health." },
+
             };
 
             int weaponLootRarity = random.Next(1,101);
             int weaponLoot;
-            int itemLoot = random.Next(items.Length);
+            int itemLoot1 = random.Next(items.Length);
+            int itemLoot2 = random.Next(items.Length);
             int ingredientLoot = random.Next(ingredients.Length);
 
             if (weaponLootRarity <= 40)
@@ -605,7 +776,8 @@ namespace UberProject
             }
 
             Weapons acquiredEpicWeapon = weapons[weaponLoot];
-            Items acquiredItem = items[itemLoot];
+            Items acquiredItem1 = items[itemLoot1];
+            Items acquiredItem2 = items[itemLoot2];
             Ingredients acquiredIngredient = ingredients[ingredientLoot];
 
             for (int i = 0; i < inventory.Length; i++)
@@ -642,32 +814,34 @@ namespace UberProject
             Console.ResetColor();
 
             Console.WriteLine();
-            Console.WriteLine($"You have received {acquiredItem.itemName}");
+            Console.WriteLine($"You have received {acquiredItem1.itemName}");
             Thread.Sleep(1000);
 
             for (int i = 0; i < inventory.Length; i++)
             {
                 if (inventory[i] == "")
                 {
-                    inventory[i] = $"{acquiredItem.itemName} - {acquiredItem.itemType} - {acquiredItem.itemEffectValue}";
+                    inventory[i] = $"{acquiredItem1.itemName} - {acquiredItem1.itemType} - {acquiredItem1.itemEffectValue}";
                     break;
                 }
             }
 
-            Console.ReadLine();
+            Console.WriteLine($"You have received {acquiredItem2.itemName}");
+            Thread.Sleep(1000);
+            Console.WriteLine();
 
-        }
-        static void DisplayInventory()
-        {
-            Console.WriteLine("Inventory:");
-            Console.WriteLine("Slot | Item");
-            Console.WriteLine("---------------");
             for (int i = 0; i < inventory.Length; i++)
             {
-                string item = string.IsNullOrEmpty(inventory[i]) ? "[Empty]" : inventory[i];
-                Console.WriteLine($"{i + 1,4} | {item}");
+                if (inventory[i] == "")
+                {
+                    inventory[i] = $"{acquiredItem2.itemName} - {acquiredItem2.itemType} - {acquiredItem2.itemEffectValue}";
+                    break;
+                }
             }
-            Console.WriteLine();
+
+            Console.WriteLine("Press any button to continue...");
+            Console.ReadLine();
+
         }
 
         public static Enemies RadndomHostileEncounter()
@@ -697,7 +871,6 @@ namespace UberProject
             int enemyNumber = random.Next(monsters.Length);
 
             return monsters[enemyNumber];
-
 
         }
 
@@ -849,22 +1022,17 @@ namespace UberProject
                         // Display all items in a readable format
                         Items[] items =
                         {
-                            new Items { itemName = "Stimpak", itemType = "Healing", itemEffectValue = 15, itemDesc = "A medical kit that heals wounds and restores health." },
-                            new Items { itemName = "RadAway", itemType = "Healing", itemEffectValue = 10, itemDesc = "A serum that removes radiation from the body." },
-                            new Items { itemName = "Nuka-Cola", itemType = "Beverage", itemEffectValue = 8, itemDesc = "A refreshing drink that boosts energy." },
-                            new Items { itemName = "Pork n' Beans", itemType = "Food", itemEffectValue = 9, itemDesc = "A can of beans that restores hunger." },
-                            new Items { itemName = "Mirelurk Meat"  , itemType = "Food", itemEffectValue = 12, itemDesc = "Cooked meat from a Mirelurk." },
-                            new Items { itemName = "Mutfruit", itemType = "Food", itemEffectValue = 5, itemDesc = "A mutated fruit, slightly restores health." },
+                            new Items { itemName = "Stimpak", itemType = "Healing", itemEffectValue = 20, itemDesc = "A medical kit that heals wounds and restores health." },
+                            new Items { itemName = "RadAway", itemType = "Healing", itemEffectValue = 15, itemDesc = "A serum that removes radiation from the body." },
                             new Items { itemName = "Antiseptic Bandage", itemType = "Healing", itemEffectValue = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
-                            new Items { itemName = "Dirty Water", itemType = "Beverage", itemEffectValue = 5, itemDesc = "Water of questionable quality, restores a small amount of health." },
                             new Items { itemName = "Molotov Cocktail", itemType = "Explosive", itemEffectValue = 18, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
                             new Items { itemName = "Fragmentation Grenade", itemType = "Explosive", itemEffectValue = 20, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
                             new Items { itemName = "Plasma Mine", itemType = "Explosive", itemEffectValue = 24, itemDesc = "A mine that detonates with a burst of plasma energy." },
                             new Items { itemName = "Dynamite Bundle", itemType = "Explosive", itemEffectValue = 30, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
                             new Items { itemName = "Cryo Grenade", itemType = "Explosive", itemEffectValue = 15, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
-                            new Items { itemName = "Cram", itemType = "Food", itemEffectValue = 15, itemDesc = "A can of processed meat, restores a moderate amount of health." },
-                            new Items { itemName = "Purified Water", itemType = "Beverage", itemEffectValue = 10, itemDesc = "Clean water, restores a good amount of health." }
+                            new Items { itemName = "Purified Water", itemType = "Healing", itemEffectValue = 10, itemDesc = "Clean water that hydrates and restores minor health." },
                         };
+
                         Console.WriteLine("Items in the game:\n");
                         foreach (var item in items)
                         {
@@ -966,6 +1134,7 @@ namespace UberProject
         {
             Console.WriteLine("This is the exit");
             Console.WriteLine("Press any key to close program");
+            Console.ReadLine();
         }
 
         static void InvalidInput()
