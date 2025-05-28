@@ -101,7 +101,7 @@ namespace UberProject
             new Enemies("Mirelurk", 30, 5, "A mutated crab-like creature with a hard shell and a vicious bite."),
             new Enemies("Super Mutant", 40, 8, "A hulking brute with enhanced strength and resilience, often armed with heavy weapons."),
             new Enemies("Deathclaw", 50, 10, "A terrifying predator with razor-sharp claws and incredible speed."),
-            new Enemies("Radscorpion", 80, 13, "A giant scorpion with a venomous sting and armored exoskeleton."),
+            new Enemies("Radscorpion", 65, 13, "A giant scorpion with a venomous sting and armored exoskeleton."),
             new Enemies("Radroach", 20, 4, "Giant irradiated cockroach with acidic saliva and armored carapace"),
             new Enemies("Mutant Hound", 35, 7, "Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression."),
             new Enemies("Ash Crawler", 25, 5, "A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below."),
@@ -513,6 +513,9 @@ namespace UberProject
                 }
             }
             Console.WriteLine("Kutia was added to your cookbook");
+            Console.WriteLine("Press any button to cook new dish");
+            Console.ReadLine();
+            InventoryManage();
             Console.ReadLine();
         }
 
@@ -582,6 +585,9 @@ namespace UberProject
             }
 
             Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press any button to cook new dish");
+            Console.ReadLine();
+            InventoryManage();
             Console.ReadLine();
 
             Console.WriteLine("Thanks for playing the game. Hope you enjoyed it.");
