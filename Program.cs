@@ -1,4 +1,9 @@
-﻿using System.Numerics;
+﻿using System.Diagnostics.Metrics;
+using System.Drawing;
+using System.Numerics;
+using System.Runtime.Intrinsics.X86;
+using System.Text.RegularExpressions;
+using System.Threading.Channels;
 using System.Xml.Linq;
 
 namespace UberProject
@@ -172,32 +177,34 @@ namespace UberProject
             Player player = new Player(charName, 100, "Steel Pan", 6);
             Console.Clear();
 
-            Console.WriteLine($"{charName} belongs to a small village born and brought up in a big family. His mother was a housekeeper and father was the army chief." +
-                $"\nHis whole family is very patriotic and kind. Following his father's footsteps he also wanted to become an army officer. " +
-                $"\nHe also liked cooking which her mother taught him and wanted to use this side talent in his life. So he wanted to become an army chef." +
-                "\nEventually, after working hard he accomplished his goal and started serving in the army.");
+            Console.WriteLine($"{charName} belongs to a small village and was brought up in a large family. His mother was a housekeeper, and his father was the army chief.\n " +
+                $"\nHis whole family was very patriotic and kind. He wanted to follow in his father’s footsteps and become an army officer." +
+                $"\nHe also liked cooking, which was taught to him by his mother, and he wanted to use this side talent in his life." +
+                $"\nSo he wanted to become an army chef. After much hard work, he eventually accomplished his goal and started serving in the army.");
             Thread.Sleep(1000);
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
-            Console.WriteLine($"\n\nTwo Years Later.........\nRussia Bombed America and World War III started and whole world was on fire and people were starving. " +
-                $"\nIn the attack {charName} lost his family, lost all of his friends fighting on the border.He himself got injured badly and was in hospital getting treated." +
-                "Suddenly, something went bad and he went into a coma.");
+            Console.WriteLine($"\nTwo Years Later.........\nRussia Bombed America and World War III started. The whole world was on fire, and people were starving." +
+                $"\nIn the attack, {charName} lost his family and his friends fighting on the border. He got badly injured and was sent to the hospital to be treated." +
+                $"\nSuddenly, his condition became severe, and he fell into a coma.");
             Thread.Sleep(1000);
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
-            Console.WriteLine("\nHe woke up after six months and remembered things which happened. \nAfter getting out from the hospital, he observed lots of things has changed example due to nuclear war some animals got mutated.\nSo, one night he had a panic attack and he was thinking that now  had no purpose left in his life, fully depressed, no family and friends. " +
-                "\nBut he had no idea that nature has planned something big for him.");
+            Console.WriteLine($"\nSix months later, he woke up and remembered all that had happened. " +
+                $"\nAfter leaving the hospital, he saw that lots had changed.Due to the nuclear war, some animals had been mutated." +
+                $"\nOne night, he had a panic attack and felt he had no purpose left in his life; he was fully depressed and had no family or friends. " +
+                $"\nBut he had no idea that nature had planned something big for him.");
             Thread.Sleep(1000);
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
-            Console.WriteLine($"After some days, while {charName} was still trying to figure out the purpose of his life, " +
-                $"\none night he got a dream where he was sitting on the dining table with his mom and dad talking about stuff happened recently.\n" +
-                "There his parents told him to follow his passion of cooking and serving people in order to make something out of his life.\n");
+            Console.WriteLine($"After some days, while {charName} was trying to figure out the purpose of his life, he had a dream about his parents. " +
+                $"\nHe was sitting with them at the dining table, talking about everything that had happened." +
+                $"\nHis parents told him to make something new out of his life by following his passion for cooking and serving people.");
             Thread.Sleep(500);
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
-            Console.WriteLine("\nAfter this night he decided to go on a world journey with passion to help people and to get some new experiences.");
-            Console.WriteLine("\nTo decide where he should start first he just darted on the small globe and it landed on Russia.");
+            Console.WriteLine("\nAfter this dream, he decided to go on a worldwide journey to work towards restoring human civilisation one meal at a time.");
+            Console.WriteLine("\nTo decide where to go first, he threw a dart at a small globe, landing on Russia...");
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             //start of the game
@@ -543,6 +550,7 @@ namespace UberProject
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine($"{player.playerName} attacks {enemy.enemyName} for {pAttack} damage!");
                         Console.ResetColor();
+                        Thread.Sleep(1000);
 
                         if (enemy.enemyHP <= 0)
                         {
@@ -552,11 +560,13 @@ namespace UberProject
                             break;
                         }
 
+
                         int eAttack = enemy.enemyAttack + random.Next(-2,3);
                         player.playerHP = player.playerHP - eAttack;
-                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine($"{enemy.enemyName} attacks {player.playerName} for {eAttack} damage!");
                         Console.ResetColor();
+                        Thread.Sleep(1000);
 
                         if (player.playerHP <= 0)
                         {
@@ -568,8 +578,6 @@ namespace UberProject
                             Main();
                         }
 
-                        Console.WriteLine("\nPress Enter for next round...");
-                        Console.ReadLine();
                         break;
 
                     case 2:
@@ -1146,12 +1154,22 @@ namespace UberProject
 
         static void InventoryManage()
         {
+            string temp;
             int input;
             Console.Clear();
             do
             {
                 Console.WriteLine("Hello. This is your food inventory.\nPress 1 to cook ingredients\nPress 2 to read out your inventory\n\nPress 0 to close the program"); //Menu text
-                input = Convert.ToInt32(Console.ReadLine());
+                temp = Console.ReadLine();
+                input =Convert.ToInt32(temp);
+
+                if (string.IsNullOrWhiteSpace(temp) || !int.TryParse(temp, out input))
+                {
+                    Console.WriteLine("Invalid input, please enter a number.");
+                    Thread.Sleep(1000);
+                    continue;
+                }
+
                 switch (input)
                 {
                     default:
