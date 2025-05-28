@@ -112,7 +112,7 @@ namespace UberProject
             new Enemies("Toxic Spitter", 22, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
             new Enemies("Bone Dragger", 26, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
             new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts."),
-            new Enemies("Murderous Crow", 18, 4, "A seemingly normal crow with teeth that can cut through ceramic plates"),
+            new Enemies("Murderous Crow", 22, 4, "A seemingly normal crow with teeth that can cut through ceramic plates"),
             new Enemies("Mutant Bear", 35, 8, "A mutated bear, aggressive and dangerous.")
     };
 
@@ -424,7 +424,10 @@ namespace UberProject
         static void event4(ref Player player)
         {
             string input;
-            Console.WriteLine("You see yourself at what used to be an old car park. Tattered green tents lay across it, and military jeeps create barricades. You can tell it had long since been abandoned. All of a sudden a crow comes eye to eye with you. twitchingly eyeing you up.");
+            Console.Clear();
+            Console.WriteLine("You see yourself at what used to be an old car park. Tattered green tents lay across it," +
+                "\nand military jeeps create barricades. You can tell it had long since been abandoned." +
+                "\nAll of a sudden a crow comes eye to eye with you, twitchingly eyeing you up.");
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
             Console.Beep(319, 100);
@@ -437,8 +440,10 @@ namespace UberProject
             Enemies enemy = monsters[14];
             CombatSystem(ref player, enemy); //Crow fight
             Console.Clear();
-            Console.WriteLine("You notice that the crow has given you bite marks. It seems that over time it has evolved teeth to chew through the armour plating that the military soldiers have. It seems that you have caused quite the commotion during your fight, and now all of the crows want to see what's going on");
-            Console.WriteLine("You couldn't outrun them if you tried, unless you managed to find a distraction. The meat you're carrying will do just fine. Or you can engage with them, and see what the soldiers left behind");
+            Console.WriteLine("You notice that the crow has given you bite marks. It seems that over time it has evolved teeth to chew through the armour plating that the military soldiers have." +
+                "\nIt seems that you have caused quite the commotion during your fight, and now all of the crows want to see what's going on");
+            Console.WriteLine("You couldn't outrun them if you tried, unless you managed to find a distraction." +
+                "\nThe meat you're carrying will do just fine. Or you can engage with them, and see what the soldiers left behind");
             Console.WriteLine("r|   Sacrifice all meat and run away     f|    Fight 5 crows back to back");
             input = Console.ReadLine();
             switch (input)
@@ -756,33 +761,33 @@ namespace UberProject
 
             Weapons[] weapons =
             {
-                new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 6, weaponType = "Ranged", weaponRarity = "Common" },
-                new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 6, weaponType = "Melee", weaponRarity = "Common" },
-                new Weapons { weaponName = "Radiation Axe", weaponDamage = 8, weaponType = "Melee", weaponRarity = "Common" },
-                new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 7, weaponType = "Energy", weaponRarity = "Common" },
-                new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 7, weaponType = "Ranged", weaponRarity = "Common" },
-                new Weapons { weaponName = "Electrified Machete", weaponDamage = 8, weaponType = "Melee", weaponRarity = "Common" },
+                new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 7, weaponType = "Ranged", weaponRarity = "Common" },
+                new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 8, weaponType = "Melee", weaponRarity = "Common" },
+                new Weapons { weaponName = "Radiation Axe", weaponDamage = 9, weaponType = "Melee", weaponRarity = "Common" },
+                new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 10, weaponType = "Energy", weaponRarity = "Common" },
+                new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 11, weaponType = "Ranged", weaponRarity = "Common" },
+                new Weapons { weaponName = "Electrified Machete", weaponDamage = 12, weaponType = "Melee", weaponRarity = "Common" },
             
-                new Weapons { weaponName = "Hunting Rifle", weaponDamage = 12, weaponType = "Ranged", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 13, weaponType = "Ranged", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Combat Shotgun", weaponDamage = 14, weaponType = "Ranged", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Flamer", weaponDamage = 12, weaponType = "Heavy", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Super Sledge", weaponDamage = 13, weaponType = "Melee", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Laser Musket", weaponDamage = 14, weaponType = "Energy", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Hunting Rifle", weaponDamage = 13, weaponType = "Ranged", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 14, weaponType = "Ranged", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Combat Shotgun", weaponDamage = 15, weaponType = "Ranged", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Flamer", weaponDamage = 16, weaponType = "Heavy", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Super Sledge", weaponDamage = 17, weaponType = "Melee", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Laser Musket", weaponDamage = 18, weaponType = "Energy", weaponRarity = "Rare" },
             
-                new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 21, weaponType = "Energy", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Tesla Cannon", weaponDamage = 24, weaponType = "Energy", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 22, weaponType = "Melee", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Cryolator", weaponDamage = 21, weaponType = "Energy", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 19, weaponType = "Energy", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Tesla Cannon", weaponDamage = 20, weaponType = "Energy", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 21, weaponType = "Melee", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Cryolator", weaponDamage = 22, weaponType = "Energy", weaponRarity = "Epic" },
                 new Weapons { weaponName = "Railway Rifle", weaponDamage = 23, weaponType = "Ranged", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Auto-Axe", weaponDamage = 22, weaponType = "Melee", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Auto-Axe", weaponDamage = 24, weaponType = "Melee", weaponRarity = "Epic" },
             
-                new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 50, weaponType = "Explosive", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Plague Injector", weaponDamage = 36, weaponType = "Ranged", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 35, weaponType = "Heavy", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 38, weaponType = "Energy", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Oblivion Hammer", weaponDamage = 36, weaponType = "Melee", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Apocalypse Blade", weaponDamage = 35, weaponType = "Melee", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Plague Injector", weaponDamage = 25, weaponType = "Ranged", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 26, weaponType = "Heavy", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 27, weaponType = "Energy", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Oblivion Hammer", weaponDamage = 28, weaponType = "Melee", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Apocalypse Blade", weaponDamage = 29, weaponType = "Melee", weaponRarity = "*Legendary*" },
+                new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 30, weaponType = "Explosive", weaponRarity = "*Legendary*" },
             };
 
 
@@ -911,6 +916,20 @@ namespace UberProject
                     break;
                 }
             }
+
+            Console.WriteLine($"You have received {acquiredIngredient.ingredientName}");
+            Thread.Sleep(1000);
+            Console.WriteLine();
+            for (int i = 0; i < foodSatchel.Length; i++)
+            {
+                if (foodSatchel[i] == "")
+                {
+                    foodSatchel[i] = acquiredIngredient.ingredientName;
+                    break;
+                }
+            }
+
+
 
             Console.WriteLine("Press any button to continue...");
             Console.ReadLine();
