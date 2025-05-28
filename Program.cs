@@ -455,13 +455,13 @@ namespace UberProject
             Console.WriteLine($"{charName} decides to help other soldiers");
             Console.ReadLine();
             Console.WriteLine($"Prepare to FIGHT!!!");
-
+            Thread.Sleep(500);
             Enemies enemy = monsters[3];
 
             CombatSystem(ref player, enemy);
 
             //fighting scene will come here
-            Console.WriteLine($"After the Fight you gained the trust of soldiers and now told them that he wants to teach soldiers some cooking methods.");
+            Console.WriteLine($"After the Fight you gained the trust of soldiers and now {charName} told them that he wants to teach soldiers some cooking methods.");
             Console.WriteLine($"In this whole journey {charName} learned lots of new dishes which are:");
             Console.WriteLine("Beef stroganoff - Meat, Sour Cream, Onions");
             Console.WriteLine("Varenniki - Cheese, Potato, Eggs");
@@ -501,7 +501,8 @@ namespace UberProject
             Console.ReadLine();
 
             Console.WriteLine("Thanks for playing the game.Hope you enjoyed it.");
-            Console.WriteLine("If you wanna play again press A\nIf you wanna exit Press Enter.");
+            Console.WriteLine("To exit Press Enter.");
+            Console.ReadLine();
         }
 
 
