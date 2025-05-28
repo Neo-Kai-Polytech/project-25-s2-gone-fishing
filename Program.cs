@@ -1266,7 +1266,7 @@ namespace UberProject
             {
                 for (int i = 0; i < foodSatchel.Length; i++)
                 {
-                    if (foodSatchel[i] == "Bread")
+                    if (foodSatchel[i] == "")
                     {
                         foodSatchel[i] = "Toast";
                         Console.Write("You cooked Toast");
@@ -1279,7 +1279,7 @@ namespace UberProject
             {
                 for (int i = 0; i < foodSatchel.Length; i++)
                 {
-                    if (foodSatchel[i] == "Drinkable Water")
+                    if (foodSatchel[i] == "")
                     {
                         foodSatchel[i] = "Boiling Water";
                         Console.WriteLine("You made Boiling Water");
@@ -1301,21 +1301,9 @@ namespace UberProject
             {
                 for (int i = 0; i < foodSatchel.Length; i++)
                 {
-                    if (foodSatchel[i] == "Lettuce") //First instance of ingredient
+                    if (foodSatchel[i] == "") //First instance of ingredient
                     {
                         foodSatchel[i] = "Salad"; //Change it to result
-                        Console.WriteLine("You made Salad");
-
-                        for (int j = 0; j < foodSatchel.Length; j++) //Second instance of ingredient
-                        {
-                            if (foodSatchel[j] == "Lettuce")
-                            {
-                                foodSatchel[j] = ""; //Change it to nothing
-
-                                break; //break out of each for loop so that it doesn't change all instances of lettuce (Sorry Krissi)
-                            }
-                        }
-                        break;
                     }
                 }
             }
@@ -1323,7 +1311,10 @@ namespace UberProject
             {
                 for (int i = 0;i < foodSatchel.Length; i++)
                 {
-
+                    if (foodSatchel[i] == "")
+                    {
+                        foodSatchel[i] = "Jam Toast";
+                    }
                 }
             }
             else
@@ -1339,29 +1330,10 @@ namespace UberProject
             {
                 for (int i = 0; i < foodSatchel.Length; i++)
                 { //Adds sandwich
-                    if (foodSatchel[i] == "Bread")
+                    if (foodSatchel[i] == "")
                     {
                         foodSatchel[i] = "Basic Sandwich";
                         Console.WriteLine("You made a Basic Sandwich");
-                        for (int j = 0; j < foodSatchel.Length; j++) //Removes second ingredient
-                        {
-                            if (foodSatchel[j] == "Lettuce")
-                            {
-                                foodSatchel[j] = "";
-
-                                for (int k = 0; k < foodSatchel.Length; k++) //Removes third ingredient
-                                {
-                                    if (foodSatchel[k] == "Bread")
-                                    {
-                                        foodSatchel[k] = "";
-
-                                        break;
-                                    }
-                                }
-                                break;
-                            }
-                        }
-                        break;
                     }
                 }
             }
@@ -1369,29 +1341,10 @@ namespace UberProject
             {
                 for (int i = 0; i < foodSatchel.Length; i++)
                 { //Adds Russian Steak
-                    if (foodSatchel[i] == "Meat")
+                    if (foodSatchel[i] == "")
                     {
                         foodSatchel[i] = "Russian Steak";
                         Console.WriteLine("You made a Russian Steak");
-                        for (int j = 0; j < foodSatchel.Length; j++) //Removes second ingredient
-                        {
-                            if (foodSatchel[j] == "Bread")
-                            {
-                                foodSatchel[j] = "";
-
-                                for (int k = 0; k < foodSatchel.Length; k++) //Removes third ingredient
-                                {
-                                    if (foodSatchel[k] == "Potato")
-                                    {
-                                        foodSatchel[k] = "";
-
-                                        break;
-                                    }
-                                }
-                                break;
-                            }
-                        }
-                        break;
                     }
                 }
             }
@@ -1403,25 +1356,6 @@ namespace UberProject
                     {
                         foodSatchel[i] = "Borscht";
                         Console.WriteLine("You made Borscht");
-                        for (int j = 0; j < foodSatchel.Length; j++) //Removes second ingredient
-                        {
-                            if (foodSatchel[j] == "Onion")
-                            {
-                                foodSatchel[j] = "";
-
-                                for (int k = 0; k < foodSatchel.Length; k++) //Removes third ingredient
-                                {
-                                    if (foodSatchel[k] == "Potato")
-                                    {
-                                        foodSatchel[k] = "";
-
-                                        break;
-                                    }
-                                }
-                                break;
-                            }
-                        }
-                        break;
                     }
                 }
             }
@@ -1433,25 +1367,6 @@ namespace UberProject
                     {
                         inventory[i] = "Varenniki";
                         Console.WriteLine("You made Varenniki");
-                        for (int j = 0; j < inventory.Length; j++) //Removes second ingredient
-                        {
-                            if (inventory[j] == "Potato")
-                            {
-                                inventory[j] = "";
-
-                                for (int k = 0; k < inventory.Length; k++) //Removes third ingredient
-                                {
-                                    if (inventory[k] == "Eggs")
-                                    {
-                                        inventory[k] = "";
-
-                                        break;
-                                    }
-                                }
-                                break;
-                            }
-                        }
-                        break;
                     }
                 }
             }
@@ -1459,29 +1374,10 @@ namespace UberProject
             {
                 for (int i = 0; i < inventory.Length; i++)
                 { //Adds Beef Stroganoff
-                    if (inventory[i] == "Meat")
+                    if (inventory[i] == "")
                     {
                         inventory[i] = "Beef Stroganoff";
                         Console.WriteLine("You made Beef Stroganoff");
-                        for (int j = 0; j < inventory.Length; j++) //Removes second ingredient
-                        {
-                            if (inventory[j] == "Sour Cream")
-                            {
-                                inventory[j] = "";
-
-                                for (int k = 0; k < inventory.Length; k++) //Removes third ingredient
-                                {
-                                    if (inventory[k] == "Onions")
-                                    {
-                                        inventory[k] = "";
-
-                                        break;
-                                    }
-                                }
-                                break;
-                            }
-                        }
-                        break;
                     }
                 }
             }
@@ -1489,29 +1385,10 @@ namespace UberProject
             {
                 for (int i = 0; i < foodSatchel.Length; i++)
                 { //Adds solyanka
-                    if (foodSatchel[i] == "Pickle")
+                    if (foodSatchel[i] == "")
                     {
                         foodSatchel[i] = "Solyanka";
                         Console.WriteLine("You made Solyanka");
-                        for (int j = 0; j < foodSatchel.Length; j++) //Removes second ingredient
-                        {
-                            if (foodSatchel[j] == "Lemon")
-                            {
-                                foodSatchel[j] = "";
-
-                                for (int k = 0; k < foodSatchel.Length; k++) //Removes third ingredient
-                                {
-                                    if (foodSatchel[k] == "Flour")
-                                    {
-                                        foodSatchel[k] = "";
-
-                                        break;
-                                    }
-                                }
-                                break;
-                            }
-                        }
-                        break;
                     }
                 }
             }
@@ -1519,29 +1396,10 @@ namespace UberProject
             {
                 for (int i = 0; i < inventory.Length; i++)
                 { //Adds Kutia
-                    if (inventory[i] == "Rice")
+                    if (inventory[i] == "")
                     {
                         inventory[i] = "Kutia";
                         Console.WriteLine("You made Kutia");
-                        for (int j = 0; j < inventory.Length; j++) //Removes second ingredient
-                        {
-                            if (inventory[j] == "Canned Fruits")
-                            {
-                                inventory[j] = "";
-
-                                for (int k = 0; k < inventory.Length; k++) //Removes third ingredient
-                                {
-                                    if (inventory[k] == "Flower Seeds")
-                                    {
-                                        inventory[k] = "";
-
-                                        break;
-                                    }
-                                }
-                                break;
-                            }
-                        }
-                        break;
                     }
                 }
             }
