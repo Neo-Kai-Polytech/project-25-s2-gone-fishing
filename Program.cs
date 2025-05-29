@@ -713,7 +713,8 @@ namespace UberProject
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("1. Use an item");
             Console.WriteLine("2. Equip a weapon");
-            Console.WriteLine("3. Return to combat");
+            Console.WriteLine("3. Drop item");
+            Console.WriteLine("4. Return to combat");
 
             int choice;
             string temp = Console.ReadLine();
@@ -778,7 +779,23 @@ namespace UberProject
                         Console.WriteLine("Invalid slot number or empty slot.");
                     }
                     break;
-                case 3:
+
+                    case 3:
+                    Console.WriteLine("Enter the slot number of the item you want to drop:");
+                    int dropSlot;
+                    temp = Console.ReadLine();
+                    dropSlot = Convert.ToInt32(temp) - 1;
+                    if (dropSlot >= 0 && dropSlot < inventory.Length && !string.IsNullOrEmpty(inventory[dropSlot]))
+                    {
+                        inventory[dropSlot] = "";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid slot number or empty slot.");
+                    }
+                    break;
+
+                case 4:
                     Console.WriteLine("Returning to combat...");
                     Thread.Sleep(1000);
                     return;
