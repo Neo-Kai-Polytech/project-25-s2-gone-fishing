@@ -516,7 +516,9 @@ namespace UberProject
             Console.WriteLine("Press any button to cook new dish");
             Console.ReadLine();
             InventoryManage();
+            Console.WriteLine("Press any button to continue...");
             Console.ReadLine();
+            
         }
 
         static void endEvent(ref Player player)
@@ -588,6 +590,7 @@ namespace UberProject
             Console.WriteLine("Press any button to cook new dish");
             Console.ReadLine();
             InventoryManage();
+            Console.WriteLine("Press any button to continue...");
             Console.ReadLine();
 
             Console.WriteLine("Thanks for playing the game. Hope you enjoyed it.");
