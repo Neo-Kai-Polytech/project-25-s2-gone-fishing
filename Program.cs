@@ -1431,6 +1431,7 @@ namespace UberProject
                             Console.WriteLine(foodSatchel[i]);
                         }
                         Console.WriteLine($"Cookbook:\n{cookbook}");
+                        Console.WriteLine("Ingredients need to be entered in the correct order.");
                         Console.WriteLine("What is the first ingredient you would like to use?");
                         ingredientSlot1 = Console.ReadLine().ToLower();
                         Console.WriteLine("What is the second ingredient you would like to use?");
