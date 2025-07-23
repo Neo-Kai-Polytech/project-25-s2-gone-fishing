@@ -127,17 +127,7 @@ namespace UberProject
             Console.WriteLine("2  Arena");
             Console.WriteLine("3  Collection");
             Console.WriteLine("0  Exit menu system");
-            Console.Beep(659, 200); // E5
-            Console.Beep(659, 200); // E5
-            Thread.Sleep(100);
-            Console.Beep(659, 200); // E5
-            Thread.Sleep(100);
-            Console.Beep(523, 200); // C5
-            Console.Beep(659, 200); // E5
-            Thread.Sleep(100);
-            Console.Beep(784, 200); // G5
-            Thread.Sleep(300);
-            Console.Beep(392, 400); // G4
+
             Console.WriteLine();
         }
 
@@ -173,14 +163,7 @@ namespace UberProject
             Console.WriteLine("believing that one day a savior would emerge to bring balance back to the world.");
             Thread.Sleep(200);
             Console.WriteLine("\nPress any key to know about the main character");
-            Console.Beep(369, 200);
-            Console.Beep(369, 200);
-            Console.Beep(369, 200);
-            Console.Beep(293, 200);
-            Console.Beep(246, 200);
-            Console.Beep(329, 200);
-            Console.Beep(329, 200);
-            Console.Beep(329, 200);
+
             Console.ReadLine();
 
             // Lead to Character Creation
