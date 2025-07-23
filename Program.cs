@@ -42,7 +42,7 @@ namespace UberProject
         }
         public override string ToString()
         {
-            return $"{enemyName} | HP: {enemyHP} | Attack: {enemyAttack} | Description: {enemyDesc}";
+            return $"{enemyName.PadRight(22)} | HP: {enemyHP} | Attack: {enemyAttack} | Description: {enemyDesc}";
         }
 
     }
@@ -94,7 +94,7 @@ namespace UberProject
         private static Random random = new Random();
         private static int Task;
         public static string charName, cookbook = "";
-        static string[] inventory = ["", "", "", "", "", "", "", "", "", ""]; 
+        static string[] inventory = ["", "", "", "", "", "", "", "", "", ""];
         static string[] foodSatchel = ["", "", "", "", "", "", "", "", "", ""];
         static Enemies[] monsters =
       {
@@ -251,9 +251,9 @@ namespace UberProject
             StartingArea(ref player);
 
         }
-         
+
         public static void StartingArea(ref Player player)
-        { 
+        {
             Console.Clear();
 
             Console.WriteLine("Starting Area - Russia, 2042");
@@ -276,7 +276,7 @@ namespace UberProject
 
         }
 
-    
+
         static void event1(ref Player player)
         {
             Console.WriteLine("Setting off on his journey, he finally makes it to Russia where he sees immense destruction everywhere." +
@@ -459,9 +459,9 @@ namespace UberProject
             {
                 case "f":
                     CombatSystem(ref player, enemy); //Fight 5 crows
-                    CombatSystem(ref player, enemy); 
-                    CombatSystem(ref player, enemy); 
-                    CombatSystem(ref player, enemy); 
+                    CombatSystem(ref player, enemy);
+                    CombatSystem(ref player, enemy);
+                    CombatSystem(ref player, enemy);
                     CombatSystem(ref player, enemy);
                     Console.WriteLine("YOU'VE FOUND EPIC LOOT!");
                     Thread.Sleep(1000);
@@ -470,7 +470,7 @@ namespace UberProject
                 case "r":
                     for (int i = 0; i < foodSatchel.Length; i++)
                     {
-                        if (foodSatchel[i] == "Meat" ||  foodSatchel[i] == "Fish")
+                        if (foodSatchel[i] == "Meat" || foodSatchel[i] == "Fish")
                         {
                             foodSatchel[i] = "";
                         }
@@ -518,12 +518,12 @@ namespace UberProject
             InventoryManage();
             Console.WriteLine("Press any button to continue...");
             Console.ReadLine();
-            
+
         }
 
         static void endEvent(ref Player player)
         {
-            
+
             Console.WriteLine($"In the morning {charName} hears reports that there is a Military base near Moscow where a chef teacher is needed and they can use his help.");
             Console.WriteLine($"\nSo he went there and saw bunch of young soldiers eating any scraps they can get their hands on, " +
                 $"\nsome even psychoticly choosing to eat human flesh to survive." +
@@ -630,7 +630,7 @@ namespace UberProject
 
                 Console.WriteLine("1. Attack");
                 Console.WriteLine("2. Open Inventory");
-                
+
                 temp = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(temp) || !int.TryParse(temp, out choice))
                 {
@@ -661,7 +661,7 @@ namespace UberProject
                         }
 
 
-                        int eAttack = enemy.enemyAttack + random.Next(-2,3);
+                        int eAttack = enemy.enemyAttack + random.Next(-2, 3);
                         player.playerHP = player.playerHP - eAttack;
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine($"{enemy.enemyName} attacks {player.playerName} for {eAttack} damage!");
@@ -780,7 +780,7 @@ namespace UberProject
                     }
                     break;
 
-                    case 3:
+                case 3:
                     Console.WriteLine("Enter the slot number of the item you want to drop:");
                     int dropSlot;
                     temp = Console.ReadLine();
@@ -816,21 +816,21 @@ namespace UberProject
                 new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 10, weaponType = "Energy", weaponRarity = "Common" },
                 new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 11, weaponType = "Ranged", weaponRarity = "Common" },
                 new Weapons { weaponName = "Electrified Machete", weaponDamage = 12, weaponType = "Melee", weaponRarity = "Common" },
-            
+
                 new Weapons { weaponName = "Hunting Rifle", weaponDamage = 13, weaponType = "Ranged", weaponRarity = "Rare" },
                 new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 14, weaponType = "Ranged", weaponRarity = "Rare" },
                 new Weapons { weaponName = "Combat Shotgun", weaponDamage = 15, weaponType = "Ranged", weaponRarity = "Rare" },
                 new Weapons { weaponName = "Flamer", weaponDamage = 16, weaponType = "Heavy", weaponRarity = "Rare" },
                 new Weapons { weaponName = "Super Sledge", weaponDamage = 17, weaponType = "Melee", weaponRarity = "Rare" },
                 new Weapons { weaponName = "Laser Musket", weaponDamage = 18, weaponType = "Energy", weaponRarity = "Rare" },
-            
+
                 new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 19, weaponType = "Energy", weaponRarity = "Epic" },
                 new Weapons { weaponName = "Tesla Cannon", weaponDamage = 20, weaponType = "Energy", weaponRarity = "Epic" },
                 new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 21, weaponType = "Melee", weaponRarity = "Epic" },
                 new Weapons { weaponName = "Cryolator", weaponDamage = 22, weaponType = "Energy", weaponRarity = "Epic" },
                 new Weapons { weaponName = "Railway Rifle", weaponDamage = 23, weaponType = "Ranged", weaponRarity = "Epic" },
                 new Weapons { weaponName = "Auto-Axe", weaponDamage = 24, weaponType = "Melee", weaponRarity = "Epic" },
-            
+
                 new Weapons { weaponName = "Plague Injector", weaponDamage = 25, weaponType = "Ranged", weaponRarity = "*Legendary*" },
                 new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 26, weaponType = "Heavy", weaponRarity = "*Legendary*" },
                 new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 27, weaponType = "Energy", weaponRarity = "*Legendary*" },
@@ -878,7 +878,7 @@ namespace UberProject
 
             };
 
-            int weaponLootRarity = random.Next(1,101);
+            int weaponLootRarity = random.Next(1, 101);
             int weaponLoot;
             int itemLoot1 = random.Next(items.Length);
             int itemLoot2 = random.Next(items.Length);
@@ -1023,7 +1023,7 @@ namespace UberProject
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
 
-            do 
+            do
             {
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine($"Round {i++}");
@@ -1074,7 +1074,7 @@ namespace UberProject
                 Console.WriteLine();
                 Console.WriteLine("Please choose an option");
                 userInput = Console.ReadLine();
-                
+
 
                 Console.Clear();
 
@@ -1101,6 +1101,10 @@ namespace UberProject
                             new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts.")
                         };
                         Console.WriteLine("Monsters in the game:\n");
+                        Console.WriteLine("Name".PadRight(20)
+                                        + "HP".PadRight(10)
+                                        + "Attack".PadRight(10)
+                                        + "Description");
                         foreach (var enemy in monsters)
                         {
                             Console.WriteLine(enemy);
@@ -1321,7 +1325,7 @@ namespace UberProject
             {
                 Console.WriteLine("Hello. This is your food inventory.\nPress 1 to cook ingredients\nPress 2 to read out your inventory\n\nPress 0 to close the program"); //Menu text
                 temp = Console.ReadLine();
-                input =Convert.ToInt32(temp);
+                input = Convert.ToInt32(temp);
 
                 if (string.IsNullOrWhiteSpace(temp) || !int.TryParse(temp, out input))
                 {
@@ -1499,7 +1503,7 @@ namespace UberProject
             }
             else if (ingredient1 == "toast" && ingredient2 == "jam")
             {
-                for (int i = 0;i < foodSatchel.Length; i++)
+                for (int i = 0; i < foodSatchel.Length; i++)
                 {
                     if (foodSatchel[i] == "")
                     {
@@ -1604,7 +1608,7 @@ namespace UberProject
             {
                 Console.WriteLine("I don't know what to make with this!");
             }
-                Console.ReadLine();
+            Console.ReadLine();
         }
 
         static void Main()
