@@ -62,7 +62,7 @@ namespace UberProject
         public string ingredientName;
         public override string ToString()
         {
-            return $"Name: {ingredientName}";
+            return $"{ingredientName}";
         }
     }
     public struct Items()
@@ -73,7 +73,7 @@ namespace UberProject
         public string itemDesc;
         public override string ToString()
         {
-            return $"{itemName.PadRight(22)} | {itemType.PadRight(10)} | {itemEffectValue.ToString().PadRight(8)} | {itemDesc}";
+            return $"{itemName.PadRight(22)} | {itemType.PadRight(10)} | {itemEffectValue.ToString().PadRight(6)} | {itemDesc}";
         }
 
     }
@@ -85,7 +85,7 @@ namespace UberProject
         public string ingredient3;
         public override string ToString()
         {
-            return $"{recipeName} | Ingredient1: {ingredient1} | Ingredient2: {ingredient2} | Ingredient3: {ingredient3}";
+            return $"{recipeName.PadRight(26)} | {ingredient1.PadRight(18)} | {ingredient2.PadRight(9)} | {ingredient3}";
         }
     }
 
@@ -796,26 +796,26 @@ namespace UberProject
 
             Ingredients[] ingredients =
             {
-                new Ingredients { ingredientName = "Bread" },
-                new Ingredients { ingredientName = "Lettuce" },
-                new Ingredients { ingredientName = "Tomato" },
-                new Ingredients { ingredientName = "Cheese" },
-                new Ingredients { ingredientName = "Meat" },
                 new Ingredients { ingredientName = "Egg" },
-                new Ingredients { ingredientName = "Potato" },
-                new Ingredients { ingredientName = "Carrot" },
-                new Ingredients { ingredientName = "Onion" },
-                new Ingredients { ingredientName = "Garlic" },
-                new Ingredients { ingredientName = "Salt" },
-                new Ingredients { ingredientName = "Pepper" },
-                new Ingredients { ingredientName = "Drinkable Water" },
                 new Ingredients { ingredientName = "Jam" },
                 new Ingredients { ingredientName = "Milk" },
-                new Ingredients { ingredientName = "Butter" },
-                new Ingredients { ingredientName = "Mushroom" },
+                new Ingredients { ingredientName = "Salt" },
                 new Ingredients { ingredientName = "Fish" },
+                new Ingredients { ingredientName = "Meat" },
+                new Ingredients { ingredientName = "Bread" },
+                new Ingredients { ingredientName = "Onion" },
                 new Ingredients { ingredientName = "Apple" },
-                new Ingredients { ingredientName = "Mutfruit" }
+                new Ingredients { ingredientName = "Tomato" },
+                new Ingredients { ingredientName = "Cheese" },
+                new Ingredients { ingredientName = "Potato" },
+                new Ingredients { ingredientName = "Carrot" },
+                new Ingredients { ingredientName = "Garlic" },
+                new Ingredients { ingredientName = "Pepper" },
+                new Ingredients { ingredientName = "Butter" },
+                new Ingredients { ingredientName = "Lettuce" },
+                new Ingredients { ingredientName = "Mutfruit" },
+                new Ingredients { ingredientName = "Mushroom" },
+                new Ingredients { ingredientName = "Drinkable Water" },
             };
 
             Items[] items =
@@ -1185,7 +1185,7 @@ namespace UberProject
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Name".PadRight(25)
                                         + "Type".PadRight(13)
-                                        + "Effect".PadRight(11)
+                                        + "Effect".PadRight(9)
                                         + "Description");
                         Console.ResetColor();
                         foreach (var item in items)
@@ -1200,28 +1200,31 @@ namespace UberProject
                         // Display all ingredients in a readable format
                         Ingredients[] ingredients =
                         {
+                            new Ingredients { ingredientName = "Egg" },
+                            new Ingredients { ingredientName = "Jam" },
+                            new Ingredients { ingredientName = "Meat" },
+                            new Ingredients { ingredientName = "Salt" },
+                            new Ingredients { ingredientName = "Fish" },
+                            new Ingredients { ingredientName = "Milk" },
                             new Ingredients { ingredientName = "Bread" },
-                            new Ingredients { ingredientName = "Lettuce" },
+                            new Ingredients { ingredientName = "Onion" },
+                            new Ingredients { ingredientName = "Apple" },
                             new Ingredients { ingredientName = "Tomato" },
                             new Ingredients { ingredientName = "Cheese" },
-                            new Ingredients { ingredientName = "Meat" },
-                            new Ingredients { ingredientName = "Egg" },
                             new Ingredients { ingredientName = "Potato" },
                             new Ingredients { ingredientName = "Carrot" },
-                            new Ingredients { ingredientName = "Onion" },
                             new Ingredients { ingredientName = "Garlic" },
-                            new Ingredients { ingredientName = "Salt" },
                             new Ingredients { ingredientName = "Pepper" },
-                            new Ingredients { ingredientName = "Drinkable Water" },
-                            new Ingredients { ingredientName = "Jam" },
-                            new Ingredients { ingredientName = "Milk" },
                             new Ingredients { ingredientName = "Butter" },
+                            new Ingredients { ingredientName = "Lettuce" },
                             new Ingredients { ingredientName = "Mushroom" },
-                            new Ingredients { ingredientName = "Fish" },
-                            new Ingredients { ingredientName = "Apple" },
-                            new Ingredients { ingredientName = "Mutfruit" }
+                            new Ingredients { ingredientName = "Mutfruit" },
+                            new Ingredients { ingredientName = "Drinkable Water" },
                         };
                         Console.WriteLine("Ingredients in the game:\n");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Name");
+                        Console.ResetColor();
                         foreach (var ingredient in ingredients)
                         {
                             Console.WriteLine(ingredient);
@@ -1256,6 +1259,12 @@ namespace UberProject
                             new Recipes { recipeName = "Egg & Mutfruit Breakfast", ingredient1 = "Egg", ingredient2 = "Mutfruit", ingredient3 = "Milk" },
                         };
                         Console.WriteLine("Recipes in the game:\n");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Name".PadRight(29)
+                                        + "First Ingredient".PadRight(21)
+                                        + "Second".PadRight(12)
+                                        + "Third");
+                        Console.ResetColor();
                         foreach (var recipe in recipes)
                         {
                             Console.WriteLine(recipe);
