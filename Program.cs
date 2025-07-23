@@ -127,17 +127,7 @@ namespace UberProject
             Console.WriteLine("2  Arena");
             Console.WriteLine("3  Collection");
             Console.WriteLine("0  Exit menu system");
-            Console.Beep(659, 200); // E5
-            Console.Beep(659, 200); // E5
-            Thread.Sleep(100);
-            Console.Beep(659, 200); // E5
-            Thread.Sleep(100);
-            Console.Beep(523, 200); // C5
-            Console.Beep(659, 200); // E5
-            Thread.Sleep(100);
-            Console.Beep(784, 200); // G5
-            Thread.Sleep(300);
-            Console.Beep(392, 400); // G4
+            //There was sound here and it was removed due to it being tedious when playing multiple times
             Console.WriteLine();
         }
 
@@ -171,16 +161,11 @@ namespace UberProject
             Console.WriteLine("\nSome still held onto hope,");
             Thread.Sleep(1600);
             Console.WriteLine("believing that one day a savior would emerge to bring balance back to the world.");
+
             Thread.Sleep(1600);
             Console.WriteLine("\nPress enter to know about the main character");
-            Console.Beep(369, 200);
-            Console.Beep(369, 200);
-            Console.Beep(369, 200);
-            Console.Beep(293, 200);
-            Console.Beep(246, 200);
-            Console.Beep(329, 200);
-            Console.Beep(329, 200);
-            Console.Beep(329, 200);
+            //There was sound here and it was removed due to it being tedious when playing multiple times
+
             Console.ReadLine();
 
             // Lead to Character Creation
@@ -230,21 +215,11 @@ namespace UberProject
             Console.ReadLine();
             Console.WriteLine("\nAfter this dream, he decided to go on a worldwide journey to work towards restoring human civilisation, one meal at a time.");
             Console.WriteLine("\nTo decide where to go first, he threw a dart at a small globe, landing on Russia...");
+
             Console.WriteLine("Press enter to continue...");
-            Console.Beep(440, 200);
-            Console.Beep(493, 200);
-            Console.Beep(440, 200);
-            Console.Beep(440, 200);
-            Console.Beep(440, 200);
-            Console.Beep(329, 200);
-            Console.Beep(293, 200);
-            Console.Beep(369, 200);
-            Console.Beep(369, 200);
-            Console.Beep(369, 200);
-            Console.Beep(329, 200);
-            Console.Beep(329, 200);
-            Console.Beep(369, 200);
-            Console.Beep(329, 200);
+
+            //There was sound here and it was removed due to it being tedious when playing multiple times
+
 
             Console.ReadLine();
             //start of the game
@@ -289,13 +264,7 @@ namespace UberProject
             Console.WriteLine("Prepare yourself!\n\n");
             Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(213, 100);
+            //There was sound here and it was removed due to it being tedious when playing multiple times
 
             Enemies enemy = monsters[15];
 
@@ -440,13 +409,7 @@ namespace UberProject
                 "\nAll of a sudden a crow comes eye to eye with you, twitchingly eyeing you up.");
             Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(213, 100);
+            //There was sound here and it was removed due to it being tedious when playing multiple times
             Enemies enemy = monsters[14];
             CombatSystem(ref player, enemy); //Crow fight
             Console.Clear();
@@ -535,13 +498,7 @@ namespace UberProject
             Console.WriteLine();
             Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(213, 100);
+            //There was sound here and it was removed due to it being tedious when playing multiple times
             Thread.Sleep(500);
             Enemies enemy = monsters[3];
 
@@ -648,7 +605,7 @@ namespace UberProject
                         enemy.enemyHP = enemy.enemyHP - pAttack;
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine($"{player.playerName} attacks {enemy.enemyName} for {pAttack} damage!");
-                        Console.Beep(400, 100);
+                        //There was sound here and it was removed due to it being tedious when playing multiple times
                         Console.ResetColor();
                         Thread.Sleep(700);
 
@@ -656,7 +613,7 @@ namespace UberProject
                         {
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.WriteLine($"{enemy.enemyName} is defeated!");
-                            Console.Beep(800, 300);
+                            //There was sound here and it was removed due to it being tedious when playing multiple times
                             Console.ResetColor();
                             break;
                         }
@@ -666,7 +623,7 @@ namespace UberProject
                         player.playerHP = player.playerHP - eAttack;
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine($"{enemy.enemyName} attacks {player.playerName} for {eAttack} damage!");
-                        Console.Beep(200, 150);
+                        //There was sound here and it was removed due to it being tedious when playing multiple times
                         Console.ResetColor();
                         Thread.Sleep(700);
 
