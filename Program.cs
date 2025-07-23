@@ -172,7 +172,7 @@ namespace UberProject
             Thread.Sleep(1600);
             Console.WriteLine("believing that one day a savior would emerge to bring balance back to the world.");
             Thread.Sleep(1600);
-            Console.WriteLine("\nPress any key to know about the main character");
+            Console.WriteLine("\nPress enter to know about the main character");
             Console.Beep(369, 200);
             Console.Beep(369, 200);
             Console.Beep(369, 200);
@@ -203,13 +203,13 @@ namespace UberProject
                 $"\nuse this side talent in his life. So he wanted to become an Army Chef." +
                 $"\nAfter much hard work, he eventually accomplished his goal and started serving in the army.");
             Thread.Sleep(1000);
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
             Console.WriteLine($"\nTwo Years Later.........\nRussia Bombed America and World War III started. The whole world was on fire, and people were starving." +
                 $"\nIn the attack, {charName} lost his family and his friends fighting on the border. He got badly injured and was sent to the hospital to be treated." +
                 $"\nSuddenly, his condition became severe, and he fell into a coma.");
             Thread.Sleep(1000);
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
             Console.WriteLine($"\nSix months later, he woke up alone and abandoned, facing a devasted world beyond recognition." +
                 $"\nAfter leaving the hospital, he quickly realised how much has changed. Due to the nuclear war," +
@@ -217,19 +217,20 @@ namespace UberProject
                 $"\nhe had no purpose left in his life; he was fully depressed and had no family or friends." +
                 $"\nBut he had no idea that nature had planned something big for him.");
             Thread.Sleep(1000);
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
+            Console.Clear();
             Console.WriteLine($"After some days, while {charName} was trying to figure out the purpose of his life, he had a dream about his parents." +
                 $"\nHe was sitting with them at the dining table, talking about everything that had happened." +
                 $"\nHis parents comforted him about the immense tragedy that has befallen mankind, but told him he had the opportunity" +
                 $"\nto create something new with his life, by following his passion for cooking and serving people" +
                 $"\nhe could be a catalyst towards the rebuilding and revival of humanity.");
             Thread.Sleep(500);
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
             Console.WriteLine("\nAfter this dream, he decided to go on a worldwide journey to work towards restoring human civilisation, one meal at a time.");
             Console.WriteLine("\nTo decide where to go first, he threw a dart at a small globe, landing on Russia...");
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.Beep(440, 200);
             Console.Beep(493, 200);
             Console.Beep(440, 200);
@@ -286,7 +287,7 @@ namespace UberProject
             Thread.Sleep(2000);
             Console.WriteLine("\nYou see a bear running towards you!");
             Console.WriteLine("Prepare yourself!\n\n");
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
             Console.Beep(319, 100);
             Console.Beep(319, 100);
@@ -437,7 +438,7 @@ namespace UberProject
                 "\nTattered green tents lay across it, and military jeeps create barricades." +
                 "\nYou can tell it had long since been abandoned." +
                 "\nAll of a sudden a crow comes eye to eye with you, twitchingly eyeing you up.");
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
             Console.Beep(319, 100);
             Console.Beep(319, 100);
@@ -516,7 +517,7 @@ namespace UberProject
             Console.WriteLine("Press any button to cook new dish");
             Console.ReadLine();
             InventoryManage();
-            Console.WriteLine("Press any button to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
             
         }
@@ -532,7 +533,7 @@ namespace UberProject
             Thread.Sleep(2000);
             Console.WriteLine($"Prepare to FIGHT!!!");
             Console.WriteLine();
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
             Console.Beep(319, 100);
             Console.Beep(319, 100);
@@ -586,11 +587,11 @@ namespace UberProject
                 }
             }
 
-            Console.WriteLine("Press any key to continue...");
-            Console.WriteLine("Press any button to cook new dish");
+            Console.WriteLine("Press enter to continue...");
+            Console.WriteLine("Press enter to cook new dish");
             Console.ReadLine();
             InventoryManage();
-            Console.WriteLine("Press any button to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
 
             Console.WriteLine("Thanks for playing the game. Hope you enjoyed it.");
@@ -966,7 +967,7 @@ namespace UberProject
                 }
             }
 
-            Console.WriteLine("Press any button to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
 
         }
@@ -1020,7 +1021,7 @@ namespace UberProject
 
             Console.ResetColor();
 
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
 
             do 
@@ -1207,7 +1208,7 @@ namespace UberProject
                         {
                             Console.WriteLine(item);
                         }
-                        Console.WriteLine("\n-- Press any key to return to the collection menu --");
+                        Console.WriteLine("\n-- Press enter to return to the collection menu --");
                         Console.ReadLine();
                         break;
 
@@ -1241,7 +1242,7 @@ namespace UberProject
                         {
                             Console.WriteLine(ingredient);
                         }
-                        Console.WriteLine("\n-- Press any key to return to the collection menu --");
+                        Console.WriteLine("\n-- Press enter to return to the collection menu --");
                         Console.ReadLine();
                         break;
 
@@ -1275,7 +1276,7 @@ namespace UberProject
                         {
                             Console.WriteLine(recipe);
                         }
-                        Console.WriteLine("\n-- Press any key to return to the collection menu --");
+                        Console.WriteLine("\n-- Press enter to return to the collection menu --");
                         Console.ReadLine();
                         break;
 
@@ -1294,7 +1295,7 @@ namespace UberProject
 
             } while (userInput != "0");
 
-            Console.WriteLine("Press any key to return to menu");
+            Console.WriteLine("Press enter to return to menu");
             Console.ReadLine();
 
         }
@@ -1302,7 +1303,7 @@ namespace UberProject
         static void Exit()
         {
             Console.WriteLine("This is the exit");
-            Console.WriteLine("Press any key to close program");
+            Console.WriteLine("Press enter to close program");
             Console.ReadLine();
         }
 
