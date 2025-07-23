@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics.X86;
 using System.Text.RegularExpressions;
 using System.Threading.Channels;
@@ -8,6 +9,26 @@ using System.Xml.Linq;
 
 namespace UberProject
 {
+
+
+    public struct Fish
+    {
+        public string fishName;
+        public int sellPrice;
+        public string fishPun;
+
+        public Fish(string name, int sell, string Pun)
+        {
+            fishName = name;
+            sellPrice = sell;
+            fishPun = Pun;
+        }
+        public override string ToString()
+        {
+            return $"You caught a {fishName} \n\n{fishPun.TrimStart(' ')}";
+        }
+
+    }
     public struct Player
     {
         public string playerName;
@@ -1557,6 +1578,104 @@ namespace UberProject
                 Console.ReadLine();
         }
 
+        static void Fishing()
+        {
+            List<Fish> fishlist = new List<Fish>()
+            {
+                new Fish("Bluegill", 50, "You're reely gillin' it!"),
+                new Fish("Bluegill", 50, "You're reely gillin' it!"),
+                new Fish("Bluegill", 50, "You're reely gillin' it!"),
+                new Fish("Bluegill", 50, "You're reely gillin' it!"),
+                new Fish("Bluegill", 50, "You're reely gillin' it!"),
+                new Fish("Bluegill", 50, "You're reely gillin' it!"),
+                new Fish("Bluegill", 50, "You're reely gillin' it!"),
+                new Fish("Bluegill", 50, "You're reely gillin' it!"),
+                new Fish("Carp", 40, "What a load of carp."),
+                new Fish("Carp", 40, "What a load of carp."),
+                new Fish("Carp", 40, "What a load of carp."),
+                new Fish("Carp", 40, "What a load of carp."),
+                new Fish("Carp", 40, "What a load of carp."),
+                new Fish("Carp", 40, "What a load of carp."),
+                new Fish("Trout", 55, "I trout you'd like this one."),
+                new Fish("Trout", 55, "I trout you'd like this one."),
+                new Fish("Trout", 55, "I trout you'd like this one."),
+                new Fish("Trout", 55, "I trout you'd like this one."),
+                new Fish("Trout", 55, "I trout you'd like this one."),
+                new Fish("Trout", 55, "I trout you'd like this one."),
+                new Fish("Sardine", 20, "Small but sardinely proud."),
+                new Fish("Sardine", 20, "Small but sardinely proud."),
+                new Fish("Sardine", 20, "Small but sardinely proud."),
+                new Fish("Sardine", 20, "Small but sardinely proud."),
+                new Fish("Sardine", 20, "Small but sardinely proud."),
+                new Fish("Sardine", 20, "Small but sardinely proud."),
+                new Fish("Sardine", 20, "Small but sardinely proud."),
+                new Fish("Sardine", 20, "Small but sardinely proud."),
+
+                // Uncommon Fish
+                new Fish("Catfish", 120, "Not a cat, but still fin-tastic."),
+                new Fish("Catfish", 120, "Not a cat, but still fin-tastic."),
+                new Fish("Catfish", 120, "Not a cat, but still fin-tastic."),
+                new Fish("Catfish", 120, "Not a cat, but still fin-tastic."),
+                new Fish("Bass", 100, "You're about to get bass-ic!"),
+                new Fish("Bass", 100, "You're about to get bass-ic!"),
+                new Fish("Bass", 100, "You're about to get bass-ic!"),
+                new Fish("Perch", 80, "You can perch-ase this fish!"),
+                new Fish("Perch", 80, "You can perch-ase this fish!"),
+                new Fish("Perch", 80, "You can perch-ase this fish!"),
+                new Fish("Salmon", 90, "Something’s fishy—oh, it’s salmon."),
+                new Fish("Salmon", 90, "Something’s fishy—oh, it’s salmon."),
+                new Fish("Salmon", 90, "Something’s fishy—oh, it’s salmon."),
+
+                // Rare Fish (1 each)
+                new Fish("Coelacanth", 1000, "Back from extinction—again!"),
+                new Fish("Golden Arowana", 1500, "Goldfish? Nah, golden Arowana!"),
+                new Fish("Ancient Sturgeon", 1200, "This one’s older than your jokes."),
+                new Fish("Mythic Koi", 1300, "A fish of legend and pond-sibilities."),
+                new Fish("Dragonfish", 1600, "Drag-on your rod paid off!"),
+
+                // Fillers to reach 100
+                new Fish("Bluegill", 50, "You're reely gillin' it!"),
+                new Fish("Bluegill", 50, "You're reely gillin' it!"),
+                new Fish("Carp", 40, "What a load of carp."),
+                new Fish("Carp", 40, "What a load of carp."),
+                new Fish("Trout", 55, "I trout you'd like this one."),
+                new Fish("Trout", 55, "I trout you'd like this one."),
+                new Fish("Sardine", 20, "Small but sardinely proud."),
+                new Fish("Sardine", 20, "Small but sardinely proud."),
+                new Fish("Catfish", 120, "Not a cat, but still fin-tastic."),
+                new Fish("Bass", 100, "You're about to get bass-ic!"),
+                new Fish("Perch", 80, "You can perch-ase this fish!"),
+                new Fish("Salmon", 90, "Something’s fishy—oh, it’s salmon."),
+                new Fish("Trout", 55, "I trout you'd like this one."),
+                new Fish("Trout", 55, "I trout you'd like this one."),
+                new Fish("Bluegill", 50, "You're reely gillin' it!"),
+                new Fish("Bluegill", 50, "You're reely gillin' it!"),
+                new Fish("Bluegill", 50, "You're reely gillin' it!"),
+                new Fish("Carp", 40, "What a load of carp."),
+                new Fish("Sardine", 20, "Small but sardinely proud."),
+                new Fish("Sardine", 20, "Small but sardinely proud."),
+                new Fish("Sardine", 20, "Small but sardinely proud."),
+                new Fish("Perch", 80, "You can perch-ase this fish!"),
+                new Fish("Bass", 100, "You're about to get bass-ic!"),
+                new Fish("Catfish", 120, "Not a cat, but still fin-tastic."),
+                new Fish("Salmon", 90, "Something’s fishy—oh, it’s salmon."),
+                new Fish("Carp", 40, "What a load of carp."),
+                new Fish("Carp", 40, "What a load of carp."),
+                new Fish("Bluegill", 50, "You're reely gillin' it!"),
+                new Fish("Trout", 55, "I trout you'd like this one."),
+                new Fish("Sardine", 20, "Small but sardinely proud."),
+                new Fish("Sardine", 20, "Small but sardinely proud."),
+                new Fish("Trout", 55, "I trout you'd like this one.")
+            };
+
+            Console.WriteLine(fishlist[random.Next(0, fishlist.Count + 1)]);
+            Console.ReadKey();
+            
+            
+
+        }
+
+
         static void Main()
         {
 
@@ -1592,6 +1711,10 @@ namespace UberProject
                         Exit();
                         break;
 
+                    case 4:
+                        Fishing();
+                        break;
+
                     default:
                         InvalidInput();
                         break;
@@ -1607,5 +1730,6 @@ namespace UberProject
 
 
         }
+        
     }
 }
