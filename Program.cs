@@ -759,7 +759,8 @@ namespace UberProject
         static void AcquireEpicLoot()
         {
             // This will be an Array of Loot that you can randomly acquire through different events and fights.
-
+            // Simplication of assests here.
+            //12 Items removed
             Weapons[] weapons =
             {
                 new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 7, weaponType = "Ranged", weaponRarity = "Common" },
@@ -773,22 +774,17 @@ namespace UberProject
                 new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 14, weaponType = "Ranged", weaponRarity = "Rare" },
                 new Weapons { weaponName = "Combat Shotgun", weaponDamage = 15, weaponType = "Ranged", weaponRarity = "Rare" },
                 new Weapons { weaponName = "Flamer", weaponDamage = 16, weaponType = "Heavy", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Super Sledge", weaponDamage = 17, weaponType = "Melee", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Laser Musket", weaponDamage = 18, weaponType = "Energy", weaponRarity = "Rare" },
+         
             
                 new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 19, weaponType = "Energy", weaponRarity = "Epic" },
                 new Weapons { weaponName = "Tesla Cannon", weaponDamage = 20, weaponType = "Energy", weaponRarity = "Epic" },
                 new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 21, weaponType = "Melee", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Cryolator", weaponDamage = 22, weaponType = "Energy", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Railway Rifle", weaponDamage = 23, weaponType = "Ranged", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Auto-Axe", weaponDamage = 24, weaponType = "Melee", weaponRarity = "Epic" },
+
             
                 new Weapons { weaponName = "Plague Injector", weaponDamage = 25, weaponType = "Ranged", weaponRarity = "*Legendary*" },
                 new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 26, weaponType = "Heavy", weaponRarity = "*Legendary*" },
                 new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 27, weaponType = "Energy", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Oblivion Hammer", weaponDamage = 28, weaponType = "Melee", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Apocalypse Blade", weaponDamage = 29, weaponType = "Melee", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 30, weaponType = "Explosive", weaponRarity = "*Legendary*" },
+             
             };
 
 
@@ -1078,26 +1074,22 @@ namespace UberProject
                             new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 30, weaponType = "Ranged" },
                             new Weapons { weaponName = "Combat Shotgun", weaponDamage = 30, weaponType = "Ranged" },
                             new Weapons { weaponName = "Flamer", weaponDamage = 35, weaponType = "Heavy" },
-                            new Weapons { weaponName = "Super Sledge", weaponDamage = 28, weaponType = "Melee" },
-                            new Weapons { weaponName = "Laser Musket", weaponDamage = 32, weaponType = "Energy" },
+
                         };
                         Weapons[] tier3weapons =
                         {
                             new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 55, weaponType = "Energy" },
                             new Weapons { weaponName = "Tesla Cannon", weaponDamage = 65, weaponType = "Energy" },
                             new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 50, weaponType = "Melee" },
-                            new Weapons { weaponName = "Cryolator", weaponDamage = 60, weaponType = "Energy" },
-                            new Weapons { weaponName = "Railway Rifle", weaponDamage = 58, weaponType = "Ranged" },
-                            new Weapons { weaponName = "Auto-Axe", weaponDamage = 52, weaponType = "Melee" }
+         
                         };
                         Weapons[] tier4weapons =
                         {
-                            new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 100, weaponType = "Explosive" },
+              
                             new Weapons { weaponName = "Plague Injector", weaponDamage = 80, weaponType = "Ranged" },
                             new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 90, weaponType = "Heavy" },
                             new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 110, weaponType = "Energy" },
-                            new Weapons { weaponName = "Oblivion Hammer", weaponDamage = 95, weaponType = "Melee" },
-                            new Weapons { weaponName = "Apocalypse Blade", weaponDamage = 105, weaponType = "Melee" },
+
                         };
 
                         Console.WriteLine("Weapons in the game:\n");
