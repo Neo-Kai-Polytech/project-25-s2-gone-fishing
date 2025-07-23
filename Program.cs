@@ -1058,7 +1058,7 @@ namespace UberProject
                             new Enemies("Wasteland Abomination", 50, 10, "A massive fusion of flesh and machinery, created from failed experiments and scavenged tech."),
                          };
                         Console.WriteLine("Monsters in the game:\n");
-                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Name".PadRight(25)
                                         + "HP".PadRight(6)
                                         + "Attack".PadRight(8)
@@ -1111,7 +1111,7 @@ namespace UberProject
 
                         Console.ForegroundColor = ConsoleColor.Gray;
                         Console.WriteLine("Tier 1 Weapons:");
-                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Name".PadRight(27)
                                         + "Type".PadRight(9)
                                         + "Damage");
@@ -1124,7 +1124,7 @@ namespace UberProject
 
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Tier 2 Weapons:");
-                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Name".PadRight(27)
                                         + "Type".PadRight(9)
                                         + "Damage");
@@ -1138,7 +1138,7 @@ namespace UberProject
 
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("Tier 3 Weapons:");
-                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Name".PadRight(27)
                                         + "Type".PadRight(9)
                                         + "Damage");
@@ -1151,7 +1151,7 @@ namespace UberProject
 
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.WriteLine("Tier 4 Weapons:");
-                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("Name".PadRight(27)
                                         + "Type".PadRight(9)
                                         + "Damage");
@@ -1173,13 +1173,13 @@ namespace UberProject
                         {
                             new Items { itemName = "Stimpak", itemType = "Healing", itemEffectValue = 20, itemDesc = "A medical kit that heals wounds and restores health." },
                             new Items { itemName = "RadAway", itemType = "Healing", itemEffectValue = 15, itemDesc = "A serum that removes radiation from the body." },
-                            new Items { itemName = "Antiseptic Bandage", itemType = "Healing", itemEffectValue = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
-                            new Items { itemName = "Molotov Cocktail", itemType = "Explosive", itemEffectValue = 18, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
-                            new Items { itemName = "Fragmentation Grenade", itemType = "Explosive", itemEffectValue = 20, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
                             new Items { itemName = "Plasma Mine", itemType = "Explosive", itemEffectValue = 24, itemDesc = "A mine that detonates with a burst of plasma energy." },
-                            new Items { itemName = "Dynamite Bundle", itemType = "Explosive", itemEffectValue = 30, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
                             new Items { itemName = "Cryo Grenade", itemType = "Explosive", itemEffectValue = 15, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
                             new Items { itemName = "Purified Water", itemType = "Healing", itemEffectValue = 10, itemDesc = "Clean water that hydrates and restores minor health." },
+                            new Items { itemName = "Dynamite Bundle", itemType = "Explosive", itemEffectValue = 30, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
+                            new Items { itemName = "Molotov Cocktail", itemType = "Explosive", itemEffectValue = 18, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
+                            new Items { itemName = "Antiseptic Bandage", itemType = "Healing", itemEffectValue = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
+                            new Items { itemName = "Fragmentation Grenade", itemType = "Explosive", itemEffectValue = 20, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
                         };
 
                         Console.WriteLine("Items in the game:\n");
@@ -1229,26 +1229,26 @@ namespace UberProject
                         // Display all recipes in a readable format
                         Recipes[] recipes =
                         {
+                            new Recipes { recipeName = "Apple Pie", ingredient1 = "Apple", ingredient2 = "Flour", ingredient3 = "Butter" },
+                            new Recipes { recipeName = "Pepper Steak", ingredient1 = "Meat", ingredient2 = "Pepper", ingredient3 = "Butter" },
+                            new Recipes { recipeName = "Mirelurk Pie", ingredient1 = "Mirelurk Meat", ingredient2 = "Potato", ingredient3 = "Salt" },
+                            new Recipes { recipeName = "Garlic Bread", ingredient1 = "Bread", ingredient2 = "Butter", ingredient3 = "Garlic" },
+                            new Recipes { recipeName = "Radroach Stew", ingredient1 = "Radroach Meat", ingredient2 = "Potato", ingredient3 = "Carrot" },
+                            new Recipes { recipeName = "Ghoul Goulash", ingredient1 = "Ghoul Meat", ingredient2 = "Carrot", ingredient3 = "Onion" },
+                            new Recipes { recipeName = "Mushroom Stew", ingredient1 = "Mushroom", ingredient2 = "Onion", ingredient3 = "Drinkable Water" },
                             new Recipes { recipeName = "Russian Steak", ingredient1 = "Meat", ingredient2 = "Potato", ingredient3 = "Butter" },
                             new Recipes { recipeName = "Nuka-Cola Cake", ingredient1 = "Flour", ingredient2 = "Sugar", ingredient3 = "Nuka-Cola" },
-                            new Recipes { recipeName = "Mutfruit Salad", ingredient1 = "Mutfruit", ingredient2 = "Lettuce", ingredient3 = "Tomato" },
-                            new Recipes { recipeName = "Radroach Stew", ingredient1 = "Radroach Meat", ingredient2 = "Potato", ingredient3 = "Carrot" },
-                            new Recipes { recipeName = "Wasteland Omelette", ingredient1 = "Egg", ingredient2 = "Cheese", ingredient3 = "Onion" },
-                            new Recipes { recipeName = "Mirelurk Pie", ingredient1 = "Mirelurk Meat", ingredient2 = "Potato", ingredient3 = "Salt" },
-                            new Recipes { recipeName = "Mutant Hound Jerky", ingredient1 = "Mutant Hound Meat", ingredient2 = "Salt", ingredient3 = "Pepper" },
-                            new Recipes { recipeName = "Ghoul Goulash", ingredient1 = "Ghoul Meat", ingredient2 = "Carrot", ingredient3 = "Onion" },
-                            new Recipes { recipeName = "Irradiated Apple Jam", ingredient1 = "Apple", ingredient2 = "Sugar", ingredient3 = "Jam" },
-                            new Recipes { recipeName = "Cheesy Potato Soup", ingredient1 = "Potato", ingredient2 = "Cheese", ingredient3 = "Drinkable Water" },
-                            new Recipes { recipeName = "Fried Fish Fillet", ingredient1 = "Fish", ingredient2 = "Butter", ingredient3 = "Salt" },
-                            new Recipes { recipeName = "Mushroom Stew", ingredient1 = "Mushroom", ingredient2 = "Onion", ingredient3 = "Drinkable Water" },
-                            new Recipes { recipeName = "Egg & Mutfruit Breakfast", ingredient1 = "Egg", ingredient2 = "Mutfruit", ingredient3 = "Milk" },
-                            new Recipes { recipeName = "Carrot & Potato Mash", ingredient1 = "Carrot", ingredient2 = "Potato", ingredient3 = "Butter" },
-                            new Recipes { recipeName = "Spicy Meat Skewer", ingredient1 = "Meat", ingredient2 = "Pepper", ingredient3 = "Onion" },
-                            new Recipes { recipeName = "Garlic Bread", ingredient1 = "Bread", ingredient2 = "Butter", ingredient3 = "Garlic" },
-                            new Recipes { recipeName = "Apple Pie", ingredient1 = "Apple", ingredient2 = "Flour", ingredient3 = "Butter" },
-                            new Recipes { recipeName = "Mutfruit Jam Toast", ingredient1 = "Toast", ingredient2 = "Mutfruit", ingredient3 = "Jam" },
                             new Recipes { recipeName = "Rad-X Smoothie", ingredient1 = "Rad-X", ingredient2 = "Milk", ingredient3 = "Mutfruit" },
-                            new Recipes { recipeName = "Pepper Steak", ingredient1 = "Meat", ingredient2 = "Pepper", ingredient3 = "Butter" }
+                            new Recipes { recipeName = "Mutfruit Salad", ingredient1 = "Mutfruit", ingredient2 = "Lettuce", ingredient3 = "Tomato" },
+                            new Recipes { recipeName = "Fried Fish Fillet", ingredient1 = "Fish", ingredient2 = "Butter", ingredient3 = "Salt" },
+                            new Recipes { recipeName = "Spicy Meat Skewer", ingredient1 = "Meat", ingredient2 = "Pepper", ingredient3 = "Onion" },
+                            new Recipes { recipeName = "Wasteland Omelette", ingredient1 = "Egg", ingredient2 = "Cheese", ingredient3 = "Onion" },
+                            new Recipes { recipeName = "Cheesy Potato Soup", ingredient1 = "Potato", ingredient2 = "Cheese", ingredient3 = "Drinkable Water" },
+                            new Recipes { recipeName = "Mutant Hound Jerky", ingredient1 = "Mutant Hound Meat", ingredient2 = "Salt", ingredient3 = "Pepper" },
+                            new Recipes { recipeName = "Mutfruit Jam Toast", ingredient1 = "Toast", ingredient2 = "Mutfruit", ingredient3 = "Jam" },
+                            new Recipes { recipeName = "Irradiated Apple Jam", ingredient1 = "Apple", ingredient2 = "Sugar", ingredient3 = "Jam" },
+                            new Recipes { recipeName = "Carrot & Potato Mash", ingredient1 = "Carrot", ingredient2 = "Potato", ingredient3 = "Butter" },
+                            new Recipes { recipeName = "Egg & Mutfruit Breakfast", ingredient1 = "Egg", ingredient2 = "Mutfruit", ingredient3 = "Milk" },
                         };
                         Console.WriteLine("Recipes in the game:\n");
                         foreach (var recipe in recipes)
