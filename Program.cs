@@ -42,7 +42,7 @@ namespace UberProject
         }
         public override string ToString()
         {
-            return $"{enemyName.PadRight(22)} | HP: {enemyHP.ToString().PadRight(5)} | Attack: {enemyAttack} | Description: {enemyDesc.PadLeft(10)}";
+            return $"{enemyName.PadRight(22)} | {enemyHP.ToString().PadRight(3)} | {enemyAttack.ToString().PadRight(3)} | {enemyDesc}";
         }
 
     }
@@ -99,21 +99,21 @@ namespace UberProject
         static Enemies[] monsters =
       {
             new Enemies("Mirelurk", 30, 5, "A mutated crab-like creature with a hard shell and a vicious bite."),
-            new Enemies("Super Mutant", 40, 8, "A hulking brute with enhanced strength and resilience, often armed with heavy weapons."),
-            new Enemies("Deathclaw", 50, 10, "A terrifying predator with razor-sharp claws and incredible speed."),
-            new Enemies("Radscorpion", 65, 13, "A giant scorpion with a venomous sting and armored exoskeleton."),
             new Enemies("Radroach", 20, 4, "Giant irradiated cockroach with acidic saliva and armored carapace"),
-            new Enemies("Mutant Hound", 35, 7, "Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression."),
-            new Enemies("Ash Crawler", 25, 5, "A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below."),
-            new Enemies("Ghoul Reaper", 30, 6, "A sentient, decaying humanoid that hunts the living for flesh, often in packs."),
-            new Enemies("Wasteland Abomination", 50, 10, "A massive fusion of flesh and machinery, created from failed experiments and scavenged tech."),
-            new Enemies("Irradiated Behemoth", 60, 12, "Towering brute pulsing with nuclear energy, leaving scorched earth in its wake."),
-            new Enemies("Scorched Stalker", 28, 6, "Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes."),
-            new Enemies("Toxic Spitter", 22, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
-            new Enemies("Bone Dragger", 26, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
+            new Enemies("Deathclaw", 50, 10, "A terrifying predator with razor-sharp claws and incredible speed."),
             new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts."),
-            new Enemies("Murderous Crow", 22, 4, "A seemingly normal crow with teeth that can cut through ceramic plates"),
             new Enemies("Mutant Bear", 35, 8, "A mutated bear, aggressive and dangerous.")
+            new Enemies("Radscorpion", 65, 13, "A giant scorpion with a venomous sting and armored exoskeleton."),
+            new Enemies("Ash Crawler", 25, 5, "A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below."),
+            new Enemies("Mutant Hound", 35, 7, "Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression."),
+            new Enemies("Ghoul Reaper", 30, 6, "A sentient, decaying humanoid that hunts the living for flesh, often in packs."),
+            new Enemies("Bone Dragger", 26, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
+            new Enemies("Super Mutant", 40, 8, "A hulking brute with enhanced strength and resilience, often armed with heavy weapons."),
+            new Enemies("Toxic Spitter", 22, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
+            new Enemies("Murderous Crow", 22, 4, "A seemingly normal crow with teeth that can cut through ceramic plates"),
+            new Enemies("Scorched Stalker", 28, 6, "Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes."),
+            new Enemies("Irradiated Behemoth", 60, 12, "Towering brute pulsing with nuclear energy, leaving scorched earth in its wake."),
+            new Enemies("Wasteland Abomination", 50, 10, "A massive fusion of flesh and machinery, created from failed experiments and scavenged tech."),
     };
 
         static void Welcome()
@@ -780,17 +780,17 @@ namespace UberProject
                 new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 14, weaponType = "Ranged", weaponRarity = "Rare" },
                 new Weapons { weaponName = "Combat Shotgun", weaponDamage = 15, weaponType = "Ranged", weaponRarity = "Rare" },
                 new Weapons { weaponName = "Flamer", weaponDamage = 16, weaponType = "Heavy", weaponRarity = "Rare" },
-         
-            
+
+
                 new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 19, weaponType = "Energy", weaponRarity = "Epic" },
                 new Weapons { weaponName = "Tesla Cannon", weaponDamage = 20, weaponType = "Energy", weaponRarity = "Epic" },
                 new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 21, weaponType = "Melee", weaponRarity = "Epic" },
 
-            
+
                 new Weapons { weaponName = "Plague Injector", weaponDamage = 25, weaponType = "Ranged", weaponRarity = "*Legendary*" },
                 new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 26, weaponType = "Heavy", weaponRarity = "*Legendary*" },
                 new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 27, weaponType = "Energy", weaponRarity = "*Legendary*" },
-             
+
             };
 
 
@@ -933,22 +933,23 @@ namespace UberProject
 
             Enemies[] monsters =
         {
-            new Enemies("Mirelurk", 4*modifier, 7, "A mutated crab-like creature with a hard shell and a vicious bite."),
-            new Enemies("Super Mutant",3*modifier , 8, "A hulking brute with enhanced strength and resilience, often armed with heavy weapons."),
-            new Enemies("Deathclaw", 5*modifier, 10, "A terrifying predator with razor-sharp claws and incredible speed."),
-            new Enemies("Radscorpion", 2*modifier, 7, "A giant scorpion with a venomous sting and armored exoskeleton."),
-            new Enemies("Radroach", 2*modifier, 4, "Giant irradiated cockroach with acidic saliva and armored carapace"),
-            new Enemies("Mutant Hound", 3*modifier, 7, "Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression."),
-            new Enemies("Ash Crawler", 2*modifier, 5, "A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below."),
-            new Enemies("Ghoul Reaper", 3*modifier, 6, "A sentient, decaying humanoid that hunts the living for flesh, often in packs."),
-            new Enemies("Wasteland Abomination", 5*modifier, 10, "A massive fusion of flesh and machinery, created from failed experiments and scavenged tech."),
-            new Enemies("Irradiated Behemoth", 6*modifier, 11, "Towering brute pulsing with nuclear energy, leaving scorched earth in its wake."),
-            new Enemies("Scorched Stalker", 3*modifier, 6, "Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes."),
-            new Enemies("Toxic Spitter", 2*modifier, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
-            new Enemies("Bone Dragger", 3*modifier, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
-            new Enemies("Nuke Leech", 2*modifier, 5, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts."),
-            new Enemies("Murderous Crow", 2*modifier, 4, "A seemingly normal crow with teeth that can cut through ceramic plates")
-        };
+            new Enemies("Mirelurk", 30, 5, "A mutated crab-like creature with a hard shell and a vicious bite."),
+            new Enemies("Radroach", 20, 4, "Giant irradiated cockroach with acidic saliva and armored carapace"),
+            new Enemies("Deathclaw", 50, 10, "A terrifying predator with razor-sharp claws and incredible speed."),
+            new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts."),
+            new Enemies("Mutant Bear", 35, 8, "A mutated bear, aggressive and dangerous.")
+            new Enemies("Radscorpion", 65, 13, "A giant scorpion with a venomous sting and armored exoskeleton."),
+            new Enemies("Ash Crawler", 25, 5, "A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below."),
+            new Enemies("Mutant Hound", 35, 7, "Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression."),
+            new Enemies("Ghoul Reaper", 30, 6, "A sentient, decaying humanoid that hunts the living for flesh, often in packs."),
+            new Enemies("Bone Dragger", 26, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
+            new Enemies("Super Mutant", 40, 8, "A hulking brute with enhanced strength and resilience, often armed with heavy weapons."),
+            new Enemies("Toxic Spitter", 22, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
+            new Enemies("Murderous Crow", 22, 4, "A seemingly normal crow with teeth that can cut through ceramic plates"),
+            new Enemies("Scorched Stalker", 28, 6, "Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes."),
+            new Enemies("Irradiated Behemoth", 60, 12, "Towering brute pulsing with nuclear energy, leaving scorched earth in its wake."),
+            new Enemies("Wasteland Abomination", 50, 10, "A massive fusion of flesh and machinery, created from failed experiments and scavenged tech."),
+    };
 
             int enemyNumber = random.Next(monsters.Length);
 
@@ -1055,10 +1056,12 @@ namespace UberProject
                             new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts.")
                         };
                         Console.WriteLine("Monsters in the game:\n");
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.WriteLine("Name".PadRight(20)
-                                        + "HP".PadRight(10)
+                                        + "HP".PadRight(25)
                                         + "Attack".PadRight(10)
                                         + "Description");
+                        Console.ResetColor();
                         foreach (var enemy in monsters)
                         {
                             Console.WriteLine(enemy);
@@ -1091,11 +1094,11 @@ namespace UberProject
                             new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 55, weaponType = "Energy" },
                             new Weapons { weaponName = "Tesla Cannon", weaponDamage = 65, weaponType = "Energy" },
                             new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 50, weaponType = "Melee" },
-         
+
                         };
                         Weapons[] tier4weapons =
                         {
-              
+
                             new Weapons { weaponName = "Plague Injector", weaponDamage = 80, weaponType = "Ranged" },
                             new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 90, weaponType = "Heavy" },
                             new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 110, weaponType = "Energy" },
