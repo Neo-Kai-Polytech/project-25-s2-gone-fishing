@@ -127,7 +127,7 @@ namespace UberProject
             Console.WriteLine("2  Arena");
             Console.WriteLine("3  Collection");
             Console.WriteLine("0  Exit menu system");
-
+            //There was sound here and it was removed due to it being tedious when playing multiple times
             Console.WriteLine();
         }
 
@@ -163,7 +163,7 @@ namespace UberProject
             Console.WriteLine("believing that one day a savior would emerge to bring balance back to the world.");
             Thread.Sleep(200);
             Console.WriteLine("\nPress any key to know about the main character");
-
+            //There was sound here and it was removed due to it being tedious when playing multiple times
             Console.ReadLine();
 
             // Lead to Character Creation
