@@ -42,7 +42,7 @@ namespace UberProject
         }
         public override string ToString()
         {
-            return $"{enemyName.PadRight(22)} | HP: {enemyHP} | Attack: {enemyAttack} | Description: {enemyDesc}";
+            return $"{enemyName.PadRight(22)} | HP: {enemyHP.ToString().PadRight(5)} | Attack: {enemyAttack} | Description: {enemyDesc.PadLeft(10)}";
         }
 
     }
