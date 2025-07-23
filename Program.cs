@@ -127,17 +127,7 @@ namespace UberProject
             Console.WriteLine("2  Arena");
             Console.WriteLine("3  Collection");
             Console.WriteLine("0  Exit menu system");
-            Console.Beep(659, 200); // E5
-            Console.Beep(659, 200); // E5
-            Thread.Sleep(100);
-            Console.Beep(659, 200); // E5
-            Thread.Sleep(100);
-            Console.Beep(523, 200); // C5
-            Console.Beep(659, 200); // E5
-            Thread.Sleep(100);
-            Console.Beep(784, 200); // G5
-            Thread.Sleep(300);
-            Console.Beep(392, 400); // G4
+            //There was sound here and it was removed due to it being tedious when playing multiple times
             Console.WriteLine();
         }
 
@@ -151,36 +141,31 @@ namespace UberProject
         static void StoryLineSum()
         {
             Console.WriteLine("The story begins with the aftermath of World War III,");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("complete nuclear devastion plunging every nation into chaos and destruction.");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("\nCountless lives were lost, families were torn apart,");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("and the world as we knew it was shattered.");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("\nThe devastation extended beyond humanity, as nature itself suffered,");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("with animal species driven to extinction and the air thick with radiation.");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("\nCommunities vanished, the global population was reduced to a tiny fraction,");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("and darkness spread to every corner of the earth.");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("\nIn these desperate times, people prayed for the world to be restored.");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("\nSome still held onto hope,");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("believing that one day a savior would emerge to bring balance back to the world.");
-            Thread.Sleep(200);
-            Console.WriteLine("\nPress any key to know about the main character");
-            Console.Beep(369, 200);
-            Console.Beep(369, 200);
-            Console.Beep(369, 200);
-            Console.Beep(293, 200);
-            Console.Beep(246, 200);
-            Console.Beep(329, 200);
-            Console.Beep(329, 200);
-            Console.Beep(329, 200);
+
+            Thread.Sleep(1600);
+            Console.WriteLine("\nPress enter to know about the main character");
+            //There was sound here and it was removed due to it being tedious when playing multiple times
+
             Console.ReadLine();
 
             // Lead to Character Creation
@@ -203,13 +188,13 @@ namespace UberProject
                 $"\nuse this side talent in his life. So he wanted to become an Army Chef." +
                 $"\nAfter much hard work, he eventually accomplished his goal and started serving in the army.");
             Thread.Sleep(1000);
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
             Console.WriteLine($"\nTwo Years Later.........\nRussia Bombed America and World War III started. The whole world was on fire, and people were starving." +
                 $"\nIn the attack, {charName} lost his family and his friends fighting on the border. He got badly injured and was sent to the hospital to be treated." +
                 $"\nSuddenly, his condition became severe, and he fell into a coma.");
             Thread.Sleep(1000);
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
             Console.WriteLine($"\nSix months later, he woke up alone and abandoned, facing a devasted world beyond recognition." +
                 $"\nAfter leaving the hospital, he quickly realised how much has changed. Due to the nuclear war," +
@@ -217,33 +202,24 @@ namespace UberProject
                 $"\nhe had no purpose left in his life; he was fully depressed and had no family or friends." +
                 $"\nBut he had no idea that nature had planned something big for him.");
             Thread.Sleep(1000);
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
+            Console.Clear();
             Console.WriteLine($"After some days, while {charName} was trying to figure out the purpose of his life, he had a dream about his parents." +
                 $"\nHe was sitting with them at the dining table, talking about everything that had happened." +
                 $"\nHis parents comforted him about the immense tragedy that has befallen mankind, but told him he had the opportunity" +
                 $"\nto create something new with his life, by following his passion for cooking and serving people" +
                 $"\nhe could be a catalyst towards the rebuilding and revival of humanity.");
             Thread.Sleep(500);
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
             Console.WriteLine("\nAfter this dream, he decided to go on a worldwide journey to work towards restoring human civilisation, one meal at a time.");
             Console.WriteLine("\nTo decide where to go first, he threw a dart at a small globe, landing on Russia...");
-            Console.WriteLine("Press any key to continue...");
-            Console.Beep(440, 200);
-            Console.Beep(493, 200);
-            Console.Beep(440, 200);
-            Console.Beep(440, 200);
-            Console.Beep(440, 200);
-            Console.Beep(329, 200);
-            Console.Beep(293, 200);
-            Console.Beep(369, 200);
-            Console.Beep(369, 200);
-            Console.Beep(369, 200);
-            Console.Beep(329, 200);
-            Console.Beep(329, 200);
-            Console.Beep(369, 200);
-            Console.Beep(329, 200);
+
+            Console.WriteLine("Press enter to continue...");
+
+            //There was sound here and it was removed due to it being tedious when playing multiple times
+
 
             Console.ReadLine();
             //start of the game
@@ -286,15 +262,9 @@ namespace UberProject
             Thread.Sleep(2000);
             Console.WriteLine("\nYou see a bear running towards you!");
             Console.WriteLine("Prepare yourself!\n\n");
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(213, 100);
+            //There was sound here and it was removed due to it being tedious when playing multiple times
 
             Enemies enemy = monsters[15];
 
@@ -437,15 +407,9 @@ namespace UberProject
                 "\nTattered green tents lay across it, and military jeeps create barricades." +
                 "\nYou can tell it had long since been abandoned." +
                 "\nAll of a sudden a crow comes eye to eye with you, twitchingly eyeing you up.");
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(213, 100);
+            //There was sound here and it was removed due to it being tedious when playing multiple times
             Enemies enemy = monsters[14];
             CombatSystem(ref player, enemy); //Crow fight
             Console.Clear();
@@ -516,7 +480,7 @@ namespace UberProject
             Console.WriteLine("Press any button to cook new dish");
             Console.ReadLine();
             InventoryManage();
-            Console.WriteLine("Press any button to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
 
         }
@@ -532,15 +496,9 @@ namespace UberProject
             Thread.Sleep(2000);
             Console.WriteLine($"Prepare to FIGHT!!!");
             Console.WriteLine();
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(319, 100);
-            Console.Beep(213, 100);
+            //There was sound here and it was removed due to it being tedious when playing multiple times
             Thread.Sleep(500);
             Enemies enemy = monsters[3];
 
@@ -586,11 +544,11 @@ namespace UberProject
                 }
             }
 
-            Console.WriteLine("Press any key to continue...");
-            Console.WriteLine("Press any button to cook new dish");
+            Console.WriteLine("Press enter to continue...");
+            Console.WriteLine("Press enter to cook new dish");
             Console.ReadLine();
             InventoryManage();
-            Console.WriteLine("Press any button to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
 
             Console.WriteLine("Thanks for playing the game. Hope you enjoyed it.");
@@ -647,7 +605,7 @@ namespace UberProject
                         enemy.enemyHP = enemy.enemyHP - pAttack;
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine($"{player.playerName} attacks {enemy.enemyName} for {pAttack} damage!");
-                        Console.Beep(400, 100);
+                        //There was sound here and it was removed due to it being tedious when playing multiple times
                         Console.ResetColor();
                         Thread.Sleep(700);
 
@@ -655,7 +613,7 @@ namespace UberProject
                         {
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.WriteLine($"{enemy.enemyName} is defeated!");
-                            Console.Beep(800, 300);
+                            //There was sound here and it was removed due to it being tedious when playing multiple times
                             Console.ResetColor();
                             break;
                         }
@@ -665,7 +623,7 @@ namespace UberProject
                         player.playerHP = player.playerHP - eAttack;
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine($"{enemy.enemyName} attacks {player.playerName} for {eAttack} damage!");
-                        Console.Beep(200, 150);
+                        //There was sound here and it was removed due to it being tedious when playing multiple times
                         Console.ResetColor();
                         Thread.Sleep(700);
 
@@ -807,7 +765,8 @@ namespace UberProject
         static void AcquireEpicLoot()
         {
             // This will be an Array of Loot that you can randomly acquire through different events and fights.
-
+            // Simplication of assests here.
+            //12 Items removed
             Weapons[] weapons =
             {
                 new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 7, weaponType = "Ranged", weaponRarity = "Common" },
@@ -821,22 +780,17 @@ namespace UberProject
                 new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 14, weaponType = "Ranged", weaponRarity = "Rare" },
                 new Weapons { weaponName = "Combat Shotgun", weaponDamage = 15, weaponType = "Ranged", weaponRarity = "Rare" },
                 new Weapons { weaponName = "Flamer", weaponDamage = 16, weaponType = "Heavy", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Super Sledge", weaponDamage = 17, weaponType = "Melee", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Laser Musket", weaponDamage = 18, weaponType = "Energy", weaponRarity = "Rare" },
-
+         
+            
                 new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 19, weaponType = "Energy", weaponRarity = "Epic" },
                 new Weapons { weaponName = "Tesla Cannon", weaponDamage = 20, weaponType = "Energy", weaponRarity = "Epic" },
                 new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 21, weaponType = "Melee", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Cryolator", weaponDamage = 22, weaponType = "Energy", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Railway Rifle", weaponDamage = 23, weaponType = "Ranged", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Auto-Axe", weaponDamage = 24, weaponType = "Melee", weaponRarity = "Epic" },
 
+            
                 new Weapons { weaponName = "Plague Injector", weaponDamage = 25, weaponType = "Ranged", weaponRarity = "*Legendary*" },
                 new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 26, weaponType = "Heavy", weaponRarity = "*Legendary*" },
                 new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 27, weaponType = "Energy", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Oblivion Hammer", weaponDamage = 28, weaponType = "Melee", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Apocalypse Blade", weaponDamage = 29, weaponType = "Melee", weaponRarity = "*Legendary*" },
-                new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 30, weaponType = "Explosive", weaponRarity = "*Legendary*" },
+             
             };
 
 
@@ -966,7 +920,7 @@ namespace UberProject
                 }
             }
 
-            Console.WriteLine("Press any button to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
 
         }
@@ -1020,7 +974,7 @@ namespace UberProject
 
             Console.ResetColor();
 
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
 
             do
@@ -1130,26 +1084,22 @@ namespace UberProject
                             new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 30, weaponType = "Ranged" },
                             new Weapons { weaponName = "Combat Shotgun", weaponDamage = 30, weaponType = "Ranged" },
                             new Weapons { weaponName = "Flamer", weaponDamage = 35, weaponType = "Heavy" },
-                            new Weapons { weaponName = "Super Sledge", weaponDamage = 28, weaponType = "Melee" },
-                            new Weapons { weaponName = "Laser Musket", weaponDamage = 32, weaponType = "Energy" },
+
                         };
                         Weapons[] tier3weapons =
                         {
                             new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 55, weaponType = "Energy" },
                             new Weapons { weaponName = "Tesla Cannon", weaponDamage = 65, weaponType = "Energy" },
                             new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 50, weaponType = "Melee" },
-                            new Weapons { weaponName = "Cryolator", weaponDamage = 60, weaponType = "Energy" },
-                            new Weapons { weaponName = "Railway Rifle", weaponDamage = 58, weaponType = "Ranged" },
-                            new Weapons { weaponName = "Auto-Axe", weaponDamage = 52, weaponType = "Melee" }
+         
                         };
                         Weapons[] tier4weapons =
                         {
-                            new Weapons { weaponName = "Mini Nuke Launcher", weaponDamage = 100, weaponType = "Explosive" },
+              
                             new Weapons { weaponName = "Plague Injector", weaponDamage = 80, weaponType = "Ranged" },
                             new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 90, weaponType = "Heavy" },
                             new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 110, weaponType = "Energy" },
-                            new Weapons { weaponName = "Oblivion Hammer", weaponDamage = 95, weaponType = "Melee" },
-                            new Weapons { weaponName = "Apocalypse Blade", weaponDamage = 105, weaponType = "Melee" },
+
                         };
 
                         Console.WriteLine("Weapons in the game:\n");
@@ -1211,7 +1161,7 @@ namespace UberProject
                         {
                             Console.WriteLine(item);
                         }
-                        Console.WriteLine("\n-- Press any key to return to the collection menu --");
+                        Console.WriteLine("\n-- Press enter to return to the collection menu --");
                         Console.ReadLine();
                         break;
 
@@ -1245,7 +1195,7 @@ namespace UberProject
                         {
                             Console.WriteLine(ingredient);
                         }
-                        Console.WriteLine("\n-- Press any key to return to the collection menu --");
+                        Console.WriteLine("\n-- Press enter to return to the collection menu --");
                         Console.ReadLine();
                         break;
 
@@ -1279,7 +1229,7 @@ namespace UberProject
                         {
                             Console.WriteLine(recipe);
                         }
-                        Console.WriteLine("\n-- Press any key to return to the collection menu --");
+                        Console.WriteLine("\n-- Press enter to return to the collection menu --");
                         Console.ReadLine();
                         break;
 
@@ -1298,7 +1248,7 @@ namespace UberProject
 
             } while (userInput != "0");
 
-            Console.WriteLine("Press any key to return to menu");
+            Console.WriteLine("Press enter to return to menu");
             Console.ReadLine();
 
         }
@@ -1306,7 +1256,7 @@ namespace UberProject
         static void Exit()
         {
             Console.WriteLine("This is the exit");
-            Console.WriteLine("Press any key to close program");
+            Console.WriteLine("Press enter to close program");
             Console.ReadLine();
         }
 
