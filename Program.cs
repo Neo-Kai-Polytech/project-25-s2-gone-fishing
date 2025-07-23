@@ -73,7 +73,7 @@ namespace UberProject
         public string itemDesc;
         public override string ToString()
         {
-            return $"{itemName} | Type: {itemType} | {itemEffectValue} | Description: {itemDesc}";
+            return $"{itemName.PadRight(22)} | {itemType.PadRight(10)} | {itemEffectValue.ToString().PadRight(8)} | {itemDesc}";
         }
 
     }
@@ -769,22 +769,22 @@ namespace UberProject
             //12 Items removed
             Weapons[] weapons =
             {
-                new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 7, weaponType = "Ranged", weaponRarity = "Common" },
-                new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 8, weaponType = "Melee", weaponRarity = "Common" },
                 new Weapons { weaponName = "Radiation Axe", weaponDamage = 9, weaponType = "Melee", weaponRarity = "Common" },
-                new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 10, weaponType = "Energy", weaponRarity = "Common" },
+                new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 7, weaponType = "Ranged", weaponRarity = "Common" },
                 new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 11, weaponType = "Ranged", weaponRarity = "Common" },
+                new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 8, weaponType = "Melee", weaponRarity = "Common" },
                 new Weapons { weaponName = "Electrified Machete", weaponDamage = 12, weaponType = "Melee", weaponRarity = "Common" },
+                new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 10, weaponType = "Energy", weaponRarity = "Common" },
 
-                new Weapons { weaponName = "Hunting Rifle", weaponDamage = 13, weaponType = "Ranged", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 14, weaponType = "Ranged", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Combat Shotgun", weaponDamage = 15, weaponType = "Ranged", weaponRarity = "Rare" },
                 new Weapons { weaponName = "Flamer", weaponDamage = 16, weaponType = "Heavy", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Hunting Rifle", weaponDamage = 13, weaponType = "Ranged", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Combat Shotgun", weaponDamage = 15, weaponType = "Ranged", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 14, weaponType = "Ranged", weaponRarity = "Rare" },
 
 
-                new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 19, weaponType = "Energy", weaponRarity = "Epic" },
                 new Weapons { weaponName = "Tesla Cannon", weaponDamage = 20, weaponType = "Energy", weaponRarity = "Epic" },
                 new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 21, weaponType = "Melee", weaponRarity = "Epic" },
+                new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 19, weaponType = "Energy", weaponRarity = "Epic" },
 
 
                 new Weapons { weaponName = "Plague Injector", weaponDamage = 25, weaponType = "Ranged", weaponRarity = "*Legendary*" },
@@ -822,15 +822,14 @@ namespace UberProject
             {
                 new Items { itemName = "Stimpak", itemType = "Healing", itemEffectValue = 20, itemDesc = "A medical kit that heals wounds and restores health." },
                 new Items { itemName = "RadAway", itemType = "Healing", itemEffectValue = 15, itemDesc = "A serum that removes radiation from the body." },
-                new Items { itemName = "Antiseptic Bandage", itemType = "Healing", itemEffectValue = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
-                new Items { itemName = "Molotov Cocktail", itemType = "Explosive", itemEffectValue = 18, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
-                new Items { itemName = "Fragmentation Grenade", itemType = "Explosive", itemEffectValue = 20, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
                 new Items { itemName = "Plasma Mine", itemType = "Explosive", itemEffectValue = 24, itemDesc = "A mine that detonates with a burst of plasma energy." },
-                new Items { itemName = "Dynamite Bundle", itemType = "Explosive", itemEffectValue = 30, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
                 new Items { itemName = "Cryo Grenade", itemType = "Explosive", itemEffectValue = 15, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
                 new Items { itemName = "Purified Water", itemType = "Healing", itemEffectValue = 10, itemDesc = "Clean water that hydrates and restores minor health." },
-
-            };
+                new Items { itemName = "Dynamite Bundle", itemType = "Explosive", itemEffectValue = 30, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
+                new Items { itemName = "Molotov Cocktail", itemType = "Explosive", itemEffectValue = 18, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
+                new Items { itemName = "Antiseptic Bandage", itemType = "Healing", itemEffectValue = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
+                new Items { itemName = "Fragmentation Grenade", itemType = "Explosive", itemEffectValue = 20, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
+             };
 
             int weaponLootRarity = random.Next(1, 101);
             int weaponLoot;
@@ -1183,6 +1182,12 @@ namespace UberProject
                         };
 
                         Console.WriteLine("Items in the game:\n");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Name".PadRight(25)
+                                        + "Type".PadRight(13)
+                                        + "Effect".PadRight(11)
+                                        + "Description");
+                        Console.ResetColor();
                         foreach (var item in items)
                         {
                             Console.WriteLine(item);
