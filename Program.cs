@@ -151,27 +151,27 @@ namespace UberProject
         static void StoryLineSum()
         {
             Console.WriteLine("The story begins with the aftermath of World War III,");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("complete nuclear devastion plunging every nation into chaos and destruction.");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("\nCountless lives were lost, families were torn apart,");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("and the world as we knew it was shattered.");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("\nThe devastation extended beyond humanity, as nature itself suffered,");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("with animal species driven to extinction and the air thick with radiation.");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("\nCommunities vanished, the global population was reduced to a tiny fraction,");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("and darkness spread to every corner of the earth.");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("\nIn these desperate times, people prayed for the world to be restored.");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("\nSome still held onto hope,");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("believing that one day a savior would emerge to bring balance back to the world.");
-            Thread.Sleep(200);
+            Thread.Sleep(1600);
             Console.WriteLine("\nPress any key to know about the main character");
             Console.Beep(369, 200);
             Console.Beep(369, 200);
