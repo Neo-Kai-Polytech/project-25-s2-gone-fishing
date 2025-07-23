@@ -1076,26 +1076,26 @@ namespace UberProject
                         // Display all weapons in a readable format
                         Weapons[] tier1weapons =
                         {
-                            new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 12, weaponType = "Ranged" },
-                            new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 10, weaponType = "Melee" },
                             new Weapons { weaponName = "Radiation Axe", weaponDamage = 14, weaponType = "Melee" },
-                            new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 16, weaponType = "Energy" },
+                            new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 12, weaponType = "Ranged" },
                             new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 13, weaponType = "Ranged" },
-                            new Weapons { weaponName = "Electrified Machete", weaponDamage = 17, weaponType = "Melee" }
+                            new Weapons { weaponName = "Electrified Machete", weaponDamage = 17, weaponType = "Melee" },
+                            new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 10, weaponType = "Melee" },
+                            new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 16, weaponType = "Energy" },
                         };
                         Weapons[] tier2weapons =
                         {
-                            new Weapons { weaponName = "Hunting Rifle", weaponDamage = 25, weaponType = "Ranged" },
-                            new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 30, weaponType = "Ranged" },
-                            new Weapons { weaponName = "Combat Shotgun", weaponDamage = 30, weaponType = "Ranged" },
                             new Weapons { weaponName = "Flamer", weaponDamage = 35, weaponType = "Heavy" },
+                            new Weapons { weaponName = "Hunting Rifle", weaponDamage = 25, weaponType = "Ranged" },
+                            new Weapons { weaponName = "Combat Shotgun", weaponDamage = 30, weaponType = "Ranged" },
+                            new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 30, weaponType = "Ranged" },
 
                         };
                         Weapons[] tier3weapons =
                         {
-                            new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 55, weaponType = "Energy" },
                             new Weapons { weaponName = "Tesla Cannon", weaponDamage = 65, weaponType = "Energy" },
                             new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 50, weaponType = "Melee" },
+                            new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 55, weaponType = "Energy" },
 
                         };
                         Weapons[] tier4weapons =
@@ -1111,33 +1111,54 @@ namespace UberProject
 
                         Console.ForegroundColor = ConsoleColor.Gray;
                         Console.WriteLine("Tier 1 Weapons:");
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine("Name".PadRight(27)
+                                        + "Type".PadRight(9)
+                                        + "Damage");
+                        Console.ResetColor();
                         foreach (var weapon in tier1weapons)
                         {
-                            Console.WriteLine($"Name: {weapon.weaponName}, Damage: {weapon.weaponDamage}, Type: {weapon.weaponType}");
+                            Console.WriteLine($"{weapon.weaponName.PadRight(24)} | {weapon.weaponType.ToString().PadRight(6)} | {weapon.weaponDamage}");
                         }
                         Console.WriteLine();
 
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Tier 2 Weapons:");
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine("Name".PadRight(27)
+                                        + "Type".PadRight(9)
+                                        + "Damage");
+                        Console.ResetColor();
                         foreach (var weapon in tier2weapons)
                         {
-                            Console.WriteLine($"Name: {weapon.weaponName}, Damage: {weapon.weaponDamage}, Type: {weapon.weaponType}");
+                            Console.WriteLine($"{weapon.weaponName.PadRight(24)} | {weapon.weaponType.ToString().PadRight(6)} | {weapon.weaponDamage}");
+
                         }
                         Console.WriteLine();
 
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("Tier 3 Weapons:");
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine("Name".PadRight(27)
+                                        + "Type".PadRight(9)
+                                        + "Damage");
+                        Console.ResetColor();
                         foreach (var weapon in tier3weapons)
                         {
-                            Console.WriteLine($"Name: {weapon.weaponName}, Damage: {weapon.weaponDamage}, Type: {weapon.weaponType}");
+                            Console.WriteLine($"{weapon.weaponName.PadRight(24)} | {weapon.weaponType.ToString().PadRight(6)} | {weapon.weaponDamage}");
                         }
                         Console.WriteLine();
 
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.WriteLine("Tier 4 Weapons:");
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine("Name".PadRight(27)
+                                        + "Type".PadRight(9)
+                                        + "Damage");
+                        Console.ResetColor();
                         foreach (var weapon in tier4weapons)
                         {
-                            Console.WriteLine($"Name: {weapon.weaponName}, Damage: {weapon.weaponDamage}, Type: {weapon.weaponType}");
+                            Console.WriteLine($"{weapon.weaponName.PadRight(24)} | {weapon.weaponType.ToString().PadRight(6)} | {weapon.weaponDamage}");
                         }
 
                         Console.ResetColor();
