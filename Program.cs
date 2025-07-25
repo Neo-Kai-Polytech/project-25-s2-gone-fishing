@@ -8,7 +8,24 @@ using System.Xml.Linq;
 
 namespace UberProject
 {
-    public struct Player
+
+    public struct Fish
+    {
+        public string fishName;
+        public int sellPrice;
+        public string fishPun;
+
+        public Fish(string name, int sell, string Pun)
+        {
+            fishName = name;
+            sellPrice = sell;
+            fishPun = Pun;
+        }
+        public override string ToString()
+        {
+            return $"You caught a {fishName} \n\n{fishPun.TrimStart(' ')}";
+        }
+        public struct Player
     {
         public string playerName;
         public int playerHP;
