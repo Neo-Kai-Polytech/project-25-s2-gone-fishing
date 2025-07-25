@@ -116,6 +116,56 @@ namespace UberProject
             new Enemies("Wasteland Abomination", 50, 10, "A massive fusion of flesh and machinery, created from failed experiments and scavenged tech."),
     };
 
+        static void Main()
+        {
+
+            string temp;
+
+
+            do
+            {
+                Welcome();
+
+                Console.WriteLine("Please choose an option");
+                temp = Console.ReadLine();
+                Task = Convert.ToInt32(temp);
+
+                Console.Clear();
+
+                switch (Task)
+
+                {
+                    case 1:
+                        Task1();
+                        break;
+
+                    case 2:
+                        Arena();
+                        break;
+
+                    case 3:
+                        Task3();
+                        break;
+
+                    case 0:
+                        Exit();
+                        break;
+
+                    default:
+                        InvalidInput();
+                        break;
+
+                }
+
+                Console.Clear();
+
+
+            } while (Task != 0);
+
+
+
+
+        }
         static void Welcome()
         {
             Console.Clear();
@@ -1601,55 +1651,6 @@ namespace UberProject
             Console.ReadLine();
         }
 
-        static void Main()
-        {
-
-            string temp;
-
-
-            do
-            {
-                Welcome();
-
-                Console.WriteLine("Please choose an option");
-                temp = Console.ReadLine();
-                Task = Convert.ToInt32(temp);
-
-                Console.Clear();
-
-                switch (Task)
-
-                {
-                    case 1:
-                        Task1();
-                        break;
-
-                    case 2:
-                        Arena();
-                        break;
-
-                    case 3:
-                        Task3();
-                        break;
-
-                    case 0:
-                        Exit();
-                        break;
-
-                    default:
-                        InvalidInput();
-                        break;
-
-                }
-
-                Console.Clear();
-
-
-            } while (Task != 0);
-
-
-
-
-        }
+        
     }
 }
