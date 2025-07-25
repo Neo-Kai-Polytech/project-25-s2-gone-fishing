@@ -1,4 +1,4 @@
-﻿using System.Diagnostics.Metrics;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Numerics;
 using System.Runtime.CompilerServices;
@@ -63,7 +63,7 @@ namespace UberProject
         }
         public override string ToString()
         {
-            return $"{enemyName.PadRight(22)} | {enemyHP.ToString().PadRight(4)} | {enemyAttack.ToString().PadRight(4)} | {enemyDesc}";
+            return $"{enemyName} | HP: {enemyHP} | Attack: {enemyAttack} | Description: {enemyDesc}";
         }
 
     }
@@ -83,7 +83,7 @@ namespace UberProject
         public string ingredientName;
         public override string ToString()
         {
-            return $"{ingredientName}";
+            return $"Name: {ingredientName}";
         }
     }
     public struct Items()
@@ -94,7 +94,7 @@ namespace UberProject
         public string itemDesc;
         public override string ToString()
         {
-            return $"{itemName.PadRight(22)} | {itemType.PadRight(10)} | {itemEffectValue.ToString().PadRight(6)} | {itemDesc}";
+            return $"{itemName} | Type: {itemType} | {itemEffectValue} | Description: {itemDesc}";
         }
 
     }
@@ -106,7 +106,7 @@ namespace UberProject
         public string ingredient3;
         public override string ToString()
         {
-            return $"{recipeName.PadRight(26)} | {ingredient1.PadRight(18)} | {ingredient2.PadRight(9)} | {ingredient3}";
+            return $"{recipeName} | Ingredient1: {ingredient1} | Ingredient2: {ingredient2} | Ingredient3: {ingredient3}";
         }
     }
 
@@ -115,78 +115,28 @@ namespace UberProject
         private static Random random = new Random();
         private static int Task;
         public static string charName, cookbook = "";
-        static string[] inventory = ["", "", "", "", "", "", "", "", "", ""];
+        static string[] inventory = ["", "", "", "", "", "", "", "", "", ""]; 
         static string[] foodSatchel = ["", "", "", "", "", "", "", "", "", ""];
         static Enemies[] monsters =
       {
             new Enemies("Mirelurk", 30, 5, "A mutated crab-like creature with a hard shell and a vicious bite."),
-            new Enemies("Radroach", 20, 4, "Giant irradiated cockroach with acidic saliva and armored carapace"),
-            new Enemies("Deathclaw", 50, 10, "A terrifying predator with razor-sharp claws and incredible speed."),
-            new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts."),
-            new Enemies("Mutant Bear", 35, 8, "A mutated bear, aggressive and dangerous."),
-            new Enemies("Radscorpion", 65, 13, "A giant scorpion with a venomous sting and armored exoskeleton."),
-            new Enemies("Ash Crawler", 25, 5, "A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below."),
-            new Enemies("Mutant Hound", 35, 7, "Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression."),
-            new Enemies("Ghoul Reaper", 30, 6, "A sentient, decaying humanoid that hunts the living for flesh, often in packs."),
-            new Enemies("Bone Dragger", 26, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
             new Enemies("Super Mutant", 40, 8, "A hulking brute with enhanced strength and resilience, often armed with heavy weapons."),
-            new Enemies("Toxic Spitter", 22, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
-            new Enemies("Murderous Crow", 22, 4, "A seemingly normal crow with teeth that can cut through ceramic plates"),
-            new Enemies("Scorched Stalker", 28, 6, "Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes."),
-            new Enemies("Irradiated Behemoth", 60, 12, "Towering brute pulsing with nuclear energy, leaving scorched earth in its wake."),
+            new Enemies("Deathclaw", 50, 10, "A terrifying predator with razor-sharp claws and incredible speed."),
+            new Enemies("Radscorpion", 65, 13, "A giant scorpion with a venomous sting and armored exoskeleton."),
+            new Enemies("Radroach", 20, 4, "Giant irradiated cockroach with acidic saliva and armored carapace"),
+            new Enemies("Mutant Hound", 35, 7, "Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression."),
+            new Enemies("Ash Crawler", 25, 5, "A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below."),
+            new Enemies("Ghoul Reaper", 30, 6, "A sentient, decaying humanoid that hunts the living for flesh, often in packs."),
             new Enemies("Wasteland Abomination", 50, 10, "A massive fusion of flesh and machinery, created from failed experiments and scavenged tech."),
+            new Enemies("Irradiated Behemoth", 60, 12, "Towering brute pulsing with nuclear energy, leaving scorched earth in its wake."),
+            new Enemies("Scorched Stalker", 28, 6, "Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes."),
+            new Enemies("Toxic Spitter", 22, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
+            new Enemies("Bone Dragger", 26, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
+            new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts."),
+            new Enemies("Murderous Crow", 22, 4, "A seemingly normal crow with teeth that can cut through ceramic plates"),
+            new Enemies("Mutant Bear", 35, 8, "A mutated bear, aggressive and dangerous.")
     };
 
-        static void Main()
-        {
-
-            string temp;
-
-
-            do
-            {
-                Welcome();
-
-                Console.WriteLine("Please choose an option");
-                temp = Console.ReadLine();
-                Task = Convert.ToInt32(temp);
-
-                Console.Clear();
-
-                switch (Task)
-
-                {
-                    case 1:
-                        Task1();
-                        break;
-
-                    case 2:
-                        Arena();
-                        break;
-
-                    case 3:
-                        Task3();
-                        break;
-
-                    case 0:
-                        Exit();
-                        break;
-
-                    default:
-                        InvalidInput();
-                        break;
-
-                }
-
-                Console.Clear();
-
-
-            } while (Task != 0);
-
-
-
-
-        }
         static void Welcome()
         {
             Console.Clear();
@@ -298,9 +248,9 @@ namespace UberProject
             StartingArea(ref player);
 
         }
-
+         
         public static void StartingArea(ref Player player)
-        {
+        { 
             Console.Clear();
 
             Console.WriteLine("Starting Area - Russia, 2042");
@@ -323,7 +273,7 @@ namespace UberProject
 
         }
 
-
+    
         static void event1(ref Player player)
         {
             Console.WriteLine("Setting off on his journey, he finally makes it to Russia where he sees immense destruction everywhere." +
@@ -494,9 +444,9 @@ namespace UberProject
             {
                 case "f":
                     CombatSystem(ref player, enemy); //Fight 5 crows
-                    CombatSystem(ref player, enemy);
-                    CombatSystem(ref player, enemy);
-                    CombatSystem(ref player, enemy);
+                    CombatSystem(ref player, enemy); 
+                    CombatSystem(ref player, enemy); 
+                    CombatSystem(ref player, enemy); 
                     CombatSystem(ref player, enemy);
                     Console.WriteLine("YOU'VE FOUND EPIC LOOT!");
                     Thread.Sleep(1000);
@@ -505,7 +455,7 @@ namespace UberProject
                 case "r":
                     for (int i = 0; i < foodSatchel.Length; i++)
                     {
-                        if (foodSatchel[i] == "Meat" || foodSatchel[i] == "Fish")
+                        if (foodSatchel[i] == "Meat" ||  foodSatchel[i] == "Fish")
                         {
                             foodSatchel[i] = "";
                         }
@@ -553,12 +503,12 @@ namespace UberProject
             InventoryManage();
             Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
-
+            
         }
 
         static void endEvent(ref Player player)
         {
-
+            
             Console.WriteLine($"In the morning {charName} hears reports that there is a Military base near Moscow where a chef teacher is needed and they can use his help.");
             Console.WriteLine($"\nSo he went there and saw bunch of young soldiers eating any scraps they can get their hands on, " +
                 $"\nsome even psychoticly choosing to eat human flesh to survive." +
@@ -659,7 +609,7 @@ namespace UberProject
 
                 Console.WriteLine("1. Attack");
                 Console.WriteLine("2. Open Inventory");
-
+                
                 temp = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(temp) || !int.TryParse(temp, out choice))
                 {
@@ -690,7 +640,7 @@ namespace UberProject
                         }
 
 
-                        int eAttack = enemy.enemyAttack + random.Next(-2, 3);
+                        int eAttack = enemy.enemyAttack + random.Next(-2,3);
                         player.playerHP = player.playerHP - eAttack;
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine($"{enemy.enemyName} attacks {player.playerName} for {eAttack} damage!");
@@ -809,7 +759,7 @@ namespace UberProject
                     }
                     break;
 
-                case 3:
+                    case 3:
                     Console.WriteLine("Enter the slot number of the item you want to drop:");
                     int dropSlot;
                     temp = Console.ReadLine();
@@ -840,69 +790,70 @@ namespace UberProject
             //12 Items removed
             Weapons[] weapons =
             {
-                new Weapons { weaponName = "Radiation Axe", weaponDamage = 9, weaponType = "Melee", weaponRarity = "Common" },
                 new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 7, weaponType = "Ranged", weaponRarity = "Common" },
-                new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 11, weaponType = "Ranged", weaponRarity = "Common" },
                 new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 8, weaponType = "Melee", weaponRarity = "Common" },
-                new Weapons { weaponName = "Electrified Machete", weaponDamage = 12, weaponType = "Melee", weaponRarity = "Common" },
+                new Weapons { weaponName = "Radiation Axe", weaponDamage = 9, weaponType = "Melee", weaponRarity = "Common" },
                 new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 10, weaponType = "Energy", weaponRarity = "Common" },
-
-                new Weapons { weaponName = "Flamer", weaponDamage = 16, weaponType = "Heavy", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 11, weaponType = "Ranged", weaponRarity = "Common" },
+                new Weapons { weaponName = "Electrified Machete", weaponDamage = 12, weaponType = "Melee", weaponRarity = "Common" },
+            
                 new Weapons { weaponName = "Hunting Rifle", weaponDamage = 13, weaponType = "Ranged", weaponRarity = "Rare" },
-                new Weapons { weaponName = "Combat Shotgun", weaponDamage = 15, weaponType = "Ranged", weaponRarity = "Rare" },
                 new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 14, weaponType = "Ranged", weaponRarity = "Rare" },
-
-
+                new Weapons { weaponName = "Combat Shotgun", weaponDamage = 15, weaponType = "Ranged", weaponRarity = "Rare" },
+                new Weapons { weaponName = "Flamer", weaponDamage = 16, weaponType = "Heavy", weaponRarity = "Rare" },
+         
+            
+                new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 19, weaponType = "Energy", weaponRarity = "Epic" },
                 new Weapons { weaponName = "Tesla Cannon", weaponDamage = 20, weaponType = "Energy", weaponRarity = "Epic" },
                 new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 21, weaponType = "Melee", weaponRarity = "Epic" },
-                new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 19, weaponType = "Energy", weaponRarity = "Epic" },
 
-
+            
                 new Weapons { weaponName = "Plague Injector", weaponDamage = 25, weaponType = "Ranged", weaponRarity = "*Legendary*" },
                 new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 26, weaponType = "Heavy", weaponRarity = "*Legendary*" },
                 new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 27, weaponType = "Energy", weaponRarity = "*Legendary*" },
-
+             
             };
 
 
             Ingredients[] ingredients =
             {
-                new Ingredients { ingredientName = "Egg" },
-                new Ingredients { ingredientName = "Jam" },
-                new Ingredients { ingredientName = "Milk" },
-                new Ingredients { ingredientName = "Salt" },
-                new Ingredients { ingredientName = "Fish" },
-                new Ingredients { ingredientName = "Meat" },
                 new Ingredients { ingredientName = "Bread" },
-                new Ingredients { ingredientName = "Onion" },
-                new Ingredients { ingredientName = "Apple" },
+                new Ingredients { ingredientName = "Lettuce" },
                 new Ingredients { ingredientName = "Tomato" },
                 new Ingredients { ingredientName = "Cheese" },
+                new Ingredients { ingredientName = "Meat" },
+                new Ingredients { ingredientName = "Egg" },
                 new Ingredients { ingredientName = "Potato" },
                 new Ingredients { ingredientName = "Carrot" },
+                new Ingredients { ingredientName = "Onion" },
                 new Ingredients { ingredientName = "Garlic" },
+                new Ingredients { ingredientName = "Salt" },
                 new Ingredients { ingredientName = "Pepper" },
-                new Ingredients { ingredientName = "Butter" },
-                new Ingredients { ingredientName = "Lettuce" },
-                new Ingredients { ingredientName = "Mutfruit" },
-                new Ingredients { ingredientName = "Mushroom" },
                 new Ingredients { ingredientName = "Drinkable Water" },
+                new Ingredients { ingredientName = "Jam" },
+                new Ingredients { ingredientName = "Milk" },
+                new Ingredients { ingredientName = "Butter" },
+                new Ingredients { ingredientName = "Mushroom" },
+                new Ingredients { ingredientName = "Fish" },
+                new Ingredients { ingredientName = "Apple" },
+                new Ingredients { ingredientName = "Mutfruit" }
             };
 
             Items[] items =
             {
                 new Items { itemName = "Stimpak", itemType = "Healing", itemEffectValue = 20, itemDesc = "A medical kit that heals wounds and restores health." },
                 new Items { itemName = "RadAway", itemType = "Healing", itemEffectValue = 15, itemDesc = "A serum that removes radiation from the body." },
+                new Items { itemName = "Antiseptic Bandage", itemType = "Healing", itemEffectValue = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
+                new Items { itemName = "Molotov Cocktail", itemType = "Explosive", itemEffectValue = 18, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
+                new Items { itemName = "Fragmentation Grenade", itemType = "Explosive", itemEffectValue = 20, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
                 new Items { itemName = "Plasma Mine", itemType = "Explosive", itemEffectValue = 24, itemDesc = "A mine that detonates with a burst of plasma energy." },
+                new Items { itemName = "Dynamite Bundle", itemType = "Explosive", itemEffectValue = 30, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
                 new Items { itemName = "Cryo Grenade", itemType = "Explosive", itemEffectValue = 15, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
                 new Items { itemName = "Purified Water", itemType = "Healing", itemEffectValue = 10, itemDesc = "Clean water that hydrates and restores minor health." },
-                new Items { itemName = "Dynamite Bundle", itemType = "Explosive", itemEffectValue = 30, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
-                new Items { itemName = "Molotov Cocktail", itemType = "Explosive", itemEffectValue = 18, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
-                new Items { itemName = "Antiseptic Bandage", itemType = "Healing", itemEffectValue = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
-                new Items { itemName = "Fragmentation Grenade", itemType = "Explosive", itemEffectValue = 20, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
-             };
 
-            int weaponLootRarity = random.Next(1, 101);
+            };
+
+            int weaponLootRarity = random.Next(1,101);
             int weaponLoot;
             int itemLoot1 = random.Next(items.Length);
             int itemLoot2 = random.Next(items.Length);
@@ -1003,23 +954,22 @@ namespace UberProject
 
             Enemies[] monsters =
         {
-            new Enemies("Mirelurk", 30, 5, "A mutated crab-like creature with a hard shell and a vicious bite."),
-            new Enemies("Radroach", 20, 4, "Giant irradiated cockroach with acidic saliva and armored carapace"),
-            new Enemies("Deathclaw", 50, 10, "A terrifying predator with razor-sharp claws and incredible speed."),
-            new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts."),
-            new Enemies("Mutant Bear", 35, 8, "A mutated bear, aggressive and dangerous."),
-            new Enemies("Radscorpion", 65, 13, "A giant scorpion with a venomous sting and armored exoskeleton."),
-            new Enemies("Ash Crawler", 25, 5, "A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below."),
-            new Enemies("Mutant Hound", 35, 7, "Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression."),
-            new Enemies("Ghoul Reaper", 30, 6, "A sentient, decaying humanoid that hunts the living for flesh, often in packs."),
-            new Enemies("Bone Dragger", 26, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
-            new Enemies("Super Mutant", 40, 8, "A hulking brute with enhanced strength and resilience, often armed with heavy weapons."),
-            new Enemies("Toxic Spitter", 22, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
-            new Enemies("Murderous Crow", 22, 4, "A seemingly normal crow with teeth that can cut through ceramic plates"),
-            new Enemies("Scorched Stalker", 28, 6, "Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes."),
-            new Enemies("Irradiated Behemoth", 60, 12, "Towering brute pulsing with nuclear energy, leaving scorched earth in its wake."),
-            new Enemies("Wasteland Abomination", 50, 10, "A massive fusion of flesh and machinery, created from failed experiments and scavenged tech."),
-    };
+            new Enemies("Mirelurk", 4*modifier, 7, "A mutated crab-like creature with a hard shell and a vicious bite."),
+            new Enemies("Super Mutant",3*modifier , 8, "A hulking brute with enhanced strength and resilience, often armed with heavy weapons."),
+            new Enemies("Deathclaw", 5*modifier, 10, "A terrifying predator with razor-sharp claws and incredible speed."),
+            new Enemies("Radscorpion", 2*modifier, 7, "A giant scorpion with a venomous sting and armored exoskeleton."),
+            new Enemies("Radroach", 2*modifier, 4, "Giant irradiated cockroach with acidic saliva and armored carapace"),
+            new Enemies("Mutant Hound", 3*modifier, 7, "Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression."),
+            new Enemies("Ash Crawler", 2*modifier, 5, "A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below."),
+            new Enemies("Ghoul Reaper", 3*modifier, 6, "A sentient, decaying humanoid that hunts the living for flesh, often in packs."),
+            new Enemies("Wasteland Abomination", 5*modifier, 10, "A massive fusion of flesh and machinery, created from failed experiments and scavenged tech."),
+            new Enemies("Irradiated Behemoth", 6*modifier, 11, "Towering brute pulsing with nuclear energy, leaving scorched earth in its wake."),
+            new Enemies("Scorched Stalker", 3*modifier, 6, "Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes."),
+            new Enemies("Toxic Spitter", 2*modifier, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
+            new Enemies("Bone Dragger", 3*modifier, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
+            new Enemies("Nuke Leech", 2*modifier, 5, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts."),
+            new Enemies("Murderous Crow", 2*modifier, 4, "A seemingly normal crow with teeth that can cut through ceramic plates")
+        };
 
             int enemyNumber = random.Next(monsters.Length);
 
@@ -1048,7 +998,7 @@ namespace UberProject
             Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
 
-            do
+            do 
             {
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine($"Round {i++}");
@@ -1099,7 +1049,7 @@ namespace UberProject
                 Console.WriteLine();
                 Console.WriteLine("Please choose an option");
                 userInput = Console.ReadLine();
-
+                
 
                 Console.Clear();
 
@@ -1111,29 +1061,21 @@ namespace UberProject
                         Enemies[] monsters =
                         {
                             new Enemies("Mirelurk", 30, 5, "A mutated crab-like creature with a hard shell and a vicious bite."),
-                            new Enemies("Radroach", 20, 4, "Giant irradiated cockroach with acidic saliva and armored carapace"),
-                            new Enemies("Deathclaw", 50, 10, "A terrifying predator with razor-sharp claws and incredible speed."),
-                            new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts."),
-                            new Enemies("Mutant Bear", 35, 8, "A mutated bear, aggressive and dangerous."),
-                            new Enemies("Radscorpion", 65, 13, "A giant scorpion with a venomous sting and armored exoskeleton."),
-                            new Enemies("Ash Crawler", 25, 5, "A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below."),
-                            new Enemies("Mutant Hound", 35, 7, "Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression."),
-                            new Enemies("Ghoul Reaper", 30, 6, "A sentient, decaying humanoid that hunts the living for flesh, often in packs."),
-                            new Enemies("Bone Dragger", 26, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
                             new Enemies("Super Mutant", 40, 8, "A hulking brute with enhanced strength and resilience, often armed with heavy weapons."),
-                            new Enemies("Toxic Spitter", 22, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
-                            new Enemies("Murderous Crow", 22, 4, "A seemingly normal crow with teeth that can cut through ceramic plates"),
-                            new Enemies("Scorched Stalker", 28, 6, "Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes."),
-                            new Enemies("Irradiated Behemoth", 60, 12, "Towering brute pulsing with nuclear energy, leaving scorched earth in its wake."),
+                            new Enemies("Deathclaw", 50, 10, "A terrifying predator with razor-sharp claws and incredible speed."),
+                            new Enemies("Radscorpion", 35, 7, "A giant scorpion with a venomous sting and armored exoskeleton."),
+                            new Enemies("Radroach", 20, 4, "Giant irradiated cockroach with acidic saliva and armored carapace"),
+                            new Enemies("Mutant Hound", 35, 7, "Once a domestic dog, now a grotesque, hairless predator with enhanced senses and aggression."),
+                            new Enemies("Ash Crawler", 25, 5, "A pale, skeletal creature that burrows through radioactive ash, ambushing prey from below."),
+                            new Enemies("Ghoul Reaper", 30, 6, "A sentient, decaying humanoid that hunts the living for flesh, often in packs."),
                             new Enemies("Wasteland Abomination", 50, 10, "A massive fusion of flesh and machinery, created from failed experiments and scavenged tech."),
-                         };
+                            new Enemies("Irradiated Behemoth", 60, 12, "Towering brute pulsing with nuclear energy, leaving scorched earth in its wake."),
+                            new Enemies("Scorched Stalker", 28, 6, "Burn-scarred humanoid with smoldering skin, capable of setting traps and ambushes."),
+                            new Enemies("Toxic Spitter", 22, 5, "A bloated mutant that expels corrosive bile from a distended jaw."),
+                            new Enemies("Bone Dragger", 26, 5, "Lurks in the shadows, dragging scavenged bones across the ground to lure victims."),
+                            new Enemies("Nuke Leech", 18, 3, "A glowing, slug-like parasite that feeds on radiation and attaches to living hosts.")
+                        };
                         Console.WriteLine("Monsters in the game:\n");
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Name".PadRight(25)
-                                        + "HP".PadRight(6)
-                                        + "Attack".PadRight(8)
-                                        + "Description");
-                        Console.ResetColor();
                         foreach (var enemy in monsters)
                         {
                             Console.WriteLine(enemy);
@@ -1146,31 +1088,31 @@ namespace UberProject
                         // Display all weapons in a readable format
                         Weapons[] tier1weapons =
                         {
-                            new Weapons { weaponName = "Radiation Axe", weaponDamage = 14, weaponType = "Melee" },
                             new Weapons { weaponName = "Rusty Pipe Rifle", weaponDamage = 12, weaponType = "Ranged" },
-                            new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 13, weaponType = "Ranged" },
-                            new Weapons { weaponName = "Electrified Machete", weaponDamage = 17, weaponType = "Melee" },
                             new Weapons { weaponName = "Spiked Baseball Bat", weaponDamage = 10, weaponType = "Melee" },
+                            new Weapons { weaponName = "Radiation Axe", weaponDamage = 14, weaponType = "Melee" },
                             new Weapons { weaponName = "Jury-Rigged Laser Pistol", weaponDamage = 16, weaponType = "Energy" },
+                            new Weapons { weaponName = "Toxic Syringe Gun", weaponDamage = 13, weaponType = "Ranged" },
+                            new Weapons { weaponName = "Electrified Machete", weaponDamage = 17, weaponType = "Melee" }
                         };
                         Weapons[] tier2weapons =
                         {
-                            new Weapons { weaponName = "Flamer", weaponDamage = 35, weaponType = "Heavy" },
                             new Weapons { weaponName = "Hunting Rifle", weaponDamage = 25, weaponType = "Ranged" },
-                            new Weapons { weaponName = "Combat Shotgun", weaponDamage = 30, weaponType = "Ranged" },
                             new Weapons { weaponName = "Sawblade Launcher", weaponDamage = 30, weaponType = "Ranged" },
+                            new Weapons { weaponName = "Combat Shotgun", weaponDamage = 30, weaponType = "Ranged" },
+                            new Weapons { weaponName = "Flamer", weaponDamage = 35, weaponType = "Heavy" },
 
                         };
                         Weapons[] tier3weapons =
                         {
+                            new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 55, weaponType = "Energy" },
                             new Weapons { weaponName = "Tesla Cannon", weaponDamage = 65, weaponType = "Energy" },
                             new Weapons { weaponName = "Incendiary Chainsaw", weaponDamage = 50, weaponType = "Melee" },
-                            new Weapons { weaponName = "Experimental Gauss Rifle", weaponDamage = 55, weaponType = "Energy" },
-
+         
                         };
                         Weapons[] tier4weapons =
                         {
-
+              
                             new Weapons { weaponName = "Plague Injector", weaponDamage = 80, weaponType = "Ranged" },
                             new Weapons { weaponName = "Hellfire Minigun", weaponDamage = 90, weaponType = "Heavy" },
                             new Weapons { weaponName = "Quantum Disruptor", weaponDamage = 110, weaponType = "Energy" },
@@ -1181,54 +1123,33 @@ namespace UberProject
 
                         Console.ForegroundColor = ConsoleColor.Gray;
                         Console.WriteLine("Tier 1 Weapons:");
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Name".PadRight(27)
-                                        + "Type".PadRight(9)
-                                        + "Damage");
-                        Console.ResetColor();
                         foreach (var weapon in tier1weapons)
                         {
-                            Console.WriteLine($"{weapon.weaponName.PadRight(24)} | {weapon.weaponType.ToString().PadRight(6)} | {weapon.weaponDamage}");
+                            Console.WriteLine($"Name: {weapon.weaponName}, Damage: {weapon.weaponDamage}, Type: {weapon.weaponType}");
                         }
                         Console.WriteLine();
 
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Tier 2 Weapons:");
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Name".PadRight(27)
-                                        + "Type".PadRight(9)
-                                        + "Damage");
-                        Console.ResetColor();
                         foreach (var weapon in tier2weapons)
                         {
-                            Console.WriteLine($"{weapon.weaponName.PadRight(24)} | {weapon.weaponType.ToString().PadRight(6)} | {weapon.weaponDamage}");
-
+                            Console.WriteLine($"Name: {weapon.weaponName}, Damage: {weapon.weaponDamage}, Type: {weapon.weaponType}");
                         }
                         Console.WriteLine();
 
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("Tier 3 Weapons:");
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Name".PadRight(27)
-                                        + "Type".PadRight(9)
-                                        + "Damage");
-                        Console.ResetColor();
                         foreach (var weapon in tier3weapons)
                         {
-                            Console.WriteLine($"{weapon.weaponName.PadRight(24)} | {weapon.weaponType.ToString().PadRight(6)} | {weapon.weaponDamage}");
+                            Console.WriteLine($"Name: {weapon.weaponName}, Damage: {weapon.weaponDamage}, Type: {weapon.weaponType}");
                         }
                         Console.WriteLine();
 
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.WriteLine("Tier 4 Weapons:");
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Name".PadRight(27)
-                                        + "Type".PadRight(9)
-                                        + "Damage");
-                        Console.ResetColor();
                         foreach (var weapon in tier4weapons)
                         {
-                            Console.WriteLine($"{weapon.weaponName.PadRight(24)} | {weapon.weaponType.ToString().PadRight(6)} | {weapon.weaponDamage}");
+                            Console.WriteLine($"Name: {weapon.weaponName}, Damage: {weapon.weaponDamage}, Type: {weapon.weaponType}");
                         }
 
                         Console.ResetColor();
@@ -1243,22 +1164,16 @@ namespace UberProject
                         {
                             new Items { itemName = "Stimpak", itemType = "Healing", itemEffectValue = 20, itemDesc = "A medical kit that heals wounds and restores health." },
                             new Items { itemName = "RadAway", itemType = "Healing", itemEffectValue = 15, itemDesc = "A serum that removes radiation from the body." },
+                            new Items { itemName = "Antiseptic Bandage", itemType = "Healing", itemEffectValue = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
+                            new Items { itemName = "Molotov Cocktail", itemType = "Explosive", itemEffectValue = 18, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
+                            new Items { itemName = "Fragmentation Grenade", itemType = "Explosive", itemEffectValue = 20, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
                             new Items { itemName = "Plasma Mine", itemType = "Explosive", itemEffectValue = 24, itemDesc = "A mine that detonates with a burst of plasma energy." },
+                            new Items { itemName = "Dynamite Bundle", itemType = "Explosive", itemEffectValue = 30, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
                             new Items { itemName = "Cryo Grenade", itemType = "Explosive", itemEffectValue = 15, itemDesc = "A grenade that explodes with a freezing blast, slowing enemies." },
                             new Items { itemName = "Purified Water", itemType = "Healing", itemEffectValue = 10, itemDesc = "Clean water that hydrates and restores minor health." },
-                            new Items { itemName = "Dynamite Bundle", itemType = "Explosive", itemEffectValue = 30, itemDesc = "A bundle of dynamite sticks, causes a large explosion." },
-                            new Items { itemName = "Molotov Cocktail", itemType = "Explosive", itemEffectValue = 18, itemDesc = "A bottle filled with flammable liquid, deals fire damage." },
-                            new Items { itemName = "Antiseptic Bandage", itemType = "Healing", itemEffectValue = 12, itemDesc = "A bandage soaked in antiseptic, heals minor wounds." },
-                            new Items { itemName = "Fragmentation Grenade", itemType = "Explosive", itemEffectValue = 20, itemDesc = "A standard grenade that explodes into deadly shrapnel." },
                         };
 
                         Console.WriteLine("Items in the game:\n");
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Name".PadRight(25)
-                                        + "Type".PadRight(13)
-                                        + "Effect".PadRight(9)
-                                        + "Description");
-                        Console.ResetColor();
                         foreach (var item in items)
                         {
                             Console.WriteLine(item);
@@ -1271,31 +1186,28 @@ namespace UberProject
                         // Display all ingredients in a readable format
                         Ingredients[] ingredients =
                         {
-                            new Ingredients { ingredientName = "Egg" },
-                            new Ingredients { ingredientName = "Jam" },
-                            new Ingredients { ingredientName = "Meat" },
-                            new Ingredients { ingredientName = "Salt" },
-                            new Ingredients { ingredientName = "Fish" },
-                            new Ingredients { ingredientName = "Milk" },
                             new Ingredients { ingredientName = "Bread" },
-                            new Ingredients { ingredientName = "Onion" },
-                            new Ingredients { ingredientName = "Apple" },
+                            new Ingredients { ingredientName = "Lettuce" },
                             new Ingredients { ingredientName = "Tomato" },
                             new Ingredients { ingredientName = "Cheese" },
+                            new Ingredients { ingredientName = "Meat" },
+                            new Ingredients { ingredientName = "Egg" },
                             new Ingredients { ingredientName = "Potato" },
                             new Ingredients { ingredientName = "Carrot" },
+                            new Ingredients { ingredientName = "Onion" },
                             new Ingredients { ingredientName = "Garlic" },
+                            new Ingredients { ingredientName = "Salt" },
                             new Ingredients { ingredientName = "Pepper" },
-                            new Ingredients { ingredientName = "Butter" },
-                            new Ingredients { ingredientName = "Lettuce" },
-                            new Ingredients { ingredientName = "Mushroom" },
-                            new Ingredients { ingredientName = "Mutfruit" },
                             new Ingredients { ingredientName = "Drinkable Water" },
+                            new Ingredients { ingredientName = "Jam" },
+                            new Ingredients { ingredientName = "Milk" },
+                            new Ingredients { ingredientName = "Butter" },
+                            new Ingredients { ingredientName = "Mushroom" },
+                            new Ingredients { ingredientName = "Fish" },
+                            new Ingredients { ingredientName = "Apple" },
+                            new Ingredients { ingredientName = "Mutfruit" }
                         };
                         Console.WriteLine("Ingredients in the game:\n");
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Name");
-                        Console.ResetColor();
                         foreach (var ingredient in ingredients)
                         {
                             Console.WriteLine(ingredient);
@@ -1308,34 +1220,28 @@ namespace UberProject
                         // Display all recipes in a readable format
                         Recipes[] recipes =
                         {
-                            new Recipes { recipeName = "Apple Pie", ingredient1 = "Apple", ingredient2 = "Flour", ingredient3 = "Butter" },
-                            new Recipes { recipeName = "Pepper Steak", ingredient1 = "Meat", ingredient2 = "Pepper", ingredient3 = "Butter" },
-                            new Recipes { recipeName = "Mirelurk Pie", ingredient1 = "Mirelurk Meat", ingredient2 = "Potato", ingredient3 = "Salt" },
-                            new Recipes { recipeName = "Garlic Bread", ingredient1 = "Bread", ingredient2 = "Butter", ingredient3 = "Garlic" },
-                            new Recipes { recipeName = "Radroach Stew", ingredient1 = "Radroach Meat", ingredient2 = "Potato", ingredient3 = "Carrot" },
-                            new Recipes { recipeName = "Ghoul Goulash", ingredient1 = "Ghoul Meat", ingredient2 = "Carrot", ingredient3 = "Onion" },
-                            new Recipes { recipeName = "Mushroom Stew", ingredient1 = "Mushroom", ingredient2 = "Onion", ingredient3 = "Drinkable Water" },
                             new Recipes { recipeName = "Russian Steak", ingredient1 = "Meat", ingredient2 = "Potato", ingredient3 = "Butter" },
                             new Recipes { recipeName = "Nuka-Cola Cake", ingredient1 = "Flour", ingredient2 = "Sugar", ingredient3 = "Nuka-Cola" },
-                            new Recipes { recipeName = "Rad-X Smoothie", ingredient1 = "Rad-X", ingredient2 = "Milk", ingredient3 = "Mutfruit" },
                             new Recipes { recipeName = "Mutfruit Salad", ingredient1 = "Mutfruit", ingredient2 = "Lettuce", ingredient3 = "Tomato" },
-                            new Recipes { recipeName = "Fried Fish Fillet", ingredient1 = "Fish", ingredient2 = "Butter", ingredient3 = "Salt" },
-                            new Recipes { recipeName = "Spicy Meat Skewer", ingredient1 = "Meat", ingredient2 = "Pepper", ingredient3 = "Onion" },
+                            new Recipes { recipeName = "Radroach Stew", ingredient1 = "Radroach Meat", ingredient2 = "Potato", ingredient3 = "Carrot" },
                             new Recipes { recipeName = "Wasteland Omelette", ingredient1 = "Egg", ingredient2 = "Cheese", ingredient3 = "Onion" },
-                            new Recipes { recipeName = "Cheesy Potato Soup", ingredient1 = "Potato", ingredient2 = "Cheese", ingredient3 = "Drinkable Water" },
+                            new Recipes { recipeName = "Mirelurk Pie", ingredient1 = "Mirelurk Meat", ingredient2 = "Potato", ingredient3 = "Salt" },
                             new Recipes { recipeName = "Mutant Hound Jerky", ingredient1 = "Mutant Hound Meat", ingredient2 = "Salt", ingredient3 = "Pepper" },
-                            new Recipes { recipeName = "Mutfruit Jam Toast", ingredient1 = "Toast", ingredient2 = "Mutfruit", ingredient3 = "Jam" },
+                            new Recipes { recipeName = "Ghoul Goulash", ingredient1 = "Ghoul Meat", ingredient2 = "Carrot", ingredient3 = "Onion" },
                             new Recipes { recipeName = "Irradiated Apple Jam", ingredient1 = "Apple", ingredient2 = "Sugar", ingredient3 = "Jam" },
-                            new Recipes { recipeName = "Carrot & Potato Mash", ingredient1 = "Carrot", ingredient2 = "Potato", ingredient3 = "Butter" },
+                            new Recipes { recipeName = "Cheesy Potato Soup", ingredient1 = "Potato", ingredient2 = "Cheese", ingredient3 = "Drinkable Water" },
+                            new Recipes { recipeName = "Fried Fish Fillet", ingredient1 = "Fish", ingredient2 = "Butter", ingredient3 = "Salt" },
+                            new Recipes { recipeName = "Mushroom Stew", ingredient1 = "Mushroom", ingredient2 = "Onion", ingredient3 = "Drinkable Water" },
                             new Recipes { recipeName = "Egg & Mutfruit Breakfast", ingredient1 = "Egg", ingredient2 = "Mutfruit", ingredient3 = "Milk" },
+                            new Recipes { recipeName = "Carrot & Potato Mash", ingredient1 = "Carrot", ingredient2 = "Potato", ingredient3 = "Butter" },
+                            new Recipes { recipeName = "Spicy Meat Skewer", ingredient1 = "Meat", ingredient2 = "Pepper", ingredient3 = "Onion" },
+                            new Recipes { recipeName = "Garlic Bread", ingredient1 = "Bread", ingredient2 = "Butter", ingredient3 = "Garlic" },
+                            new Recipes { recipeName = "Apple Pie", ingredient1 = "Apple", ingredient2 = "Flour", ingredient3 = "Butter" },
+                            new Recipes { recipeName = "Mutfruit Jam Toast", ingredient1 = "Toast", ingredient2 = "Mutfruit", ingredient3 = "Jam" },
+                            new Recipes { recipeName = "Rad-X Smoothie", ingredient1 = "Rad-X", ingredient2 = "Milk", ingredient3 = "Mutfruit" },
+                            new Recipes { recipeName = "Pepper Steak", ingredient1 = "Meat", ingredient2 = "Pepper", ingredient3 = "Butter" }
                         };
                         Console.WriteLine("Recipes in the game:\n");
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine("Name".PadRight(29)
-                                        + "First Ingredient".PadRight(21)
-                                        + "Second".PadRight(12)
-                                        + "Third");
-                        Console.ResetColor();
                         foreach (var recipe in recipes)
                         {
                             Console.WriteLine(recipe);
@@ -1386,7 +1292,7 @@ namespace UberProject
             {
                 Console.WriteLine("Hello. This is your food inventory.\nPress 1 to cook ingredients\nPress 2 to read out your inventory\n\nPress 0 to close the program"); //Menu text
                 temp = Console.ReadLine();
-                input = Convert.ToInt32(temp);
+                input =Convert.ToInt32(temp);
 
                 if (string.IsNullOrWhiteSpace(temp) || !int.TryParse(temp, out input))
                 {
@@ -1564,7 +1470,7 @@ namespace UberProject
             }
             else if (ingredient1 == "toast" && ingredient2 == "jam")
             {
-                for (int i = 0; i < foodSatchel.Length; i++)
+                for (int i = 0;i < foodSatchel.Length; i++)
                 {
                     if (foodSatchel[i] == "")
                     {
@@ -1669,7 +1575,7 @@ namespace UberProject
             {
                 Console.WriteLine("I don't know what to make with this!");
             }
-            Console.ReadLine();
+                Console.ReadLine();
         }
 
         static void Fishing()
@@ -1824,9 +1730,6 @@ namespace UberProject
 
 
         }
-        
-    }
-}
         
     }
 }
