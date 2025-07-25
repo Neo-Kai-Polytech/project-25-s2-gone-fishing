@@ -170,6 +170,10 @@ namespace UberProject
                             Exit();
                             break;
 
+                        case 4:
+                            Fishing();
+                            break;
+
                         default:
                             InvalidInput();
                             break;
@@ -1671,7 +1675,7 @@ namespace UberProject
             }
 
 
-        }
+        
 
         static void Fishing()
         {
