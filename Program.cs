@@ -174,6 +174,11 @@ namespace UberProject
                             Fishing();
                             break;
 
+                        case 5:
+                        Player player = new Player("Bob", 100, "Steel Pan", 6);
+                            StartingArea(ref player);
+                        break;
+
                         default:
                             InvalidInput();
                             break;
@@ -310,14 +315,21 @@ namespace UberProject
 
 
                 event1(ref player);
+                Dayend(ref player);
 
                 event2(ref player);
+                Dayend(ref player);
 
                 event3(ref player);
+                Dayend(ref player);
 
                 event4(ref player);
+                Dayend(ref player);
 
                 event5(ref player);
+                Dayend(ref player);
+
+
 
                 endEvent(ref player);
 
@@ -334,12 +346,12 @@ namespace UberProject
                     "\nAnd suddenly...");
                 Thread.Sleep(2000);
                 Console.WriteLine("\nHe hears a faint rustling sound coming from the trees behind him");
-                Console.WriteLine("Prepare yourself!\n\n");
+                Console.WriteLine("He prepares himself for the worst!\n\n");
                 Console.WriteLine("Press enter to continue...");
                 Console.ReadLine();
                 //There was sound here and it was removed due to it being tedious when playing multiple times
 
-                Enemies enemy = monsters[15];
+                Enemies enemy = monsters[random.Next(0,monsters.Length-1)];
 
                 CombatSystem(ref player, enemy);
 
@@ -908,9 +920,9 @@ namespace UberProject
 
                 int weaponLootRarity = random.Next(1, 101);
                 int weaponLoot;
-                int itemLoot1 = random.Next(items.Length);
-                int itemLoot2 = random.Next(items.Length);
-                int ingredientLoot = random.Next(ingredients.Length);
+                int itemLoot1 = random.Next(items.Length-1);
+                int itemLoot2 = random.Next(items.Length-1);
+                int ingredientLoot = random.Next(ingredients.Length-1);
 
                 if (weaponLootRarity <= 40)
                 {
@@ -927,7 +939,7 @@ namespace UberProject
                 }
                 else
                 {
-                    weaponLoot = random.Next(18, 24); // Legendary Weapons
+                    weaponLoot = random.Next(18, weapons.Length-1); // Legendary Weapons
                 }
 
                 Weapons acquiredEpicWeapon = weapons[weaponLoot];
@@ -1778,7 +1790,45 @@ namespace UberProject
 
         static Player Dayend (ref Player player)
         {
+            string input;
+            int exit=0;
+            Console.Clear();
+            do
+            {
+                Console.WriteLine("After a long day he finds himself with some freetime");
+                Console.WriteLine("He decided to:");
+                Console.WriteLine("1:Rest\n2:Visit the arena\n3:Go Fishing");
+                input = Console.ReadLine();
 
+                switch (Convert.ToInt32(input))
+                {
+                    case 1:
+                        Console.Clear();
+                        player.playerHP = player.playerHP + 15;
+                        Console.WriteLine("Our hero rests for the night regaining some lost strength");
+                        Console.WriteLine($"Current HP: {player.playerHP}");
+                        exit = 1;
+                        break;
+
+                    case 2:
+                        Console.Clear();
+                        Arena();
+                        exit = 1;
+                        break;
+
+                    case 3:
+                        Console.Clear();
+                        Fishing();
+                        exit = 1;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Input");
+                        Thread.Sleep(2000);
+                        break;
+                }
+            }while(exit != 1);
+
+            Console.ReadKey();
 
             return player;
         }
