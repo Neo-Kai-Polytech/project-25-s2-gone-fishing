@@ -145,7 +145,6 @@ namespace UberProject
                 {
                     Welcome();
 
-                    Console.WriteLine("Please choose an option");
                     temp = Console.ReadLine();
                     Task = Convert.ToInt32(temp);
 
@@ -192,17 +191,30 @@ namespace UberProject
             static void Welcome()
             {
                 Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("______ _                                        __       ______    _ _             _   \r\n|  ___| |                                      / _|      |  ___|  | | |           | |  \r\n| |_  | | __ ___   _____  _ __ ___        ___ | |_       | |_ __ _| | | ___  _   _| |_ \r\n|  _| | |/ _` \\ \\ / / _ \\| '__/ __|      / _ \\|  _|      |  _/ _` | | |/ _ \\| | | | __|\r\n| |   | | (_| |\\ V / (_) | |  \\__ \\     | (_) | |        | || (_| | | | (_) | |_| | |_ \r\n\\_|   |_|\\__,_| \\_/ \\___/|_|  |___/      \\___/|_|        \\_| \\__,_|_|_|\\___/ \\__,_|\\__|\r\n                                                                                       \r\n                                                                                       ");
-                Console.ResetColor();
-                Console.WriteLine("The Menu options are:");
-                Console.WriteLine("1  New Game");
-                Console.WriteLine("2  Arena");
-                Console.WriteLine("3  Collection");
-                Console.WriteLine("0  Exit menu system");
-                //There was sound here and it was removed due to it being tedious when playing multiple times
-                Console.WriteLine();
-            }
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("\n\n\n        ███████╗██╗      █████╗ ██╗   ██╗ ██████╗ ██████╗ ███████╗     ██████╗ ███████╗    ");
+            Console.WriteLine("        ██╔════╝██║     ██╔══██╗██║   ██║██╔═══██╗██╔══██╗██╔════╝    ██╔═══██╗██╔════╝    ");
+            Console.WriteLine("        █████╗  ██║     ███████║██║   ██║██║   ██║██████╔╝███████╗    ██║   ██║█████╗      ");
+            Console.WriteLine("        ██╔══╝  ██║     ██╔══██║╚██╗ ██╔╝██║   ██║██╔══██╗╚════██║    ██║   ██║██╔══╝      ");
+            Console.WriteLine("        ██║     ███████╗██║  ██║ ╚████╔╝ ╚██████╔╝██║  ██║███████║    ╚██████╔╝██║         ");
+            Console.WriteLine("        ╚═╝     ╚══════╝╚═╝  ╚═╝  ╚═══╝   ╚═════╝ ╚═╝  ╚═╝╚══════╝     ╚═════╝ ╚═╝         ");
+            Console.WriteLine("                                                                                          ");
+            Console.WriteLine("                    ███████╗ █████╗ ██╗     ██╗      ██████╗ ██╗   ██╗████████╗            ");
+            Console.WriteLine("                    ██╔════╝██╔══██╗██║     ██║     ██╔═══██╗██║   ██║╚══██╔══╝            ");
+            Console.WriteLine("                    █████╗  ███████║██║     ██║     ██║   ██║██║   ██║   ██║               ");
+            Console.WriteLine("                    ██╔══╝  ██╔══██║██║     ██║     ██║   ██║██║   ██║   ██║               ");
+            Console.WriteLine("                    ██║     ██║  ██║███████╗███████╗╚██████╔╝╚██████╔╝   ██║               ");
+            Console.WriteLine("                    ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝  ╚═════╝    ╚═╝               ");
+
+
+
+
+            Console.WriteLine("\n\t\t\t|  1  New Game  |  2. Arena   |  3. Collections  |");
+            Console.ResetColor();
+
+            //There was sound here and it was removed due to it being tedious when playing multiple times
+
+        }
 
             static void Task1()
             {
