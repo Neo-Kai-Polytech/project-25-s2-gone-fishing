@@ -1778,9 +1778,10 @@ namespace UberProject
 
             static void Gambling(int firstTime)
             {
+                int money;
                 Console.WriteLine("Welcome to the gambling den\nare you ready for slots");
                 Console.ReadKey();
-                Console.WriteLine("First we need to make sure you have money!\nHEADS OR TAILS!\nIf you win you can have some money to start gambling\nEnter H or T");
+                Console.WriteLine("First we need to make sure you have money!\nHEADS OR TAILS!\nIf you win you can have some money to start gambling but if you lose any money you may have will be forfeit\nEnter H or T");
                 string temp;
                 char userGuess, answer;
                 int flipped;
@@ -1801,14 +1802,23 @@ namespace UberProject
                 if (answer == userGuess)
                 {
                     Console.WriteLine($"You got lucky, here's $100");
+                    money = 100;
                 }
 
                 else
 
                 {
                     Console.WriteLine($"HAHAHAHA Your terrible at gambling go lose money at the slots if you can!");
+                    money = 0;
                 }
-                Console.ReadLine();
+                Console.WriteLine($"It costs $10 for one go at the slots you have ${money}");
+                Console.WriteLine("Press 1 to spin the slots\n2 to leave");
+                int choice =Convert.ToInt32( Console.ReadLine() );
+                if (choice == 1)
+                {
+
+                }
+
             }
 
         }
