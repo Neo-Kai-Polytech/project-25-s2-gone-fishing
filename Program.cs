@@ -333,7 +333,7 @@ namespace UberProject
                     "\nSoon he finds himself in a dense forest." +
                     "\nAnd suddenly...");
                 Thread.Sleep(2000);
-                Console.WriteLine("\nYou see a bear running towards you!");
+                Console.WriteLine("\nHe hears a faint rustling sound coming from the trees behind him");
                 Console.WriteLine("Prepare yourself!\n\n");
                 Console.WriteLine("Press enter to continue...");
                 Console.ReadLine();
@@ -356,6 +356,8 @@ namespace UberProject
                     $"\nSo {charName} decided to help them with his cooking skills and he started cooking for them." +
                     $"\nThe Villagers were very happy with his cooking skills and they started calling him Chef {charName}.\n");
 
+                Thread.Sleep(500);
+                
                 Thread.Sleep(500);
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadLine();
@@ -1772,6 +1774,13 @@ namespace UberProject
 
 
 
+        }
+
+        static Player Dayend (ref Player player)
+        {
+
+
+            return player;
         }
     }
 }
