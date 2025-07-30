@@ -1038,6 +1038,12 @@ namespace UberProject
                 Thread.Sleep(1000);
                 Console.WriteLine("This world ain't for the weak!");
                 Thread.Sleep(1000);
+                Console.WriteLine("Press 1 for arena fighting\n2 for gambling");
+                int temp=Convert.ToInt32(Console.ReadLine());
+                if (temp==2)
+                {
+                    Gambling();
+                }
                 Console.WriteLine("Survive for as long as you can in the Arena and prove your worth!\n");
                 Thread.Sleep(1000);
 
@@ -1770,7 +1776,40 @@ namespace UberProject
             Console.WriteLine(fishlist[random.Next(0, fishlist.Count + 1)]);
             Console.ReadKey();
 
+            static void Gambling(int firstTime)
+            {
+                Console.WriteLine("Welcome to the gambling den\nare you ready for slots");
+                Console.ReadKey();
+                Console.WriteLine("First we need to make sure you have money!\nHEADS OR TAILS!\nIf you win you can have some money to start gambling\nEnter H or T");
+                string temp;
+                char userGuess, answer;
+                int flipped;
+                Random rand = new Random();
+                flipped = rand.Next(1, 3);
+                temp = Console.ReadLine();
+                userGuess = Convert.ToChar(temp);
+                if (flipped == 1)
+                {
+                    answer = 'H';
+                }
 
+                else
+                {
+                    answer = 'T';
+                }
+
+                if (answer == userGuess)
+                {
+                    Console.WriteLine($"You got lucky, here's $100");
+                }
+
+                else
+
+                {
+                    Console.WriteLine($"HAHAHAHA Your terrible at gambling go lose money at the slots if you can!");
+                }
+                Console.ReadLine();
+            }
 
         }
     }
