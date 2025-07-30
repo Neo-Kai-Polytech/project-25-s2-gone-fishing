@@ -159,7 +159,8 @@ namespace UberProject
                             break;
 
                         case 2:
-                            Arena();
+                            Player player = new Player(charName, 100, "Steel Pan", 6);
+                            Arena(ref player);
                             break;
 
                         case 3:
@@ -1030,7 +1031,7 @@ namespace UberProject
             }
 
 
-            static void Arena()
+            static void Arena(ref Player player)
             {
                 int i = 1;
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -1038,18 +1039,18 @@ namespace UberProject
                 Thread.Sleep(1000);
                 Console.WriteLine("This world ain't for the weak!");
                 Thread.Sleep(1000);
-                Console.WriteLine("Press 1 for arena fighting\n2 for gambling");
+                Console.WriteLine("Press 1 for arena fighting\nPress 2 for gambling");
                 int temp=Convert.ToInt32(Console.ReadLine());
                 if (temp==2)
                 {
-                    Gambling();
+                    Gambling(ref player);
                 }
                 Console.WriteLine("Survive for as long as you can in the Arena and prove your worth!\n");
                 Thread.Sleep(1000);
 
                 Console.WriteLine("Enter the name of your character.");
                 charName = Console.ReadLine();
-                Player player = new Player(charName, 100, "Steel Pan", 6);
+                
 
                 Console.ResetColor();
 
@@ -1681,7 +1682,7 @@ namespace UberProject
             }
 
 
-        
+
 
         static void Fishing()
         {
@@ -1773,10 +1774,12 @@ namespace UberProject
                 new Fish("Trout", 55, "I trout you'd like this one.")
             };
 
+
             Console.WriteLine(fishlist[random.Next(0, fishlist.Count + 1)]);
             Console.ReadKey();
+        }
 
-            static void Gambling(int firstTime)
+            static void Gambling(ref Player player)
             {
                 int money;
                 Console.WriteLine("Welcome to the gambling den\nare you ready for slots");
@@ -1788,6 +1791,7 @@ namespace UberProject
                 Random rand = new Random();
                 flipped = rand.Next(1, 3);
                 temp = Console.ReadLine();
+                temp.ToUpper();
                 userGuess = Convert.ToChar(temp);
                 if (flipped == 1)
                 {
@@ -1798,7 +1802,6 @@ namespace UberProject
                 {
                     answer = 'T';
                 }
-
                 if (answer == userGuess)
                 {
                     Console.WriteLine($"You got lucky, here's $100");
@@ -1812,15 +1815,40 @@ namespace UberProject
                     money = 0;
                 }
                 Console.WriteLine($"It costs $10 for one go at the slots you have ${money}");
-                Console.WriteLine("Press 1 to spin the slots\n2 to leave");
+                Console.WriteLine("Press 1 to spin the slots\nPress 2 to leave");
                 int choice =Convert.ToInt32( Console.ReadLine() );
-                if (choice == 1)
+                while (choice == 1 && money >= 10)
                 {
-
+                    List<int> slots = new List<int> {0,0,0};
+                    money -= 10;
+                    for (int i = 0; i < 3; i++)
+                    {
+                        slots[i]=rand.Next(1,8);
+                    }
+                    Console.Clear();
+                    Console.WriteLine($"{slots[0]}, {slots[1]}, {slots[2]}");
+                    if (slots[0] == slots[1] && slots[1] == slots[2])
+                    {
+                        money += slots[1] * 2;
+                        Console.WriteLine($"You won ${slots[0] * 2}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("You're terrible at gambling!\nYou lose 5 health");
+                        player.playerHP -= 5;
+                    }
+                    Console.WriteLine("Press 1 to spin again\n2 to leave");
+                    choice = Convert.ToInt32(Console.ReadLine());
+                    if (choice==1 && money<=10)
+                    {
+                        Console.WriteLine("YOU RAN OUT OF MONEY GET OUT OF HERE YOU BUM!!!!");
+                    money = 0;
+                    }
                 }
+                Console.WriteLine("You have left the Gamblers Hall");
 
             }
 
-        }
+        
     }
 }
