@@ -1807,7 +1807,7 @@ namespace UberProject
             static void Gambling(ref Player player)
             {
                 int money;
-                Console.WriteLine("Welcome to the gambling den\nare you ready for slots");
+                Console.WriteLine("Welcome to the gambling den\nAre you ready for slots?");
                 Console.ReadKey();
                 Console.WriteLine("First we need to make sure you have money!\nHEADS OR TAILS!\nIf you win you can have some money to start gambling but if you lose any money you may have will be forfeit\nEnter H or T");
                 string temp;
@@ -1877,7 +1877,7 @@ namespace UberProject
 
         
 
-        }
+        
 
         static Player Dayend (ref Player player)
         {
