@@ -179,8 +179,8 @@ namespace UberProject
                             break;
 
                         case 5:
-                        Player player = new Player("Bob", 100, "Steel Pan", 6);
-                            StartingArea(ref player);
+                        Player player2 = new Player("Bob", 100, "Steel Pan", 6);
+                            StartingArea(ref player2);
                         break;
 
                         default:
