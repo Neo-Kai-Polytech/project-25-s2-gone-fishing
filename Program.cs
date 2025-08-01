@@ -1073,15 +1073,27 @@ namespace UberProject
                 int temp=Convert.ToInt32(Console.ReadLine());
                 if (temp==2)
                 {
-                    Gambling(ref player);
+                    int money=Gambling(ref player);
+                    if (money != 0)
+                    {
+                        Console.WriteLine("Press 1 for arena fighting\nPress 2 to leave");
+                        temp = Convert.ToInt32(Console.ReadLine());
+                    }
+                    else
+                    {
+                        temp = 1;
+                        Console.WriteLine("Due to your debt you are being thrown into the arena");
+                    }
                 }
+            if (temp == 1)
+            {
                 Console.WriteLine("Survive for as long as you can in the Arena and prove your worth!\n");
                 Thread.Sleep(1000);
                 Console.ResetColor();
 
                 Console.WriteLine("Press enter to continue...");
                 Console.ReadLine();
-
+                string leave = "Y";
                 do
                 {
                     Console.ForegroundColor = ConsoleColor.DarkYellow;
@@ -1105,11 +1117,13 @@ namespace UberProject
                         Console.WriteLine($"You have defeated the {enemy.enemyName}!");
                         Thread.Sleep(1000);
                         AcquireEpicLoot();
+                        Console.WriteLine("Do you wish to test your luck and continue\nPress y to continue\t|Press n to leave");
+                        leave = Console.ReadLine().ToUpper();
                     }
 
                     Console.Clear();
-                } while (player.playerHP > 0);
-
+                } while (player.playerHP > 0 && leave == "Y");
+            }
 
             }
             public static void Task3()
@@ -1804,11 +1818,11 @@ namespace UberProject
             Console.ReadKey();
         }
 
-            static void Gambling(ref Player player)
+            public static int Gambling(ref Player player)
             {
                 int money;
                 Console.WriteLine("Welcome to the gambling den\nAre you ready for slots?");
-                Console.ReadKey();
+                Thread.Sleep(500);
                 Console.WriteLine("First we need to make sure you have money!\nHEADS OR TAILS!\nIf you win you can have some money to start gambling but if you lose any money you may have will be forfeit\nEnter H or T");
                 string temp;
                 char userGuess, answer;
@@ -1872,7 +1886,7 @@ namespace UberProject
                     }
                 }
                 Console.WriteLine("You have left the Gamblers Hall");
-
+                return money;
             }
 
         
