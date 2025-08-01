@@ -159,7 +159,11 @@ namespace UberProject
                             break;
 
                         case 2:
-                            Arena();
+                            Console.Write("Please enter you character name: ");
+
+                            string input = Console.ReadLine();
+                            Player player = new Player(input, 100, "Steel Pan", 6);
+                            Arena(ref player);
                             break;
 
                         case 3:
@@ -939,7 +943,7 @@ namespace UberProject
                 }
                 else
                 {
-                    weaponLoot = random.Next(18, weapons.Length-1); // Legendary Weapons
+                    weaponLoot = random.Next(18, weapons.Length); // Legendary Weapons
                 }
 
                 Weapons acquiredEpicWeapon = weapons[weaponLoot];
@@ -1044,7 +1048,7 @@ namespace UberProject
             }
 
 
-            static void Arena()
+            static void Arena(ref Player player)
             {
                 int i = 1;
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -1056,8 +1060,7 @@ namespace UberProject
                 Thread.Sleep(1000);
 
                 Console.WriteLine("Enter the name of your character.");
-                charName = Console.ReadLine();
-                Player player = new Player(charName, 100, "Steel Pan", 6);
+
 
                 Console.ResetColor();
 
@@ -1812,7 +1815,7 @@ namespace UberProject
 
                     case 2:
                         Console.Clear();
-                        Arena();
+                        Arena( ref player);
                         exit = 1;
                         break;
 
