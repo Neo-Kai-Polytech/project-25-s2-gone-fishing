@@ -145,7 +145,6 @@ namespace UberProject
                 {
                     Welcome();
 
-                    Console.WriteLine("Please choose an option");
                     temp = Console.ReadLine();
                     Task = Convert.ToInt32(temp);
 
@@ -159,7 +158,11 @@ namespace UberProject
                             break;
 
                         case 2:
-                            Player player = new Player(charName, 100, "Steel Pan", 6);
+
+                            Console.Write("Please enter you character name: ");
+
+                            string input = Console.ReadLine();
+                            Player player = new Player(input, 100, "Steel Pan", 6);
                             Arena(ref player);
                             break;
 
@@ -174,6 +177,11 @@ namespace UberProject
                         case 4:
                             Fishing();
                             break;
+
+                        case 5:
+                        Player player2 = new Player("Bob", 100, "Steel Pan", 6);
+                            StartingArea(ref player2);
+                        break;
 
                         default:
                             InvalidInput();
@@ -193,17 +201,30 @@ namespace UberProject
             static void Welcome()
             {
                 Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("______ _                                        __       ______    _ _             _   \r\n|  ___| |                                      / _|      |  ___|  | | |           | |  \r\n| |_  | | __ ___   _____  _ __ ___        ___ | |_       | |_ __ _| | | ___  _   _| |_ \r\n|  _| | |/ _` \\ \\ / / _ \\| '__/ __|      / _ \\|  _|      |  _/ _` | | |/ _ \\| | | | __|\r\n| |   | | (_| |\\ V / (_) | |  \\__ \\     | (_) | |        | || (_| | | | (_) | |_| | |_ \r\n\\_|   |_|\\__,_| \\_/ \\___/|_|  |___/      \\___/|_|        \\_| \\__,_|_|_|\\___/ \\__,_|\\__|\r\n                                                                                       \r\n                                                                                       ");
-                Console.ResetColor();
-                Console.WriteLine("The Menu options are:");
-                Console.WriteLine("1  New Game");
-                Console.WriteLine("2  Arena");
-                Console.WriteLine("3  Collection");
-                Console.WriteLine("0  Exit menu system");
-                //There was sound here and it was removed due to it being tedious when playing multiple times
-                Console.WriteLine();
-            }
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("\n\n\n        ███████╗██╗      █████╗ ██╗   ██╗ ██████╗ ██████╗ ███████╗     ██████╗ ███████╗    ");
+            Console.WriteLine("        ██╔════╝██║     ██╔══██╗██║   ██║██╔═══██╗██╔══██╗██╔════╝    ██╔═══██╗██╔════╝    ");
+            Console.WriteLine("        █████╗  ██║     ███████║██║   ██║██║   ██║██████╔╝███████╗    ██║   ██║█████╗      ");
+            Console.WriteLine("        ██╔══╝  ██║     ██╔══██║╚██╗ ██╔╝██║   ██║██╔══██╗╚════██║    ██║   ██║██╔══╝      ");
+            Console.WriteLine("        ██║     ███████╗██║  ██║ ╚████╔╝ ╚██████╔╝██║  ██║███████║    ╚██████╔╝██║         ");
+            Console.WriteLine("        ╚═╝     ╚══════╝╚═╝  ╚═╝  ╚═══╝   ╚═════╝ ╚═╝  ╚═╝╚══════╝     ╚═════╝ ╚═╝         ");
+            Console.WriteLine("                                                                                          ");
+            Console.WriteLine("                    ███████╗ █████╗ ██╗     ██╗      ██████╗ ██╗   ██╗████████╗            ");
+            Console.WriteLine("                    ██╔════╝██╔══██╗██║     ██║     ██╔═══██╗██║   ██║╚══██╔══╝            ");
+            Console.WriteLine("                    █████╗  ███████║██║     ██║     ██║   ██║██║   ██║   ██║               ");
+            Console.WriteLine("                    ██╔══╝  ██╔══██║██║     ██║     ██║   ██║██║   ██║   ██║               ");
+            Console.WriteLine("                    ██║     ██║  ██║███████╗███████╗╚██████╔╝╚██████╔╝   ██║               ");
+            Console.WriteLine("                    ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝  ╚═════╝    ╚═╝               ");
+
+
+
+
+            Console.WriteLine("\n\t\t\t|  1  New Game  |  2. Arena   |  3. Collections  |");
+            Console.ResetColor();
+
+            //There was sound here and it was removed due to it being tedious when playing multiple times
+
+        }
 
             static void Task1()
             {
@@ -311,14 +332,21 @@ namespace UberProject
 
 
                 event1(ref player);
+                Dayend(ref player);
 
                 event2(ref player);
+                Dayend(ref player);
 
                 event3(ref player);
+                Dayend(ref player);
 
                 event4(ref player);
+                Dayend(ref player);
 
                 event5(ref player);
+                Dayend(ref player);
+
+
 
                 endEvent(ref player);
 
@@ -334,13 +362,13 @@ namespace UberProject
                     "\nSoon he finds himself in a dense forest." +
                     "\nAnd suddenly...");
                 Thread.Sleep(2000);
-                Console.WriteLine("\nYou see a bear running towards you!");
-                Console.WriteLine("Prepare yourself!\n\n");
+                Console.WriteLine("\nHe hears a faint rustling sound coming from the trees behind him");
+                Console.WriteLine("He prepares himself for the worst!\n\n");
                 Console.WriteLine("Press enter to continue...");
                 Console.ReadLine();
                 //There was sound here and it was removed due to it being tedious when playing multiple times
 
-                Enemies enemy = monsters[15];
+                Enemies enemy = monsters[random.Next(0,monsters.Length-1)];
 
                 CombatSystem(ref player, enemy);
 
@@ -357,6 +385,8 @@ namespace UberProject
                     $"\nSo {charName} decided to help them with his cooking skills and he started cooking for them." +
                     $"\nThe Villagers were very happy with his cooking skills and they started calling him Chef {charName}.\n");
 
+                Thread.Sleep(500);
+                
                 Thread.Sleep(500);
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadLine();
@@ -907,9 +937,9 @@ namespace UberProject
 
                 int weaponLootRarity = random.Next(1, 101);
                 int weaponLoot;
-                int itemLoot1 = random.Next(items.Length);
-                int itemLoot2 = random.Next(items.Length);
-                int ingredientLoot = random.Next(ingredients.Length);
+                int itemLoot1 = random.Next(items.Length-1);
+                int itemLoot2 = random.Next(items.Length-1);
+                int ingredientLoot = random.Next(ingredients.Length-1);
 
                 if (weaponLootRarity <= 40)
                 {
@@ -926,7 +956,7 @@ namespace UberProject
                 }
                 else
                 {
-                    weaponLoot = random.Next(18, 24); // Legendary Weapons
+                    weaponLoot = random.Next(18, weapons.Length); // Legendary Weapons
                 }
 
                 Weapons acquiredEpicWeapon = weapons[weaponLoot];
@@ -1047,11 +1077,6 @@ namespace UberProject
                 }
                 Console.WriteLine("Survive for as long as you can in the Arena and prove your worth!\n");
                 Thread.Sleep(1000);
-
-                Console.WriteLine("Enter the name of your character.");
-                charName = Console.ReadLine();
-                
-
                 Console.ResetColor();
 
                 Console.WriteLine("Press enter to continue...");
@@ -1808,6 +1833,7 @@ namespace UberProject
                     money = 100;
                 }
 
+
                 else
 
                 {
@@ -1850,5 +1876,53 @@ namespace UberProject
             }
 
         
+
+        }
+
+        static Player Dayend (ref Player player)
+        {
+            string input;
+            int exit=0;
+            Console.Clear();
+            do
+            {
+                Console.WriteLine("After a long day he finds himself with some freetime");
+                Console.WriteLine("He decided to:");
+                Console.WriteLine("1:Rest\n2:Visit the arena\n3:Go Fishing");
+                input = Console.ReadLine();
+
+                switch (Convert.ToInt32(input))
+                {
+                    case 1:
+                        Console.Clear();
+                        player.playerHP = player.playerHP + 15;
+                        Console.WriteLine("Our hero rests for the night regaining some lost strength");
+                        Console.WriteLine($"Current HP: {player.playerHP}");
+                        exit = 1;
+                        break;
+
+                    case 2:
+                        Console.Clear();
+                        Arena( ref player);
+                        exit = 1;
+                        break;
+
+                    case 3:
+                        Console.Clear();
+                        Fishing();
+                        exit = 1;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Input");
+                        Thread.Sleep(2000);
+                        break;
+                }
+            }while(exit != 1);
+
+            Console.ReadKey();
+
+            return player;
+        }
+
     }
 }
