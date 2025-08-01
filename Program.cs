@@ -5,6 +5,7 @@ using System.Runtime.Intrinsics.X86;
 using System.Text.RegularExpressions;
 using System.Threading.Channels;
 using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace UberProject
 {
@@ -905,7 +906,7 @@ namespace UberProject
                 weaponLoot = random.Next(18, 24); // Legendary Weapons
             }
 
-            Weapons acquiredEpicWeapon = weapons[weaponLoot];
+            Weapons acquiredEpicWeapon = weapons[weaponLoot];// this line is out of bounds -------<
             Items acquiredItem1 = items[itemLoot1];
             Items acquiredItem2 = items[itemLoot2];
             Ingredients acquiredIngredient = ingredients[ingredientLoot];
@@ -1417,7 +1418,7 @@ namespace UberProject
                         Kitchen();
                         break;
                     case 2:
-                        Console.WriteLine($"{cookbook}\n\n-- Press enter to go back");
+                        Console.WriteLine($"\nCookbook:\n {cookbook}\n\n-- Press enter to go back");
                         Console.ReadLine();
                         break;
                     case 0:
@@ -1434,7 +1435,17 @@ namespace UberProject
             Console.Clear();
             do
             {
-                Console.WriteLine("What tier recipie do you want to make?\n1. Tier 1 recipie\n2. Tier 2 recipie\n3. Tier 3 recipie\n\n0. Go back to cooking menu");
+                Console.WriteLine("What tier recipe do you want to make?");
+                ShowColoredLabel("1. Tier 1 recipe");
+                ShowColoredLabel("2. Tier 2 recipe", ConsoleColor.Green);
+                ShowColoredLabel("3. Tier 3 recipe", ConsoleColor.Blue);
+                Console.WriteLine("0. Go back to cooking menu\n\n");
+
+                // Explanation of tiers
+                ShowColoredLabel("Tier 1: Basic recipes with one ingredient.", ConsoleColor.Yellow);
+                ShowColoredLabel("Tier 2: Intermediate recipes with 2 ingredients.", ConsoleColor.Yellow);
+                ShowColoredLabel("Tier 3: Advanced recipes with 3 ingredients.", ConsoleColor.Yellow);
+
                 input = Convert.ToInt32(Console.ReadLine());
                 switch (input)
                 {
@@ -1448,7 +1459,8 @@ namespace UberProject
                         {
                             Console.WriteLine(foodSatchel[i]);
                         }
-                        Console.WriteLine($"Cookbook:\n{cookbook}");
+                        Console.WriteLine($"Cookbook:\n{cookbook}\n");
+                        ShowColoredLabel("Ingredients need to be entered in the correct order.\n", ConsoleColor.Yellow);
                         Console.WriteLine("What ingredient would you like to use?");
                         ingredientSlot1 = Console.ReadLine().ToLower();
                         tierOne(ingredientSlot1);
@@ -1460,7 +1472,8 @@ namespace UberProject
                         {
                             Console.WriteLine(foodSatchel[i]);
                         }
-                        Console.WriteLine($"Cookbook:\n{cookbook}");
+                        Console.WriteLine($"Cookbook:\n{cookbook}\n");
+                        ShowColoredLabel("Ingredients need to be entered in the correct order.\n", ConsoleColor.Yellow);
                         Console.WriteLine("What is the first ingredient you would like to use?");
                         ingredientSlot1 = Console.ReadLine().ToLower();
                         Console.WriteLine("What is the second ingredient you would like to use?");
@@ -1474,8 +1487,8 @@ namespace UberProject
                         {
                             Console.WriteLine(foodSatchel[i]);
                         }
-                        Console.WriteLine($"Cookbook:\n{cookbook}");
-                        Console.WriteLine("Ingredients need to be entered in the correct order.");
+                        Console.WriteLine($"Cookbook:\n{cookbook}\n");
+                        ShowColoredLabel("Ingredients need to be entered in the correct order.\n", ConsoleColor.Yellow);
                         Console.WriteLine("What is the first ingredient you would like to use?");
                         ingredientSlot1 = Console.ReadLine().ToLower();
                         Console.WriteLine("What is the second ingredient you would like to use?");
@@ -1529,7 +1542,6 @@ namespace UberProject
         }
         static void tierTwo(string ingredient1, string ingredient2)
         {
-
             //Salad
             if (ingredient1 == "lettuce" && ingredient2 == "lettuce") //Conditions (Must be in order)
             {
@@ -1650,7 +1662,15 @@ namespace UberProject
             }
             Console.ReadLine();
         }
+        public static void ShowColoredLabel(string text, ConsoleColor color = ConsoleColor.Gray, int padding = 0)
+        { // This helper method is to colour text and add padding if needed
+            // padding or colour does not need to be included 
+            // call it like --> ShowColoredLabel("2. Tier 2 recipe", ConsoleColor.Green, 25); 
+            Console.ForegroundColor = color;
+            Console.WriteLine(text.PadRight(padding));
+            Console.ResetColor();
+        }
 
-        
+
     }
 }
