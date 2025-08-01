@@ -1473,7 +1473,8 @@ namespace UberProject
                         Kitchen();
                         break;
                     case 2:
-                        Console.WriteLine($"\nCookbook:\n {cookbook}\n\n-- Press enter to go back");
+                        Console.WriteLine($"\nCookbook:\n{cookbook}");
+                        ShowColoredLabel("Press enter to go back", ConsoleColor.Yellow);
                         Console.ReadLine();
                         break;
                     case 0:
@@ -1509,7 +1510,7 @@ namespace UberProject
                         break;
                     case 1: //Cooking tier 1 recipies
                         Console.Clear();
-                        Console.WriteLine("Food satchel:");
+                        Console.WriteLine("Food satchel:\n");
                         for (int i = 0; i < foodSatchel.Length; i++)
                         {
                             Console.WriteLine(foodSatchel[i]);
@@ -1522,7 +1523,7 @@ namespace UberProject
                         break;
                     case 2: //Cooking tier 2 recipies
                         Console.Clear();
-                        Console.WriteLine("Food satchel:");
+                        Console.WriteLine("\nFood satchel:\n");
                         for (int i = 0; i < foodSatchel.Length; i++)
                         {
                             Console.WriteLine(foodSatchel[i]);
@@ -1537,7 +1538,7 @@ namespace UberProject
                         break;
                     case 3: //Cooking tier 3 recipies
                         Console.Clear();
-                        Console.WriteLine("Food satchel:");
+                        Console.WriteLine("Food satchel:\n");
                         for (int i = 0; i < foodSatchel.Length; i++)
                         {
                             Console.WriteLine(foodSatchel[i]);
