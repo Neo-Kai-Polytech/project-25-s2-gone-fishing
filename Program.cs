@@ -175,7 +175,7 @@ namespace UberProject
                             break;
 
                         case 4:
-                            Fishing();
+                            DeathScreen();
                             break;
 
                         case 5:
@@ -354,8 +354,66 @@ namespace UberProject
 
             }
 
+        public static void DeathScreen()
+        {
+            string[] falloutQuotes = {
+        "War. War never changes.",
+        "When you realize you're just a pawn in their game.",
+        "The apocalypse wasn't the end... it was the beginning.",
+        "You see, in this world, it's kill or be killed.",
+        "What makes a man a ghoul? Radiation... or regret?",
+        "War doesn't determine who is right—only who is left.",
+        "In the wasteland, trust gets you killed faster than bullets.",
+        "It's not the end of the world... but you can see it from here.",
+        "The world may have ended, but survival never goes out of style.",
+        "A bottlecap and a dream—that's all you're worth now.",
+        "You either become the monster, or feed it."
+    };
 
-            static void event1(ref Player player)
+            Random random = new Random();
+            int selectedQuote = random.Next(falloutQuotes.Length);
+
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            string pad = "        ";
+            string quote = $"\"{falloutQuotes[selectedQuote]}\"";
+            Console.WriteLine("\n\n\n\n");
+            Console.WriteLine(pad + "▓██   ██▓ ▒█████   █    ██     ▄▄▄       ██▀███  ▓█████ ");
+            Console.WriteLine(pad + " ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▒████▄    ▓██ ▒ ██▒▓█   ▀ ");
+            Console.WriteLine(pad + "  ▒██ ██░▒██░  ██▒▓██  ▒██░   ▒██  ▀█▄  ▓██ ░▄█ ▒▒███   ");
+            Console.WriteLine(pad + "  ░ ▐██▓░▒██   ██░▓▓█  ░██░   ░██▄▄▄▄██ ▒██▀▀█▄  ▒▓█  ▄ ");
+            Console.WriteLine(pad + "  ░ ██▒▓░░ ████▓▒░▒▒█████▓     ▓█   ▓██▒░██▓ ▒██▒░▒████▒");
+            Console.WriteLine(pad + "   ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒     ▒▒   ▓▒█░░ ▒▓ ░▒▓░░░ ▒░ ░");
+            Console.WriteLine(pad + " ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░      ▒   ▒▒ ░  ░▒ ░ ▒░ ░ ░  ░");
+            Console.WriteLine(pad + " ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░      ░   ▒     ░░   ░    ░   ");
+            Console.WriteLine(pad + " ░ ░         ░ ░     ░              ░  ░   ░        ░  ░");
+            Console.WriteLine(pad + " ░ ░                                                    ");
+            Console.WriteLine(pad + pad + "\t▓█████▄ ▓█████ ▄▄▄      ▓█████▄                         ");
+            Console.WriteLine(pad + pad + "\t▒██▀ ██▌▓█   ▀▒████▄    ▒██▀ ██▌                        ");
+            Console.WriteLine(pad + pad + "\t░██   █▌▒███  ▒██  ▀█▄  ░██   █▌                        ");
+            Console.WriteLine(pad + pad + "\t░▓█▄   ▌▒▓█  ▄░██▄▄▄▄██ ░▓█▄   ▌                        ");
+            Console.WriteLine(pad + pad + "\t░▒████▓ ░▒████▒▓█   ▓██▒░▒████▓  ██▓                    ");
+            Console.WriteLine(pad + pad + "\t ▒▒▓  ▒ ░░ ▒░ ░▒▒   ▓▒█░ ▒▒▓  ▒  ▒▓▒                    ");
+            Console.WriteLine(pad + pad + "\t ░ ▒  ▒  ░ ░  ░ ▒   ▒▒ ░ ░ ▒  ▒  ░▒                     ");
+            Console.WriteLine(pad + pad + "\t ░ ░  ░    ░    ░   ▒    ░ ░  ░  ░                      ");
+            Console.WriteLine(pad + pad + "\t   ░       ░  ░     ░  ░   ░      ░                     ");
+            Console.WriteLine(pad + pad + "\t ░                       ░        ░                    \n\n");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            
+            Console.WriteLine("\n" + quote.PadLeft(40 + quote.Length / 2) + "\n");
+
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine($"\n\t\t{pad}Press Enter to return to Main Menu...");
+
+            Console.ResetColor();
+            Console.ReadLine();
+            Main();
+        }
+
+
+
+
+        static void event1(ref Player player)
             {
                 Console.WriteLine("Setting off on his journey, he finally makes it to Russia where he sees immense destruction everywhere." +
                     "\nWalking around he desperately tries to find any sign of life, hoping to find survivors he can talk with." +
@@ -733,12 +791,7 @@ namespace UberProject
 
                             if (player.playerHP <= 0)
                             {
-                                Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine($"{player.playerName} has been defeated!");
-                                Console.ResetColor();
-
-                                Console.WriteLine("GAME OVER! Press Enter to exit...");
-                                Main();
+                            DeathScreen();
                             }
 
                             break;
@@ -1096,9 +1149,9 @@ namespace UberProject
                     {
                         Console.WriteLine("You have been defeated in the Arena. Game Over!");
                         Console.WriteLine($"You survived for {i - 1} rounds.");
-                        Console.WriteLine("Press Enter to exit...");
+                        Console.WriteLine("Press Enter to continue..");
                         Console.ReadLine();
-                        return;
+                        DeathScreen();
                     }
                     else
                     {
