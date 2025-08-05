@@ -943,20 +943,20 @@ namespace UberProject
 
                 if (weaponLootRarity <= 40)
                 {
-                    weaponLoot = random.Next(0, 6); // Common Weapons
+                    weaponLoot = random.Next(0, 5); // Common Weapons
 
                 }
                 else if (weaponLootRarity > 40 && weaponLootRarity < 70)
                 {
-                    weaponLoot = random.Next(6, 12); // Rare Weapons
+                    weaponLoot = random.Next(5, 9); // Rare Weapons
                 }
                 else if (weaponLootRarity >= 70 && weaponLootRarity < 90)
                 {
-                    weaponLoot = random.Next(12, 18); // Epic Weapons
+                    weaponLoot = random.Next(9, 13); // Epic Weapons
                 }
                 else
                 {
-                    weaponLoot = random.Next(18, weapons.Length); // Legendary Weapons
+                    weaponLoot = random.Next(13, weapons.Length); // Legendary Weapons
                 }
 
                 Weapons acquiredEpicWeapon = weapons[weaponLoot];
